@@ -75,8 +75,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   text-align: center;
   text-wrap: balance;
-  overflow-wrap: anywhere;
-  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
 }
 
 h1 { font-size: var(--fs-hero); letter-spacing: var(--ls-tight); }
@@ -92,12 +93,16 @@ p {
   text-align: center;
   text-wrap: pretty;
   text-align-last: center;
-  hyphens: auto;
-  overflow-wrap: anywhere;
+  hyphens: none;
+  overflow-wrap: break-word;
+  word-break: normal;
   line-height: 1.75;
   letter-spacing: 0.01em;
   padding: 0 var(--space-sm);
 }
+
+b, strong { overflow-wrap: break-word; word-break: normal; }
+.detail-section p b, .timeline-item p b { white-space: nowrap; }
 
 .text-green  { color: var(--gold); }
 .text-blue   { color: var(--blue); }

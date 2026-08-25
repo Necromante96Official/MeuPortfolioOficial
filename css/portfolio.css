@@ -333,7 +333,7 @@
 }
 .timeline-item h4 { font-size: 0.95rem; margin-bottom: 4px; text-align: center; }
 .timeline-item .meta { font-size: 0.72rem; color: var(--gold); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 6px; text-align: center; }
-.timeline-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; text-align: center; text-wrap: balance; text-align-last: center; hyphens: auto; overflow-wrap: anywhere; }
+.timeline-item p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; text-align: center; text-wrap: pretty; text-align-last: center; hyphens: none; overflow-wrap: break-word; word-break: normal; }
 
 /* PAGE HEADER (reuso do modelo) */
 .page-header {
@@ -452,9 +452,9 @@
 .detail-section::before { content:""; position: absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(8,145,178,0.18), transparent); }
 .detail-section h3 { font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; width: 100%; }
 .detail-section h3 .ico { width:32px; height:32px; display:grid; place-items:center; background: rgba(8,145,178,0.10); border:1px solid rgba(8,145,178,0.18); border-radius:8px; font-size:1rem; flex-shrink: 0; }
-.detail-section p { font-size: 0.86rem; color: var(--text-body); line-height: 1.75; max-width: 65ch; margin: 0 auto; text-align: center; text-wrap: balance; text-align-last: center; hyphens: auto; overflow-wrap: anywhere; }
+.detail-section p { font-size: 0.86rem; color: var(--text-body); line-height: 1.75; max-width: 62ch; margin: 0 auto; text-align: center; text-wrap: pretty; text-align-last: center; hyphens: none; overflow-wrap: break-word; word-break: normal; }
 .detail-section ul { list-style: none; margin-top: 8px; }
-.detail-section li { font-size: 0.84rem; color: var(--text-muted); padding: 8px 12px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); text-align: center; line-height: 1.6; overflow-wrap: anywhere; hyphens: auto; }
+.detail-section li { font-size: 0.84rem; color: var(--text-muted); padding: 8px 12px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); text-align: center; text-wrap: pretty; line-height: 1.6; overflow-wrap: break-word; hyphens: none; }
 .detail-section li:last-child { border-bottom: none; }
 .detail-section li::before { content:"› "; display: inline; color: var(--gold); font-weight:700; margin-right: 6px; position: static; }
 .gallery {
