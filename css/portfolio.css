@@ -484,10 +484,12 @@
 }
 
 @media (max-width: 860px) {
-  .detail-grid { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; gap: 20px; }
   .detail-side { position: static; }
-  .project-grid { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; gap: 16px; }
+  .gallery { grid-template-columns: 1fr; gap: 12px; }
+  .detail-section { padding: 18px 16px; }
+  .info-card { padding: 16px; }
 }
 
 .filter-bar::-webkit-scrollbar { display: none; }

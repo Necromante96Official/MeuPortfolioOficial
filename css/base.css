@@ -14,6 +14,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -26,6 +28,9 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
@@ -179,6 +184,16 @@ b, strong { overflow-wrap: break-word; word-break: normal; }
 p, .detail-section li {
   text-wrap: pretty;
 }
+
+/* ANDROID: evita zoom em inputs e melhora toque */
+input, textarea, select {
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 640px) {
+  input, textarea, select { font-size: 16px !important; }
+}
+a, button { -webkit-tap-highlight-color: rgba(8,145,178,0.18); touch-action: manipulation; }
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {

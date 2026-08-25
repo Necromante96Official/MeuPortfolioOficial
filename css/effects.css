@@ -183,3 +183,10 @@
   background-size: 60px 60px;
   z-index: 0;
 }
+
+/* ANDROID: reduz partículas em telas pequenas para performance */
+@media (max-width: 640px) {
+  .gp:nth-child(n+19) { display: none; }
+  .bg-grid { opacity: 0.08; background-size: 32px 32px; }
+  .hero-aurora { filter: blur(12px); opacity: 0.7; }
+}

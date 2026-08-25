@@ -2,20 +2,21 @@
    RPG SKILLS — Components
    ============================================ */
 
-/* ---------- NAV ---------- */
+/* ---------- NAV - Android safe-area + 48px touch */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: var(--z-nav);
-  padding: var(--space-md) var(--space-xl);
+  padding: calc(var(--space-md) + env(safe-area-inset-top)) calc(var(--space-xl) + env(safe-area-inset-right)) var(--space-md) calc(var(--space-xl) + env(safe-area-inset-left));
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: transparent;
   border-bottom: 1px solid transparent;
   transition: background var(--transition-base), border-color var(--transition-base);
+  min-height: calc(56px + env(safe-area-inset-top));
 }
 
 .nav.scrolled {

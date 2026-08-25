@@ -1,16 +1,24 @@
 /* ============================================
-   RPG SKILLS — Mobile Nav Overlay
+   ANDROID & MOBILE — All alignments, touch & safe-area
    ============================================ */
 
+/* Botão hamburger: 48px mínimo Android, safe-area */
 .mobile-toggle {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-size: 1.25rem;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  font-size: 1.35rem;
   color: var(--text-body);
+  border-radius: 12px;
+  margin-right: env(safe-area-inset-right);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
+.mobile-toggle:active { background: rgba(8,145,178,0.10); }
 
 .mobile-nav {
   display: none;
@@ -22,6 +30,7 @@
   z-index: calc(var(--z-nav) - 1);
   background: rgba(10, 10, 15, 0.97);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -29,6 +38,9 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-base);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav.open {
@@ -39,32 +51,62 @@
 
 .mobile-nav a {
   font-family: var(--font-heading);
-  font-size: var(--fs-2xl);
+  font-size: clamp(1.4rem, 5vw, 1.9rem);
   font-weight: 600;
   color: var(--text-body);
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
   transition: color var(--transition-fast);
+  padding: 8px 16px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  text-wrap: balance;
 }
 
-.mobile-nav a:hover {
+.mobile-nav a:hover, .mobile-nav a:active {
   color: #fff;
 }
 
 .mobile-nav-close {
   position: absolute;
-  top: var(--space-lg);
-  right: var(--space-lg);
-  font-size: 1.5rem;
+  top: calc(var(--space-lg) + env(safe-area-inset-top));
+  right: calc(var(--space-lg) + env(safe-area-inset-right));
+  font-size: 1.75rem;
   color: var(--text-body);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
 }
+.mobile-nav-close:active { background: rgba(255,255,255,0.06); }
 
 .mobile-lang-switcher .lang-option {
-  padding: 10px 20px;
-  font-size: 0.8rem;
+  padding: 12px 22px;
+  font-size: 0.82rem;
+  min-height: 44px;
 }
 
 .mobile-lang-switcher .fi {
   width: 20px;
   height: 15px;
+}
+
+/* Cards e grids: 100% largura no Android, sem cortes */
+@media (max-width: 700px) {
+  .project-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+    padding: 0 env(safe-area-inset-left) 0 env(safe-area-inset-right);
+  }
+  .project-card { max-width: 100% !important; margin: 0; }
+  .filter-bar { -webkit-overflow-scrolling: touch; }
+}
+
+/* Inputs: 16px evita zoom no Android Chrome */
+@media (max-width: 640px) {
+  input, textarea, select { font-size: 16px !important; line-height: 1.5; }
+  .btn, .filter-btn, .mobile-nav a { min-height: 44px; }
 }

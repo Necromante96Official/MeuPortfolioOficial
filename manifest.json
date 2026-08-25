@@ -1,0 +1,23 @@
+{
+  "name": "Lucas Tavares — Portfólio",
+  "short_name": "Lucas Tavares",
+  "description": "Desenvolvedor • Tradutor • Criador de Mods — 11 cases, Vibe Coding, ciano #0891b2",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#09080a",
+  "theme_color": "#0891b2",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/img/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
