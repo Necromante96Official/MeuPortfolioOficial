@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contato — Lucas Tavares. Orçamentos web, tooling e tradução PT-BR.">
+<title>Contato — Lucas Tavares</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+<link rel="stylesheet" href="css/tokens.css"><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/layout.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/effects.css"><link rel="stylesheet" href="css/portfolio.css"><link rel="stylesheet" href="css/mobile.css"><link rel="stylesheet" href="css/polish.css">
+<style>
+.form-card { background: var(--dark2); border:1px solid var(--border); border-radius:14px; padding:22px; position:relative; overflow:hidden; }
+.form-card::before{ content:""; position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(212,136,28,0.22), transparent); }
+.form-card label{ font-family:var(--font-heading); font-size:0.72rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); display:block; margin-bottom:6px; }
+.form-card input, .form-card textarea{ width:100%; padding:12px 14px; background:#0e0b0e; border:1px solid rgba(212,136,28,0.16); border-radius:10px; color:#fff; font-family:var(--font-body); font-size:0.92rem; outline:none; transition: border-color .18s, box-shadow .18s; }
+.form-card input:focus, .form-card textarea:focus{ border-color:var(--gold); box-shadow:0 0 0 3px rgba(212,136,28,0.12); }
+.form-card textarea{ min-height:120px; resize:vertical; }
+</style>
+</head>
+<body>
+<div class="global-particles"><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div></div><div class="global-vignette"></div>
+<nav class="nav"><a href="index.html" class="nav-brand"><span class="brand-icon">◆</span> Lucas Tavares</a><div class="nav-links"><a href="index.html" data-i18n="nav.home">Início</a><a href="projetos-site/index.html" data-i18n="nav.projects">Projetos</a><a href="sobre.html" data-i18n="nav.about">Sobre</a><a href="competencias.html" data-i18n="nav.skills">Competências</a><a href="contato.html" data-i18n="nav.contact" style="color:#fff;">Contato</a><div class="lang-switcher"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem;">GitHub</a></div><button class="mobile-toggle">☰</button></nav>
+<div class="mobile-nav"><button class="mobile-nav-close">&times;</button><a href="index.html" data-i18n="nav.home">Início</a><a href="projetos-site/index.html" data-i18n="nav.projects">Projetos</a><a href="sobre.html" data-i18n="nav.about">Sobre</a><a href="competencias.html" data-i18n="nav.skills">Competências</a><a href="contato.html" data-i18n="nav.contact">Contato</a><div class="lang-switcher mobile-lang-switcher"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a></div>
+
+<header class="page-header">
+  <div class="container" style="max-width:860px; position:relative; z-index:1;">
+    <div class="page-kicker" data-i18n="page.contact.kicker">Contato</div>
+    <h1 class="page-title" data-i18n="page.contact.title">Vamos <span>conversar</span></h1>
+    <p class="page-sub" data-i18n="page.contact.sub">Orçamentos, parcerias de tradução/modding ou oportunidades. Escolha o canal.</p>
+    <div class="page-stats"><span>◆ 24h resposta</span><span>◆ PT-BR • EN</span><span>◆ Remoto</span></div>
+    <div style="margin-top:16px;"><a href="index.html" class="page-back-btn">← Voltar ao início</a></div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="detail-grid">
+      <div class="form-card reveal">
+        <h3 style="font-family:var(--font-heading); font-size:1.05rem; margin-bottom:14px; display:flex; align-items:center; gap:10px;"><span style="width:32px; height:32px; display:grid; place-items:center; background: rgba(212,136,28,0.10); border:1px solid rgba(212,136,28,0.18); border-radius:8px;">✉</span> Enviar mensagem</h3>
+        <!-- Troque action pelo seu Formspree endpoint: https://formspree.io/f/XXXXXXX -->
+        <form action="mailto:contato@exemplo.com" method="post" enctype="text/plain" style="display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <label data-i18n="contact.form.name">Seu nome</label>
+            <input type="text" name="name" required placeholder="Lucas Tavares" data-i18n-placeholder="contact.form.name">
+          </div>
+          <div>
+            <label data-i18n="contact.form.email">Seu e-mail</label>
+            <input type="email" name="email" required placeholder="seu@email.com" data-i18n-placeholder="contact.form.email">
+          </div>
+          <div>
+            <label data-i18n="contact.form.message">Mensagem</label>
+            <textarea name="message" required placeholder="Olá Lucas, gostaria de..." data-i18n-placeholder="contact.form.message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="justify-content:center; padding:14px;" data-i18n="contact.form.send">Enviar mensagem</button>
+          <div style="font-size:0.74rem; color:var(--text-dim); text-align:center;" data-i18n="contact.form.note">Formulário via Formspree/mailto — configure o endpoint no HTML.</div>
+        </form>
+      </div>
+
+      <aside style="display:flex; flex-direction:column; gap:16px;">
+        <div class="info-card reveal">
+          <h4 data-i18n="contact.direct">Contato direto</h4>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px; padding:12px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:10px; text-decoration:none; color:var(--text-body);"><span style="width:36px; height:36px; display:grid; place-items:center; background:#0a0a0f; border-radius:8px; color:#fff; font-weight:700; font-size:0.72rem;">GH</span><span><span style="font-weight:700; font-family:var(--font-heading);">GitHub</span><br><span style="font-size:0.76rem; color:var(--text-muted);">Necromante96Official</span></span><span style="margin-left:auto; color:var(--gold);">↗</span></a>
+            <a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px; padding:12px; background: rgba(212,136,28,0.08); border:1px solid rgba(212,136,28,0.16); border-radius:10px; text-decoration:none; color:var(--gold);"><span style="width:36px; height:36px; display:grid; place-items:center; background: rgba(212,136,28,0.14); border-radius:8px; font-size:1rem;">◆</span><span><span style="font-weight:700; font-family:var(--font-heading); color:#fff;">Nexus Mods</span><br><span style="font-size:0.76rem; color:var(--text-muted);">Mods & traduções</span></span><span style="margin-left:auto;">↗</span></a>
+            <a href="https://www.curseforge.com/hytale/mods/maior-pack-de-traducoes-pt-br" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px; padding:12px; background: rgba(96,165,250,0.08); border:1px solid rgba(96,165,250,0.16); border-radius:10px; text-decoration:none; color:var(--blue);"><span style="width:36px; height:36px; display:grid; place-items:center; background: rgba(96,165,250,0.14); border-radius:8px; font-size:0.84rem;">⬢</span><span><span style="font-weight:700; font-family:var(--font-heading); color:#fff;">CurseForge</span><br><span style="font-size:0.76rem; color:var(--text-muted);">Hytale PT-BR</span></span><span style="margin-left:auto;">↗</span></a>
+            <div style="display:flex; align-items:center; gap:12px; padding:12px; background: var(--dark3); border:1px solid var(--border); border-radius:10px;"><span style="width:36px; height:36px; display:grid; place-items:center; background: rgba(212,136,28,0.10); border-radius:8px;">✉</span><span><span style="font-weight:700; font-family:var(--font-heading); color:#fff;" data-i18n="contact.email">E-mail</span><br><span style="font-size:0.76rem; color:var(--text-muted);" data-i18n="contact.response">Resposta em até 24h • PT-BR / EN</span></span></div>
+          </div>
+        </div>
+        <div class="info-card reveal" style="background: linear-gradient(135deg, rgba(212,136,28,0.10), rgba(212,136,28,0.02)); border-color: rgba(212,136,28,0.18);">
+          <h4>Links de jogos traduzidos</h4>
+          <div style="display:flex; flex-direction:column; gap:8px; font-size:0.82rem;">
+            <a href="https://www.nexusmods.com/forsakenrealmsvahrinscall/mods/5" target="_blank" rel="noopener" style="color:var(--gold);">↗ Forsaken Realms: Vahrin's Call — mods/5 (Nexus)</a>
+            <a href="https://store.steampowered.com/app/1304280/Elementallis/" target="_blank" rel="noopener" style="color:var(--text-body);">↗ Elementallis — Steam 1304280 (aguardando Nexus)</a>
+            <a href="https://store.steampowered.com/app/2893570/DRAGON_QUEST_I__II_HD2D_Remake/" target="_blank" rel="noopener" style="color:var(--text-body);">↗ Dragon Quest I & II HD-2D — Steam (WIP)</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="nav-brand" style="margin-bottom:8px;"><span class="brand-icon">◆</span> Lucas Tavares</div><p data-i18n="footer.brand"></p></div><div class="footer-col"><h4 data-i18n="footer.pages">Páginas</h4><a href="index.html" data-i18n="nav.home">Início</a><a href="sobre.html" data-i18n="nav.about">Sobre</a><a href="competencias.html" data-i18n="nav.skills">Competências</a><a href="projetos-site/index.html" data-i18n="nav.projects">Projetos</a></div><div class="footer-col"><h4 data-i18n="footer.projects">Projetos</h4><a href="projetos-site/fisiohub.html">FisioHub</a><a href="projetos-site/rpg-skills-mod.html">RPG Skills Mod</a><a href="projetos-site/traducoes-jogos-mods.html">Traduções</a></div><div class="footer-col"><h4 data-i18n="footer.connect">Conectar</h4><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener">GitHub</a><a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener">Nexus</a><a href="https://www.curseforge.com/hytale/mods/maior-pack-de-traducoes-pt-br" target="_blank" rel="noopener">CurseForge</a></div></div><div class="footer-bottom"><span data-i18n="footer.made">Feito com &#9829; por Lucas Tavares — 2025</span><span></span></div></div></footer>
+<script src="js/i18n-data.js"></script><script src="js/projects-data.js"></script><script src="js/main.js"></script>
+</body>
+</html>

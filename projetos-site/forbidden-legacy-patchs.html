@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gerenciador C# .NET 9 + Avalonia 11.2.5 que gera overlays patch_{N:04d}.pck (AES) e mescla ao patch oficial via Python.">
+<title>Forbidden Legacy Patch Manager — Lucas Tavares</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+<link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/layout.css"><link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/effects.css"><link rel="stylesheet" href="../css/portfolio.css"><link rel="stylesheet" href="../css/mobile.css"><link rel="stylesheet" href="../css/polish.css">
+</head>
+<body data-slug="forbidden-legacy-patchs">
+<div class="global-particles"><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div></div><div class="global-vignette"></div>
+<nav class="nav"><a href="../index.html" class="nav-brand"><span class="brand-icon">◆</span> Lucas Tavares</a><div class="nav-links"><a href="../index.html" data-i18n="nav.home">Início</a><a href="index.html" data-i18n="nav.projects" style="color:#fff;">Projetos</a><a href="../sobre.html" data-i18n="nav.about">Sobre</a><a href="../competencias.html" data-i18n="nav.skills">Competências</a><a href="../contato.html" data-i18n="nav.contact">Contato</a><div class="lang-switcher"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem;">GitHub</a></div><button class="mobile-toggle">☰</button></nav>
+<div class="mobile-nav"><button class="mobile-nav-close">&times;</button><a href="../index.html" data-i18n="nav.home">Início</a><a href="index.html" data-i18n="nav.projects">Projetos</a><a href="../sobre.html" data-i18n="nav.about">Sobre</a><a href="../competencias.html" data-i18n="nav.skills">Competências</a><a href="../contato.html" data-i18n="nav.contact">Contato</a><div class="lang-switcher mobile-lang-switcher"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a></div>
+
+<header class="page-header">
+  <div class="container" style="max-width:860px; position:relative; z-index:1; text-align:center;">
+    <div class="page-kicker" data-i18n="projects.detail.kicker">Case</div>
+    <div style="display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom:10px;">
+      <span data-detail="icon" style="width:44px; height:44px; display:grid; place-items:center; background: rgba(212,136,28,0.12); border:1px solid rgba(212,136,28,0.22); border-radius:10px; font-size:1.4rem;">◆</span>
+      <span data-detail="category" style="padding:5px 12px; background: rgba(212,136,28,0.10); border:1px solid rgba(212,136,28,0.18); border-radius:999px; font-family:var(--font-heading); font-size:0.68rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold);">categoria</span>
+      <span data-detail="year" style="padding:5px 12px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:999px; font-family:var(--font-heading); font-size:0.68rem; font-weight:700; color:var(--text-muted);">2025</span>
+    </div>
+    <h1 class="page-title" data-detail="title" style="font-size: clamp(1.6rem, 4vw, 2.6rem);">Forbidden Legacy Patch Manager</h1>
+    <p class="page-sub" data-detail="resumo">Gerenciador C# .NET 9 + Avalonia 11.2.5 que gera overlays patch_{N:04d}.pck (AES) e mescla ao patch oficial via Python.</p>
+    <div style="margin-top:16px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;"><a href="index.html" class="page-back-btn" data-i18n="projects.detail.back">← Voltar aos projetos</a><a href="../index.html" class="page-back-btn">⌂ Início</a></div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="detail-grid">
+      <div class="detail-main">
+        <div class="detail-section reveal">
+          <h3><span class="ico">▣</span> <span data-i18n="projects.detail.context">Contexto</span></h3>
+          <p data-detail="descricao">Gerenciador C# .NET 9 + Avalonia 11.2.5 que gera overlays patch_{N:04d}.pck (AES) e mescla ao patch oficial via Python.</p>
+        </div>
+        <div class="detail-section reveal">
+          <h3><span class="ico">◆</span> <span data-i18n="projects.detail.solution">Solução</span></h3>
+          <p data-detail="papel">C# Avalonia UI, Python pipelines (pck_writer, pck_crypto, GDRE), pesquisa de formato PCK e UX do manager.</p>
+          <div style="margin-top:12px;">
+            <div style="font-family:var(--font-heading); font-size:0.74rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:8px;" data-i18n="projects.detail.tech">Tecnologias</div>
+            <div data-detail="techs" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+          </div>
+        </div>
+        <div class="detail-section reveal">
+          <h3><span class="ico">★</span> <span data-i18n="projects.detail.results">Resultados</span></h3>
+          <ul data-detail="resultados"></ul>
+        </div>
+        <div class="detail-section reveal">
+          <h3><span class="ico">▣</span> <span data-i18n="projects.detail.gallery">Galeria</span></h3>
+          <div class="gallery">
+            <div class="placeholder">Screenshots / demo em breve<br><span style="font-size:0.70rem; color:var(--text-dim);">Adicione imagens em assets/img/</span></div>
+            <div class="placeholder">Diagrama / arquitetura<br><span style="font-size:0.70rem; color:var(--text-dim);">Placeholder premium</span></div>
+          </div>
+        </div>
+      </div>
+      <aside class="detail-side">
+        <div class="info-card reveal">
+          <h4 data-i18n="projects.detail.links">Links</h4>
+          <div data-detail="links" style="display:flex; flex-direction:column; gap:8px;"></div>
+        </div>
+        <div class="info-card reveal">
+          <h4>Info</h4>
+          <div class="info-list">
+            <div class="info-row"><span>Categoria</span><span data-detail="category">—</span></div>
+            <div class="info-row"><span>Ano</span><span data-detail="year">—</span></div>
+            <div class="info-row"><span>Autor</span><span>Lucas Tavares</span></div>
+            <div class="info-row"><span>Alias</span><span>Necromante96Official</span></div>
+          </div>
+        </div>
+        <div class="info-card reveal" style="background: linear-gradient(135deg, rgba(212,136,28,0.08), rgba(212,136,28,0.02)); border-color: rgba(212,136,28,0.18);">
+          <h4>Próximos passos</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; max-width:none;">Quer um case como este? Vamos conversar.</p>
+          <a href="../contato.html" class="btn btn-primary" style="width:100%; margin-top:10px; justify-content:center;" data-i18n="cta.button">Entrar em contato</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="nav-brand" style="margin-bottom:8px;"><span class="brand-icon">◆</span> Lucas Tavares</div><p data-i18n="footer.brand"></p></div><div class="footer-col"><h4 data-i18n="footer.pages">Páginas</h4><a href="../index.html" data-i18n="nav.home">Início</a><a href="index.html" data-i18n="nav.projects">Projetos</a><a href="../sobre.html" data-i18n="nav.about">Sobre</a><a href="../competencias.html" data-i18n="nav.skills">Competências</a></div><div class="footer-col"><h4>Outros cases</h4><a href="fisiohub.html">FisioHub</a><a href="nexustranslator.html">NexusTranslator</a><a href="rpg-skills-mod.html">RPG Skills Mod</a><a href="traducoes-jogos-mods.html">Traduções</a></div><div class="footer-col"><h4 data-i18n="footer.connect">Conectar</h4><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener">GitHub</a><a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener">Nexus</a><a href="../contato.html">Contato</a></div></div><div class="footer-bottom"><span data-i18n="footer.made">Feito com &#9829; por Lucas Tavares — 2025</span><span></span></div></div></footer>
+<script src="../js/i18n-data.js"></script><script src="../js/projects-data.js"></script><script src="../js/main.js"></script>
+</body>
+</html>

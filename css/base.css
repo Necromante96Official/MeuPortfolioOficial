@@ -1,0 +1,171 @@
+/* ============================================
+   RPG SKILLS — Base Styles
+   ============================================ */
+
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-body);
+  background: var(--dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: .01;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+h1 { font-size: var(--fs-hero); letter-spacing: var(--ls-tight); }
+h2 { font-size: clamp(1.75rem, 4vw, 3rem); }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+
+p {
+  color: var(--text-body);
+  max-width: 65ch;
+}
+
+.text-green  { color: var(--gold); }
+.text-blue   { color: var(--blue); }
+.text-red    { color: var(--red); }
+.text-gold   { color: var(--gold-light); }
+.text-muted  { color: var(--text-muted); }
+.text-dim    { color: var(--text-dim); }
+
+.font-heading { font-family: var(--font-heading); }
+.font-mono    { font-family: var(--font-mono); }
+
+/* SECTION LABEL (eyebrow) */
+.section-label {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-sm);
+}
+
+/* SECTION TITLE */
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  margin-bottom: var(--space-md);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 10px;
+}
+
+.section-title.center::after {
+  margin: 10px auto 0;
+}
+
+.section-subtitle {
+  font-size: var(--fs-lg);
+  color: var(--text-body);
+  max-width: 60ch;
+}
+
+/* UNDERLINE ACCENT */
+.accent-line {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-md);
+}
+
+.accent-line.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* SELECTION */
+::selection {
+  background: rgba(200, 151, 58, 0.3);
+  color: #fff;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark4);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
