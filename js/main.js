@@ -7,9 +7,13 @@
   var I18N = null;
 
   function i18nBase() {
-    // Em projetos-site/*.html o fetch precisa subir um nível
+    // Em subpastas (projetos-site/*, paginas/*) o fetch precisa subir um nível
     try {
-      if (location.pathname.indexOf('/projetos-site/') !== -1) return '../';
+      var p = location.pathname;
+      if (p.indexOf('/projetos-site/') !== -1 || p.indexOf('/paginas/') !== -1) return '../';
+      // fallback: se tiver mais de 1 '/' após host, assume subpasta
+      var parts = p.split('/').filter(function(x){ return x.length; });
+      if (parts.length > 1 && parts[parts.length-1].indexOf('.html') !== -1) return '../';
     } catch(e) {}
     return '';
   }
@@ -168,12 +172,13 @@
     var privateLabel = dict['projects.detail.private'] || 'Privado';
     var privateBadge = p.private ? '<span class="project-card-private">'+privateLabel+'</span>' : '';
     var href = 'projetos-site/'+p.slug+'.html';
-    // se já estamos em projetos-site, corrigir href relativo
+    // corrigir href relativo conforme localização
     try {
-      if (location.pathname.indexOf('/projetos-site/') !== -1) href = p.slug+'.html';
-      if (location.pathname.indexOf('/projetos-site/') === -1 && document.querySelector('#project-grid-all')) href = 'projetos-site/'+p.slug+'.html';
-      // home usa projetos-site/
-      if (document.querySelector('#project-grid') && !document.querySelector('#project-grid-all')) href = 'projetos-site/'+p.slug+'.html';
+      var path = location.pathname;
+      if (path.indexOf('/projetos-site/') !== -1) href = p.slug+'.html';
+      else if (path.indexOf('/paginas/') !== -1) href = '../projetos-site/'+p.slug+'.html';
+      else if (document.querySelector('#project-grid-all')) href = 'projetos-site/'+p.slug+'.html';
+      else if (document.querySelector('#project-grid')) href = 'projetos-site/'+p.slug+'.html';
     } catch(e) {}
     return '<a href="'+href+'" class="project-card" data-category="'+p.category+'" data-title="'+(d.titulo||'').toLowerCase()+'">'
       + '<div class="project-card-thumb">'

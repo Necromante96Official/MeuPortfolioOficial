@@ -4,20 +4,24 @@ Portfólio minimalista premium bilíngue (PT-BR / EN), 100% estático para **Git
 
 **Stack:** Vanilla HTML/CSS/JS, `GitHub Pages` + `.nojekyll`, sem build.
 
-## Estrutura
+## Estrutura (modular)
 ```
-index.html                  # hub (hero + projetos destaque + sobre + skills)
-sobre.html | competencias.html | contato.html
+index.html                  # único HTML na raiz (hub hero + destaques) — GitHub Pages
+paginas/sobre.html          # trajetória + filosofia
+paginas/competencias.html   # stack + todas as linguagens + top 5
+paginas/contato.html        # FormSubmit para lukastavaresmattos96@gmail.com
 projetos-site/index.html    # grade completa com filtros + busca
 projetos-site/{slug}.html   # 11 cases (fisiohub, nexustranslator, rpg-skills-mod, forbidden-legacy-patchs, controle-financeiro, traducoes-jogos-mods, ancient-souls, deck-building-system, obs-overlay, mo2tools, rpg-skills-site)
-css/tokens.css → polish.css + effects.css (leve, 12 partículas) + portfolio.css
-js/main.js                  # nav scroll + reveal + i18n + filter + detail render
-js/projects-data.js         # fonte única de verdade (11 projetos)
-js/i18n-data.js             # fallback file://
-i18n/pt-BR.json | en.json   # 96 chaves
+partials/nav.html | footer.html  # componentes modulares (injetáveis via js/components.js)
+css/tokens.css → polish.css + effects.css (leve, 12 partículas) + portfolio.css + mobile.css
+js/main.js                  # nav scroll + reveal + i18n (base paginas/projetos-site) + filter + detail render (getLocalized)
+js/components.js            # loader modular nav/footer + focus polish
+js/projects-data.js         # fonte única de verdade (11 projetos, pt/en, Unreal/Unity, mods não oficiais autorizados)
+js/i18n-data.js             # fallback file:// (171 chaves)
+i18n/pt-BR.json | en.json   # 171 chaves, sem " — "
 assets/img/logo.svg | favicon.svg
 modelo-base/                # referência intacta (não deployar se quiser, mas mantido)
-projetos/                   # 10 pastas fonte (não publicadas, só referência)
+projetos/                   # 10 pastas fonte 845 MB (gitignored, não vai para Pages)
 ```
 
 ## Como editar
