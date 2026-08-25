@@ -38,6 +38,40 @@
     });
   });
 
+
+    // Expand particles to 30 if needed
+    try {
+      document.querySelectorAll('.global-particles').forEach(function(container){
+        var colors = ['g','w','d','c','b','g','c','w','d','b'];
+        while (container.children.length < 30) {
+          var d = document.createElement('div');
+          var idx = container.children.length;
+          d.className = 'gp ' + colors[idx % colors.length];
+          container.appendChild(d);
+        }
+      });
+      // Add bg-grid if missing
+      if (!document.querySelector('.bg-grid')) {
+        var grid = document.createElement('div');
+        grid.className = 'bg-grid';
+        document.body.insertBefore(grid, document.body.firstChild);
+      }
+      // Add hero-aurora if hero exists and missing
+      var hero = document.querySelector('.hero');
+      if (hero && !hero.querySelector('.hero-aurora')) {
+        var aur = document.createElement('div');
+        aur.className = 'hero-aurora';
+        hero.insertBefore(aur, hero.firstChild);
+      }
+      // Ensure third orb
+      if (hero && !hero.querySelector('.hero-orb--3')) {
+        var orb3 = document.createElement('div');
+        orb3.className = 'hero-orb hero-orb--3';
+        orb3.style.cssText = 'width:360px; height:360px; top:18%; left:4%; background: radial-gradient(circle, rgba(6,182,212,0.05) 0%, transparent 70%); animation: orbFloat 9s ease-in-out infinite;';
+        hero.appendChild(orb3);
+      }
+    } catch(e){}
+
   // Helper to load partials via fetch (used only if placeholder exists)
   function loadPartial(url, targetId){
     var el = document.getElementById(targetId);

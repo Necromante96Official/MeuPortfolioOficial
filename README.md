@@ -13,22 +13,23 @@ paginas/contato.html        # FormSubmit para lukastavaresmattos96@gmail.com
 projetos-site/index.html    # grade completa com filtros + busca
 projetos-site/{slug}.html   # 11 cases (fisiohub, nexustranslator, rpg-skills-mod, forbidden-legacy-patchs, controle-financeiro, traducoes-jogos-mods, ancient-souls, deck-building-system, obs-overlay, mo2tools, rpg-skills-site)
 partials/nav.html | footer.html  # componentes modulares (injetáveis via js/components.js)
-css/tokens.css → polish.css + effects.css (leve, 12 partículas) + portfolio.css + mobile.css
-js/main.js                  # nav scroll + reveal + i18n (base paginas/projetos-site) + filter + detail render (getLocalized)
-js/components.js            # loader modular nav/footer + focus polish
-js/projects-data.js         # fonte única de verdade (11 projetos, pt/en, Unreal/Unity, mods não oficiais autorizados)
-js/i18n-data.js             # fallback file:// (171 chaves)
-i18n/pt-BR.json | en.json   # 171 chaves, sem " — "
+css/tokens.css → polish.css + effects.css (30 partículas + bg-grid + aurora) + portfolio.css + mobile.css  # ciano #0891b2
+js/main.js                  # nav scroll + reveal + i18n (base paginas/projetos-site) + filter + detail render (getLocalized) + 2026
+js/components.js            # loader modular nav/footer + partículas 12→30 + bg-grid/aurora + focus polish
+js/projects-data.js         # fonte única de verdade (11 projetos, pt/en, Unreal/Unity, mods não oficiais autorizados, year 2024-2026)
+js/i18n-data.js             # fallback file:// (180 chaves, Vibe Coding, 2026)
+i18n/pt-BR.json | en.json   # 180 chaves, sem " — ", Vibe Coding
 assets/img/logo.svg | favicon.svg
 modelo-base/                # referência intacta (não deployar se quiser, mas mantido)
 projetos/                   # 10 pastas fonte 845 MB (gitignored, não vai para Pages)
 ```
 
 ## Como editar
-- **Texto bilíngue:** edite `i18n/*.json` (rebuild `js/i18n-data.js` via `python tools` ou manualmente).
-- **Projetos:** edite `js/projects-data.js` — `slug`, `category` (`web|game|translation|tool|institucional`), `pt/en` (`titulo`, `resumo`, `descricao`, `papel`, `techs`, `resultados`), `links`, `private`.
-- **Cores:** `css/tokens.css` `--gold #d4881c`, `--dark #09080a`.
-- **Efeitos:** `css/effects.css` — 12 partículas `.gp`, vignette; runas/círculos removidos.
+- **Texto bilíngue:** edite `i18n/*.json` (rebuild `js/i18n-data.js` via `python -c "import json..."` ou manualmente). 180 chaves PT/EN, sem " — ".
+- **Vibe Coding:** edite `i18n/*.json` `hero.vibe`, `about.vibe.*`, `skills.vibe.*` e `paginas/sobre.html` + `competencias.html` callouts.
+- **Projetos:** edite `js/projects-data.js` — `slug`, `category` (`web|game|translation|tool|institucional`), `pt/en` (`titulo`, `resumo`, `descricao`, `papel`, `techs`, `resultados`), `links`, `private`, `year` (2024-2026 ativos, 2023-2024 arquivados).
+- **Cores:** `css/tokens.css` `--gold #0891b2` (ciano escuro), `--gold-light #06b6d4`, `--dark #09080a`. Todo `rgba(212,136,28` → `rgba(8,145,178`.
+- **Efeitos:** `css/effects.css` — 30 partículas `.gp` + `bg-grid` (42px) + `hero-aurora` blur 18px + `section-glow-line` shimmer; `js/components.js` expande de 12→30 dinamicamente.
 - **Galeria:** substitua placeholders em `projetos-site/{slug}.html` + adicione webp em `assets/img/`.
 
 ## Rodar local

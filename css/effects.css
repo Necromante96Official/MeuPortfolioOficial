@@ -1,9 +1,8 @@
 /* ============================================
-   PORTFÓLIO LUCAS TAVARES — Effects (leve)
-   Baseado em rpg-effects.css, reduzido para premium minimalista
+   PORTFÓLIO LUCAS TAVARES — Effects (ciano premium, 30 partículas)
    ============================================ */
 
-/* GLOBAL PARTICLES - 12 apenas, opacidade reduzida */
+/* GLOBAL PARTICLES - 30 com variação ciano */
 .global-particles {
   position: fixed;
   inset: 0;
@@ -16,34 +15,96 @@
   border-radius: 50%;
   animation: gpFloat linear infinite;
   opacity: 0;
+  will-change: transform, opacity;
 }
-.gp.g { background: rgba(212,136,28,.32); box-shadow: 0 0 6px rgba(212,136,28,.2); }
-.gp.w { background: rgba(255,255,255,.22); box-shadow: 0 0 4px rgba(255,255,255,.12); }
-.gp.d { background: rgba(212,136,28,.12); }
+.gp.g { background: rgba(8,145,178,.34); box-shadow: 0 0 7px rgba(8,145,178,.22); }
+.gp.w { background: rgba(255,255,255,.20); box-shadow: 0 0 4px rgba(255,255,255,.10); }
+.gp.d { background: rgba(8,145,178,.14); }
+.gp.c { background: rgba(6,182,212,.28); box-shadow: 0 0 6px rgba(6,182,212,.18); }
+.gp.b { background: rgba(96,165,250,.18); box-shadow: 0 0 5px rgba(96,165,250,.12); }
 
-/* 12 particles leves */
-.gp:nth-child(1)  { left: 6%;  width: 2px; height: 2px; animation-duration: 24s; animation-delay: 0s; }
-.gp:nth-child(2)  { left: 18%; width: 3px; height: 3px; animation-duration: 20s; animation-delay: -3s; }
-.gp:nth-child(3)  { left: 30%; width: 1.5px; height: 1.5px; animation-duration: 28s; animation-delay: -7s; }
-.gp:nth-child(4)  { left: 42%; width: 2px; height: 2px; animation-duration: 22s; animation-delay: -1s; }
-.gp:nth-child(5)  { left: 55%; width: 2.5px; height: 2.5px; animation-duration: 18s; animation-delay: -10s; }
-.gp:nth-child(6)  { left: 68%; width: 1.2px; height: 1.2px; animation-duration: 30s; animation-delay: -5s; }
-.gp:nth-child(7)  { left: 80%; width: 2px; height: 2px; animation-duration: 26s; animation-delay: -8s; }
-.gp:nth-child(8)  { left: 92%; width: 2px; height: 2px; animation-duration: 19s; animation-delay: -14s; }
-.gp:nth-child(9)  { left: 12%; width: 1px; height: 1px; animation-duration: 32s; animation-delay: -4s; }
-.gp:nth-child(10) { left: 48%; width: 2px; height: 2px; animation-duration: 21s; animation-delay: -6s; }
-.gp:nth-child(11) { left: 74%; width: 3px; height: 3px; animation-duration: 17s; animation-delay: -9s; }
-.gp:nth-child(12) { left: 86%; width: 1.5px; height: 1.5px; animation-duration: 27s; animation-delay: -12s; }
+/* 30 particles - distribuição uniforme, tamanhos 1px a 3.5px, durações 15s a 35s */
+.gp:nth-child(1)  { left: 4%;   width: 2px; height: 2px; animation-duration: 24s; animation-delay: 0s; }
+.gp:nth-child(2)  { left: 11%;  width: 3px; height: 3px; animation-duration: 20s; animation-delay: -3s; }
+.gp:nth-child(3)  { left: 19%;  width: 1.5px; height: 1.5px; animation-duration: 28s; animation-delay: -7s; }
+.gp:nth-child(4)  { left: 27%;  width: 2px; height: 2px; animation-duration: 22s; animation-delay: -1s; }
+.gp:nth-child(5)  { left: 35%;  width: 2.5px; height: 2.5px; animation-duration: 18s; animation-delay: -10s; }
+.gp:nth-child(6)  { left: 43%;  width: 1.2px; height: 1.2px; animation-duration: 30s; animation-delay: -5s; }
+.gp:nth-child(7)  { left: 51%;  width: 2px; height: 2px; animation-duration: 26s; animation-delay: -8s; }
+.gp:nth-child(8)  { left: 59%;  width: 2px; height: 2px; animation-duration: 19s; animation-delay: -14s; }
+.gp:nth-child(9)  { left: 67%;  width: 1px; height: 1px; animation-duration: 32s; animation-delay: -4s; }
+.gp:nth-child(10) { left: 75%;  width: 2px; height: 2px; animation-duration: 21s; animation-delay: -6s; }
+.gp:nth-child(11) { left: 83%;  width: 3px; height: 3px; animation-duration: 17s; animation-delay: -9s; }
+.gp:nth-child(12) { left: 90%;  width: 1.5px; height: 1.5px; animation-duration: 27s; animation-delay: -12s; }
+.gp:nth-child(13) { left: 7%;   width: 1.8px; height: 1.8px; animation-duration: 23s; animation-delay: -2s; }
+.gp:nth-child(14) { left: 15%;  width: 3.2px; height: 3.2px; animation-duration: 16s; animation-delay: -11s; }
+.gp:nth-child(15) { left: 23%;  width: 1px; height: 1px; animation-duration: 29s; animation-delay: -6s; }
+.gp:nth-child(16) { left: 31%;  width: 2.8px; height: 2.8px; animation-duration: 19s; animation-delay: -13s; }
+.gp:nth-child(17) { left: 39%;  width: 1.3px; height: 1.3px; animation-duration: 33s; animation-delay: -8s; }
+.gp:nth-child(18) { left: 47%;  width: 2.3px; height: 2.3px; animation-duration: 18s; animation-delay: -3s; }
+.gp:nth-child(19) { left: 55%;  width: 1px; height: 1px; animation-duration: 31s; animation-delay: -15s; }
+.gp:nth-child(20) { left: 63%;  width: 3.5px; height: 3.5px; animation-duration: 15s; animation-delay: -5s; }
+.gp:nth-child(21) { left: 71%;  width: 1.1px; height: 1.1px; animation-duration: 35s; animation-delay: -9s; }
+.gp:nth-child(22) { left: 78%;  width: 2.1px; height: 2.1px; animation-duration: 20s; animation-delay: -12s; }
+.gp:nth-child(23) { left: 86%;  width: 2.6px; height: 2.6px; animation-duration: 22s; animation-delay: -7s; }
+.gp:nth-child(24) { left: 93%;  width: 1px; height: 1px; animation-duration: 28s; animation-delay: -4s; }
+.gp:nth-child(25) { left: 2%;   width: 2px; height: 2px; animation-duration: 25s; animation-delay: -10s; }
+.gp:nth-child(26) { left: 9%;   width: 1.4px; height: 1.4px; animation-duration: 27s; animation-delay: -14s; }
+.gp:nth-child(27) { left: 18%;  width: 2.9px; height: 2.9px; animation-duration: 17s; animation-delay: -1s; }
+.gp:nth-child(28) { left: 26%;  width: 1px; height: 1px; animation-duration: 34s; animation-delay: -8s; }
+.gp:nth-child(29) { left: 34%;  width: 2.4px; height: 2.4px; animation-duration: 21s; animation-delay: -11s; }
+.gp:nth-child(30) { left: 42%;  width: 1.6px; height: 1.6px; animation-duration: 26s; animation-delay: -6s; }
 
-.gp:nth-child(n+13) { display: none; }
+.gp:nth-child(n+31) { display: none; }
 
 @keyframes gpFloat {
   0% { bottom: -4%; opacity: 0; transform: translateX(0) scale(1); }
-  8% { opacity: .45; transform: translateX(6px) scale(1.1); }
-  25% { transform: translateX(18px) scale(1); opacity: .3; }
-  50% { transform: translateX(-12px) scale(.92); opacity: .4; }
-  92% { opacity: .08; }
+  8% { opacity: .52; transform: translateX(6px) scale(1.12); }
+  25% { transform: translateX(18px) scale(1); opacity: .36; }
+  50% { transform: translateX(-12px) scale(.92); opacity: .44; }
+  92% { opacity: .09; }
   100% { bottom: 104%; opacity: 0; transform: translateX(-8px); }
+}
+
+/* BACKGROUND GRID sutil ciano */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.16;
+  background-image:
+    linear-gradient(rgba(8,145,178,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8,145,178,0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  animation: gridMove 22s linear infinite;
+}
+@keyframes gridMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(42px); }
+}
+
+/* AURORA ciano-hero */
+.hero-aurora {
+  position: absolute;
+  width: 130%;
+  height: 65%;
+  top: -12%;
+  left: -15%;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 45% 55% at 28% 22%, rgba(6,182,212,0.09), transparent 60%),
+    radial-gradient(ellipse 42% 50% at 72% 78%, rgba(8,145,178,0.07), transparent 60%),
+    radial-gradient(ellipse 35% 40% at 55% 45%, rgba(14,165,233,0.05), transparent 65%);
+  filter: blur(18px);
+  animation: auroraFloat 16s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+@keyframes auroraFloat {
+  0% { transform: translateX(0) translateY(0) scale(1); opacity: 0.9; }
+  50% { transform: translateX(18px) translateY(-10px) scale(1.04); opacity: 1; }
+  100% { transform: translateX(-12px) translateY(8px) scale(0.98); opacity: 0.85; }
 }
 
 /* VIGNETTE global sutil */
@@ -84,13 +145,13 @@
   content: '';
   position: absolute;
   top: 50%; left: 10%; right: 10%; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212,136,28,.10), transparent);
+  background: linear-gradient(90deg, transparent, rgba(8,145,178,.10), transparent);
 }
 .section-divider::after {
   content: '◆  ◆  ◆';
   position: absolute;
   top: 50%; left: 50%; transform: translate(-50%,-50%);
-  color: rgba(212,136,28,.12);
+  color: rgba(8,145,178,.14);
   font-size: 7px;
   letter-spacing: 8px;
   background: var(--dark);
@@ -99,15 +160,26 @@
 .section-glow-line {
   position: absolute;
   top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212,136,28,.08), transparent);
+  background: linear-gradient(90deg, transparent, rgba(8,145,178,.08), transparent);
   z-index: 1;
+}
+.section-glow-line::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(8,145,178,0.18), transparent);
+  animation: shimmerLine 3.5s ease-in-out infinite;
+}
+@keyframes shimmerLine {
+  0% { left: -100%; }
+  55%, 100% { left: 150%; }
 }
 .section-texture {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: .018;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23c8973a' stroke-width='.5'/%3E%3C/svg%3E");
+  opacity: .016;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%230891b2' stroke-width='.5'/%3E%3C/svg%3E");
   background-size: 60px 60px;
   z-index: 0;
 }

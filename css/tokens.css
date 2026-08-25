@@ -4,10 +4,10 @@
 
 :root {
   /* PRIMARY — Gold (XP, Progression) */
-  --gold:         #d4881c;
-  --gold-light:   #e8a030;
-  --gold-dim:     #8a5a10;
-  --gold-rgb:     212, 136, 28;
+  --gold:         #0891b2;
+  --gold-light:   #06b6d4;
+  --gold-dim:     #155e75;
+  --gold-rgb:     8, 145, 178;
 
   /* SECONDARY — Blue (Magic, Skills) */
   --blue:         #60a5fa;
@@ -41,9 +41,9 @@
   --text-faint:   #444;
 
   /* BORDERS */
-  --border:       rgba(212, 136, 28, 0.13);
-  --border-hover: rgba(212, 136, 28, 0.28);
-  --border-active: rgba(212, 136, 28, 0.4);
+  --border:       rgba(8, 145, 178, 0.13);
+  --border-hover: rgba(8, 145, 178, 0.28);
+  --border-active: rgba(8, 145, 178, 0.4);
 
   /* SEMANTIC */
   --success:      #22c55e;
@@ -55,8 +55,8 @@
   --cat-combat:   #ef4444;
   --cat-defense:  #60a5fa;
   --cat-mobility: #a78bfa;
-  --cat-utility:  #c8973a;
-  --cat-settler:  #c8973a;
+  --cat-utility:  #0e7490;
+  --cat-settler:  #0e7490;
 
   /* SPACING */
   --space-xs:     4px;
@@ -100,10 +100,10 @@
   --shadow-sm:    0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.5);
   --shadow-lg:    0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-glow:  0 0 20px rgba(212, 136, 28, 0.15);
-  --shadow-card-hover: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 18px rgba(212, 136, 28, 0.07);
-  --gold-gradient: linear-gradient(90deg, #f0b24a, #ffd38a, #f0b24a);
-  --gold-gradient-strong: linear-gradient(180deg, #fff 15%, #ffe7b3 55%, #d4881c 100%);
+  --shadow-glow:  0 0 20px rgba(8, 145, 178, 0.15);
+  --shadow-card-hover: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 18px rgba(8, 145, 178, 0.07);
+  --gold-gradient: linear-gradient(90deg, #22d3ee, #a5f3fc, #22d3ee);
+  --gold-gradient-strong: linear-gradient(180deg, #fff 15%, #cffafe 55%, #0891b2 100%);
 
   /* TRANSITIONS */
   --transition-fast:   0.15s ease;
