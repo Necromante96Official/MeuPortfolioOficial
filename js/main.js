@@ -187,10 +187,10 @@
       + privateBadge
       + '</div>'
       + '<div class="project-card-body">'
-      + '  <div class="project-card-title">'+(d.titulo||'')+' <small>'+p.year+'</small></div>'
+      + '  <div class="project-card-title">'+(d.titulo||'')+'</div>'
       + '  <div class="project-card-desc">'+(d.resumo||'')+'</div>'
       + '  <div class="project-card-techs">'+techs+'</div>'
-      + '  <div class="project-card-foot"><span><strong>'+ (d.techs? d.techs.length : 0) +' techs</strong> • '+p.year+'</span><span class="arrow">→</span></div>'
+      + '  <div class="project-card-foot"><span><strong>'+ (d.techs? d.techs.length : 0) +' techs</strong></span><span class="arrow">→</span></div>'
       + '</div>'
       + '</a>';
   }
