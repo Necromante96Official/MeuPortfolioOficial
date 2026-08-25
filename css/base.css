@@ -71,8 +71,11 @@ button {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.25;
   color: #fff;
+  text-align: center;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 h1 { font-size: var(--fs-hero); letter-spacing: var(--ls-tight); }
@@ -83,6 +86,14 @@ h4 { font-size: var(--fs-xl); }
 p {
   color: var(--text-body);
   max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  padding: 0 var(--space-sm);
 }
 
 .text-green  { color: var(--gold); }
