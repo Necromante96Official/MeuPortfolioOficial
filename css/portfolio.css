@@ -31,15 +31,16 @@
   transition: opacity .22s;
 }
 .project-card:hover {
+  will-change: transform;
   border-color: rgba(212,136,28,0.30);
   transform: translateY(-5px);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.45), 0 0 18px rgba(212,136,28,0.07);
+  box-shadow: var(--shadow-card-hover);
 }
 .project-card:hover::before { opacity: 1; }
 .project-card-thumb {
   position: relative;
   aspect-ratio: 16/9;
-  background: #0a0a0f;
+  background: var(--dark);
   overflow: hidden;
   display: grid;
   place-items: center;
@@ -111,6 +112,7 @@
   gap: 8px;
 }
 .project-card-title {
+  word-break: break-word;
   font-family: var(--font-heading);
   font-size: 1.02rem;
   font-weight: 700;
@@ -185,6 +187,8 @@
 
 /* FILTER BAR */
 .filter-bar {
+  scrollbar-width: none; -ms-overflow-style: none;
+
   display: flex;
   align-items: center;
   gap: 8px;
@@ -458,3 +462,16 @@
   .project-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr; }
 }
+
+.filter-bar::-webkit-scrollbar { display: none; }
+@media (max-width: 640px) {
+  .filter-bar { overflow-x: auto; flex-wrap: nowrap; max-width: 100%; padding-bottom: 4px; scroll-snap-type: x proximity; }
+  .filter-btn { scroll-snap-align: start; }
+}
+
+/* focus-visible polish */
+.project-card:focus-visible, .filter-btn:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.filter-btn:focus-visible { outline-offset: 1px; }

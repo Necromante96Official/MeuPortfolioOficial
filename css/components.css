@@ -139,7 +139,7 @@
 }
 
 .hero-buttons .btn-primary {
-  animation: pulseGlow 2s ease-in-out infinite;
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 @keyframes pulseGlow {
@@ -1197,3 +1197,7 @@
   content: '-';
   color: var(--red);
 }
+
+/* focus polish */
+.btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.lang-option:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }

@@ -101,6 +101,9 @@
   --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.5);
   --shadow-lg:    0 8px 32px rgba(0, 0, 0, 0.6);
   --shadow-glow:  0 0 20px rgba(212, 136, 28, 0.15);
+  --shadow-card-hover: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 18px rgba(212, 136, 28, 0.07);
+  --gold-gradient: linear-gradient(90deg, #f0b24a, #ffd38a, #f0b24a);
+  --gold-gradient-strong: linear-gradient(180deg, #fff 15%, #ffe7b3 55%, #d4881c 100%);
 
   /* TRANSITIONS */
   --transition-fast:   0.15s ease;

@@ -39,19 +39,19 @@ window.PROJECTS = [
     thumb: "assets/img/nexustranslator.webp",
     pt: {
       titulo: "NexusTranslator — Central de Tradução com IA",
-      resumo: "v6.3.5, 31 módulos: scan, normalização, progresso, ZIPs e LQA para Stardew/Unity/Hytale. Integração Cursor + Ollama + UnityPy.",
-      descricao: "Tool proprietária para traduzir mods Stardew Valley (e Unity/Unreal/Hytale). Pipeline completo: detecta Unity Mono/IL2CPP, integra NexusMods + Cursor Auto, gera zips traduzidos, audita vazamentos de inglês e glossários. CI com security audit e 15 scripts de qualidade.",
-      papel: "Arquitetura Node/TS, esbuild, Cursor SDK, pipelines de LQA e automação de ZIPs.",
-      techs: ["TypeScript 5.5","Node 20","esbuild","Cursor SDK","archiver/ws/yauzl","UnityPy","Ollama"],
-      resultados: ["6.3.5 estável, 31 módulos","Base para pack 12 idiomas RPG Skills","Fluxo usado em produção diária"]
+      resumo: "v6.3.5, 31 módulos: traduz mods Stardew Valley, Hytale e jogos Unreal Engine + Unity; scan, normalização, progresso, ZIPs e LQA. Cursor + Ollama + UnityPy.",
+      descricao: "Tool proprietária para traduzir mods Stardew Valley, Hytale e jogos Unreal Engine + Unity. Pipeline completo: detecta Unity Mono/IL2CPP e pacotes Unreal, integra NexusMods + Cursor Auto, gera zips traduzidos, audita vazamentos de inglês e glossários. CI com security audit e 15 scripts de qualidade.",
+      papel: "Arquitetura Node/TS, esbuild, Cursor SDK, pipelines de LQA e automação de ZIPs para Stardew/Hytale/Unreal/Unity.",
+      techs: ["TypeScript 5.5","Node 20","esbuild","Cursor SDK","archiver/ws/yauzl","UnityPy","Ollama","Unreal Engine","Unity"],
+      resultados: ["6.3.5 estável, 31 módulos","Stardew + Hytale + Unreal + Unity","Base para pack 12 idiomas RPG Skills"]
     },
     en: {
       titulo: "NexusTranslator — AI Translation Hub",
-      resumo: "v6.3.5, 31 modules: scanning, normalization, progress, ZIPs & LQA for Stardew/Unity/Hytale. Cursor + Ollama + UnityPy.",
-      descricao: "Proprietary tool to translate Stardew mods (and Unity/Unreal/Hytale). Detects Mono/IL2CPP, drives Cursor Auto, builds translated ZIPs, audits English leaks & glossaries. CI + security audit.",
-      papel: "Node/TS architecture, esbuild, Cursor SDK, LQA & ZIP automation.",
-      techs: ["TypeScript 5.5","Node 20","esbuild","Cursor SDK","archiver/ws/yauzl","UnityPy","Ollama"],
-      resultados: ["Stable 6.3.5, 31 modules","Powers 12-language RPG Skills pack","Daily prod workflow"]
+      resumo: "v6.3.5, 31 modules: translates Stardew Valley, Hytale and Unreal Engine + Unity games; scanning, normalization, progress, ZIPs & LQA. Cursor + Ollama + UnityPy.",
+      descricao: "Proprietary tool to translate Stardew Valley, Hytale and Unreal Engine + Unity games. Detects Unity Mono/IL2CPP and Unreal packages, drives Cursor Auto, builds translated ZIPs, audits English leaks & glossaries. CI + security audit.",
+      papel: "Node/TS architecture, esbuild, Cursor SDK, LQA & ZIP automation for Stardew/Hytale/Unreal/Unity.",
+      techs: ["TypeScript 5.5","Node 20","esbuild","Cursor SDK","archiver/ws/yauzl","UnityPy","Ollama","Unreal Engine","Unity"],
+      resultados: ["Stable 6.3.5, 31 modules","Stardew + Hytale + Unreal + Unity","Powers 12-language RPG Skills pack"]
     }
   },
   {
@@ -146,20 +146,20 @@ window.PROJECTS = [
     links: { github: "", demo: "https://www.nexusmods.com/profile/Necromante96Official", docs: "https://www.curseforge.com/hytale/mods/maior-pack-de-traducoes-pt-br" },
     thumb: "assets/img/traducoes.webp",
     pt: {
-      titulo: "Traduções Autorizadas — Jogos & Mods",
-      resumo: "Stardew Valley (Nexus), Forsaken Realms: Vahrin's Call (Nexus mods/5), Elementallis (Steam 1304280) e Dragon Quest I & II Remake (em andamento).",
-      descricao: "Localização PT-BR autorizada: packs de mods Stardew, Forsaken Realms: Vahrin's Call (tradução oficial Nexus), Elementallis aprovado aguardando Nexus, e Dragon Quest I & II HD-2D Remake em tradução. Fluxo NexusTranslator + LQA + glossários.",
-      papel: "Tradução, revisão, LQA, geração de ZIPs, contato com devs e publicação Nexus/CurseForge/Steam.",
-      techs: ["NexusTranslator","LQA","Glossários","Unity/IL2CPP","Hytale","Steam Workshop"],
-      resultados: ["Forsaken Realms oficial mods/5","Hytale PT-BR na CurseForge","Elementallis autorizado","DQ I&II em progresso"]
+      titulo: "Mods de Tradução PT-BR — Jogos & Mods (não oficiais, autorizados pelas devs)",
+      resumo: "Mods não oficiais autorizados: Stardew Valley (Nexus), Forsaken Realms: Vahrin's Call (Nexus mods/5), Hytale (CurseForge), Elementallis (Steam 1304280) e Dragon Quest I & II Remake (em tradução).",
+      descricao: "Localização PT-BR não oficial distribuída como mod autorizado pelas desenvolvedoras: packs Stardew Valley (Nexus), Forsaken Realms: Vahrin's Call — mod autorizado pela dev (Nexus mods/5), Hytale PT-BR na CurseForge e Unreal/Unity, Elementallis — tradução autorizada aguardando publicação Nexus — e Dragon Quest I & II HD-2D Remake em tradução (sem vínculo oficial com a publisher). Fluxo NexusTranslator + LQA + glossários. Aviso: sem afiliação com publishers oficiais.",
+      papel: "Tradução, revisão, LQA, geração de ZIPs, contato com devs e publicação Nexus/CurseForge/Steam como mods não oficiais autorizados.",
+      techs: ["NexusTranslator","LQA","Glossários","Unity/IL2CPP","Unreal Engine","Hytale","Steam Workshop"],
+      resultados: ["Forsaken Realms — mod autorizado mods/5","Hytale PT-BR na CurseForge","Elementallis autorizado (aguardando Nexus)","DQ I&II em progresso (mod não oficial)"]
     },
     en: {
-      titulo: "Authorized Translations — Games & Mods",
-      resumo: "Stardew (Nexus), Forsaken Realms: Vahrin's Call (Nexus mods/5), Elementallis (Steam 1304280) & Dragon Quest I & II Remake (WIP).",
-      descricao: "Authorized PT-BR: Stardew mod packs, Forsaken Realms official (Nexus), Elementallis approved pending Nexus, Dragon Quest I & II HD-2D WIP. NexusTranslator + LQA + glossaries.",
-      papel: "Translation, review, LQA, ZIP builds, dev liaison & Nexus/CurseForge/Steam publishing.",
-      techs: ["NexusTranslator","LQA","Glossaries","Unity/IL2CPP","Hytale","Steam Workshop"],
-      resultados: ["Forsaken official mods/5","Hytale PT-BR on CurseForge","Elementallis authorized","DQ I&II WIP"]
+      titulo: "PT-BR Translation Mods — Games & Mods (unofficial, dev-authorized)",
+      resumo: "Authorized unofficial mods: Stardew (Nexus), Forsaken Realms: Vahrin's Call (Nexus mods/5), Hytale (CurseForge), Elementallis (Steam 1304280) & Dragon Quest I & II Remake (WIP).",
+      descricao: "Unofficial PT-BR localization distributed as dev-authorized mods: Stardew Valley packs (Nexus), Forsaken Realms: Vahrin's Call — dev-authorized mod (Nexus mods/5), Hytale PT-BR on CurseForge and Unreal/Unity, Elementallis — authorized translation pending Nexus — and Dragon Quest I & II HD-2D WIP (no official publisher affiliation). NexusTranslator + LQA + glossaries. Disclaimer: no affiliation with official publishers.",
+      papel: "Translation, review, LQA, ZIP builds, dev liaison & Nexus/CurseForge/Steam publishing as authorized unofficial mods.",
+      techs: ["NexusTranslator","LQA","Glossaries","Unity/IL2CPP","Unreal Engine","Hytale","Steam Workshop"],
+      resultados: ["Forsaken — authorized mod mods/5","Hytale PT-BR on CurseForge","Elementallis authorized (pending Nexus)","DQ I&II WIP (unofficial mod)"]
     }
   },
   {
