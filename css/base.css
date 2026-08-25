@@ -74,6 +74,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25;
   color: #fff;
   text-align: center;
+  text-wrap: balance;
   overflow-wrap: anywhere;
   hyphens: auto;
 }
@@ -89,6 +90,8 @@ p {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  text-wrap: pretty;
+  text-align-last: center;
   hyphens: auto;
   overflow-wrap: anywhere;
   line-height: 1.75;
@@ -161,6 +164,15 @@ p {
 ::selection {
   background: rgba(8, 145, 178, 0.28);
   color: #fff;
+}
+
+/* BALANCED TEXT - evita espaçamento sobrando e centraliza de forma profissional */
+.hero-vibe, .hero-subtitle, .hero-subtitle-card p, .detail-section p, .timeline-item p, .skill-card, .info-card p, .page-sub, .section-subtitle, .explore-subtitle {
+  text-wrap: balance;
+  text-align-last: center;
+}
+p, .detail-section li {
+  text-wrap: pretty;
 }
 
 /* SCROLLBAR */
