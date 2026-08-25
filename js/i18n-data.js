@@ -10,7 +10,7 @@ window.I18N_FALLBACK = {
     "hero.title": "Lucas Tavares",
     "hero.role": "Desenvolvedor • Tradutor • Criador de Mods",
     "hero.tagline": "Transformo ideias em sistemas que funcionam.",
-    "hero.subtitle": "Sites, mods, traduções não oficiais: mods autorizados pelas desenvolvedoras: e ferramentas usadas em produção: do PWA financeiro ao sistema da UFRGS, do mod com 18.5k acessos ao pipeline de tradução com IA.",
+    "hero.subtitle": "Sites, mods, traduções não oficiais autorizadas pelas desenvolvedoras e ferramentas usadas em produção: do PWA financeiro ao sistema da UFRGS, do mod com 18,5 mil acessos ao pipeline de tradução com IA.",
     "hero.cta.primary": "Ver Projetos",
     "hero.cta.secondary": "GitHub",
     "hero.cta.cv": "Baixar CV",
@@ -172,14 +172,14 @@ window.I18N_FALLBACK = {
     "competencias.languages.top5.byLines": "Por volume de código",
     "competencias.languages.note": "Análise baseada em 14.372 arquivos fonte e 845 MB de projetos. Markdown e JSON são transversais.",
     "hero.vibe.badge": "◆ VIBE CODING • IA direcionada",
-    "hero.vibe": "Hoje faço <b>todos os meus projetos em Vibe Coding</b>, direcionando os modelos de IA mais avançados para criar tudo que preciso, otimizando <b>dias, semanas e até anos</b> de programação linha por linha.",
-    "hero.vibe.short": "Vibe Coding: IA e engenharia para entregar premium em horas, não em meses.",
+    "hero.vibe": "Desenvolvo em <b>Vibe Coding</b>: orquestro IA de ponta para transformar ideias em produtos. O que levava <b>semanas ou meses de código manual</b>, entrego em <b>horas com qualidade premium</b> e acabamento impecável.",
+    "hero.vibe.short": "Vibe Coding: da ideia ao produto em horas, com rigor de engenharia.",
     "about.vibe.title": "Vibe Coding: meu modo de construir",
-    "about.vibe.p1": "Hoje eu faço todos os meus projetos codando em Vibe Coding: eu direciono a IA e os modelos mais avançados para criar tudo que necessito, otimizando dias, semanas, meses até anos de programação linha por linha, sem abrir mão de código legível, documentação e privacidade offline-first.",
-    "about.vibe.p2": "Eu projeto a arquitetura e a IA executa o esqueleto. Reviso, testo e publico. Velocidade sem atalho na qualidade.",
+    "about.vibe.p1": "Meu fluxo hoje é <b>Vibe Coding</b>: defino arquitetura, experiência e critérios de qualidade e dirijo IA avançada para gerar, validar e refinar cada camada. Converto <b>semanas, meses e até anos de codificação manual</b> em ciclos ágeis de horas, mantendo código limpo, testes, documentação e privacidade offline-first.",
+    "about.vibe.p2": "Eu arquiteto. A IA acelera. Eu reviso com lupa, testo e publico. Velocidade de startup com disciplina de engenharia sênior.",
     "skills.vibe.title": "Vibe Coding e IA Direcionada",
-    "skills.vibe.desc": "Arquiteto o sistema e a IA executa o boilerplate. Reviso, testo e publico. Velocidade sem perder engenharia.",
-    "skills.vibe.callout": "Stack enxuta e IA direcionada: velocidade de Vibe Coding com rigor de engenharia."
+    "skills.vibe.desc": "Arquitetura humana com execução por IA. Da ideia ao deploy em horas, com performance, testes e código que escala. Sem atalhos na qualidade.",
+    "skills.vibe.callout": "Vibe Coding com IA direcionada: entrega premium em horas, não em meses."
   },
   "en": {
     "nav.home": "Home",
@@ -192,7 +192,7 @@ window.I18N_FALLBACK = {
     "hero.title": "Lucas Tavares",
     "hero.role": "Developer • Translator • Mod Creator",
     "hero.tagline": "I turn ideas into systems that ship.",
-    "hero.subtitle": "Websites, mods, unofficial community translation mods authorized by the developers and production-grade tools: from an offline-first finance PWA to the UFRGS clinic system, from an 18.5k-view mod to an AI-powered translation pipeline.",
+    "hero.subtitle": "Websites, mods, authorized unofficial community translations and production-grade tools: from offline-first finance PWA to the UFRGS clinic system, from an 18.5k-view mod to an AI-powered translation pipeline.",
     "hero.cta.primary": "View Projects",
     "hero.cta.secondary": "GitHub",
     "hero.cta.cv": "Download CV",
@@ -354,13 +354,13 @@ window.I18N_FALLBACK = {
     "competencias.languages.top5.byLines": "By code volume",
     "competencias.languages.note": "Based on 14,372 source files and 845 MB of projects. Markdown and JSON are cross-cutting.",
     "hero.vibe.badge": "◆ VIBE CODING • Directed AI",
-    "hero.vibe": "Today I build <b>all my projects with Vibe Coding</b>, directing the most advanced AI models to create everything I need, compressing <b>days, weeks and even years</b> of line-by-line coding.",
-    "hero.vibe.short": "Vibe Coding: AI and engineering to ship premium in hours, not months.",
+    "hero.vibe": "I build with <b>Vibe Coding</b>: I orchestrate cutting-edge AI to turn ideas into products. What used to take <b>weeks or months of manual code</b> now ships in <b>hours with premium quality</b> and refined finish.",
+    "hero.vibe.short": "Vibe Coding: from idea to product in hours, with engineering rigor.",
     "about.vibe.title": "Vibe Coding: how I build",
-    "about.vibe.p1": "Today I build every project with Vibe Coding: I direct AI and the most advanced models to create whatever I need, saving days, weeks, months and even years of line-by-line programming, without sacrificing readable code, docs or offline-first privacy.",
-    "about.vibe.p2": "I architect and AI scaffolds. I review, test and ship. Speed without cutting corners.",
+    "about.vibe.p1": "My workflow today is <b>Vibe Coding</b>: I define architecture, experience and quality bars and direct advanced AI to generate, validate and refine every layer. I compress <b>weeks, months and even years of manual coding</b> into agile cycles of hours, keeping clean code, tests, docs and offline-first privacy.",
+    "about.vibe.p2": "I architect. AI accelerates. I review in detail, test and ship. Startup speed with senior engineering discipline.",
     "skills.vibe.title": "Vibe Coding & Directed AI",
-    "skills.vibe.desc": "I architect the system and AI executes the boilerplate. I review, test and ship. Speed without losing engineering.",
-    "skills.vibe.callout": "Lean stack and directed AI: Vibe Coding speed with engineering rigor."
+    "skills.vibe.desc": "Human architecture with AI execution. From idea to deploy in hours, with performance, tests and scalable code. No shortcuts on quality.",
+    "skills.vibe.callout": "Vibe Coding with directed AI: premium delivery in hours, not months."
   }
 };
