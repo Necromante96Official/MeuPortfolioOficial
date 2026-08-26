@@ -13,3 +13,6 @@ node_modules/
 dist/
 modelo-base/
 projetos/
+
+# Commit helper local - nao enviar para o repositorio
+EnviarCommit.bat
