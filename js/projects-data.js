@@ -70,7 +70,7 @@ window.PROJECTS = [
       descricao: "Transforma Necesse em RPG: 33 classes (5 categorias), nível máx 165, 19 passivas desbloqueáveis, loja QoL, suporte controle e multi-idioma. Gradle 8 multi-módulo (core, gameplay, ui, network, persistence, etc) + ADRs.",
       papel: "Java 17, Gradle multi-projeto, Necesse API, sistema de progressão, balanceamento e localização.",
       techs: ["Java 17","Gradle 8","Necesse API","JUnit","Eclipse JDT","12 idiomas"],
-      resultados: ["v2.7 compat Necesse 1.3.2","18.5k acessos Workshop","457 favoritos • 143 avaliações"]
+      resultados: ["v2.7 compat Necesse 1.3.2","18,5 mil no Workshop Necesse (Steam)","457 favoritos • 143 avaliações"]
     },
     en: {
       titulo: "RPG Skills Mod: Necesse (Java)",
@@ -78,7 +78,7 @@ window.PROJECTS = [
       descricao: "Turns Necesse into an RPG: 33 classes (5 cats), max 165, 19 passives, QoL shop, controller & i18n. Gradle 8 multi-module + ADRs.",
       papel: "Java 17, multi-module Gradle, Necesse API, progression, balancing & i18n.",
       techs: ["Java 17","Gradle 8","Necesse API","JUnit","Eclipse JDT","12 locales"],
-      resultados: ["v2.7 for Necesse 1.3.2","18.5k Workshop views","457 favs • 143 ratings"]
+      resultados: ["v2.7 for Necesse 1.3.2","18.5k on Necesse Workshop (Steam)","457 favs • 143 ratings"]
     }
   },
   {
