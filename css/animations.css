@@ -128,5 +128,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  *:not(.gp):not(.gs):not(.lp):not(.bg-grid):not(.hero-aurora):not(.hero-orb), *:not(.gp):not(.gs):not(.lp):not(.bg-grid):not(.hero-aurora):not(.hero-orb)::before, *:not(.gp):not(.gs):not(.lp):not(.bg-grid):not(.hero-aurora):not(.hero-orb)::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .gp, .gs, .lp, .bg-grid, .hero-aurora, .hero-orb { animation-duration: 6s !important; }
 }

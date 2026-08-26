@@ -36,10 +36,8 @@
       el.addEventListener('focus', function(){ el.classList.add('focus-visible'); });
       el.addEventListener('blur', function(){ el.classList.remove('focus-visible'); });
     });
-  });
 
-
-    // Expand particles to 30 if needed
+    // Expand particles to 30 if needed + local particles inside large sections
     try {
       document.querySelectorAll('.global-particles').forEach(function(container){
         var colors = ['g','w','d','c','b','g','c','w','d','b'];
@@ -47,6 +45,16 @@
           var d = document.createElement('div');
           var idx = container.children.length;
           d.className = 'gp ' + colors[idx % colors.length];
+          container.appendChild(d);
+        }
+      });
+      // Ensure global-stars has 25
+      document.querySelectorAll('.global-stars').forEach(function(container){
+        while (container.children.length < 25) {
+          var d = document.createElement('div');
+          var idx = container.children.length;
+          var cls = ['white','cyan','dim'][idx%3];
+          d.className = 'gs ' + cls;
           container.appendChild(d);
         }
       });
@@ -70,7 +78,24 @@
         orb3.style.cssText = 'width:360px; height:360px; top:18%; left:4%; background: radial-gradient(circle, rgba(6,182,212,0.05) 0%, transparent 70%); animation: orbFloat 9s ease-in-out infinite;';
         hero.appendChild(orb3);
       }
+      // Add local particles inside large sections/modals for visibility over opaque backgrounds
+      document.querySelectorAll('.detail-section, .section, .page-header, .explore-section, .skill-card, .info-card').forEach(function(section){
+        if (section.querySelector('.local-particles')) return;
+        if (section.classList.contains('detail-section') || section.classList.contains('section') || section.classList.contains('page-header') || section.classList.contains('explore-section')) {
+          var lp = document.createElement('div');
+          lp.className = 'local-particles';
+          for (var i=0;i<5;i++) {
+            var d = document.createElement('div');
+            d.className = 'lp';
+            lp.appendChild(d);
+          }
+          section.insertBefore(lp, section.firstChild);
+          section.style.position = 'relative';
+          section.style.overflow = 'hidden';
+        }
+      });
     } catch(e){}
+  });
 
   // Helper to load partials via fetch (used only if placeholder exists)
   function loadPartial(url, targetId){
