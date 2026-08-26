@@ -161,11 +161,20 @@
   bindLangButtons();
 
   // PROJECT RENDERING
+  function getTechTagClass(t){
+    var lc = t.toLowerCase();
+    if (lc.includes('typescript') || lc.includes('javascript') || lc.includes('html') || lc.includes('css')) return 'gold';
+    if (lc.includes('python') || lc.includes('node') || lc.includes('esbuild') || lc.includes('pycryptodome')) return 'blue';
+    if (lc.includes('java') || lc.includes('gradle') || lc.includes('junit')) return 'red';
+    if (lc.includes('c#') || lc.includes('.net') || lc.includes('avalonia') || lc.includes('c++') || lc.includes('cmake')) return 'purple';
+    if (lc.includes('pwa') || lc.includes('capacitor') || lc.includes('git') || lc.includes('obs') || lc.includes('win32')) return 'green';
+    if (lc.includes('unity') || lc.includes('unreal') || lc.includes('godot') || lc.includes('rpg maker')) return 'orange';
+    return '';
+  }
   function projectCardHTML(p){
     var d = getLocalized(p);
     var techs = (d.techs||[]).slice(0,3).map(function(t){
-      var lc = t.toLowerCase();
-      var cls = lc.includes('python')||lc.includes('ts')||lc.includes('js')?'gold': lc.includes('c#')||lc.includes('java')?'blue':'';
+      var cls = getTechTagClass(t);
       return '<span class="tech-tag '+cls+'">'+t+'</span>';
     }).join('');
     var dict = (I18N && I18N[currentLang]) || {};
@@ -180,15 +189,17 @@
       else if (document.querySelector('#project-grid-all')) href = 'projetos-site/'+p.slug+'.html';
       else if (document.querySelector('#project-grid')) href = 'projetos-site/'+p.slug+'.html';
     } catch(e) {}
+    var langHighlight = (d.techs||[]).slice(0,2).map(function(t){ return '<span class="tech-tag gold" style="font-weight:800; border-width:1.5px;">'+t+'</span>'; }).join('');
     return '<a href="'+href+'" class="project-card" data-category="'+p.category+'" data-title="'+(d.titulo||'').toLowerCase()+'">'
       + '<div class="project-card-thumb">'
       + '  <div class="project-card-thumb-placeholder">'+(d.titulo||'')+'</div>'
-      + '  <span class="project-card-badge dot">'+catLabel(p.category)+'</span>'
+      + '  <span class="project-card-badge dot '+p.category+'">'+catLabel(p.category)+'</span>'
       + privateBadge
       + '</div>'
       + '<div class="project-card-body">'
-      + '  <div class="project-card-title">'+(d.titulo||'')+'</div>'
       + '  <div class="project-card-desc">'+(d.resumo||'')+'</div>'
+      + '  <div style="width:100%; height:1px; background: linear-gradient(90deg, transparent, rgba(8,145,178,0.18), transparent); margin: 2px 0;"></div>'
+      + '  <div class="project-card-techs" style="justify-content:center;"><span style="font-size:0.62rem; color:var(--gold); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-right:4px;">Linguagens:</span>'+langHighlight+'</div>'
       + '  <div class="project-card-techs">'+techs+'</div>'
       + '  <div class="project-card-foot"><span><strong>'+ (d.techs? d.techs.length : 0) +' techs</strong></span><span class="arrow">→</span></div>'
       + '</div>'
@@ -269,7 +280,7 @@
     setText('[data-detail="descricao"]', d.descricao||'');
     setText('[data-detail="papel"]', d.papel||'');
     var techWrap = document.querySelector('[data-detail="techs"]');
-    if(techWrap) techWrap.innerHTML = (d.techs||[]).map(function(t){ return '<span class="tech-tag gold">'+t+'</span>'; }).join('');
+    if(techWrap) techWrap.innerHTML = (d.techs||[]).map(function(t){ var c=getTechTagClass(t); return '<span class="tech-tag '+c+'">'+t+'</span>'; }).join('');
     var resWrap = document.querySelector('[data-detail="resultados"]');
     if(resWrap) resWrap.innerHTML = (d.resultados||[]).map(function(r){ return '<li>'+r+'</li>'; }).join('');
     var linksWrap = document.querySelector('[data-detail="links"]');
