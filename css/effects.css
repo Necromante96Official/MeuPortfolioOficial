@@ -107,6 +107,59 @@
   100% { transform: translateX(-12px) translateY(8px) scale(0.98); opacity: 0.85; }
 }
 
+
+/* GLOBAL STARS - estrelas piscando estilo céu - 25 estrelas */
+.global-stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.gs {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 6px rgba(165,243,252,0.8), 0 0 10px rgba(6,182,212,0.4);
+  animation: starTwinkle ease-in-out infinite;
+  will-change: opacity;
+}
+.gs.cyan { background: rgba(165,243,252,0.85); box-shadow: 0 0 6px rgba(165,243,252,0.7); }
+.gs.white { background: rgba(255,255,255,0.95); box-shadow: 0 0 5px rgba(255,255,255,0.6); }
+.gs.dim { background: rgba(165,243,252,0.5); box-shadow: 0 0 4px rgba(165,243,252,0.4); }
+
+.gs:nth-child(1)  { left: 8%;  top: 12%; width: 1.8px; height: 1.8px; animation-duration: 2.8s; animation-delay: 0s; }
+.gs:nth-child(2)  { left: 18%; top: 24%; width: 1.2px; height: 1.2px; animation-duration: 3.2s; animation-delay: -0.7s; }
+.gs:nth-child(3)  { left: 27%; top: 8%;  width: 2px; height: 2px; animation-duration: 2.5s; animation-delay: -1.2s; }
+.gs:nth-child(4)  { left: 34%; top: 18%; width: 1px; height: 1px; animation-duration: 3.8s; animation-delay: -0.4s; }
+.gs:nth-child(5)  { left: 42%; top: 6%;  width: 1.6px; height: 1.6px; animation-duration: 2.9s; animation-delay: -1.8s; }
+.gs:nth-child(6)  { left: 51%; top: 15%; width: 1.3px; height: 1.3px; animation-duration: 3.5s; animation-delay: -0.9s; }
+.gs:nth-child(7)  { left: 59%; top: 9%;  width: 2.2px; height: 2.2px; animation-duration: 2.6s; animation-delay: -2.1s; }
+.gs:nth-child(8)  { left: 67%; top: 22%; width: 1px; height: 1px; animation-duration: 4.1s; animation-delay: -0.5s; }
+.gs:nth-child(9)  { left: 74%; top: 14%; width: 1.7px; height: 1.7px; animation-duration: 3s; animation-delay: -1.5s; }
+.gs:nth-child(10) { left: 82%; top: 11%; width: 1.4px; height: 1.4px; animation-duration: 2.7s; animation-delay: -0.8s; }
+.gs:nth-child(11) { left: 89%; top: 19%; width: 1px; height: 1px; animation-duration: 3.6s; animation-delay: -1.1s; }
+.gs:nth-child(12) { left: 5%;  top: 32%; width: 1.5px; height: 1.5px; animation-duration: 3.1s; animation-delay: -2.3s; }
+.gs:nth-child(13) { left: 14%; top: 45%; width: 1.1px; height: 1.1px; animation-duration: 2.4s; animation-delay: -0.6s; }
+.gs:nth-child(14) { left: 22%; top: 38%; width: 1.9px; height: 1.9px; animation-duration: 3.3s; animation-delay: -1.9s; }
+.gs:nth-child(15) { left: 31%; top: 52%; width: 1px; height: 1px; animation-duration: 2.8s; animation-delay: -1.3s; }
+.gs:nth-child(16) { left: 38%; top: 42%; width: 2px; height: 2px; animation-duration: 3.7s; animation-delay: -0.3s; }
+.gs:nth-child(17) { left: 46%; top: 58%; width: 1.2px; height: 1.2px; animation-duration: 2.9s; animation-delay: -1.7s; }
+.gs:nth-child(18) { left: 54%; top: 48%; width: 1.6px; height: 1.6px; animation-duration: 3.4s; animation-delay: -0.9s; }
+.gs:nth-child(19) { left: 62%; top: 62%; width: 1px; height: 1px; animation-duration: 2.6s; animation-delay: -2s; }
+.gs:nth-child(20) { left: 71%; top: 54%; width: 1.8px; height: 1.8px; animation-duration: 3s; animation-delay: -1.4s; }
+.gs:nth-child(21) { left: 78%; top: 68%; width: 1.3px; height: 1.3px; animation-duration: 3.2s; animation-delay: -0.7s; }
+.gs:nth-child(22) { left: 86%; top: 44%; width: 1px; height: 1px; animation-duration: 2.5s; animation-delay: -1.6s; }
+.gs:nth-child(23) { left: 92%; top: 57%; width: 1.7px; height: 1.7px; animation-duration: 3.8s; animation-delay: -0.2s; }
+.gs:nth-child(24) { left: 11%; top: 72%; width: 1.4px; height: 1.4px; animation-duration: 2.7s; animation-delay: -1s; }
+.gs:nth-child(25) { left: 19%; top: 85%; width: 1px; height: 1px; animation-duration: 3.9s; animation-delay: -0.8s; }
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+
 /* VIGNETTE global sutil */
 .global-vignette {
   position: fixed;
@@ -188,5 +241,6 @@
 @media (max-width: 640px) {
   .gp:nth-child(n+19) { display: none; }
   .bg-grid { opacity: 0.08; background-size: 32px 32px; }
+  .gs:nth-child(n+16) { display: none; }
   .hero-aurora { filter: blur(12px); opacity: 0.7; }
 }
