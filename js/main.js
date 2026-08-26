@@ -182,7 +182,7 @@
     } catch(e) {}
     return '<a href="'+href+'" class="project-card" data-category="'+p.category+'" data-title="'+(d.titulo||'').toLowerCase()+'">'
       + '<div class="project-card-thumb">'
-      + '  <div class="project-card-thumb-placeholder" style="color:'+p.color+'">'+p.icon+'</div>'
+      + '  <div class="project-card-thumb-placeholder">'+(d.titulo||'')+'</div>'
       + '  <span class="project-card-badge dot">'+catLabel(p.category)+'</span>'
       + privateBadge
       + '</div>'
