@@ -480,23 +480,28 @@
  var resWrap = document.querySelector('[data-detail="resultados"]');
  if(resWrap) resWrap.innerHTML = (d.resultados||[]).map(function(r){ return '<li>'+r+'</li>'; }).join('');
  var linksWrap = document.querySelector('[data-detail="links"]');
- if(linksWrap){
- var links = [];
- var labelGH = dict['projects.detail.github'] || 'Ver no GitHub';
- var labelDemo = dict['projects.detail.demo'] || 'Ver demo / download';
- if(p.links.github) links.push('<a href="'+p.links.github+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 18px; font-size:0.74rem;">↗ '+labelGH+'</a>');
- if(p.links.demo) links.push('<a href="'+p.links.demo+'" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 18px; font-size:0.74rem;">↗ '+labelDemo+'</a>');
- if(p.private) {
- var privateLabel = dict['projects.detail.private'] || 'Código privado, protegido';
- links.push('<span class="tag red">🔒 '+privateLabel+'</span>');
- }
- if(!p.links.github && !p.links.demo && !p.private) {
- var consulta = currentLang==='en' ? 'Links on request' : 'Links sob consulta';
- links.push('<span style="color:var(--text-muted); font-size:0.82rem;">'+consulta+'</span>');
- }
- linksWrap.innerHTML = links.join(' ');
- }
- var catEl = document.querySelector('[data-detail="category"]');
+  if(linksWrap){
+    var links = [];
+    var labelDemo = dict['projects.detail.demo'] || 'Acesse já aqui!';
+    var primaryHref = p.links.demo || p.links.github || "";
+    if(primaryHref){
+      links.push('<a href="'+primaryHref+'" target="_blank" rel="noopener" class="btn btn-primary" style="padding:14px 28px; font-size:0.84rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 10px 28px rgba(6,182,212,0.22); min-width:220px; justify-content:center;">↗ '+labelDemo+'</a>');
+      if(p.links.github && p.links.demo && p.links.github !== p.links.demo){
+        var labelGH = dict['projects.detail.github'] || 'Ver no GitHub';
+        links.push('<a href="'+p.links.github+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:12px 22px; font-size:0.78rem;">↗ '+labelGH+'</a>');
+      }
+    }
+    if(p.private) {
+      var privateLabel = dict['projects.detail.private'] || 'Código privado, protegido';
+      links.push('<span class="tag red" style="display:inline-flex; align-items:center; padding:6px 14px; background:rgba(168,85,247,0.12); border:1px solid rgba(168,85,247,0.22); border-radius:999px; color:#d8b4fe; font-size:0.72rem; font-weight:700;">🔒 '+privateLabel+'</span>');
+    }
+    if(!primaryHref && !p.private) {
+      var consulta = currentLang==='en' ? 'Links on request' : 'Links sob consulta';
+      links.push('<span style="color:var(--text-muted); font-size:0.82rem;">'+consulta+'</span>');
+    }
+    linksWrap.innerHTML = links.join(' ');
+  }
+  var catEl = document.querySelector('[data-detail="category"]');
  if(catEl) catEl.textContent = catLabel(p.category);
  var iconEl = document.querySelector('[data-detail="icon"]');
  if(iconEl){ iconEl.textContent = p.icon; iconEl.style.color = p.color; }

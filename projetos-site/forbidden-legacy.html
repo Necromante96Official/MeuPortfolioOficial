@@ -36,37 +36,50 @@
 </header>
 
 <section class="section">
- <div class="container">
- <div class="detail-grid">
- <div class="detail-main">
- <div class="detail-section reveal">
- <h3><span class="ico">▣</span> <span data-i18n="projects.detail.context">Contexto</span></h3>
- <p data-detail="descricao" style="text-align:center; max-width:62ch; margin:0 auto;">Remake fã espiritual de YGO Forbidden Memories com 900+ cartas, 29 NPCs e Beta 1.8.2.</p>
- </div>
- <div class="detail-section reveal">
- <h3><span class="ico">◆</span> <span data-i18n="projects.detail.solution">Solução</span></h3>
- <p data-detail="papel">Colaboração dev na Trager Games, Godot 4, C# .NET 9 + Avalonia e TypeScript.</p>
- <div style="margin-top:16px; text-align:center;">
- <div style="font-family:var(--font-heading); font-size:0.74rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; text-align:center;" data-i18n="projects.detail.tech">Tecnologias</div>
- <div data-detail="techs" style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center; cursor:pointer;" onclick="openTechModal()" title="Ver tecnologias em detalhe"></div>
-            <button onclick="openTechModal()" class="btn btn-outline" style="margin-top:14px; padding:8px 16px; font-size:0.72rem; border-color: rgba(8,145,178,0.22);">Ver tecnologias em detalhe →</button>
- </div>
- </div>
- </div>
- <aside class="detail-side">
- <div class="info-card reveal">
- <h4 data-i18n="projects.detail.links">Links</h4>
- <div data-detail="links" style="display:flex; flex-direction:column; gap:8px; align-items:center;"></div>
- </div>
- </div>
- </aside>
- </div>
-      <div class="detail-section reveal" style="margin-top:24px; text-align:center; max-width:860px; margin-left:auto; margin-right:auto; background: linear-gradient(135deg, rgba(8,145,178,0.08), rgba(8,145,178,0.02)); border-color: rgba(8,145,178,0.18);">
-          <h3 style="justify-content:center;"><span class="ico">→</span> <span data-i18n="projects.detail.next">Próximos passos</span></h3>
-          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; max-width:60ch; margin:0 auto 16px; text-align:center;" data-i18n="projects.detail.next.desc">Quer um case como este? Vamos conversar.</p>
-          <a href="../paginas/contato.html" class="btn btn-primary" style="padding:12px 24px; justify-content:center;" data-i18n="cta.button">Entrar em contato</a>
+  <div class="container" style="max-width:780px;">
+    <div class="detail-stack" style="display:flex; flex-direction:column; gap:22px; align-items:center;">
+      <!-- Contexto -->
+      <div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:30px 26px;">
+        <div style="display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom:14px;">
+          <span style="width:36px; height:36px; display:grid; place-items:center; background: rgba(8,145,178,0.10); border:1px solid rgba(8,145,178,0.18); border-radius:10px; font-size:1.1rem;">▣</span>
+          <span style="font-family:var(--font-heading); font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-size:0.78rem;" data-i18n="projects.detail.context">Contexto</span>
         </div>
- </div>
+        <p data-detail="descricao" style="text-align:center; max-width:62ch; margin:0 auto; font-size:0.92rem; line-height:1.78; color:var(--text-body); text-wrap:balance;"></p>
+      </div>
+
+      <!-- Solução -->
+      <div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:30px 26px;">
+        <div style="display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom:14px;">
+          <span style="width:36px; height:36px; display:grid; place-items:center; background: rgba(8,145,178,0.10); border:1px solid rgba(8,145,178,0.18); border-radius:10px; font-size:1.1rem;">◆</span>
+          <span style="font-family:var(--font-heading); font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-size:0.78rem;" data-i18n="projects.detail.solution">Solução</span>
+        </div>
+        <p data-detail="papel" style="text-align:center; max-width:62ch; margin:0 auto; font-size:0.90rem; line-height:1.75; color:var(--text-body); text-wrap:balance;"></p>
+        <div style="margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.06);">
+          <div style="font-family:var(--font-heading); font-size:0.74rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; text-align:center;" data-i18n="projects.detail.tech">Tecnologias</div>
+          <div data-detail="techs" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; cursor:pointer;" onclick="openTechModal()" title="Ver tecnologias em detalhe"></div>
+          <button onclick="openTechModal()" class="btn btn-outline" style="margin-top:14px; padding:9px 18px; font-size:0.74rem; border-color: rgba(8,145,178,0.22);">Ver tecnologias em detalhe →</button>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:28px 26px; background: linear-gradient(180deg, rgba(8,145,178,0.08), rgba(8,145,178,0.02)); border-color: rgba(8,145,178,0.16);">
+        <div style="display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom:14px;">
+          <span style="width:36px; height:36px; display:grid; place-items:center; background: rgba(8,145,178,0.12); border:1px solid rgba(8,145,178,0.22); border-radius:10px; font-size:1.1rem;">↗</span>
+          <span style="font-family:var(--font-heading); font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-size:0.78rem;" data-i18n="projects.detail.links">Links</span>
+        </div>
+        <div data-detail="links" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;"></div>
+        <p style="font-size:0.72rem; color:var(--text-dim); margin-top:12px; text-align:center;">Acesso direto e seguro</p>
+      </div>
+
+      <!-- Próximos passos -->
+      <div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:28px 26px; background: linear-gradient(135deg, rgba(8,145,178,0.08), rgba(8,145,178,0.02)); border-color: rgba(8,145,178,0.18);">
+        <h3 style="justify-content:center; margin-bottom:10px;"><span class="ico">→</span> <span data-i18n="projects.detail.next">Próximos passos</span></h3>
+        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; max-width:60ch; margin:0 auto 16px; text-align:center;" data-i18n="projects.detail.next.desc">Quer um case como este? Vamos conversar.</p>
+        <a href="../paginas/contato.html" class="btn btn-primary" style="padding:12px 24px; justify-content:center; min-width:200px;" data-i18n="cta.button">Entrar em contato</a>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="nav-brand" style="margin-bottom:8px;"><span class="brand-icon">◆</span> Lucas Tavares</div><p data-i18n="footer.brand"></p></div><div class="footer-col"><h4 data-i18n="footer.pages">Páginas</h4><a href="../index.html" data-i18n="nav.home">Início</a><a href="index.html" data-i18n="nav.projects">Projetos</a><a href="../paginas/sobre.html" data-i18n="nav.about">Sobre</a><a href="../paginas/competencias.html" data-i18n="nav.skills">Competências</a></div><div class="footer-col"><h4>Outros cases</h4><a href="fisiohub.html">FisioHub</a><a href="nexustranslator.html">NexusTranslator</a><a href="rpg-skills-mod.html">RPG Skills Mod</a><a href="traducoes-jogos-mods.html">Traduções</a></div><div class="footer-col"><h4 data-i18n="footer.connect">Conectar</h4><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:14px; height:14px; filter: brightness(0) invert(1);">GitHub</a><a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/nexus.svg" alt="Nexus Mods" style="width:14px; height:14px;">Nexus</a><a href="../paginas/contato.html">Contato</a></div></div><div class="footer-bottom"><span data-i18n="footer.made">Feito com &#9829; por Lucas Tavares, 2026</span><span></span></div></div></footer>
