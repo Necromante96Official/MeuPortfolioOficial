@@ -73,7 +73,7 @@
   "about.who.title": "Quem sou",
   "skills.kicker": "Competências",
   "skills.title": "Stack & <span>Ferramentas</span>",
-  "skills.subtitle": "Tecnologias que uso em produção: do frontend ao reverse engineering.",
+  "skills.subtitle": "Do frontend vanilla ao reverse engineering Godot — <b>14 projetos em produção</b> com performance premium. Com <b>Vibe Coding</b>, da ideia ao deploy em horas, não em meses.",
   "skills.frontend": "Frontend & PWA",
   "skills.frontend.desc": "Interfaces rápidas, acessíveis e offline-first.",
   "skills.frontend.proof": "Prova: Controle Financeiro PWA (build 281, MIT), FisioHub (Clínica de Fisioterapia da ESEFID da UFRGS) SPA + 3 extensões, RPG Skills Site vanilla 11 páginas.",
