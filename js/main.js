@@ -160,7 +160,7 @@
   }
   bindLangButtons();
 
-  // PROJECT RENDERING
+  // PROJECT RENDERING - cards removidos, apenas gatilhos para modais informativos
   function getTechTagClass(t){
     var lc = t.toLowerCase();
     if (lc.includes('typescript') || lc.includes('javascript') || lc.includes('html') || lc.includes('css')) return 'gold';
@@ -171,39 +171,104 @@
     if (lc.includes('unity') || lc.includes('unreal') || lc.includes('godot') || lc.includes('rpg maker')) return 'orange';
     return '';
   }
+
+  // MODAL informativo - titulo igual ao hero "Lucas Tavares"
+  function ensureProjectModal(){
+    var existing = document.getElementById('project-modal');
+    if(existing) return existing;
+    var overlay = document.createElement('div');
+    overlay.id = 'project-modal';
+    overlay.className = 'project-modal';
+    overlay.setAttribute('aria-hidden','true');
+    overlay.innerHTML = ''
+      + '<div class="project-modal-backdrop" data-close="true"></div>'
+      + '<div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="pm-title">'
+      + '  <button class="project-modal-close" aria-label="Fechar" data-close="true">&times;</button>'
+      + '  <div class="project-modal-head">'
+      + '    <div class="project-modal-kicker"><span id="pm-kicker"></span><span id="pm-year"></span></div>'
+      + '    <div class="hero-title-wrap" style="margin-bottom:6px;">'
+      + '      <div class="hero-emblem">◆</div>'
+      + '      <h2 id="pm-title" class="hero-title project-modal-title"></h2>'
+      + '      <div class="hero-emblem">◆</div>'
+      + '    </div>'
+      + '    <div class="hero-divider" style="margin:8px auto 10px; max-width:320px;"><span></span><span>◆ ◆ ◆</span><span></span></div>'
+      + '    <p id="pm-resumo" class="project-modal-resumo"></p>'
+      + '  </div>'
+      + '  <div class="project-modal-body">'
+      + '    <p id="pm-descricao" class="project-modal-desc"></p>'
+      + '    <div id="pm-techs" class="project-card-techs" style="justify-content:center; margin:14px 0;"></div>'
+      + '    <ul id="pm-resultados" class="project-modal-results"></ul>'
+      + '    <div id="pm-links" class="project-modal-links"></div>'
+      + '  </div>'
+      + '</div>';
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', function(e){
+      if(e.target.getAttribute('data-close')==='true' || e.target.closest('[data-close="true"]')) closeProjectModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape' && overlay.classList.contains('open')) closeProjectModal();
+    });
+    return overlay;
+  }
+  function closeProjectModal(){
+    var m = document.getElementById('project-modal');
+    if(!m) return;
+    m.classList.remove('open');
+    m.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  window.closeProjectModal = closeProjectModal;
+  window.openProjectModal = function(slug){
+    var p = (window.PROJECTS||[]).find(function(x){ return x.slug===slug; });
+    if(!p) return;
+    var d = getLocalized(p);
+    var dict = (I18N && I18N[currentLang]) || {};
+    var modal = ensureProjectModal();
+    var cat = catLabel(p.category);
+    var year = p.year || '';
+    var kickerEl = document.getElementById('pm-kicker');
+    var yearEl = document.getElementById('pm-year');
+    if(kickerEl) kickerEl.textContent = cat;
+    if(yearEl) yearEl.textContent = year ? ' • ' + year : '';
+    var titleEl = document.getElementById('pm-title');
+    if(titleEl) titleEl.textContent = d.titulo || p.slug;
+    var resumoEl = document.getElementById('pm-resumo');
+    if(resumoEl) resumoEl.textContent = d.resumo || '';
+    var descEl = document.getElementById('pm-descricao');
+    if(descEl) descEl.textContent = d.descricao || d.resumo || '';
+    var techWrap = document.getElementById('pm-techs');
+    if(techWrap) techWrap.innerHTML = (d.techs||[]).map(function(t){ var c=getTechTagClass(t); return '<span class="tech-tag '+c+'">'+t+'</span>'; }).join('');
+    var resWrap = document.getElementById('pm-resultados');
+    if(resWrap) resWrap.innerHTML = (d.resultados||[]).map(function(r){ return '<li>'+r+'</li>'; }).join('');
+    var linksWrap = document.getElementById('pm-links');
+    if(linksWrap){
+      var links = [];
+      var hrefBase = (function(){ var path=location.pathname; if(path.indexOf('/projetos-site/')!==-1) return ''; if(path.indexOf('/paginas/')!==-1) return '../projetos-site/'; return 'projetos-site/'; })();
+      var href = hrefBase + p.slug + '.html';
+      var labelPage = currentLang==='en' ? 'View full page' : 'Ver página completa';
+      links.push('<a href="'+href+'" class="btn btn-primary" style="padding:10px 18px; font-size:0.74rem;">↗ '+labelPage+'</a>');
+      if(p.links && p.links.github) links.push('<a href="'+p.links.github+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 18px; font-size:0.74rem;">↗ GitHub</a>');
+      if(p.links && p.links.demo) links.push('<a href="'+p.links.demo+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 18px; font-size:0.74rem;">↗ Demo</a>');
+      if(p.private){ var privLabel = dict['projects.detail.private'] || 'Código privado — protegido'; links.push('<span class="tag red" style="display:inline-flex; align-items:center; padding:6px 12px; background:rgba(168,85,247,0.14); border:1px solid rgba(168,85,247,0.28); border-radius:999px; color:#d8b4fe; font-size:0.70rem; font-weight:700;">🔒 '+privLabel+'</span>'); }
+      linksWrap.innerHTML = links.join(' ');
+    }
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    // foco no close para acessibilidade
+    var closeBtn = modal.querySelector('.project-modal-close');
+    if(closeBtn) closeBtn.focus();
+  };
+
   function projectCardHTML(p){
     var d = getLocalized(p);
-    var techs = (d.techs||[]).slice(0,3).map(function(t){
-      var cls = getTechTagClass(t);
-      return '<span class="tech-tag '+cls+'">'+t+'</span>';
-    }).join('');
-    var dict = (I18N && I18N[currentLang]) || {};
-    var privateLabel = dict['projects.detail.private'] || 'Privado';
-    var privateBadge = p.private ? '<span class="project-card-private">'+privateLabel+'</span>' : '';
-    var href = 'projetos-site/'+p.slug+'.html';
-    // corrigir href relativo conforme localização
-    try {
-      var path = location.pathname;
-      if (path.indexOf('/projetos-site/') !== -1) href = p.slug+'.html';
-      else if (path.indexOf('/paginas/') !== -1) href = '../projetos-site/'+p.slug+'.html';
-      else if (document.querySelector('#project-grid-all')) href = 'projetos-site/'+p.slug+'.html';
-      else if (document.querySelector('#project-grid')) href = 'projetos-site/'+p.slug+'.html';
-    } catch(e) {}
-    var langHighlight = (d.techs||[]).slice(0,2).map(function(t){ return '<span class="tech-tag gold" style="font-weight:800; border-width:1.5px;">'+t+'</span>'; }).join('');
-    return '<a href="'+href+'" class="project-card" data-category="'+p.category+'" data-title="'+(d.titulo||'').toLowerCase()+'">'
-      + '<div class="project-card-thumb">'
-      + '  <div class="project-card-thumb-placeholder">'+(d.titulo||'')+'</div>'
-      + '  <span class="project-card-badge dot '+p.category+'">'+catLabel(p.category)+'</span>'
-      + privateBadge
-      + '</div>'
-      + '<div class="project-card-body">'
-      + '  <div class="project-card-desc">'+(d.resumo||'')+'</div>'
-      + '  <div style="width:100%; height:1px; background: linear-gradient(90deg, transparent, rgba(8,145,178,0.18), transparent); margin: 2px 0;"></div>'
-      + '  <div class="project-card-techs" style="justify-content:center;"><span style="font-size:0.62rem; color:var(--gold); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-right:4px;">Linguagens:</span>'+langHighlight+'</div>'
-      + '  <div class="project-card-techs">'+techs+'</div>'
-      + '  <div class="project-card-foot"><span><strong>'+ (d.techs? d.techs.length : 0) +' techs</strong></span><span class="arrow">→</span></div>'
-      + '</div>'
-      + '</a>';
+    // Sem card visual - apenas gatilho minimalista que abre modal informativo
+    // Titulo estilizado igual ao hero (via classe project-modal-title / CSS abaixo)
+    return '<button type="button" class="project-trigger" data-category="'+p.category+'" data-title="'+(d.titulo||'').toLowerCase()+'" data-slug="'+p.slug+'" onclick="window.openProjectModal(\''+p.slug+'\')" aria-label="Ver detalhes de '+d.titulo+'">'
+      + '  <span class="project-trigger-title">'+d.titulo+'</span>'
+      + '  <span class="project-trigger-cat">'+catLabel(p.category)+' • '+p.year+'</span>'
+      + '  <span class="project-trigger-hint">'+(currentLang==='en' ? 'view details →' : 'ver detalhes →')+'</span>'
+      + '</button>';
   }
 
   window.renderProjects = function(){
