@@ -27,6 +27,83 @@ window.PROJECTS = [
     }
   },
   {
+    slug: "zenfisio-coletor",
+    category: "tool",
+    icon: "📥",
+    color: "#06b6d4",
+    destaque: false,
+    private: false,
+    links: { github: "", demo: "", docs: "" },
+    thumb: "assets/img/fisiohub.webp",
+    pt: {
+      titulo: "ZenFisio Coletor de Dados",
+      resumo: "Extensão Chrome MV3 para coletar agendamentos do ZenFisio. Atalho Ctrl+Shift+X, coleta manual e automática (08h–17h), painel premium arrastável com salvar TXT (dd.mm.yy), anti-duplicação e observer. Vanilla JS sem build, parte do ecossistema FisioHub.",
+      descricao: "Extensão Chrome MV3 100% JavaScript vanilla (collector.js + background.js) sem bundler, carregada direto como content script em https://app.zenfisio.com. Varre blocos FullCalendar (.fc-event) visíveis entre 08h e 17h, valida regex de horário, aplica anti-duplicação por ID (paciente+horário) com janela de 5s e guarda histórico de 50 IDs, e exporta TXT nomeado por data da agenda. UI própria com painel arrastável, minimização, progresso auto, cópia e limpeza, persistência via chrome.storage.local e notificação central. Integra ao FisioHub para alimentar importação local sem servidor.",
+      papel: "Desenvolvimento 100% JavaScript vanilla, sem TypeScript ou build, content script + service worker, MutationObserver para popups, parser de status por DOM (inputs marcados, aria-checked) e gestão de storage. CSS premium isolado e painel acessível.",
+      techs: ["JavaScript", "Chrome Extension MV3", "ZenFisio DOM", "chrome.storage", "MutationObserver"],
+      resultados: ["Atalho Ctrl+Shift+X com painel arrastável e minimizável", "Coleta auto por clique sequencial 08h–17h com delay controlado", "Anti-duplicação robusta + TXT dd.mm.yy com local lembrado", "Em produção com FisioHub v0.5.7"]
+    },
+    en: {
+      titulo: "ZenFisio Data Collector",
+      resumo: "Chrome MV3 extension to collect ZenFisio appointments. Shortcut Ctrl+Shift+X, manual and auto collection (08h–17h), premium draggable panel with TXT save (dd.mm.yy), anti-duplication and observer. Vanilla JS, no build, part of FisioHub.",
+      descricao: "100% vanilla JavaScript MV3 Chrome extension (collector.js + background.js) with no bundler, loaded as content script on https://app.zenfisio.com. Scans visible FullCalendar blocks (.fc-event) between 08h and 17h, validates time regex, applies anti-duplication by ID (patient+time) with 5s window and 50-ID history, and exports date-named TXT. Custom draggable panel with minimize, auto progress, copy and clear, persistence via chrome.storage.local and central notification. Feeds FisioHub local import without server.",
+      papel: "100% vanilla JavaScript development, no TypeScript or build, content script + service worker, MutationObserver for popups, DOM-based status parser (checked inputs, aria-checked) and storage management. Premium isolated CSS and accessible panel.",
+      techs: ["JavaScript", "Chrome Extension MV3", "ZenFisio DOM", "chrome.storage", "MutationObserver"],
+      resultados: ["Ctrl+Shift+X shortcut with draggable minimizable panel", "Auto collection by sequential click 08h–17h with controlled delay", "Robust anti-duplication + TXT dd.mm.yy with remembered location", "In production with FisioHub v0.5.7"]
+    }
+  },
+  {
+    slug: "zenfisio-notificar",
+    category: "tool",
+    icon: "🔔",
+    color: "#a78bfa",
+    destaque: false,
+    private: false,
+    links: { github: "", demo: "", docs: "" },
+    thumb: "assets/img/fisiohub.webp",
+    pt: {
+      titulo: "ZenFisio Notificar Mensagens",
+      resumo: "Extensão Chrome MV3 em TypeScript que monitora mudanças de status na agenda ZenFisio (Ctrl+Shift+Z) e envia mensagem precisa no Google Chat. Histórico, ações rápidas e suporte a múltiplos status. Parte do FisioHub.",
+      descricao: "Extensão MV3 em TypeScript 5.9 com build tsc e estrutura modular (background/content/shared/ui). Monitora alterações de status no calendário ZenFisio via content script loader (dist/content/zenfisio) e injeta no Google Chat via loader secundário (dist/content/google-chat) com all_frames. Comandos Ctrl+Shift+Z para ativar monitoramento, histórico de mensagens, ações rápidas para abrir ZenFisio/Chat/histórico/teste, e mapeamento de status (atendido, cancelado, faltou, agendado). Usa chrome.tabs, storage e scripting com web_accessible_resources para assets e lógica de precisão de status.",
+      papel: "Arquitetura 100% TypeScript 5.9 com typecheck tsc, background service worker em ESM (dist/background/index.js), content scripts duplos (ZenFisio + Google Chat) e popup UI. Tipagem @types/chrome e testes com node:test.",
+      techs: ["TypeScript 5.9", "Chrome Extension MV3", "Google Chat API", "chrome.scripting", "Node:test"],
+      resultados: ["Monitoramento Ctrl+Shift+Z com disparo automático no Google Chat", "Suporte a 6+ status (atendido, faltou, cancelado, agendado...)", "Histórico e ações rápidas integradas", "Em produção com FisioHub v0.5.7"]
+    },
+    en: {
+      titulo: "ZenFisio Notify Messages",
+      resumo: "MV3 TypeScript Chrome extension that watches status changes on ZenFisio agenda (Ctrl+Shift+Z) and sends precise Google Chat messages. History, quick actions and multi-status support. Part of FisioHub.",
+      descricao: "MV3 extension in TypeScript 5.9 with tsc build and modular structure (background/content/shared/ui). Watches status changes on ZenFisio calendar via loader (dist/content/zenfisio) and injects into Google Chat via secondary loader (dist/content/google-chat) with all_frames. Ctrl+Shift+Z toggle, message history, quick actions to open ZenFisio/Chat/history/test, and status mapping (attended, canceled, no-show, scheduled). Uses chrome.tabs, storage and scripting with web_accessible_resources for precision logic.",
+      papel: "100% TypeScript 5.9 architecture with tsc typecheck, ESM background service worker (dist/background/index.js), dual content scripts (ZenFisio + Google Chat) and popup UI. @types/chrome typing and node:test tests.",
+      techs: ["TypeScript 5.9", "Chrome Extension MV3", "Google Chat API", "chrome.scripting", "Node:test"],
+      resultados: ["Ctrl+Shift+Z monitoring with auto Google Chat dispatch", "6+ status support (attended, no-show, canceled, scheduled...)", "Integrated history and quick actions", "In production with FisioHub v0.5.7"]
+    }
+  },
+  {
+    slug: "zenfisio-alerta",
+    category: "tool",
+    icon: "⚠️",
+    color: "#f59e0b",
+    destaque: false,
+    private: false,
+    links: { github: "", demo: "", docs: "" },
+    thumb: "assets/img/fisiohub.webp",
+    pt: {
+      titulo: "ZenFisio Alerta Repetidor",
+      resumo: "Extensão Chrome MV3 em TypeScript que destaca agendamentos com repetição completa (X de Y) para renovação. Botão flutuante AR, atalho Alt+Z, faixa animada e persistência diária. Parte do FisioHub.",
+      descricao: "Extensão MV3 em TypeScript 5.9 com tsc + copy-static, focada na varredura de repetições na agenda ZenFisio. Ao clicar sequencialmente entre 07h e 17h, analisa cards com texto `Repetido: X de Y` e destaca quando X===Y e 1–20 com faixa branca animada. Botão flutuante AR com menu iniciar/parar, atalho Alt+Z para mostrar/ocultar, e destaques que persistem ao abrir/fechar agendamentos, recarregar a página e durante o mesmo dia. Content loader em dist/content/loader.js e popup em dist/ui/popup.html.",
+      papel: "Desenvolvimento TypeScript 5.9 com build tsc e copy-static, content script dedicado, lógica de parsing de repetição, gestão de estado persistente e UI flutuante. Testes com node:test e tipagem @types/chrome.",
+      techs: ["TypeScript 5.9", "Chrome Extension MV3", "ZenFisio Repetição", "chrome.storage", "Copy-static"],
+      resultados: ["Varredura automática 07h–17h com destaque X===Y", "Botão flutuante AR + Alt+Z com persistência diária", "Faixa branca animada para facilitar conferência", "Em produção com FisioHub v0.5.7"]
+    },
+    en: {
+      titulo: "ZenFisio Repeat Alert",
+      resumo: "MV3 TypeScript Chrome extension that highlights appointments with full repetition (X of Y) for renewal. Floating AR button, Alt+Z shortcut, animated stripe and daily persistence. Part of FisioHub.",
+      descricao: "MV3 extension in TypeScript 5.9 with tsc + copy-static, focused on scanning repetition in ZenFisio agenda. By sequentially clicking between 07h and 17h, it parses cards with `Repeated: X of Y` and highlights when X===Y and 1–20 with animated white stripe. Floating AR button with start/stop menu, Alt+Z to show/hide, highlights persist on open/close, reload and same day. Loader at dist/content/loader.js and popup at dist/ui/popup.html.",
+      papel: "TypeScript 5.9 development with tsc and copy-static build, dedicated content script, repetition parsing logic, persistent state and floating UI. node:test tests and @types/chrome typing.",
+      techs: ["TypeScript 5.9", "Chrome Extension MV3", "ZenFisio Repetition", "chrome.storage", "Copy-static"],
+      resultados: ["Automatic scan 07h–17h with X===Y highlight", "Floating AR button + Alt+Z with daily persistence", "Animated white stripe for easy review", "In production with FisioHub v0.5.7"]
+    }
+  },  {
     slug: "controle-financeiro",
     category: "web",
     icon: "💳",
