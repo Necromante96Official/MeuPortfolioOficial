@@ -182,22 +182,18 @@
     overlay.setAttribute('aria-hidden','true');
     overlay.innerHTML = ''
       + '<div class="project-modal-backdrop" data-close="true"></div>'
-      + '<div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="pm-title">'
+      + '<div class="project-modal-dialog premium-simple" role="dialog" aria-modal="true" aria-labelledby="pm-title">'
       + '  <button class="project-modal-close" aria-label="Fechar" data-close="true">&times;</button>'
       + '  <div class="project-modal-head">'
       + '    <div class="project-modal-kicker"><span id="pm-kicker"></span></div>'
-      + '    <div class="hero-title-wrap" style="margin-bottom:6px;">'
-      + '      <div class="hero-emblem">◆</div>'
+      + '    <div class="hero-title-wrap" style="margin-bottom:8px; justify-content:center;">'
       + '      <h2 id="pm-title" class="hero-title project-modal-title"></h2>'
-      + '      <div class="hero-emblem">◆</div>'
       + '    </div>'
-      + '    <div class="hero-divider" style="margin:8px auto 10px; max-width:320px;"><span></span><span>◆ ◆ ◆</span><span></span></div>'
+      + '    <div class="hero-divider" style="margin:8px auto 14px; max-width:260px;"><span></span><span>◆</span><span></span></div>'
       + '    <p id="pm-resumo" class="project-modal-resumo"></p>'
       + '  </div>'
-      + '  <div class="project-modal-body">'
+      + '  <div class="project-modal-body" style="text-align:center;">'
       + '    <p id="pm-descricao" class="project-modal-desc"></p>'
-      + '    <div id="pm-techs" class="project-card-techs" style="justify-content:center; margin:14px 0;"></div>'
-      + '    <ul id="pm-resultados" class="project-modal-results"></ul>'
       + '    <div id="pm-links" class="project-modal-links"></div>'
       + '  </div>'
       + '</div>';
@@ -233,21 +229,12 @@
     if(resumoEl) resumoEl.textContent = d.resumo || '';
     var descEl = document.getElementById('pm-descricao');
     if(descEl) descEl.textContent = d.descricao || d.resumo || '';
-    var techWrap = document.getElementById('pm-techs');
-    if(techWrap) techWrap.innerHTML = (d.techs||[]).map(function(t){ var c=getTechTagClass(t); return '<span class="tech-tag '+c+'">'+t+'</span>'; }).join('');
-    var resWrap = document.getElementById('pm-resultados');
-    if(resWrap) resWrap.innerHTML = (d.resultados||[]).map(function(r){ return '<li>'+r+'</li>'; }).join('');
     var linksWrap = document.getElementById('pm-links');
     if(linksWrap){
-      var links = [];
       var hrefBase = (function(){ var path=location.pathname; if(path.indexOf('/projetos-site/')!==-1) return ''; if(path.indexOf('/paginas/')!==-1) return '../projetos-site/'; return 'projetos-site/'; })();
       var href = hrefBase + p.slug + '.html';
       var labelPage = currentLang==='en' ? 'View full page' : 'Ver página completa';
-      links.push('<a href="'+href+'" class="btn btn-primary" style="padding:10px 18px; font-size:0.74rem;">↗ '+labelPage+'</a>');
-      if(p.links && p.links.github) links.push('<a href="'+p.links.github+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 18px; font-size:0.74rem;">↗ GitHub</a>');
-      if(p.links && p.links.demo) links.push('<a href="'+p.links.demo+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 18px; font-size:0.74rem;">↗ Demo</a>');
-      if(p.private){ var privLabel = dict['projects.detail.private'] || 'Código privado — protegido'; links.push('<span class="tag red" style="display:inline-flex; align-items:center; padding:6px 12px; background:rgba(168,85,247,0.14); border:1px solid rgba(168,85,247,0.28); border-radius:999px; color:#d8b4fe; font-size:0.70rem; font-weight:700;">🔒 '+privLabel+'</span>'); }
-      linksWrap.innerHTML = links.join(' ');
+      linksWrap.innerHTML = '<a href="'+href+'" class="btn btn-primary" style="padding:12px 28px; font-size:0.78rem; letter-spacing:0.04em; box-shadow: 0 8px 22px rgba(6,182,212,0.22);">↗ '+labelPage+'</a>';
     }
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');

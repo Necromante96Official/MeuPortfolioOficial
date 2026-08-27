@@ -650,6 +650,18 @@
   padding: 28px 24px 22px;
   animation: modalIn .28s cubic-bezier(.22,1,.36,1);
 }
+.project-modal-dialog.premium-simple {
+  max-width: 640px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(16,14,18,0.98), rgba(10,9,12,0.98));
+  border: 1px solid rgba(8,145,178,0.16);
+  padding: 32px 28px 26px;
+  box-shadow: 0 28px 72px rgba(0,0,0,0.58), 0 0 0 1px rgba(255,255,255,0.05) inset, 0 0 28px rgba(8,145,178,0.08);
+}
+.premium-simple .project-modal-body { border-top: 1px solid rgba(8,145,178,0.08); margin-top: 20px; padding-top: 20px; }
+.premium-simple .project-modal-resumo { font-weight: 600; color: #e6fcff; font-size: 0.95rem; }
+.premium-simple .project-modal-desc { font-size: 0.90rem; line-height: 1.82; color: var(--text-body); }
+.premium-simple .project-modal-links { margin-top: 22px; }
 @keyframes modalIn { from { opacity:0; transform: translateY(12px) scale(0.98); } to { opacity:1; transform: translateY(0) scale(1); } }
 .project-modal-close {
   position: absolute;

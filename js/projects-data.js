@@ -11,16 +11,16 @@ window.PROJECTS = [
     thumb: "assets/img/fisiohub.webp",
     pt: {
       titulo: "FisioHub",
-      resumo: "Sistema criado para a Clínica de Fisioterapia da ESEFID da Universidade Federal do Rio Grande do Sul. Gestão offline e privativa com 3 extensões Chrome que importam dados do ZenFisio e organizam por data, evoluções pendentes, financeiro e pacientes. 100% local, sem servidor.",
-      descricao: "Sistema criado para a Clínica de Fisioterapia da ESEFID da Universidade Federal do Rio Grande do Sul, em uso real. Importa dados do ZenFisio via 3 extensões Chrome (Coletor Ctrl+Shift+X, Notificador Ctrl+Shift+Z, Alerta Repetidor Alt+Z), filtra por competência, lista evoluções pendentes e consolida financeiro e agenda. Arquitetura 100% local com LocalStorage, sem servidor, com foco em privacidade e fluxo clínico.\n\nO sistema oferece dashboards personalizadas por fisioterapeuta, organiza pacientes e suas evoluções por data de atendimento, consolida dados financeiros mensais e integra automaticamente com agendas. As três extensões trabalham em conjunto para criar um workflow completo: coleta de dados, notificações em tempo real e alertas de pendências.",
+      resumo: "Da coleta do ZenFisio à gestão clínica em segundos: sistema 100% offline para a Clínica de Fisioterapia da ESEFID da Universidade Federal do Rio Grande do Sul, com 3 extensões que organizam por data, pendências e financeiro — seus dados nunca saem do dispositivo.",
+      descricao: "Já em uso real, o FisioHub recebe o TXT do Coletor (Ctrl+Shift+X), aciona Notificador (Ctrl+Shift+Z) e Alerta (Alt+Z), filtra por competência e transforma caos em clareza: evoluções pendentes à vista, financeiro fechado e agenda conferida. Tudo via LocalStorage, sem servidor e com privacidade total.\n\nVocê ganha dashboards vivas por fisioterapeuta, histórico por paciente e um painel Análise que cruza tudo em um clique — foco clínico, zero retrabalho.",
       papel: "Arquitetura completa, frontend em TypeScript com Vite, extensões Chrome MV3 em JavaScript, roteamento hash SPA e testes. Código principal em TypeScript 98% e 3 content-scripts em JavaScript.",
       techs: ["TypeScript 5.9","Vite 8","Chrome Extensions MV3","JavaScript","Hash SPA","LocalStorage"],
       resultados: ["Em uso institucional contínuo na Clínica de Fisioterapia da ESEFID da Universidade Federal do Rio Grande do Sul (v0.5.7)","382 linhas de README + testes","3 extensões Chrome em produção","Dados nunca saem do dispositivo"]
     },
     en: {
       titulo: "FisioHub",
-      resumo: "System created for the Physiotherapy Clinic of ESEFID at the Federal University of Rio Grande do Sul (UFRGS). Offline, private management with 3 Chrome extensions importing ZenFisio data and organizing by date, pending evolutions, finance and patients. 100% local.",
-      descricao: "System created for the Physiotherapy Clinic of ESEFID at the Federal University of Rio Grande do Sul (UFRGS), live in production. Imports ZenFisio data via 3 Chrome extensions (Collector Ctrl+Shift+X, Notifier Ctrl+Shift+Z, Repeater Alert Alt+Z), filters by date, flags pending evolutions and consolidates finance and schedule. 100% local with LocalStorage, no server, focused on privacy and clinical flow.\n\nThe system offers personalized dashboards per physiotherapist, organizes patients and their evolutions by appointment date, consolidates monthly financial data and integrates automatically with schedules. The three extensions work together to create a complete workflow: data collection, real-time notifications and pending alerts.",
+      resumo: "From ZenFisio collection to clinic management in seconds: 100% offline system for the Physiotherapy Clinic of ESEFID at the Federal University of Rio Grande do Sul (UFRGS), with 3 extensions organizing by date, pending and finance — your data never leaves the device.",
+      descricao: "Live in production, FisioHub takes the Collector TXT (Ctrl+Shift+X), triggers Notifier (Ctrl+Shift+Z) and Alert (Alt+Z), filters by specialty and turns chaos into clarity: pending evolutions visible, finance closed and schedule checked. All via LocalStorage, no server, total privacy.\n\nYou get live dashboards per physiotherapist, patient history and an Analysis panel that cross-checks everything in one click — clinical focus, zero rework.",
       papel: "Full architecture, frontend in TypeScript with Vite, Chrome MV3 extensions in JavaScript, hash SPA routing and tests. Main code 98% TypeScript and 3 content-scripts in JavaScript.",
       techs: ["TypeScript 5.9","Vite 8","Chrome Extensions MV3","JavaScript","Hash SPA","LocalStorage"],
       resultados: ["Live institutional use at the Physiotherapy Clinic of ESEFID at the Federal University of Rio Grande do Sul (UFRGS) (v0.5.7)","382-line README + tests","3 Chrome extensions in production","Data never leaves device"]
@@ -37,16 +37,16 @@ window.PROJECTS = [
     thumb: "assets/img/fisiohub.webp",
     pt: {
       titulo: "ZenFisio Coletor de Dados",
-      resumo: "Extensão Chrome MV3 para coletar agendamentos do ZenFisio. Atalho Ctrl+Shift+X, coleta manual e automática (08h–17h), painel premium arrastável com salvar TXT (dd.mm.yy), anti-duplicação e observer. Vanilla JS sem build, parte do ecossistema FisioHub.",
-      descricao: "Extensão Chrome MV3 100% JavaScript vanilla (collector.js + background.js) sem bundler, carregada direto como content script em https://app.zenfisio.com. Varre blocos FullCalendar (.fc-event) visíveis entre 08h e 17h, valida regex de horário, aplica anti-duplicação por ID (paciente+horário) com janela de 5s e guarda histórico de 50 IDs, e exporta TXT nomeado por data da agenda. UI própria com painel arrastável, minimização, progresso auto, cópia e limpeza, persistência via chrome.storage.local e notificação central. Integra ao FisioHub para alimentar importação local sem servidor.",
+      resumo: "Colete a agenda do ZenFisio sem copiar e colar: 1 clique, painel arrastável e TXT pronto (dd.mm.yy) — anti-duplicação inteligente para alimentar o FisioHub.",
+      descricao: "Esqueça o Ctrl+C infinito. Com Ctrl+Shift+X o Coletor varre os blocos FullCalendar visíveis (08h–17h), valida horários e evita duplicatas por ID (paciente+horário) com janela de 5s.\n\nVocê arrasta o painel, vê o progresso, salva onde quiser (ele lembra o local) e recebe notificação central. Sem build, 100% vanilla, pronto para injetar direto no app.zenfisio.com.",
       papel: "Desenvolvimento 100% JavaScript vanilla, sem TypeScript ou build, content script + service worker, MutationObserver para popups, parser de status por DOM (inputs marcados, aria-checked) e gestão de storage. CSS premium isolado e painel acessível.",
       techs: ["JavaScript", "Chrome Extension MV3", "ZenFisio DOM", "chrome.storage", "MutationObserver"],
       resultados: ["Atalho Ctrl+Shift+X com painel arrastável e minimizável", "Coleta auto por clique sequencial 08h–17h com delay controlado", "Anti-duplicação robusta + TXT dd.mm.yy com local lembrado", "Em produção com FisioHub v0.5.7"]
     },
     en: {
       titulo: "ZenFisio Data Collector",
-      resumo: "Chrome MV3 extension to collect ZenFisio appointments. Shortcut Ctrl+Shift+X, manual and auto collection (08h–17h), premium draggable panel with TXT save (dd.mm.yy), anti-duplication and observer. Vanilla JS, no build, part of FisioHub.",
-      descricao: "100% vanilla JavaScript MV3 Chrome extension (collector.js + background.js) with no bundler, loaded as content script on https://app.zenfisio.com. Scans visible FullCalendar blocks (.fc-event) between 08h and 17h, validates time regex, applies anti-duplication by ID (patient+time) with 5s window and 50-ID history, and exports date-named TXT. Custom draggable panel with minimize, auto progress, copy and clear, persistence via chrome.storage.local and central notification. Feeds FisioHub local import without server.",
+      resumo: "Collect ZenFisio agenda without copy-pasting: 1 click, draggable panel and ready TXT (dd.mm.yy) — smart anti-duplication to feed FisioHub.",
+      descricao: "Forget endless Ctrl+C. With Ctrl+Shift+X the Collector scans visible FullCalendar blocks (08h–17h), validates times and avoids duplicates by ID (patient+time) with 5s window.\n\nYou drag the panel, watch progress, save where you want (it remembers) and get a central notification. No build, 100% vanilla, ready to inject on app.zenfisio.com.",
       papel: "100% vanilla JavaScript development, no TypeScript or build, content script + service worker, MutationObserver for popups, DOM-based status parser (checked inputs, aria-checked) and storage management. Premium isolated CSS and accessible panel.",
       techs: ["JavaScript", "Chrome Extension MV3", "ZenFisio DOM", "chrome.storage", "MutationObserver"],
       resultados: ["Ctrl+Shift+X shortcut with draggable minimizable panel", "Auto collection by sequential click 08h–17h with controlled delay", "Robust anti-duplication + TXT dd.mm.yy with remembered location", "In production with FisioHub v0.5.7"]
@@ -63,16 +63,16 @@ window.PROJECTS = [
     thumb: "assets/img/fisiohub.webp",
     pt: {
       titulo: "ZenFisio Notificar Mensagens",
-      resumo: "Extensão Chrome MV3 em TypeScript que monitora mudanças de status na agenda ZenFisio (Ctrl+Shift+Z) e envia mensagem precisa no Google Chat. Histórico, ações rápidas e suporte a múltiplos status. Parte do FisioHub.",
-      descricao: "Extensão MV3 em TypeScript 5.9 com build tsc e estrutura modular (background/content/shared/ui). Monitora alterações de status no calendário ZenFisio via content script loader (dist/content/zenfisio) e injeta no Google Chat via loader secundário (dist/content/google-chat) com all_frames. Comandos Ctrl+Shift+Z para ativar monitoramento, histórico de mensagens, ações rápidas para abrir ZenFisio/Chat/histórico/teste, e mapeamento de status (atendido, cancelado, faltou, agendado). Usa chrome.tabs, storage e scripting com web_accessible_resources para assets e lógica de precisão de status.",
+      resumo: "Status mudou? O Chat já sabe: extensão que vigia a agenda e dispara mensagem precisa no Google Chat — com histórico e atalhos que poupam seu dia.",
+      descricao: "Ative com Ctrl+Shift+Z e deixe o Notificar trabalhar: ele observa mudanças de status (atendido, faltou, cancelado, agendado...) e envia no Google Chat com precisão, sem você trocar de aba.\n\nHistórico pesquisável, ações rápidas para ZenFisio/Chat e teste integrado. TypeScript 5.9, dual content-scripts e web_accessible_resources — leve, confiável e em produção.",
       papel: "Arquitetura 100% TypeScript 5.9 com typecheck tsc, background service worker em ESM (dist/background/index.js), content scripts duplos (ZenFisio + Google Chat) e popup UI. Tipagem @types/chrome e testes com node:test.",
       techs: ["TypeScript 5.9", "Chrome Extension MV3", "Google Chat API", "chrome.scripting", "Node:test"],
       resultados: ["Monitoramento Ctrl+Shift+Z com disparo automático no Google Chat", "Suporte a 6+ status (atendido, faltou, cancelado, agendado...)", "Histórico e ações rápidas integradas", "Em produção com FisioHub v0.5.7"]
     },
     en: {
       titulo: "ZenFisio Notify Messages",
-      resumo: "MV3 TypeScript Chrome extension that watches status changes on ZenFisio agenda (Ctrl+Shift+Z) and sends precise Google Chat messages. History, quick actions and multi-status support. Part of FisioHub.",
-      descricao: "MV3 extension in TypeScript 5.9 with tsc build and modular structure (background/content/shared/ui). Watches status changes on ZenFisio calendar via loader (dist/content/zenfisio) and injects into Google Chat via secondary loader (dist/content/google-chat) with all_frames. Ctrl+Shift+Z toggle, message history, quick actions to open ZenFisio/Chat/history/test, and status mapping (attended, canceled, no-show, scheduled). Uses chrome.tabs, storage and scripting with web_accessible_resources for precision logic.",
+      resumo: "Status changed? Chat already knows: extension that watches the agenda and fires precise Google Chat messages — with history and shortcuts that save your day.",
+      descricao: "Toggle with Ctrl+Shift+Z and let Notifier work: it watches status changes (attended, no-show, canceled, scheduled...) and fires on Google Chat precisely, without tab switching.\n\nSearchable history, quick actions for ZenFisio/Chat and integrated test. TypeScript 5.9, dual content-scripts and web_accessible_resources — lightweight, reliable and live.",
       papel: "100% TypeScript 5.9 architecture with tsc typecheck, ESM background service worker (dist/background/index.js), dual content scripts (ZenFisio + Google Chat) and popup UI. @types/chrome typing and node:test tests.",
       techs: ["TypeScript 5.9", "Chrome Extension MV3", "Google Chat API", "chrome.scripting", "Node:test"],
       resultados: ["Ctrl+Shift+Z monitoring with auto Google Chat dispatch", "6+ status support (attended, no-show, canceled, scheduled...)", "Integrated history and quick actions", "In production with FisioHub v0.5.7"]
@@ -89,16 +89,16 @@ window.PROJECTS = [
     thumb: "assets/img/fisiohub.webp",
     pt: {
       titulo: "ZenFisio Alerta Repetidor",
-      resumo: "Extensão Chrome MV3 em TypeScript que destaca agendamentos com repetição completa (X de Y) para renovação. Botão flutuante AR, atalho Alt+Z, faixa animada e persistência diária. Parte do FisioHub.",
-      descricao: "Extensão MV3 em TypeScript 5.9 com tsc + copy-static, focada na varredura de repetições na agenda ZenFisio. Ao clicar sequencialmente entre 07h e 17h, analisa cards com texto `Repetido: X de Y` e destaca quando X===Y e 1–20 com faixa branca animada. Botão flutuante AR com menu iniciar/parar, atalho Alt+Z para mostrar/ocultar, e destaques que persistem ao abrir/fechar agendamentos, recarregar a página e durante o mesmo dia. Content loader em dist/content/loader.js e popup em dist/ui/popup.html.",
+      resumo: "Nunca perca uma renovação: destaque automático para `X de Y` completo — faixa animada, botão AR flutuante e memória diária.",
+      descricao: "Clique em Iniciar e veja a mágica entre 07h–17h: o Alerta varre os cards, detecta `Repetido: X de Y` e ilumina só quando X===Y (1–20) com faixa branca que chama o olho.\n\nAlt+Z mostra/esconde o botão AR, e os destaques persistem mesmo recarregando ou abrindo agendamentos no mesmo dia. TypeScript puro, leve e direto ao ponto.",
       papel: "Desenvolvimento TypeScript 5.9 com build tsc e copy-static, content script dedicado, lógica de parsing de repetição, gestão de estado persistente e UI flutuante. Testes com node:test e tipagem @types/chrome.",
       techs: ["TypeScript 5.9", "Chrome Extension MV3", "ZenFisio Repetição", "chrome.storage", "Copy-static"],
       resultados: ["Varredura automática 07h–17h com destaque X===Y", "Botão flutuante AR + Alt+Z com persistência diária", "Faixa branca animada para facilitar conferência", "Em produção com FisioHub v0.5.7"]
     },
     en: {
       titulo: "ZenFisio Repeat Alert",
-      resumo: "MV3 TypeScript Chrome extension that highlights appointments with full repetition (X of Y) for renewal. Floating AR button, Alt+Z shortcut, animated stripe and daily persistence. Part of FisioHub.",
-      descricao: "MV3 extension in TypeScript 5.9 with tsc + copy-static, focused on scanning repetition in ZenFisio agenda. By sequentially clicking between 07h and 17h, it parses cards with `Repeated: X of Y` and highlights when X===Y and 1–20 with animated white stripe. Floating AR button with start/stop menu, Alt+Z to show/hide, highlights persist on open/close, reload and same day. Loader at dist/content/loader.js and popup at dist/ui/popup.html.",
+      resumo: "Never miss a renewal: auto-highlight for `X of Y` complete — animated stripe, floating AR button and daily memory.",
+      descricao: "Click Start and watch between 07h–17h: Alert scans cards, detects `Repeated: X of Y` and lights up only when X===Y (1–20) with eye-catching white stripe.\n\nAlt+Z shows/hides the AR button, and highlights persist even on reload or opening appointments the same day. Pure TypeScript, lightweight and to the point.",
       papel: "TypeScript 5.9 development with tsc and copy-static build, dedicated content script, repetition parsing logic, persistent state and floating UI. node:test tests and @types/chrome typing.",
       techs: ["TypeScript 5.9", "Chrome Extension MV3", "ZenFisio Repetition", "chrome.storage", "Copy-static"],
       resultados: ["Automatic scan 07h–17h with X===Y highlight", "Floating AR button + Alt+Z with daily persistence", "Animated white stripe for easy review", "In production with FisioHub v0.5.7"]
@@ -114,16 +114,16 @@ window.PROJECTS = [
     thumb: "assets/img/controle-financeiro.webp",
     pt: {
       titulo: "Controle Financeiro",
-      resumo: "PWA offline-first para controle familiar. Desenvolvido 100% em JavaScript vanilla com HTML5 e CSS3, sem frameworks. Extrato dinâmico, VA/VR, cartões e backup local instalável. Build 281, licença MIT.",
-      descricao: "PWA 100% em JavaScript vanilla (type:module) com HTML5 e CSS3 puro (10 arquivos tokens→polish). Gestão familiar totalmente local com categorias coloridas, extrato dinâmico, controle de benefícios VA/VR e cartões, e backup import/export sem servidor. Build com Service Worker e manifest, instalável como app e com empacotamento Android via Capacitor 5.7.\n\nO aplicativo oferece controle financeiro completo com múltiplas contas, categorias customizáveis, geração de extratos mensais e anuais com gráficos, controle de benefícios VA e VR, gestão de cartões de crédito e débito, com sincronização automática entre dispositivos via backup local. Interface intuitiva e responsiva, funciona 100% offline.",
+      resumo: "Seu dinheiro, 100% offline e sob controle: PWA que cabe no bolso — categorias coloridas, extrato vivo, VA/VR e cartões sem nuvem nem assinatura.",
+      descricao: "Instale em 1 toque e use no PC ou celular, mesmo sem internet. Feito 100% vanilla (JS + HTML5/CSS3 em 10 camadas) para ser leve e instantâneo: múltiplas contas, categorias do seu jeito e gráficos mensais/anuais.\n\nPrecisa levar para outro aparelho? Exporte e importe seu backup local em segundos. Nada sai do dispositivo — só você, seus números e código MIT aberto.",
       papel: "Desenvolvimento 100% JavaScript vanilla, sem TypeScript ou frameworks, com PWA Service Worker, design de dados com IndexedDB e build Android. Código direto, leve e performático.",
       techs: ["JavaScript","HTML5","CSS3","PWA","Service Worker","Capacitor 5.7"],
       resultados: ["v1.0.5 build 281","Licença MIT aberta","Instalável em celular e PC","100% offline e local"]
     },
     en: {
       titulo: "Controle Financeiro",
-      resumo: "Offline-first PWA for family finance. Built 100% in vanilla JavaScript with HTML5 and CSS3, no frameworks. Dynamic ledger, VA/VR, cards and local backup. Build 281, MIT license.",
-      descricao: "100% vanilla JavaScript (type:module) PWA with pure HTML5 and CSS3 (10 files tokens→polish). Fully local family management with colored categories, dynamic ledger, VA/VR and card tracking, and backup without server. Service Worker and manifest build, installable as app and Android packaging via Capacitor 5.7.\n\nThe app offers complete financial control with multiple accounts, customizable categories, monthly and annual statement generation with charts, VA and VR benefits management, credit and debit card management, with automatic synchronization between devices via local backup. Intuitive and responsive interface, works 100% offline.",
+      resumo: "Your money, 100% offline and under control: pocket-sized PWA — colorful categories, live ledger, VA/VR and cards with no cloud or subscription.",
+      descricao: "Install in 1 tap and use on PC or phone, even offline. Built 100% vanilla (JS + HTML5/CSS3 in 10 layers) to be light and instant: multiple accounts, your categories and monthly/annual charts.\n\nNeed to move devices? Export and import your local backup in seconds. Nothing leaves your device — just you, your numbers and open MIT code.",
       papel: "100% vanilla JavaScript development, no TypeScript or frameworks, with PWA Service Worker, IndexedDB data design and Android build. Direct, lightweight and performant code.",
       techs: ["JavaScript","HTML5","CSS3","PWA","Service Worker","Capacitor 5.7"],
       resultados: ["v1.0.5 build 281","MIT open license","Installable on phone and PC","100% offline and local"]
@@ -140,16 +140,16 @@ window.PROJECTS = [
     thumb: "assets/img/nexustranslator.webp",
     pt: {
       titulo: "Nexus Translator",
-      resumo: "Central de tradução com IA para Stardew Valley, Hytale e jogos Unreal Engine e Unity. Core 82% TypeScript com 31 módulos, 12% Python e 6% Shell. Scan, normalização, progresso, ZIPs e LQA com Cursor e Ollama.",
-      descricao: "Tool proprietária 82% TypeScript (31 módulos), 12% Python (UnityPy) e 6% Shell. Pipeline completo para traduzir mods Stardew Valley, Hytale e jogos Unreal Engine (C++) e Unity (C# IL2CPP/Mono). Detecta Unity Mono/IL2CPP e pacotes Unreal, integra NexusMods + Cursor Auto, gera zips traduzidos, audita vazamentos e glossários. Automação com Node 20, esbuild e Cursor SDK, CI com security audit.\n\nSistema modular com 31 módulos especializados que realizam scan de assets, normalização de strings, detecção automática de encoding, progress tracking em tempo real, geração de ZIPs otimizados e LQA (Language Quality Assurance) com análise de glossários. Suporta múltiplos formatos (JSON, XML, YAML, arquivos binários) e engines (Unreal, Unity Mono/IL2CPP, Stardew).",
+      resumo: "Traduza jogos inteiros sem dor: hub com IA para Stardew, Hytale, Unreal e Unity — escaneia, normaliza e entrega ZIPs prontos, com LQA à prova de vazamentos.",
+      descricao: "Por trás, 31 módulos (82% TypeScript, Python/UnityPy, Shell) detectam Unity Mono/IL2CPP e pacotes Unreal, integram NexusMods + Cursor Auto e cuidam de glossários.\n\nVocê vê progresso ao vivo, gera ZIPs otimizados e confia no LQA humano+IA (Cursor/Ollama) para diálogos que soam naturais — de JSON a binários, sem perder o charme.",
       papel: "Arquitetura principal em TypeScript com Node, automação Python para UnityPy/Unreal, pipelines de LQA e geração de ZIPs para Stardew, Hytale, Unreal e Unity. Código revisado e testado com esbuild e Cursor SDK.",
       techs: ["TypeScript 5.5","Python 3.10","Node 20","esbuild","Cursor SDK","UnityPy"],
       resultados: ["6.3.5 estável, 31 módulos","Stardew + Hytale + Unreal + Unity","Base para pack 12 idiomas RPG Skills"]
     },
     en: {
       titulo: "Nexus Translator",
-      resumo: "AI translation hub for Stardew Valley, Hytale and Unreal Engine and Unity games. Core 82% TypeScript with 31 modules, 12% Python and 6% Shell. Scan, normalization, progress, ZIPs and LQA with Cursor and Ollama.",
-      descricao: "Proprietary tool 82% TypeScript (31 modules), 12% Python (UnityPy) and 6% Shell. Full pipeline to translate Stardew Valley, Hytale and Unreal Engine (C++) and Unity (C# IL2CPP/Mono) games. Detects Unity Mono/IL2CPP and Unreal packages, drives NexusMods + Cursor Auto, builds ZIPs, audits leaks and glossaries. Automation with Node 20, esbuild and Cursor SDK, CI with security audit.\n\nModular system with 31 specialized modules performing asset scanning, string normalization, automatic encoding detection, real-time progress tracking, optimized ZIP generation and LQA (Language Quality Assurance) with glossary analysis. Supports multiple formats (JSON, XML, YAML, binary files) and engines (Unreal, Unity Mono/IL2CPP, Stardew).",
+      resumo: "Translate whole games painlessly: AI hub for Stardew, Hytale, Unreal and Unity — scans, normalizes and delivers ready ZIPs with leak-proof LQA.",
+      descricao: "Under the hood, 31 modules (82% TypeScript, Python/UnityPy, Shell) detect Unity Mono/IL2CPP and Unreal packages, bridge NexusMods + Cursor Auto and handle glossaries.\n\nYou watch live progress, build optimized ZIPs and trust human+AI LQA (Cursor/Ollama) for natural dialogues — from JSON to binaries, charm intact.",
       papel: "Main architecture in TypeScript with Node, Python automation for UnityPy/Unreal, LQA pipelines and ZIP generation for Stardew, Hytale, Unreal and Unity. Reviewed code with esbuild and Cursor SDK.",
       techs: ["TypeScript 5.5","Python 3.10","Node 20","esbuild","Cursor SDK","UnityPy"],
       resultados: ["Stable 6.3.5, 31 modules","Stardew + Hytale + Unreal + Unity","Powers 12-language RPG Skills pack"]
@@ -166,16 +166,16 @@ window.PROJECTS = [
     thumb: "assets/img/traducoes.webp",
     pt: {
       titulo: "Traduções de Mods",
-      resumo: "Coletânea de mods de tradução PT-BR não oficiais autorizados. Processo artesanal com revisão humana, LQA e glossários, usando NexusTranslator (TypeScript/Python) sobre engines Unreal (C++) e Unity (C#). Stardew, Forsaken Realms, Hytale, Elementallis e Dragon Quest.",
-      descricao: "Localização PT-BR não oficial distribuída como mod autorizado pelas desenvolvedoras. Coletânea com Stardew Valley (Nexus), Forsaken Realms: Vahrin's Call (mod autorizado Nexus), Hytale PT-BR na CurseForge e em engines Unreal/Unity, Elementallis (tradução autorizada aguardando Nexus) e Dragon Quest I & II HD-2D Remake em tradução.\n\nFluxo 100% TypeScript/Python do NexusTranslator + LQA (Language Quality Assurance) humano com glossários consistentes. Mantém contextos culturais, adaptações de diálogos e coerência terminológica entre múltiplos projetos. Suporte multiplataforma (PC, Mobile, Console). Sem afiliação com publishers oficiais.",
+      resumo: "Jogue no seu idioma, com alma: coletânea PT-BR autorizada via Discord — cada linha revisada para soar natural, de Stardew a Dragon Quest.",
+      descricao: "Não é robô: são mods não oficiais mas autorizados pelas devs, publicados na Nexus/CurseForge/Steam. Usei NexusTranslator + LQA humano com glossários vivos para manter piadas, lore e termos consistentes.\n\nDe Stardew Valley e Forsaken Realms (mod 5 autorizado) a Hytale, Elementallis e DQ I&II HD-2D Remake — multiplataforma e com respeito total ao original.",
       papel: "Tradução, revisão, LQA, geração de ZIPs, contato com devs e publicação Nexus/CurseForge/Steam como mods não oficiais autorizados. Uso avançado de TypeScript e Python para extração de strings de Unreal e Unity.",
       techs: ["TypeScript","Python","Unreal Engine","Unity/IL2CPP","LQA","Glossários","Hytale"],
       resultados: ["Forsaken Realms: mod autorizado mods/5","Hytale PT-BR na CurseForge","Elementallis autorizado (aguardando Nexus)","DQ I&II em progresso (mod não oficial)"]
     },
     en: {
       titulo: "Traduções de Mods",
-      resumo: "Collection of authorized unofficial PT-BR translation mods. Handcrafted process with human review, LQA and glossaries, using NexusTranslator (TypeScript/Python) on Unreal (C++) and Unity (C#) engines. Stardew, Forsaken Realms, Hytale, Elementallis and Dragon Quest.",
-      descricao: "Unofficial PT-BR localization distributed as dev-authorized mods. Stardew Valley packs (Nexus), Forsaken Realms: Vahrin's Call: dev-authorized mod (Nexus mods/5), Hytale PT-BR on CurseForge and Unreal/Unity, Elementallis: authorized translation pending Nexus: and Dragon Quest I & II HD-2D WIP. 100% TypeScript/Python flow from NexusTranslator + human LQA with glossaries. Disclaimer: no affiliation with official publishers.",
+      resumo: "Play in your language, with soul: Discord-authorized PT-BR collection — each line hand-reviewed to feel natural, from Stardew to Dragon Quest.",
+      descricao: "No bots: unofficial but dev-authorized mods on Nexus/CurseForge/Steam. I used NexusTranslator + human LQA with living glossaries to keep jokes, lore and terms consistent.\n\nFrom Stardew Valley and Forsaken Realms (mod 5 authorized) to Hytale, Elementallis and DQ I&II HD-2D Remake — cross-platform and fully respectful to the original.",
       papel: "Translation, review, LQA, ZIP builds, dev liaison & Nexus/CurseForge/Steam publishing as authorized unofficial mods. Advanced use of TypeScript and Python for Unreal and Unity string extraction.",
       techs: ["TypeScript","Python","Unreal Engine","Unity/IL2CPP","LQA","Glossaries","Hytale"],
       resultados: ["Forsaken: authorized mod mods/5","Hytale PT-BR on CurseForge","Elementallis authorized (pending Nexus)","DQ I&II WIP (unofficial mod)"]
@@ -192,16 +192,16 @@ window.PROJECTS = [
     thumb: "assets/img/rpg-skills-mod.webp",
     pt: {
       titulo: "RPG Skills Mod",
-      resumo: "Mod de progressão RPG para Necesse 1.3.2. Código 100% Java 17 com Gradle 8 multi-módulo (core, gameplay, ui). 33 classes, 19 passivas, XP dinâmico e 12 idiomas. 18,5 mil no Workshop Necesse (Steam).",
-      descricao: "Mod 100% Java 17 que transforma Necesse em RPG completo. 33 classes em 5 categorias (Guerreiro, Mago, Ranger, Sacerdote, Híbrido), nível máximo 165, 19 passivas desbloqueáveis por classe, sistema XP dinâmico, loja QoL, suporte a controle de jogo e 12 idiomas totalmente localizados.\n\nArquitetura Gradle 8 multi-módulo (core, gameplay, ui, network, persistence) com ADRs (Architecture Decision Records) documentados e testes JUnit 5 completos. Código Java puro sem Kotlin, integrando Necesse API e Eclipse JDT. Sistema de balanceamento robusto com ajustes dinâmicos de dificuldade.",
+      resumo: "Transforme Necesse em RPG de verdade: 33 classes, 19 passivas e XP que responde ao seu estilo — 12 idiomas e 18,5 mil aventureiros no Workshop.",
+      descricao: "Escolha Guerreiro, Mago, Ranger, Sacerdote ou Híbrido e suba até 165. Cada classe libera passivas únicas, a loja QoL e o balanceamento dinâmico mantêm o desafio na medida.\n\n100% Java 17 com Gradle multi-módulo (ADRs + JUnit 5), sem Kotlin — Necesse API pura para atualizar sempre e jogar liso.",
       papel: "Desenvolvimento 100% Java 17, arquitetura Gradle multi-projeto, Necesse API, sistema de progressão RPG, balanceamento de jogo e localização para 12 idiomas. Código Java com testes JUnit e build Gradle otimizado.",
       techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
       resultados: ["v2.7 compatível com Necesse 1.3.2","18,5 mil downloads no Workshop (Steam)","457 favoritos • 143 avaliações"]
     },
     en: {
       titulo: "RPG Skills Mod",
-      resumo: "RPG progression mod for Necesse 1.3.2. Code 100% Java 17 with Gradle 8 multi-module (core, gameplay, ui). 33 classes, 19 passives, dynamic XP and 12 locales. 18.5k on Necesse Workshop (Steam).",
-      descricao: "100% Java 17 mod that transforms Necesse into a complete RPG. 33 classes in 5 categories (Warrior, Mage, Ranger, Priest, Hybrid), max level 165, 19 unlockable passives per class, dynamic XP system, QoL shop, game controller support and 12 fully localized languages.\n\nGradle 8 multi-module architecture (core, gameplay, ui, network, persistence) with documented ADRs (Architecture Decision Records) and complete JUnit 5 tests. Pure Java code without Kotlin, integrating Necesse API and Eclipse JDT. Robust balancing system with dynamic difficulty adjustments.",
+      resumo: "Turn Necesse into a real RPG: 33 classes, 19 passives and XP that reacts to your style — 12 locales and 18.5k adventurers on Workshop.",
+      descricao: "Pick Warrior, Mage, Ranger, Priest or Hybrid and climb to 165. Each class unlocks unique passives, the QoL shop and dynamic balancing keep the challenge just right.\n\n100% Java 17 with Gradle multi-module (ADRs + JUnit 5), no Kotlin — pure Necesse API to stay updated and smooth.",
       papel: "100% Java 17 development, multi-module Gradle architecture, Necesse API, RPG progression system, game balancing and localization for 12 languages. Java code with JUnit tests and optimized Gradle build.",
       techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
       resultados: ["v2.7 compatible with Necesse 1.3.2","18.5k downloads on Workshop (Steam)","457 favs • 143 ratings"]
@@ -218,16 +218,16 @@ window.PROJECTS = [
     thumb: "assets/img/rpg-skills-site.webp",
     pt: {
       titulo: "RPG Skills Site",
-      resumo: "Site vitrine para o RPG Skills Mod. Desenvolvido 100% vanilla com HTML5 semântico, CSS3 com tokens e JavaScript puro sem frameworks. 11 páginas, hero com orbs e i18n PT/EN.",
-      descricao: "Site 100% vanilla: HTML5 semântico, CSS3 com design tokens (10 arquivos tokens→polish) e JavaScript puro em IIFE com IntersectionObserver e i18n vanilla sem libs. Landing premium com 11 páginas dedicadas (Início, Sistema de Progressão, 33 Classes, 19 Passivas, Mockup de UI, QoL Features, Changelog, Contato).\n\nHero visual com orbs animadas, animações de scroll, comparativos visuais, galeria de screenshots. Deploy direto no GitHub Pages com .nojekyll. Código limpo sem React/Vue, totalmente responsivo e otimizado para SEO.",
+      resumo: "A vitrine que vende o mod: site premium 100% vanilla, 11 páginas com hero de orbs e troca PT/EN instantânea — sem framework, sem peso.",
+      descricao: "HTML5 semântico + 10 camadas CSS (tokens→polish) + JS IIFE com IntersectionObserver. Navegue por Progressão, Classes, Passivas e Changelog com animações suaves.\n\nNo ar via GitHub Pages com .nojekyll, SEO redondo e responsivo de ponta a ponta — vanilla bem feito que brilha.",
       papel: "Desenvolvimento 100% HTML5 semântico, CSS3 com design tokens e JavaScript vanilla IIFE. Código sem frameworks, com i18n vanilla, IntersectionObserver para lazy load e deploy GitHub Pages.",
       techs: ["HTML5","CSS3","JavaScript vanilla","i18n vanilla","GitHub Pages"],
       resultados: ["Hub com 11 páginas responsivas","Hero premium com animações","Bilíngue instantâneo PT/EN"]
     },
     en: {
       titulo: "RPG Skills Site",
-      resumo: "Showcase site for RPG Skills Mod. Built 100% vanilla with semantic HTML5, CSS3 with tokens and pure JavaScript with no frameworks. 11 pages, hero with orbs and PT/EN i18n.",
-      descricao: "100% vanilla site: semantic HTML5, CSS3 with design tokens (10 files tokens→polish) and pure JavaScript in IIFE with IntersectionObserver and vanilla i18n with no libs. Premium landing with 11 dedicated pages (Home, Progression System, 33 Classes, 19 Passives, UI Mockup, QoL Features, Changelog, Contact).\n\nVisual hero with animated orbs, scroll animations, visual comparisons, screenshot gallery. Direct deploy to GitHub Pages with .nojekyll. Clean code without React/Vue, fully responsive and SEO optimized.",
+      resumo: "The showcase that sells the mod: 100% vanilla premium site, 11 pages with orb hero and instant PT/EN switch — no framework, no bloat.",
+      descricao: "Semantic HTML5 + 10 CSS layers (tokens→polish) + IIFE JS with IntersectionObserver. Browse Progression, Classes, Passives and Changelog with smooth animations.\n\nLive on GitHub Pages with .nojekyll, solid SEO and fully responsive — well-crafted vanilla that shines.",
       papel: "100% semantic HTML5, CSS3 with design tokens and vanilla JavaScript IIFE development. Framework-free code, with vanilla i18n, IntersectionObserver for lazy load and GitHub Pages deploy.",
       techs: ["HTML5","CSS3","JavaScript vanilla","i18n vanilla","GitHub Pages"],
       resultados: ["11-page responsive hub","Premium hero with animations","Instant bilingual PT/EN"]
@@ -244,16 +244,16 @@ window.PROJECTS = [
     thumb: "assets/img/forbidden-legacy.webp",
     pt: {
       titulo: "Forbidden Legacy Patch Manager",
-      resumo: "Gerenciador para Forbidden Legacy. Código 65% C# com .NET 9 e Avalonia e 35% Python com pycryptodome. Gera overlays patch_{N:04d}.pck com AES e mescla ao patch oficial. Reverse Godot PCK v4.",
-      descricao: "Gerenciador 65% C# (.NET 9 com Avalonia 11.2.5) e 35% Python (pycryptodome). Reverse de Godot 4: extrai e decompila GDExtension PCK com GDRE e GDScript, criptografa com AES via pycryptodome, unifica presets e drops com Rules e Features UI em C#. Gerencia saves .flsave sem sobrescrever exe.\n\nSistema modular com interface gráfica Avalonia para gestão de patches, validação de integridade de assets, aplicação de mods em camadas, resolução automática de conflitos e instalação segura sem conflito com launcher oficial. Suporta múltiplas versões e rollback automático.",
+      resumo: "Modde sem medo: app que cria patches overlay com AES e mescla ao oficial — sem tocar no exe e com rollback se precisar.",
+      descricao: "Reverti Godot 4 PCK com GDRE/GDScript, extraio GDExtension, criptografo via pycryptodome e unifico presets/drops com UI em Avalonia (MVVM).\n\nInstale em camadas, valide assets e resolva conflitos sozinho. Seus saves .flsave ficam intactos e o launcher oficial nem nota — e se algo der errado, um clique desfaz.",
       papel: "Desenvolvimento principal em C# com Avalonia UI e MVVM, pipelines Python com pck_writer e pck_crypto, pesquisa de formato PCK com GDScript e GDRE. Interface C# nativa e automação Python.",
       techs: ["C# .NET 9","Python 3.10","Avalonia 11.2.5","pycryptodome","Godot 4 PCK"],
       resultados: ["Overlays patch_xxxx.pck estáveis","Instalação segura sem conflito com launcher","Arquitetura Rules + Features modular"]
     },
     en: {
       titulo: "Forbidden Legacy Patch Manager",
-      resumo: "Manager for Forbidden Legacy. Code 65% C# with .NET 9 and Avalonia and 35% Python with pycryptodome. Builds patch_{N:04d}.pck overlays with AES and merges with official patch. Godot PCK v4 reverse.",
-      descricao: "Manager 65% C# (.NET 9 with Avalonia 11.2.5) and 35% Python (pycryptodome). Godot 4 reverse: extracts and decompiles GDExtension PCK with GDRE and GDScript, encrypts with AES via pycryptodome, unifies presets and drops with Rules and Features UI in C#. Manages .flsave saves without overwriting exe.\n\nModular system with Avalonia graphical interface for patch management, asset integrity validation, layered mod application, automatic conflict resolution and safe installation without official launcher conflict. Supports multiple versions and automatic rollback.",
+      resumo: "Mod without fear: app that builds AES overlay patches and merges to official — without touching the exe and with rollback if needed.",
+      descricao: "I reversed Godot 4 PCK with GDRE/GDScript, extract GDExtension, encrypt via pycryptodome and unify presets/drops with Avalonia UI (MVVM).\n\nInstall in layers, validate assets and solve conflicts alone. Your .flsave stays untouched and the official launcher won't notice — and if something fails, one click rolls back.",
       papel: "Main development in C# with Avalonia UI and MVVM, Python pipelines with pck_writer and pck_crypto, PCK format research with GDScript and GDRE. Native C# interface and Python automation.",
       techs: ["C# .NET 9","Python 3.10","Avalonia 11.2.5","pycryptodome","Godot 4 PCK"],
       resultados: ["Stable patch_xxxx.pck overlays","Safe installation without launcher conflict","Modular Rules + Features architecture"]
@@ -270,16 +270,16 @@ window.PROJECTS = [
     thumb: "assets/img/deck-building.webp",
     pt: {
       titulo: "Deck Building System",
-      resumo: "Pipeline para Forbidden Legacy. Código 95% TypeScript strict com Node 22 e 5% Shell. Cataloga Power Tier, arquétipos e sincroniza 200+ cartas webp para GitHub Pages.",
-      descricao: "Pipeline 95% TypeScript strict com Node 22 e 5% Shell. Tooling de balanceamento com ingest de catálogo XLSX via SheetJS, analyze-effects, build-archetype-index, validate-inventory e sync-images. Scripts em TypeScript puro com esbuild e TSX, frontend estático com 200+ cartas webp e publish automático.\n\nSistema de construção de decks com validação de sinergias, análise de custos, balanceamento automático por tier (Comum, Incomum, Raro, Épico, Lendário), geração de índices de arquétipos e sincronização de imagens otimizadas. Código TypeScript sem JavaScript solto, 100% tipado.",
+      resumo: "Seu arsenal sempre em ordem: pipeline que cataloga 200+ cartas por tier e arquétipo e publica no Pages — automático.",
+      descricao: "Ingestão XLSX via SheetJS, análise de efeitos e validação de inventário — tudo em TypeScript strict (Node 22 + esbuild) com sincronia de webp otimizadas.\n\nO builder confere sinergias, equilibra custos por raridade (Comum→Lendário) e gera índices navegáveis. Sem JS solto, só tipos: confiança total.",
       papel: "Desenvolvimento 95% TypeScript strict com Node.js, pipelines em TypeScript com ingest de dados, validação e build, e publisher para GitHub Pages. Código 100% tipado com TSX e esbuild.",
       techs: ["TypeScript 5.8","Node 22","esbuild","SheetJS","GitHub Pages"],
       resultados: ["200+ cartas webp otimizadas","Pipeline strict TypeScript validado","Publicação automática em GitHub Pages"]
     },
     en: {
       titulo: "Deck Building System",
-      resumo: "Pipeline for Forbidden Legacy. Code 95% strict TypeScript with Node 22 and 5% Shell. Catalogs Power Tier, archetypes and syncs 200+ webp cards to GitHub Pages.",
-      descricao: "Pipeline 95% strict TypeScript with Node 22 and 5% Shell. Balancing tooling with XLSX catalog ingest via SheetJS, analyze-effects, build-archetype-index, validate-inventory and sync-images. Scripts in pure TypeScript with esbuild, static frontend with 200+ webp cards and auto publish.\n\nDeck building system with synergy validation, cost analysis, automatic tier balancing (Common, Uncommon, Rare, Epic, Legendary), archetype index generation and optimized image synchronization. TypeScript code without loose JavaScript, 100% typed.",
+      resumo: "Your arsenal always sorted: pipeline that catalogs 200+ cards by tier and archetype and publishes to Pages — automatic.",
+      descricao: "XLSX ingest via SheetJS, effect analysis and inventory validation — all in strict TypeScript (Node 22 + esbuild) with optimized webp sync.\n\nThe builder checks synergies, balances costs by rarity (Common→Legendary) and generates browsable indexes. No loose JS, just types: total confidence.",
       papel: "95% strict TypeScript development with Node.js, TypeScript pipelines with data ingest, validation and build, and GitHub Pages publisher. Fully typed code with esbuild.",
       techs: ["TypeScript 5.8","Node 22","esbuild","SheetJS","GitHub Pages"],
       resultados: ["200+ optimized webp cards","Strict validated TypeScript pipeline","Automated GitHub Pages publishing"]
@@ -296,16 +296,16 @@ window.PROJECTS = [
     thumb: "assets/img/ancient-souls.webp",
     pt: {
       titulo: "Ancient Souls",
-      resumo: "Jogo autoral As Crônicas de Ancient Souls. Código 100% JavaScript ES6 com RPG Maker MZ 1.10 e NW.js. 12+ plugins AS_* custom em JS e CSS isolado, 500+ assets.",
-      descricao: "Jogo 2D JRPG medieval completo 100% JavaScript ES6 com RPG Maker MZ 1.10.0 e NW.js. Plugins proprietários em JS ES6 (AS_0.0 Orchestrator, AS_1.0 Title, AS_2.0 Battle, etc) com telas custom em HTML5 e CSS3 isolado, sistema de menu avançado, sistema de combate customizado com animations fluidas.\n\nEngine JS pura, sem TypeScript, com 500+ assets de tilesets, autômatos, spritesheets e sistema de som. Arquitetura modular de plugins com roteamento interno, salvamento local persistente e suporte completo a gamepad. Jogo narrativo com 30+ horas de conteúdo.",
+      resumo: "Entre em As Crônicas de Ancient Souls: JRPG 2D medieval 100% JS, 30+ horas e 12 plugins autorais que mudam tudo.",
+      descricao: "RPG Maker MZ 1.10 + NW.js sem TypeScript: plugins AS_0.0 Orchestrator, Title, Battle e mais, cada um com tela custom em HTML/CSS isolado e combate fluido.\n\nMergulhe em 500+ tilesets, sprites e trilhas, com menu avançado, save persistente e gamepad total — do vilarejo ao boss final, cada escolha sua.",
       papel: "Game design 100% JavaScript ES6, arquitetura de plugins extensível em JS puro, level design com mapas complexos e balanceamento RPG. Código JS modular com CSS premium e NW.js como wrapper.",
       techs: ["JavaScript ES6","RPG Maker MZ 1.10","NW.js","CSS3","HTML5"],
       resultados: ["Engine custom completa 100% JS","500+ assets proprietários","12+ plugins AS_* com 30+ horas de gameplay"]
     },
     en: {
       titulo: "Ancient Souls",
-      resumo: "Original game The Chronicles of Ancient Souls. Code 100% ES6 JavaScript with RPG Maker MZ 1.10 and NW.js. 12+ custom AS_* plugins in JS and isolated CSS, 500+ assets.",
-      descricao: "Full 2D medieval JRPG 100% ES6 JavaScript with RPG Maker MZ 1.10.0 and NW.js. Proprietary plugins in ES6 JS (AS_0.0 Orchestrator, AS_1.0 Title, AS_2.0 Battle, etc) with custom screens in HTML5 and isolated CSS3, advanced menu system, customized combat system with smooth animations.\n\nPure JS engine, no TypeScript, with 500+ tileset, automaton, spritesheet assets and sound system. Modular plugin architecture with internal routing, persistent local saving and full gamepad support. Narrative game with 30+ hours of content.",
+      resumo: "Enter The Chronicles of Ancient Souls: 100% JS 2D medieval JRPG, 30+ hours and 12 author plugins that change everything.",
+      descricao: "RPG Maker MZ 1.10 + NW.js with no TypeScript: AS_0.0 Orchestrator, Title, Battle and more, each with custom HTML/CSS isolated screen and fluid combat.\n\nDive into 500+ tilesets, sprites and tracks, with advanced menu, persistent save and full gamepad — from village to final boss, your choices matter.",
       papel: "100% ES6 JavaScript game design, extensible plugin architecture in pure JS, level design with complex maps and RPG balancing. Modular JS code with premium CSS and NW.js as wrapper.",
       techs: ["JavaScript ES6","RPG Maker MZ 1.10","NW.js","CSS3","HTML5"],
       resultados: ["Full 100% JS custom engine","500+ proprietary assets","12+ AS_* plugins with 30+ hours of gameplay"]
@@ -322,16 +322,16 @@ window.PROJECTS = [
     thumb: "assets/img/obs-overlay.webp",
     pt: {
       titulo: "OBS Overlay: Timer Action!",
-      resumo: "Timer que flutua mas é excluído da captura. Código 50% Python 3.10 com obs-websocket e 50% C++17 com CMake. 3 modos: overlay Python, plugin nativo e Browser Dock. Pill HUD sem entrar no vídeo.",
-      descricao: "Timer em 50% Python 3.10 (overlay Tkinter com obs-websocket) e 50% C++17 (plugin nativo OBS com CMake, Qt6 e libobs). Mostra tempo de gravação com pill HUD pulsante, pausa e retoma com OBS e some ao parar. Exclusão via Win32 API WDA_EXCLUDEFROMCAPTURE, requer OBS 28+ e Windows 10 2004+.\n\nTrês formas de uso: overlay Python puro para streaming, plugin C++ nativo com UI Qt6 para melhor integração, e Browser Dock com HTML/JS para máxima flexibilidade. Timer síncrono com OBS, display de tempo em milissegundos, suporte a hotkeys customizáveis.",
+      resumo: "Grave sem sustos: timer que você vê, a gravação não — pill pulsante que pausa com o OBS e some ao parar.",
+      descricao: "Três jeitos: overlay Python puro (Tkinter + obs-websocket), plugin nativo C++17 (CMake/Qt6/libobs) ou Dock em HTML/JS. Sincronia via WDA_EXCLUDEFROMCAPTURE (Win32).\n\nPrecisão de milissegundos, hotkeys livres e compatível com OBS 28+ no Windows 10 2004+ — foco no conteúdo, não na edição.",
       papel: "Desenvolvimento 50% Python 3.10 com obs-websocket e Tkinter, e 50% C++17 com CMake, Qt6 e libobs. Código Python para overlay e C++ nativo para plugin com Win32 API.",
       techs: ["Python 3.10","C++17","CMake","Qt6","OBS WebSocket 5"],
       resultados: ["3 modos funcionais: Python, C++, Dock","Totalmente excluído do vídeo via WDA_EXCLUDE","Live para streamers Windows 10+"]
     },
     en: {
       titulo: "OBS Overlay: Timer Action!",
-      resumo: "Floating timer excluded from capture. Code 50% Python 3.10 with obs-websocket and 50% C++17 with CMake. 3 modes: Python overlay, native plugin and Browser Dock. Pill HUD excluded from video.",
-      descricao: "Timer in 50% Python 3.10 (Tkinter overlay with obs-websocket) and 50% C++17 (native OBS plugin with CMake, Qt6 and libobs). Shows recording time with pulsing pill HUD, pauses and resumes with OBS and hides on stop. Exclusion via Win32 API WDA_EXCLUDEFROMCAPTURE, requires OBS 28+ and Windows 10 2004+.\n\nThree ways to use: pure Python overlay for streaming, native C++ plugin with Qt6 UI for better integration, and Browser Dock with HTML/JS for maximum flexibility. Timer synced with OBS, millisecond-precision display, support for customizable hotkeys.",
+      resumo: "Record worry-free: timer you see, recording doesn't — pulsing pill that pauses with OBS and hides on stop.",
+      descricao: "Three ways: pure Python overlay (Tkinter + obs-websocket), native C++17 plugin (CMake/Qt6/libobs) or HTML/JS Dock. Sync via WDA_EXCLUDEFROMCAPTURE (Win32).\n\nMillisecond precision, free hotkeys and OBS 28+ on Windows 10 2004+ — focus on content, not editing.",
       papel: "50% Python 3.10 development with obs-websocket and Tkinter, and 50% C++17 with CMake, Qt6 and libobs. Python code for overlay and native C++ for plugin with Win32 API.",
       techs: ["Python 3.10","C++17","CMake","Qt6","OBS WebSocket 5"],
       resultados: ["3 functional modes: Python, C++, Dock","Completely excluded from video via WDA_EXCLUDE","Live for Windows 10+ streamers"]
@@ -348,16 +348,16 @@ window.PROJECTS = [
     thumb: "assets/img/mo2tools.webp",
     pt: {
       titulo: "MO2 Tools",
-      resumo: "Automação para Mod Organizer 2. Código 100% Python 3 com mobase. Plugin MO2 que automatiza download→instalação, sanitiza nome e version-fix Ctrl+Shift+Z com retry 8x. Painel 18+ settings.",
-      descricao: "Central modular 100% Python 3 com mobase (MO2 Plugin API) e PyQt5/6 com Qt. Plugin em Python puro com Core (automação), Automation (lógica de mods) e UI (interface Qt). Fluxo completo de download→instalação automática, sanitização TitleCase de nomes, limpeza de sidecars, atualização in-place com retry automático 8x.\n\nPainel de configuração com 18+ settings ajustáveis, integração com NexusMods API, detecção automática de conflitos de mod, sistema de backup e rollback. Atalhos customizáveis (Ctrl+Shift+Z para version-fix). v0.2.2 FINAL estável.",
+      resumo: "Modde sem atrito: plugin que leva seu download à instalação sozinho, limpa nomes e corrige versão com retry — 18+ ajustes ao seu gosto.",
+      descricao: "100% Python 3 com mobase (IPluginTool) + PyQt5/6. Cobre download→install automático, TitleCase, limpeza de sidecars e update in-place com 8 tentativas.\n\nAjuste tudo no painel, conte com detecção de conflitos, backup/rollback e atalho Ctrl+Shift+Z — NexusMods integrado, seu load order agradece.",
       papel: "Desenvolvimento 100% Python 3 com mobase IPluginTool e PyQt5/6. Código Python puro com arquitetura modular (Core, Automation, UI) e QoL avançado de modding.",
       techs: ["Python 3.11","mobase API","PyQt5/6","Qt Widgets"],
       resultados: ["Fluxo download→instalação 100% automático","Sanitização inteligente e version-fix com retry 8x","18+ configurações ajustáveis em tempo real"]
     },
     en: {
       titulo: "MO2 Tools",
-      resumo: "Automation for Mod Organizer 2. Code 100% Python 3 with mobase. MO2 plugin that automates download→install, sanitizes name and version-fix Ctrl+Shift+Z with 8x retry. Panel 18+ settings.",
-      descricao: "Modular hub 100% Python 3 with mobase (MO2 Plugin API) and PyQt5/6 with Qt. Pure Python plugin with Core (automation), Automation (mod logic) and UI (Qt interface). Complete download→automatic installation workflow, TitleCase name sanitization, sidecar cleanup, in-place update with automatic 8x retry.\n\nConfiguration panel with 18+ adjustable settings, NexusMods API integration, automatic mod conflict detection, backup and rollback system. Customizable hotkeys (Ctrl+Shift+Z for version-fix). v0.2.2 FINAL stable.",
+      resumo: "Mod without friction: plugin that takes your download to install alone, cleans names and fixes version with retry — 18+ tweaks your way.",
+      descricao: "100% Python 3 with mobase (IPluginTool) + PyQt5/6. Covers download→install auto, TitleCase, sidecar cleanup and in-place update with 8 retries.\n\nTweak everything in the panel, count on conflict detection, backup/rollback and Ctrl+Shift+Z — NexusMods integrated, your load order will thank you.",
       papel: "100% Python 3 development with mobase IPluginTool and PyQt5/6. Pure Python code with modular architecture (Core, Automation, UI) and advanced modding QoL.",
       techs: ["Python 3.11","mobase API","PyQt5/6","Qt Widgets"],
       resultados: ["100% automatic download→installation workflow","Intelligent sanitization and version-fix with 8x retry","18+ adjustable settings in real-time"]
