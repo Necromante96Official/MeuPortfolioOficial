@@ -838,8 +838,15 @@
 
 /* RESPONSIVE — MOBILE */
 @media (max-width: 700px) {
-  .nav-links {
+  .nav-links,
+  .nav-center,
+  .nav-actions {
     display: none !important;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
   }
 
   .mobile-toggle {
