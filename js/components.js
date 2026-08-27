@@ -37,20 +37,20 @@
       el.addEventListener('blur', function(){ el.classList.remove('focus-visible'); });
     });
 
-    // Expand particles to 30 if needed + local particles inside large sections
+    // Expand particles to 50 + 40 stars — mais animações a partir de Explore
     try {
       document.querySelectorAll('.global-particles').forEach(function(container){
         var colors = ['g','w','d','c','b','g','c','w','d','b'];
-        while (container.children.length < 30) {
+        while (container.children.length < 50) {
           var d = document.createElement('div');
           var idx = container.children.length;
           d.className = 'gp ' + colors[idx % colors.length];
           container.appendChild(d);
         }
       });
-      // Ensure global-stars has 25
+      // Ensure global-stars has 40
       document.querySelectorAll('.global-stars').forEach(function(container){
-        while (container.children.length < 25) {
+        while (container.children.length < 40) {
           var d = document.createElement('div');
           var idx = container.children.length;
           var cls = ['white','cyan','dim'][idx%3];
@@ -94,6 +94,27 @@
           section.style.overflow = 'hidden';
         }
       });
+      // Nebulosas a partir de Explore para baixo — tirando do titulo principal
+      try {
+        var nebulaSections = document.querySelectorAll('.explore-section, .section:not(.hero)');
+        nebulaSections.forEach(function(sec, sIdx){
+          if (sec.querySelector('.nebula-wrap')) return;
+          if (sec.classList.contains('hero')) return;
+          var wrap = document.createElement('div');
+          wrap.className = 'nebula-wrap';
+          var n1 = document.createElement('div');
+          n1.className = 'section-nebula ' + (sIdx % 2 === 0 ? 'nebula-cyan' : 'nebula-blue');
+          n1.style.cssText = (sIdx % 2 === 0 ? 'width:520px; height:420px; top:-80px; left:-120px;' : 'width:480px; height:380px; top:10%; right:-100px;') + ' animation-delay:' + (sIdx*0.7) + 's;';
+          var n2 = document.createElement('div');
+          n2.className = 'section-nebula ' + (sIdx % 2 === 0 ? 'nebula-blue' : 'nebula-teal');
+          n2.style.cssText = (sIdx % 2 === 0 ? 'width:460px; height:360px; bottom:-60px; right:-80px;' : 'width:400px; height:320px; bottom:-40px; left:-60px;') + ' animation-delay:' + (sIdx*0.9+2) + 's;';
+          wrap.appendChild(n1);
+          wrap.appendChild(n2);
+          sec.insertBefore(wrap, sec.firstChild);
+          if (getComputedStyle(sec).position === 'static') sec.style.position = 'relative';
+          sec.style.overflow = 'hidden';
+        });
+      } catch(e2){}
     } catch(e){}
   });
 
