@@ -8,7 +8,7 @@ window.PROJECTS = [
  color: "#60a5fa",
  destaque: true,
  private: false,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/FisioHub/", docs: "" },
  thumb: "assets/img/fisiohub.webp",
  pt: {
  titulo: "FisioHub",
@@ -34,7 +34,7 @@ window.PROJECTS = [
  color: "#06b6d4",
  destaque: true,
  private: false,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/FisioHub/", docs: "" },
  thumb: "assets/img/fisiohub.webp",
  pt: {
  titulo: "ZenFisio Coletor de Dados",
@@ -60,7 +60,7 @@ window.PROJECTS = [
  color: "#a78bfa",
  destaque: true,
  private: false,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/FisioHub/", docs: "" },
  thumb: "assets/img/fisiohub.webp",
  pt: {
  titulo: "ZenFisio Notificar Mensagens",
@@ -86,7 +86,7 @@ window.PROJECTS = [
  color: "#f59e0b",
  destaque: false,
  private: false,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/FisioHub/", docs: "" },
  thumb: "assets/img/fisiohub.webp",
  pt: {
  titulo: "ZenFisio Alerta Repetidor",
@@ -111,7 +111,7 @@ window.PROJECTS = [
  color: "#22c55e",
  destaque: true,
  private: false,
- links: { github: "https://github.com/Necromante96Official", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/ControleFinanceiroOficial/", docs: "" },
  thumb: "assets/img/controle-financeiro.webp",
  pt: {
  titulo: "Controle Financeiro",
@@ -215,7 +215,7 @@ window.PROJECTS = [
  color: "#d4881c",
  destaque: true,
  private: false,
- links: { github: "https://github.com/Necromante96Official/RPG-Skills-Site", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/RPG-Skills-Site/", docs: "" },
  thumb: "assets/img/rpg-skills-site.webp",
  pt: {
  titulo: "RPG Skills Site",
@@ -293,7 +293,7 @@ window.PROJECTS = [
  color: "#c8973a",
  destaque: false,
  private: false,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/DeckBuildingSystem/", docs: "" },
  thumb: "assets/img/deck-building.webp",
  pt: {
  titulo: "Deck Building System",
@@ -345,7 +345,7 @@ window.PROJECTS = [
  color: "#ef4444",
  destaque: false,
  private: false,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "https://github.com/Necromante96Official/OBS-OverlayTimeShow", demo: "", docs: "" },
  thumb: "assets/img/obs-overlay.webp",
  pt: {
  titulo: "OBS Overlay: Timer Action!",
@@ -371,7 +371,7 @@ window.PROJECTS = [
  color: "#6b7280",
  destaque: false,
  private: false,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "https://github.com/Necromante96Official/MO2Tools", demo: "", docs: "" },
  thumb: "assets/img/mo2tools.webp",
  pt: {
  titulo: "MO2 Tools",

@@ -255,7 +255,154 @@
  + '</button>';
  }
 
- window.renderProjects = function(){
+ 
+  // TECH MODAL — explicativo premium, separa texto de linguagens/stack
+  var TECH_DETAILS = {
+    "TypeScript 5.9": { pt: "Tipagem estática para domínios complexos. No projeto garante segurança e refatoração sem perder performance.", en: "Static typing for complex domains. Ensures safety and refactoring without losing performance." },
+    "Vite 8": { pt: "Bundler ultra-rápido com HMR instantâneo e build otimizado.", en: "Ultra-fast bundler with instant HMR and optimized build." },
+    "Chrome Extensions MV3": { pt: "Arquitetura moderna de extensões Chrome, com service worker e permissões granulares.", en: "Modern Chrome extensions architecture with service worker and granular permissions." },
+    "Chrome Extension MV3": { pt: "Extensão Chrome MV3 isolada e segura, com content scripts e storage local.", en: "Isolated secure MV3 Chrome extension with content scripts and local storage." },
+    "JavaScript": { pt: "Linguagem base da web. Usei vanilla para leveza e controle total.", en: "Web base language. Used vanilla for lightness and full control." },
+    "Hash SPA": { pt: "Roteamento por hash para SPA sem servidor, compatível com GitHub Pages.", en: "Hash routing for serverless SPA, GitHub Pages compatible." },
+    "LocalStorage": { pt: "Persistência 100% local no navegador, sem envio para servidores.", en: "100% local persistence in browser, no server upload." },
+    "ZenFisio DOM": { pt: "Leitura e varredura do DOM FullCalendar do ZenFisio para coleta precisa.", en: "Reading and scanning ZenFisio FullCalendar DOM for precise collection." },
+    "chrome.storage": { pt: "API de armazenamento local da extensão, com persistência diária.", en: "Extension local storage API with daily persistence." },
+    "MutationObserver": { pt: "Observa mudanças no DOM para capturar popups em tempo real.", en: "Watches DOM changes to capture popups in real time." },
+    "Google Chat API": { pt: "Integração com Google Chat para disparo automático de mensagens.", en: "Integration with Google Chat for automatic message dispatch." },
+    "chrome.scripting": { pt: "Injeção dinâmica de scripts em páginas específicas com segurança.", en: "Dynamic script injection on specific pages securely." },
+    "Node:test": { pt: "Runner de testes nativo do Node para validação leve.", en: "Native Node test runner for lightweight validation." },
+    "ZenFisio Repetição": { pt: "Parsing de Repetido X de Y para detectar renovação completa.", en: "Parsing Repeated X of Y to detect full renewal." },
+    "Copy-static": { pt: "Copia de assets estáticos no build TypeScript para distribuição.", en: "Static asset copy in TypeScript build for distribution." },
+    "ZenFisio Repetition": { pt: "Detecção de ciclos completos X de Y.", en: "Full cycle X of Y detection." },
+    "HTML5": { pt: "Semântica moderna para acessibilidade e SEO.", en: "Modern semantics for accessibility and SEO." },
+    "CSS3": { pt: "Estilização com tokens, animações e responsivo premium.", en: "Styling with tokens, animations and premium responsive." },
+    "PWA": { pt: "Progressive Web App instalável, com manifest e ícones.", en: "Installable Progressive Web App with manifest and icons." },
+    "Service Worker": { pt: "Cache offline e controle de rede para uso sem internet.", en: "Offline cache and network control for offline use." },
+    "Capacitor 5.7": { pt: "Empacotamento nativo Android a partir do PWA.", en: "Native Android packaging from PWA." },
+    "TypeScript 5.5": { pt: "TypeScript em modo estrito para pipeline robusto.", en: "Strict TypeScript for robust pipeline." },
+    "Python 3.10": { pt: "Automação e integração com libs Python para dados e cripto.", en: "Automation and integration with Python libs for data and crypto." },
+    "Node 20": { pt: "Runtime Node atualizado para tooling moderno.", en: "Updated Node runtime for modern tooling." },
+    "esbuild": { pt: "Bundler extremamente rápido para TS.", en: "Extremely fast bundler for TS." },
+    "Cursor SDK": { pt: "Integração com Cursor para automação de tradução.", en: "Integration with Cursor for translation automation." },
+    "UnityPy": { pt: "Leitura e manipulação de assets Unity em Python.", en: "Reading and handling Unity assets in Python." },
+    "Unreal Engine": { pt: "Motor C++ para extração de strings e pacotes.", en: "C++ engine for string and package extraction." },
+    "Unity/IL2CPP": { pt: "Backend Unity C# com IL2CPP para descompilação.", en: "Unity C# backend with IL2CPP for decompilation." },
+    "LQA": { pt: "Language Quality Assurance com glossários e revisão humana.", en: "Language Quality Assurance with glossaries and human review." },
+    "Glossários": { pt: "Base terminológica para consistência entre projetos.", en: "Terminology base for cross-project consistency." },
+    "Glossaries": { pt: "Base terminológica para consistência.", en: "Terminology base for consistency." },
+    "Hytale": { pt: "Suporte ao ecossistema Hytale na pipeline.", en: "Hytale ecosystem support in pipeline." },
+    "Java 17": { pt: "Java LTS moderno para mods robustos.", en: "Modern Java LTS for robust mods." },
+    "Gradle 8": { pt: "Build multi-módulo com cache e tasks.", en: "Multi-module build with cache and tasks." },
+    "Necesse API": { pt: "API oficial do jogo Necesse para hooks de gameplay.", en: "Official Necesse game API for gameplay hooks." },
+    "JUnit 5": { pt: "Testes unitários Java com assertions modernas.", en: "Java unit tests with modern assertions." },
+    "Eclipse JDT": { pt: "Tooling Java para análise estática.", en: "Java tooling for static analysis." },
+    "JavaScript vanilla": { pt: "JS puro sem frameworks, leve e performático.", en: "Pure JS without frameworks, light and performant." },
+    "i18n vanilla": { pt: "Internacionalização sem libs, com troca instantânea.", en: "Library-free i18n with instant switch." },
+    "GitHub Pages": { pt: "Hospedagem estática gratuita com .nojekyll.", en: "Free static hosting with .nojekyll." },
+    "C# .NET 9": { pt: "Stack Microsoft moderna com performance e tipagem.", en: "Modern Microsoft stack with performance and typing." },
+    "Avalonia 11.2.5": { pt: "UI cross-platform com MVVM para desktop.", en: "Cross-platform UI with MVVM for desktop." },
+    "pycryptodome": { pt: "Criptografia AES para PCKs do Godot.", en: "AES cryptography for Godot PCKs." },
+    "Godot 4 PCK": { pt: "Formato de pacote do Godot 4, com extração e recompilação.", en: "Godot 4 package format with extraction and rebuild." },
+    "Godot 4": { pt: "Engine Godot 4 com GDScript e PCK.", en: "Godot 4 engine with GDScript and PCK." },
+    "GDScript/GDRE": { pt: "Script e descompilador do Godot para engenharia reversa.", en: "Godot script and decompiler for reverse engineering." },
+    "TypeScript 5.8": { pt: "TypeScript strict para pipeline com total segurança de tipos.", en: "Strict TypeScript for pipeline with full type safety." },
+    "Node 22": { pt: "Node LTS mais recente para scripts de ingestão.", en: "Latest Node LTS for ingest scripts." },
+    "SheetJS": { pt: "Leitura de XLSX no Node para catálogo de cartas.", en: "XLSX reading on Node for card catalog." },
+    "JavaScript ES6": { pt: "JS moderno com módulos e classes para plugins.", en: "Modern JS with modules and classes for plugins." },
+    "RPG Maker MZ 1.10": { pt: "Engine JRPG com editor de mapas e eventos.", en: "JRPG engine with map and event editor." },
+    "NW.js": { pt: "Wrapper desktop que une Chromium e Node.", en: "Desktop wrapper joining Chromium and Node." },
+    "Python 3.10": { pt: "Python para overlay e automação leve.", en: "Python for overlay and light automation." },
+    "C++17": { pt: "C++ moderno para plugin nativo de alta performance.", en: "Modern C++ for high-performance native plugin." },
+    "CMake": { pt: "Gerador de build para projetos C++.", en: "Build generator for C++ projects." },
+    "Qt6": { pt: "Framework UI para apps desktop com estilo nativo.", en: "UI framework for desktop apps with native style." },
+    "OBS WebSocket 5": { pt: "Protocolo para sincronizar timer com OBS.", en: "Protocol to sync timer with OBS." },
+    "Python 3.11": { pt: "Python atualizado para automação MO2.", en: "Updated Python for MO2 automation." },
+    "mobase API": { pt: "API mobase do Mod Organizer 2 para plugins.", en: "Mod Organizer 2 mobase API for plugins." },
+    "PyQt5/6": { pt: "Binding Qt para interfaces Python ricas.", en: "Qt binding for rich Python interfaces." },
+    "Qt Widgets": { pt: "Widgets clássicos do Qt para painel de settings.", en: "Classic Qt widgets for settings panel." },
+    "PC/Android": { pt: "Suporte multiplataforma com builds dedicados.", en: "Cross-platform support with dedicated builds." },
+    "Launcher": { pt: "Atualizador incremental que baixa só o delta.", en: "Incremental updater that downloads only delta." }
+  };
+  function ensureTechModal(){
+    var existing = document.getElementById('tech-modal');
+    if(existing) return existing;
+    var overlay = document.createElement('div');
+    overlay.id = 'tech-modal';
+    overlay.className = 'project-modal';
+    overlay.setAttribute('aria-hidden','true');
+    overlay.innerHTML = ''
+      + '<div class="project-modal-backdrop" data-close-tech="true"></div>'
+      + '<div class="project-modal-dialog premium-simple" role="dialog" aria-modal="true" aria-labelledby="tech-modal-title" style="max-width:720px;">'
+      + '  <button class="project-modal-close" aria-label="Fechar" data-close-tech="true">&times;</button>'
+      + '  <div class="project-modal-head">'
+      + '    <div class="project-modal-kicker"><span>Stack Técnica</span></div>'
+      + '    <div class="hero-title-wrap" style="justify-content:center; margin-bottom:6px;"><h2 id="tech-modal-title" class="hero-title project-modal-title" style="font-size: clamp(1.5rem, 4vw, 2.1rem);">Tecnologias</h2></div>'
+      + '    <div class="hero-divider" style="margin:8px auto 14px; max-width:260px;"><span></span><span>◆</span><span></span></div>'
+      + '    <p style="color:var(--text-muted); font-size:0.86rem; max-width:60ch; margin:0 auto; text-align:center; text-wrap:balance;">Cada tecnologia com papel claro no resultado, da linguagem ao deploy.</p>'
+      + '  </div>'
+      + '  <div class="project-modal-body" style="text-align:center;">'
+      + '    <div id="tech-modal-list" style="display:grid; gap:10px; margin-top:16px; text-align:left;"></div>'
+      + '    <div id="tech-modal-papel" style="margin-top:18px; padding:14px; background: rgba(8,145,178,0.06); border:1px solid rgba(8,145,178,0.14); border-radius:12px; color:var(--text-body); font-size:0.86rem; line-height:1.6; text-align:center; text-wrap:balance;"></div>'
+      + '    <div style="margin-top:18px; display:flex; justify-content:center;"><button class="btn btn-primary" data-close-tech="true" style="padding:10px 22px;">Fechar</button></div>'
+      + '  </div>'
+      + '</div>';
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', function(e){
+      if(e.target.getAttribute('data-close-tech')==='true' || e.target.closest('[data-close-tech="true"]')) closeTechModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape'){
+        var tm = document.getElementById('tech-modal');
+        if(tm && tm.classList.contains('open')) closeTechModal();
+      }
+    });
+    return overlay;
+  }
+  window.closeTechModal = function(){
+    var m = document.getElementById('tech-modal');
+    if(!m) return;
+    m.classList.remove('open');
+    m.setAttribute('aria-hidden','true');
+    if(!document.getElementById('project-modal') || !document.getElementById('project-modal').classList.contains('open')){
+      document.body.style.overflow='';
+    }
+  };
+  window.openTechModal = function(){
+    var slugEl = document.querySelector('[data-slug]');
+    if(!slugEl) return;
+    var slug = slugEl.getAttribute('data-slug');
+    var p = (window.PROJECTS||[]).find(function(x){ return x.slug===slug; });
+    if(!p) return;
+    var d = getLocalized(p);
+    var isEn = currentLang === 'en';
+    var modal = ensureTechModal();
+    var listEl = document.getElementById('tech-modal-list');
+    var papelEl = document.getElementById('tech-modal-papel');
+    if(listEl){
+      var techs = d.techs || [];
+      listEl.innerHTML = techs.map(function(t){
+        var info = TECH_DETAILS[t] || TECH_DETAILS[t.trim()] || { pt: "Tecnologia chave escolhida por performance e manutenibilidade no contexto do projeto.", en: "Key technology chosen for performance and maintainability in this project." };
+        var desc = isEn ? (info.en || info.pt) : (info.pt || info.en);
+        var c = getTechTagClass(t);
+        return '<div style="display:flex; gap:12px; align-items:flex-start; padding:12px; background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; text-align:left;">'
+          + '<span class="tech-tag '+c+'" style="flex-shrink:0; margin-top:2px;">'+t+'</span>'
+          + '<span style="font-size:0.84rem; color:var(--text-muted); line-height:1.55;">'+desc+'</span>'
+          + '</div>';
+      }).join('');
+    }
+    if(papelEl){
+      var papel = d.papel || '';
+      papelEl.innerHTML = '<b style="color:#fff;">' + (isEn ? 'My role' : 'Meu papel') + ':</b> ' + papel;
+    }
+    var titleEl = document.getElementById('tech-modal-title');
+    if(titleEl) titleEl.textContent = d.titulo + ' — Stack';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  };
+
+
+  window.renderProjects = function(){
  var grid = document.getElementById('project-grid');
  var gridAll = document.getElementById('project-grid-all');
  if(!window.PROJECTS) return;
