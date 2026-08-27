@@ -185,7 +185,7 @@
       + '<div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="pm-title">'
       + '  <button class="project-modal-close" aria-label="Fechar" data-close="true">&times;</button>'
       + '  <div class="project-modal-head">'
-      + '    <div class="project-modal-kicker"><span id="pm-kicker"></span><span id="pm-year"></span></div>'
+      + '    <div class="project-modal-kicker"><span id="pm-kicker"></span></div>'
       + '    <div class="hero-title-wrap" style="margin-bottom:6px;">'
       + '      <div class="hero-emblem">◆</div>'
       + '      <h2 id="pm-title" class="hero-title project-modal-title"></h2>'
@@ -225,11 +225,8 @@
     var dict = (I18N && I18N[currentLang]) || {};
     var modal = ensureProjectModal();
     var cat = catLabel(p.category);
-    var year = p.year || '';
     var kickerEl = document.getElementById('pm-kicker');
-    var yearEl = document.getElementById('pm-year');
     if(kickerEl) kickerEl.textContent = cat;
-    if(yearEl) yearEl.textContent = year ? ' • ' + year : '';
     var titleEl = document.getElementById('pm-title');
     if(titleEl) titleEl.textContent = d.titulo || p.slug;
     var resumoEl = document.getElementById('pm-resumo');
@@ -266,7 +263,7 @@
     // Titulo estilizado igual ao hero (via classe project-modal-title / CSS abaixo)
     return '<button type="button" class="project-trigger" data-category="'+p.category+'" data-title="'+(d.titulo||'').toLowerCase()+'" data-slug="'+p.slug+'" onclick="window.openProjectModal(\''+p.slug+'\')" aria-label="Ver detalhes de '+d.titulo+'">'
       + '  <span class="project-trigger-title">'+d.titulo+'</span>'
-      + '  <span class="project-trigger-cat">'+catLabel(p.category)+' • '+p.year+'</span>'
+      + '  <span class="project-trigger-cat">'+catLabel(p.category)+'</span>'
       + '  <span class="project-trigger-hint">'+(currentLang==='en' ? 'view details →' : 'ver detalhes →')+'</span>'
       + '</button>';
   }
@@ -367,8 +364,6 @@
     }
     var catEl = document.querySelector('[data-detail="category"]');
     if(catEl) catEl.textContent = catLabel(p.category);
-    var yearEl = document.querySelector('[data-detail="year"]');
-    if(yearEl) yearEl.textContent = p.year;
     var iconEl = document.querySelector('[data-detail="icon"]');
     if(iconEl){ iconEl.textContent = p.icon; iconEl.style.color = p.color; }
   };

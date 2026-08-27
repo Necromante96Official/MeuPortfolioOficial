@@ -145,7 +145,6 @@ window.I18N_FALLBACK = {
     "projects.detail.tech": "Tecnologias",
     "projects.detail.role": "Meu papel",
     "projects.detail.links": "Links",
-    "projects.detail.gallery": "Galeria",
     "projects.detail.context": "Contexto",
     "projects.detail.solution": "Solução",
     "projects.detail.results": "Resultados",
@@ -157,10 +156,9 @@ window.I18N_FALLBACK = {
     "projects.detail.private": "Código privado: protegido",
     "projects.detail.demo": "Ver demo / download",
     "projects.detail.github": "Ver no GitHub",
-    "projects.detail.gallery.placeholder1": "Screenshots / demo em breve",
-    "projects.detail.gallery.placeholder2": "Diagrama / arquitetura",
-    "projects.detail.gallery.note1": "Adicione imagens em assets/img/",
-    "projects.detail.gallery.note2": "Placeholder premium",
+
+
+
     "projects.detail.consulta": "Links sob consulta",
     "filter.placeholder": "Buscar projetos...",
     "competencias.languages.title": "Todas as linguagens que uso",
@@ -327,7 +325,6 @@ window.I18N_FALLBACK = {
     "projects.detail.tech": "Stack",
     "projects.detail.role": "My role",
     "projects.detail.links": "Links",
-    "projects.detail.gallery": "Gallery",
     "projects.detail.context": "Context",
     "projects.detail.solution": "Solution",
     "projects.detail.results": "Results",
@@ -339,10 +336,9 @@ window.I18N_FALLBACK = {
     "projects.detail.private": "Private source: protected",
     "projects.detail.demo": "View demo / download",
     "projects.detail.github": "View on GitHub",
-    "projects.detail.gallery.placeholder1": "Screenshots / demo soon",
-    "projects.detail.gallery.placeholder2": "Diagram / architecture",
-    "projects.detail.gallery.note1": "Add images to assets/img/",
-    "projects.detail.gallery.note2": "Premium placeholder",
+
+
+
     "projects.detail.consulta": "Links on request",
     "filter.placeholder": "Search projects...",
     "competencias.languages.title": "Every language I use",
