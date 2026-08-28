@@ -807,3 +807,58 @@
 @media (max-width: 700px) {
   .cta-grid { grid-template-columns: 1fr; }
 }
+/* Card privado — luz que viaja pelos 4 cantos do contorno, compatível */
+.private-highlight-animated {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 18px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.16), rgba(168,85,247,0.06));
+  border: 1px solid rgba(168,85,247,0.30);
+  color: #e9d5ff;
+  text-align: center;
+  min-width: 280px;
+  max-width: 360px;
+  isolation: isolate;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(168,85,247,0.20);
+}
+.private-highlight-animated::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin: -7px 0 0 -7px;
+  left: 0;
+  top: 0;
+  background: radial-gradient(circle, #ffffff 0%, #e9d5ff 40%, rgba(216,180,254,0.85) 60%, rgba(216,180,254,0) 78%);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 5px #d8b4fe) drop-shadow(0 0 12px rgba(216,180,254,0.75)) drop-shadow(0 0 22px rgba(168,85,247,0.55));
+  animation: cornerLight 3.6s linear infinite;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+}
+.private-highlight-animated > * {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  text-wrap: balance;
+}
+@keyframes cornerLight {
+  0%   { left: 0%;   top: 0%;   opacity: 0; }
+  2%   { opacity: 1; }
+  23%  { left: 100%; top: 0%;   opacity: 1; }
+  25%  { left: 100%; top: 0%; }
+  48%  { left: 100%; top: 100%; opacity: 1; }
+  50%  { left: 100%; top: 100%; }
+  73%  { left: 0%;   top: 100%; opacity: 1; }
+  75%  { left: 0%;   top: 100%; }
+  98%  { opacity: 1; }
+  100% { left: 0%;   top: 0%;   opacity: 0; }
+}
