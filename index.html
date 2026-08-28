@@ -28,6 +28,7 @@
  <link rel="stylesheet" href="css/portfolio.css">
  <link rel="stylesheet" href="css/mobile.css">
  <link rel="stylesheet" href="css/polish.css">
+ <link rel="stylesheet" href="css/icons.css">
  <style>
  /* HERO PORTFÓLIO, adaptado do modelo, mais premium minimal */
  .hero { min-height: 92vh; padding: 130px var(--space-xl) 80px; background: var(--dark); position: relative; overflow: hidden; }
@@ -99,7 +100,7 @@
  <!-- NAV -->
  <nav class="nav">
  <a href="index.html" class="nav-brand">
- <span class="brand-icon">◆</span> Lucas Tavares
+ <span class="brand-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></span> Lucas Tavares
  </a>
  
  <div class="nav-center">
@@ -114,13 +115,13 @@
  <button class="lang-option" data-lang="pt-BR" aria-label="Português"><span class="fi fi-br"></span> PT-BR</button>
  <button class="lang-option" data-lang="en" aria-label="English"><span class="fi fi-us"></span> EN</button>
  </div>
- <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; filter: brightness(0) invert(1);">GitHub</a>
+ <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</a>
  
  </div>
- <button class="mobile-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+ <button class="mobile-toggle" aria-label="Menu" aria-expanded="false"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6H20"></path><path d="M4 12H20"></path><path d="M4 18H20"></path></svg></button>
  </nav>
  <div class="mobile-nav">
- <button class="mobile-nav-close" aria-label="Fechar">&times;</button>
+ <button class="mobile-nav-close" aria-label="Fechar"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6L18 18"></path><path d="M18 6L6 18"></path></svg></button>
  <a href="index.html" data-i18n="nav.home">Início</a>
  <a href="projetos-site/index.html" data-i18n="nav.projects">Projetos</a>
  <a href="paginas/sobre.html" data-i18n="nav.about">Sobre</a>
@@ -130,7 +131,7 @@
  <button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button>
  <button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button>
  </div>
- <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:6px; justify-content:center;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; filter: brightness(0) invert(1);">GitHub</a>
+ <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:6px; justify-content:center;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</a>
  </div>
 
  <!-- HERO -->
@@ -148,14 +149,14 @@
  <span class="tag tag-version">PT-BR • EN</span>
  </div>
  <div class="hero-title-wrap">
- <div class="hero-emblem">◆</div>
+ <div class="hero-emblem"><svg class="mono-icon mono-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></div>
  <h1 class="hero-title" data-i18n="hero.title">Lucas Tavares</h1>
- <div class="hero-emblem">◆</div>
+ <div class="hero-emblem"><svg class="mono-icon mono-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></div>
  </div>
  <div class="hero-role" data-i18n="hero.role">Desenvolvedor • Tradutor • Criador de Mods</div>
- <div class="hero-divider"><span></span><span>◆ ◆ ◆</span><span></span></div>
+ <div class="hero-divider"><span></span><span><span style="display:inline-flex;gap:6px;align-items:center;"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></span></span><span></span></div>
  <p class="hero-tagline" data-i18n="hero.tagline">Transformo ideias em sistemas que funcionam.</p>
- <div style="display:inline-flex; align-items:center; gap:8px; margin:10px auto 14px; padding:6px 14px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.18); border-radius:999px; color:#a5f3fc; font-family:var(--font-heading); font-size:0.70rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;" data-i18n="hero.vibe.badge">◆ VIBE CODING • IA direcionada</div>
+ <div style="display:inline-flex; align-items:center; gap:8px; margin:10px auto 14px; padding:6px 14px; background:var(--icon-glow-bg); border:1px solid var(--icon-glow-border); border-radius:999px; font-family:var(--font-heading); font-size:0.70rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase;" data-i18n="hero.vibe.badge"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg> VIBE CODING • IA direcionada</div>
  <p class="hero-vibe" style="max-width:640px; margin:0 auto 16px; padding:12px 18px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.12); border-radius:12px; color:var(--text-body); font-size:0.88rem; line-height:1.65; text-align:center; text-wrap:balance; text-align-last:center; hyphens:auto;" data-i18n="hero.vibe">Hoje faço <b>todos os meus projetos em Vibe Coding</b>, direcionando os modelos de IA mais avançados para criar tudo que preciso, otimizando <b>dias, semanas e até anos</b> de programação linha por linha.</p>
  <div class="hero-subtitle-card">
  <p style="color:var(--text-body); font-size:0.96rem; line-height:1.65; margin:0;" data-i18n="hero.subtitle">Sites, mods, traduções não oficiais autorizadas pelas desenvolvedoras e ferramentas usadas em produção: do PWA financeiro ao sistema da Clínica de Fisioterapia da ESEFID da Universidade Federal do Rio Grande do Sul, do mod com 18,5 mil acessos ao pipeline de tradução com IA.</p>
@@ -166,27 +167,27 @@
  </div>
  </div>
  <div class="hero-buttons">
- <a href="projetos-site/index.html" class="btn btn-primary btn-lg"><span data-i18n="hero.cta.primary">Ver Projetos</span> →</a>
- <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-outline btn-lg"><span data-i18n="hero.cta.secondary">GitHub</span> ↗</a>
+ <a href="projetos-site/index.html" class="btn btn-primary btn-lg"><span data-i18n="hero.cta.primary">Ver Projetos</span> <svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:4px;"><path d="M5 12H19"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+ <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-outline btn-lg"><span data-i18n="hero.cta.secondary">GitHub</span> <svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:4px;"><path d="M14 5h6v6"></path><path d="M10 14L20 4"></path><path d="M15 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h4"></path></svg></a>
  </div>
  <div class="hero-stats">
  <div class="hero-stat">
- <div class="hero-stat-icon">▣</div>
+ <div class="hero-stat-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.2"></rect><rect x="14" y="3" width="7" height="7" rx="1.2"></rect><rect x="3" y="14" width="7" height="7" rx="1.2"></rect><rect x="14" y="14" width="7" height="7" rx="1.2"></rect></svg></div>
  <div class="hero-stat-number">11+</div>
  <div class="hero-stat-label" data-i18n="hero.stats.projects">Projetos</div>
  </div>
  <div class="hero-stat">
- <div class="hero-stat-icon">◎</div>
+ <div class="hero-stat-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 21.5 8.5 12 14.5 2.5 8.5Z"></path><path d="M2.5 12.5 12 18.5 21.5 12.5"></path><path d="M2.5 16.5 12 22.5 21.5 16.5"></path></svg></div>
  <div class="hero-stat-number">5</div>
  <div class="hero-stat-label" data-i18n="hero.stats.cats">Categorias</div>
  </div>
  <div class="hero-stat">
- <div class="hero-stat-icon">★</div>
+ <div class="hero-stat-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 14.3 8.7 20.6 9.1 16 13.3 17.3 19.5 12 16.6 6.7 19.5 8 13.3 3.4 9.1 9.7 8.7Z"></path></svg></div>
  <div class="hero-stat-number">18.5k</div>
  <div class="hero-stat-label" data-i18n="hero.stats.nimbus">Workshop Necesse</div>
  </div>
  <div class="hero-stat">
- <div class="hero-stat-icon">◆</div>
+ <div class="hero-stat-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="14.5" rx="2"></rect><path d="M8 2.5V6M16 2.5V6M3.5 10.5H20.5"></path></svg></div>
  <div class="hero-stat-number">5+</div>
  <div class="hero-stat-label" data-i18n="hero.stats.years">Anos criando</div>
  </div>
@@ -199,7 +200,7 @@
  <section class="explore-section">
  <div class="container">
  <div class="explore-header reveal">
- <div class="explore-kicker" data-i18n="explore.kicker">✦ Portfólio em destaque</div>
+ <div class="explore-kicker" data-i18n="explore.kicker"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg> Portfólio em destaque</div>
  <h2 class="explore-title" data-i18n="explore.title">Explore meus <span>trabalhos</span></h2>
  <p class="explore-subtitle" data-i18n="explore.subtitle">10+ projetos organizados por categoria, clique para ver detalhes completos, tecnologias e bastidores. Todo projeto tem página dedicada.</p>
  </div>
@@ -213,7 +214,7 @@
  </div>
  <div id="project-grid" class="project-grid reveal"></div>
  <div style="text-align:center; margin-top:22px;" class="reveal">
- <a href="projetos-site/index.html" class="btn btn-outline" data-i18n="projects.viewAll">Ver todos os projetos →</a>
+ <a href="projetos-site/index.html" class="btn btn-outline" data-i18n="projects.viewAll">Ver todos os projetos <svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:4px;"><path d="M5 12H19"></path><path d="M13 6l6 6-6 6"></path></svg></a>
  </div>
  </div>
  </section>
@@ -227,13 +228,13 @@
  <div class="reveal" style="text-align:center;">
  <div class="section-label" style="justify-content:center; margin-left:auto; margin-right:auto;" data-i18n="about.kicker">Sobre mim</div>
  <h2 class="section-title center" style="text-align:center;" data-i18n="about.title">Quem é <span style="color:var(--gold);">Lucas Tavares</span></h2>
- <a href="paginas/sobre.html" class="btn btn-primary" style="padding:12px 24px; font-size:0.78rem; margin-top:12px;" data-i18n="about.cta">Me conheça melhor →</a>
+ <a href="paginas/sobre.html" class="btn btn-primary" style="padding:12px 24px; font-size:0.78rem; margin-top:12px;" data-i18n="about.cta">Me conheça melhor <svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:4px;"><path d="M5 12H19"></path><path d="M13 6l6 6-6 6"></path></svg></a>
  </div>
  <div class="reveal reveal-delay-1">
  <div style="background: var(--dark2); border:1px solid var(--border); border-radius:16px; padding:22px; position:relative; overflow:hidden;">
  <div style="position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(8,145,178,0.28), transparent);"></div>
  <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
- <div style="width:48px; height:48px; display:grid; place-items:center; background: rgba(8,145,178,0.12); border:1px solid rgba(8,145,178,0.22); border-radius:10px; font-size:1.5rem;">◆</div>
+ <div style="width:48px; height:48px; display:grid; place-items:center; background: rgba(8,145,178,0.12); border:1px solid rgba(8,145,178,0.22); border-radius:10px;"><svg class="mono-icon mono-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></div>
  <div>
  <div style="font-family:var(--font-heading); font-weight:700; color:#fff;">Necromante96Official</div>
  <div style="font-size:0.72rem; color:var(--text-muted);">Lucas Tavares • Portfolio 2026</div>
@@ -241,7 +242,7 @@
  <span style="margin-left:auto; padding:4px 10px; background: var(--gold); color:#120a00; border-radius:999px; font-family:var(--font-heading); font-size:0.62rem; font-weight:800;">● Disponível</span>
  </div>
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
- <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="padding:12px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:10px; text-align:center; color:var(--text-body); text-decoration:none;"><div style="display:flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-family:var(--font-heading); font-size:0.82rem;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; filter: brightness(0) invert(1);">GitHub</div><div style="font-size:0.70rem; color:var(--text-muted);">Necromante96Official</div></a>
+ <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="padding:12px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:10px; text-align:center; color:var(--text-body); text-decoration:none;"><div style="display:flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-family:var(--font-heading); font-size:0.82rem;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</div><div style="font-size:0.70rem; color:var(--text-muted);">Necromante96Official</div></a>
  <a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener" style="padding:12px; background: rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.18); border-radius:10px; text-align:center; color:var(--gold); text-decoration:none;"><div style="display:flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-family:var(--font-heading); font-size:0.82rem;"><img src="assets/img/icons/nexus.svg" alt="Nexus Mods" style="width:16px; height:16px;">Nexus Mods</div><div style="font-size:0.70rem; color:var(--text-muted);">Mods traduzidos</div></a>
  <a href="https://www.curseforge.com/hytale/mods/maior-pack-de-traducoes-pt-br" target="_blank" rel="noopener" style="padding:12px; background: rgba(96,165,250,0.08); border:1px solid rgba(96,165,250,0.18); border-radius:10px; text-align:center; color:var(--blue); text-decoration:none;"><div style="display:flex; align-items:center; justify-content:center; gap:6px; font-weight:700; font-family:var(--font-heading); font-size:0.82rem;"><img src="assets/img/icons/curseforge.svg" alt="CurseForge" style="width:16px; height:16px;">CurseForge</div><div style="font-size:0.70rem; color:var(--text-muted);">Hytale PT-BR</div></a>
  <a href="paginas/contato.html" style="padding:12px; background: linear-gradient(135deg, rgba(8,145,178,0.16), rgba(8,145,178,0.04)); border:1px solid rgba(8,145,178,0.22); border-radius:10px; text-align:center; color:var(--gold); text-decoration:none;"><div style="font-weight:700; font-family:var(--font-heading); font-size:0.82rem;">Contato</div><div style="font-size:0.70rem; color:var(--text-muted);">Resposta 24h</div></a>
@@ -263,7 +264,7 @@
  </div>
  <div style="text-align:center; margin-top:22px;" class="reveal">
  <a href="paginas/competencias.html" class="btn btn-outline" data-i18n="nav.skills">Competências</a>
- <a href="projetos-site/index.html" class="btn btn-primary" style="margin-left:8px;" data-i18n="projects.viewAll">Ver todos os projetos →</a>
+ <a href="projetos-site/index.html" class="btn btn-primary" style="margin-left:8px;" data-i18n="projects.viewAll">Ver todos os projetos <svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-left:4px;"><path d="M5 12H19"></path><path d="M13 6l6 6-6 6"></path></svg></a>
  </div>
  </div>
  </section>
@@ -285,10 +286,10 @@
  <div class="container">
  <div class="footer-grid">
  <div class="footer-brand">
- <div class="nav-brand" style="margin-bottom:8px;"><span class="brand-icon">◆</span> Lucas Tavares</div>
+ <div class="nav-brand" style="margin-bottom:8px;"><span class="brand-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></span> Lucas Tavares</div>
  <p data-i18n="footer.brand">Lucas Tavares, Necromante96Official. Desenvolvedor, tradutor e modder. Sites, mods e sistemas usados em produção.</p>
  <div style="display:flex; gap:8px; margin-top:14px;">
- <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="width:34px; height:34px; display:grid; place-items:center; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:8px;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:20px; height:20px; filter: brightness(0) invert(1);"></a>
+ <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="width:34px; height:34px; display:grid; place-items:center; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:8px;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:20px; height:20px; "></a>
  <a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener" style="width:34px; height:34px; display:grid; place-items:center; background: rgba(8,145,178,0.10); border:1px solid rgba(8,145,178,0.18); border-radius:8px;"><img src="assets/img/icons/nexus.svg" alt="Nexus Mods" style="width:22px; height:22px;"></a>
  <a href="https://www.curseforge.com/hytale/mods/maior-pack-de-traducoes-pt-br" target="_blank" rel="noopener" style="width:34px; height:34px; display:grid; place-items:center; background: rgba(96,165,250,0.10); border:1px solid rgba(96,165,250,0.18); border-radius:8px;"><img src="assets/img/icons/curseforge.svg" alt="CurseForge" style="width:20px; height:20px;"></a>
  </div>
@@ -309,7 +310,7 @@
  </div>
  <div class="footer-col">
  <h4 data-i18n="footer.connect">Conectar</h4>
- <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:14px; height:14px; filter: brightness(0) invert(1);">GitHub</a>
+ <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="assets/img/icons/github.svg" alt="GitHub" style="width:14px; height:14px; ">GitHub</a>
  <a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="assets/img/icons/nexus.svg" alt="Nexus Mods" style="width:14px; height:14px;">Nexus Mods</a>
  <a href="https://www.curseforge.com/hytale/mods/maior-pack-de-traducoes-pt-br" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="assets/img/icons/curseforge.svg" alt="CurseForge" style="width:14px; height:14px;">CurseForge</a>
  <a href="https://store.steampowered.com/app/2893570/DRAGON_QUEST_I__II_HD2D_Remake/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="assets/img/icons/steam.svg" alt="Steam" style="width:14px; height:14px;">Steam</a>

@@ -4,7 +4,6 @@ window.PROJECTS = [
  {
  slug: "fisiohub",
  category: "institucional",
- icon: "🏥",
  color: "#60a5fa",
  destaque: true,
  private: false,
@@ -30,7 +29,6 @@ window.PROJECTS = [
  {
  slug: "zenfisio-coletor",
  category: "tool",
- icon: "📥",
  color: "#06b6d4",
  destaque: false,
  private: true,
@@ -56,7 +54,6 @@ window.PROJECTS = [
  {
  slug: "zenfisio-notificar",
  category: "tool",
- icon: "🔔",
  color: "#a78bfa",
  destaque: false,
  private: true,
@@ -82,7 +79,6 @@ window.PROJECTS = [
  {
  slug: "zenfisio-alerta",
  category: "tool",
- icon: "⚠️",
  color: "#f59e0b",
  destaque: false,
  private: true,
@@ -107,7 +103,6 @@ window.PROJECTS = [
  }, {
  slug: "controle-financeiro",
  category: "web",
- icon: "💳",
  color: "#22c55e",
  destaque: true,
  private: false,
@@ -133,7 +128,6 @@ window.PROJECTS = [
  {
  slug: "nexustranslator",
  category: "tool",
- icon: "🌐",
  color: "#a78bfa",
  destaque: true,
  private: true,
@@ -159,7 +153,6 @@ window.PROJECTS = [
  {
  slug: "traducoes-jogos-mods",
  category: "translation",
- icon: "📖",
  color: "#d4881c",
  destaque: true,
  private: false,
@@ -185,7 +178,6 @@ window.PROJECTS = [
  {
  slug: "rpg-skills-mod",
  category: "game",
- icon: "⚔️",
  color: "#ef4444",
  destaque: true,
  private: true,
@@ -211,7 +203,6 @@ window.PROJECTS = [
  {
  slug: "rpg-skills-site",
  category: "web",
- icon: "🌙",
  color: "#d4881c",
  destaque: false,
  private: false,
@@ -237,7 +228,6 @@ window.PROJECTS = [
  {
  slug: "forbidden-legacy-patchs",
  category: "tool",
- icon: "🛡️",
  color: "#1ea54a",
  destaque: false,
  private: true,
@@ -263,8 +253,7 @@ window.PROJECTS = [
   {
     slug: "forbidden-legacy",
     category: "game",
-    icon: "☥",
-    color: "#d4881c",
+color: "#d4881c",
     destaque: true,
     private: false,
     links: { github: "", demo: "https://forbiddenlegacy.com.br/", docs: "https://discord.gg/MkJXZ9tNQ6" },
@@ -289,7 +278,6 @@ window.PROJECTS = [
  {
  slug: "deck-building-system",
  category: "tool",
- icon: "🃏",
  color: "#c8973a",
  destaque: false,
  private: false,
@@ -315,7 +303,6 @@ window.PROJECTS = [
  {
  slug: "ancient-souls",
  category: "game",
- icon: "🗺️",
  color: "#a78bfa",
  destaque: false,
  private: true,
@@ -341,7 +328,6 @@ window.PROJECTS = [
  {
  slug: "obs-overlay",
  category: "tool",
- icon: "⏱️",
  color: "#ef4444",
  destaque: false,
  private: false,
@@ -367,7 +353,6 @@ window.PROJECTS = [
  {
  slug: "mo2tools",
  category: "tool",
- icon: "🧩",
  color: "#6b7280",
  destaque: false,
  private: false,

@@ -227,14 +227,15 @@
 }
 .tech-tag {
   font-family: var(--font-heading);
-  font-size: 0.59rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-size: 0.60rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  padding: 3px 9px;
+  padding: 4px 11px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
   color: var(--text-muted);
   white-space: nowrap;
 }
@@ -341,10 +342,12 @@
 .skill-card h4 span.icon {
   width: 34px; height: 34px;
   display: grid; place-items: center;
-  background: rgba(8,145,178,0.10);
-  border: 1px solid rgba(8,145,178,0.18);
+  background: var(--icon-glow-bg);
+  border: 1px solid var(--icon-glow-border);
   border-radius: 8px;
   font-size: 1.0rem;
+  color: var(--icon-color);
+  box-shadow: var(--icon-glow);
 }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; width: 100%; }
 .skill-tags span {
@@ -519,7 +522,7 @@
 .detail-section { background: var(--dark2); border: 1px solid var(--border); border-radius: 14px; padding: 22px; position: relative; overflow: hidden; text-align: center; align-items: center; margin-left: auto; margin-right: auto; width: 100%; }
 .detail-section::before { content:""; position: absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg, transparent, rgba(8,145,178,0.18), transparent); }
 .detail-section h3 { font-size: 1.05rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; text-align: center; width: 100%; }
-.detail-section h3 .ico { width:32px; height:32px; display:grid; place-items:center; background: rgba(8,145,178,0.10); border:1px solid rgba(8,145,178,0.18); border-radius:8px; font-size:1rem; flex-shrink: 0; }
+.detail-section h3 .ico { width:32px; height:32px; display:grid; place-items:center; background: var(--icon-glow-bg); border:1px solid var(--icon-glow-border); border-radius:8px; font-size:1rem; flex-shrink: 0; color: var(--icon-color); box-shadow: var(--icon-glow); }
 .detail-section p { font-size: 0.86rem; color: var(--text-body); line-height: 1.75; max-width: 62ch; margin: 0 auto; text-align: center; text-wrap: pretty; text-align-last: center; hyphens: none; overflow-wrap: break-word; word-break: normal; }
 .detail-section ul { list-style: none; margin-top: 8px; }
 .detail-section li { font-size: 0.84rem; color: var(--text-muted); padding: 8px 12px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); text-align: center; text-wrap: pretty; line-height: 1.6; overflow-wrap: break-word; hyphens: none; }
@@ -637,133 +640,7 @@
 }
 .project-trigger:hover .project-trigger-hint { color: var(--gold); }
 
-/* ============================================
-   MODAL INFORMATIVO — titulo igual ao hero "Lucas Tavares"
-   ============================================ */
-.project-modal { position: fixed; inset:0; z-index: 400; display:none; align-items:center; justify-content:center; padding: 20px; }
-.project-modal.open { display:flex; }
-.project-modal-backdrop { position:absolute; inset:0; background: rgba(3,6,10,0.72); backdrop-filter: blur(8px); }
-.project-modal-dialog {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 760px;
-  max-height: 86vh;
-  overflow: auto;
-  background: linear-gradient(180deg, rgba(18,14,18,0.98), rgba(10,10,15,0.98));
-  border: 1px solid rgba(8,145,178,0.22);
-  border-radius: 20px;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 32px rgba(8,145,178,0.10);
-  padding: 28px 24px 22px;
-  animation: modalIn .28s cubic-bezier(.22,1,.36,1);
-}
-.project-modal-dialog.premium-simple {
-  max-width: 640px;
-  text-align: center;
-  background: linear-gradient(180deg, rgba(16,14,18,0.98), rgba(10,9,12,0.98));
-  border: 1px solid rgba(8,145,178,0.16);
-  padding: 32px 28px 26px;
-  box-shadow: 0 28px 72px rgba(0,0,0,0.58), 0 0 0 1px rgba(255,255,255,0.05) inset, 0 0 28px rgba(8,145,178,0.08);
-}
-.premium-simple .project-modal-head { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center; }
-.premium-simple .project-modal-body { border-top: 1px solid rgba(8,145,178,0.08); margin-top: 20px; padding-top: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; text-align: center; }
-.premium-simple .project-modal-resumo { font-weight: 600; color: #e6fcff; font-size: 0.95rem; }
-.premium-simple .project-modal-desc { font-size: 0.90rem; line-height: 1.82; color: var(--text-body); }
-.premium-simple .project-modal-links { margin-top: 22px; justify-content: center; width: 100%; }
-/* Força centralização total em todos os painéis de projetos */
-.project-modal-dialog, .detail-section, .info-card, .detail-grid .detail-main { text-align: center !important; }
-.project-modal-dialog p, .detail-section p, .info-card p { text-align: center !important; text-align-last: center !important; margin-left: auto !important; margin-right: auto !important; }
-@keyframes modalIn { from { opacity:0; transform: translateY(12px) scale(0.98); } to { opacity:1; transform: translateY(0) scale(1); } }
-.project-modal-close {
-  position: absolute;
-  top: 12px; right: 12px;
-  width: 36px; height: 36px;
-  display:grid; place-items:center;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 999px;
-  color: #fff;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: all .18s;
-}
-.project-modal-close:hover { background: rgba(8,145,178,0.14); border-color: rgba(8,145,178,0.28); color: var(--gold); }
-.project-modal-head { text-align: center; padding-top: 6px; }
-.project-modal-kicker {
-  display:inline-flex; gap:8px; align-items:center;
-  padding: 5px 12px;
-  background: rgba(8,145,178,0.10);
-  border: 1px solid rgba(8,145,178,0.18);
-  border-radius: 999px;
-  font-family: var(--font-heading);
-  font-size: 0.64rem; font-weight:800; letter-spacing:0.10em; text-transform:uppercase; color: var(--gold);
-  margin-bottom: 12px;
-}
-.project-modal-title {
-  margin: 0 auto !important;
-  font-size: clamp(1.9rem, 5vw, 2.8rem) !important;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
-  background: linear-gradient(180deg, #fff 15%, #cffafe 55%, #0891b2 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  filter: drop-shadow(0 4px 18px rgba(8,145,178,0.18));
-  text-align: center !important;
-  text-align-last: center !important;
-  transform: none !important;
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-}
-.project-modal-resumo {
-  color: var(--text-body);
-  font-size: 0.92rem;
-  line-height: 1.68;
-  max-width: 58ch;
-  margin: 0 auto !important;
-  text-align: center !important;
-  text-align-last: center !important;
-  text-wrap: balance !important;
-  hyphens: none !important;
-  display: block !important;
-  width: 100% !important;
-}
-.project-modal-body { margin-top: 18px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; }
-.project-modal-desc {
-  color: var(--text-muted);
-  font-size: 0.86rem;
-  line-height: 1.82;
-  text-align: center !important;
-  text-align-last: center !important;
-  max-width: 62ch;
-  margin: 0 auto !important;
-  white-space: pre-line;
-  text-wrap: balance !important;
-  hyphens: none !important;
-  overflow-wrap: break-word !important;
-  word-break: normal !important;
-  display: block !important;
-  width: 100% !important;
-}
-.project-modal-results { list-style:none; margin: 16px auto 0; padding:0; max-width: 560px; }
-.project-modal-results li {
-  font-size: 0.84rem; color: var(--text-muted);
-  padding: 8px 12px; text-align:center;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
-.project-modal-results li:last-child{ border-bottom:none; }
-.project-modal-results li::before{ content:"› "; color:var(--gold); font-weight:700; margin-right:4px; }
-.project-modal-links { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:18px; }
-@media (max-width: 640px){
-  .project-modal-dialog { padding: 22px 16px 18px; max-height: 88vh; }
-  .project-modal-title { font-size: clamp(1.5rem, 7vw, 2.1rem) !important; }
-}
-/* === Centralização forçada — 8 projetos citados + todos os painéis === */
-.project-modal-dialog.premium-simple,
-.project-modal-head,
-.project-modal-body,
+/* === Centralização forçada — todos os painéis === */
 .detail-section,
 .info-card,
 .page-header .container,
@@ -772,7 +649,6 @@
   align-items: center !important;
   justify-content: center !important;
 }
-.project-modal-head .hero-title-wrap { justify-content: center !important; }
 [data-detail="techs"] { justify-content: center !important; display: flex !important; flex-wrap: wrap !important; }
 [data-detail="resultados"] { text-align: center !important; }
 .page-header .page-title,
@@ -780,9 +656,7 @@
 .detail-section p,
 .detail-section li,
 .info-card p,
-.info-card li,
-.project-modal-resumo,
-.project-modal-desc {
+.info-card li {
   text-align: center !important;
   text-align-last: center !important;
   margin-left: auto !important;

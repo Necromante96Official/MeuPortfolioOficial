@@ -1,0 +1,101 @@
+/* ============================================
+   MONOCHROMATIC ICONS — encaixe perfeito ciano
+   Todos os ícones usam currentColor = --icon-mono (#a5f3fc)
+   Traço 1.75, round, sem fill colorido
+   ============================================ */
+.mono-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  color: var(--icon-mono);
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+.mono-icon--sm { width: 14px; height: 14px; stroke-width: 1.9; }
+.mono-icon--md { width: 18px; height: 18px; }
+.mono-icon--lg { width: 22px; height: 22px; stroke-width: 1.6; }
+.mono-icon--xl { width: 26px; height: 26px; stroke-width: 1.5; }
+
+/* containers que antes tinham emoji + fundo colorido — agora minimal */
+.icon-box {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--icon-glow-bg);
+  border: 1px solid var(--icon-glow-border);
+  border-radius: 10px;
+  color: var(--icon-mono);
+}
+.icon-box .mono-icon { width: 18px; height: 18px; }
+
+/* skill card icon — agora monocromático */
+.skill-card h4 span.icon {
+  background: var(--icon-glow-bg) !important;
+  border-color: var(--icon-glow-border) !important;
+  color: var(--icon-mono) !important;
+  box-shadow: var(--icon-glow) !important;
+}
+.skill-card h4 span.icon .mono-icon { width: 17px; height: 17px; }
+
+/* detail-section header icon */
+.detail-section h3 .ico {
+  background: var(--icon-glow-bg) !important;
+  border-color: var(--icon-glow-border) !important;
+  color: var(--icon-mono) !important;
+  box-shadow: var(--icon-glow) !important;
+}
+.detail-section h3 .ico .mono-icon { width: 16px; height: 16px; }
+
+/* hero emblem / brand — monocromático ciano */
+.hero-emblem .mono-icon,
+.brand-icon .mono-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--icon-mono);
+}
+.hero-emblem {
+  color: var(--icon-mono) !important;
+  background: linear-gradient(135deg, rgba(8,145,178,0.14), rgba(8,145,178,0.04)) !important;
+  border-color: rgba(8,145,178,0.22) !important;
+}
+.nav-brand .brand-icon {
+  color: var(--icon-mono) !important;
+  text-shadow: var(--icon-glow) !important;
+}
+
+/* hero stats — ícones já monocromáticos */
+.hero-stat-icon {
+  display: grid;
+  place-items: center;
+  color: var(--icon-mono) !important;
+  text-shadow: var(--icon-glow) !important;
+}
+.hero-stat-icon .mono-icon { width: 18px; height: 18px; }
+
+/* badge VIBE — mantém borda ciano */
+.hero-vibe-badge .mono-icon,
+.explore-kicker .mono-icon { width: 12px; height: 12px; margin-right: 4px; }
+
+/* externos — GitHub / Nexus / CurseForge / Steam monocromáticos
+   Todos os <img> de ícones externos recebem filtro para #a5f3fc */
+.icon-external {
+  filter: brightness(0) saturate(100%) invert(88%) sepia(18%) saturate(620%) hue-rotate(150deg) brightness(98%) contrast(92%);
+  opacity: 0.95;
+  transition: filter 0.2s, opacity 0.2s;
+}
+a:hover .icon-external,
+button:hover .icon-external {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(22%) saturate(700%) hue-rotate(150deg) brightness(102%) contrast(96%);
+  opacity: 1;
+}
+/* alternativa: quando SVG inline, usar currentColor */
+.icon-external-inline { color: var(--icon-mono); fill: none; stroke: currentColor; }
+
+/* remove coloração antiga de badges/stats */
+.project-card-badge.dot::before { background: var(--icon-mono) !important; box-shadow: 0 0 6px rgba(8,145,178,0.35) !important; }

@@ -105,6 +105,14 @@
   --gold-gradient: linear-gradient(90deg, #22d3ee, #a5f3fc, #22d3ee);
   --gold-gradient-strong: linear-gradient(180deg, #fff 15%, #cffafe 55%, #0891b2 100%);
 
+  /* ICON GLOW — monocromático ciano (encaixe perfeito com página) */
+  --icon-color:   #a5f3fc;
+  --icon-glow:    0 0 8px rgba(8, 145, 178, 0.32);
+  --icon-glow-bg: rgba(8, 145, 178, 0.08);
+  --icon-glow-border: rgba(8, 145, 178, 0.18);
+  --icon-mono:    #a5f3fc;
+  --icon-mono-dim: rgba(165, 243, 252, 0.72);
+
   /* TRANSITIONS */
   --transition-fast:   0.15s ease;
   --transition-base:   0.25s ease;

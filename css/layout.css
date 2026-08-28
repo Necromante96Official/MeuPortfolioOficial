@@ -386,7 +386,8 @@
 .hero-stat-icon {
   font-size: var(--fs-lg);
   margin-bottom: var(--space-xs);
-  opacity: 0.6;
+  color: var(--icon-color);
+  text-shadow: var(--icon-glow);
 }
 
 .hero-stat-label {

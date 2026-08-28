@@ -274,20 +274,22 @@
     var links = [];
     var labelDemo = dict['projects.detail.demo'] || 'Acesse já aqui!';
     var primaryHref = p.links.demo || p.links.github || "";
+    var monoExternal = '<svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:6px;"><path d="M14 5h6v6"></path><path d="M10 14L20 4"></path><path d="M15 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h4"></path></svg>';
+    var monoLock = '<svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;color:#d8b4fe;"><rect x="4.5" y="11.5" width="15" height="9" rx="2"></rect><path d="M8.5 11.5V8a3.5 3.5 0 0 1 7 0v3.5"></path><circle cx="12" cy="15.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>';
     if(primaryHref){
-      links.push('<a href="'+primaryHref+'" target="_blank" rel="noopener" class="btn btn-primary" style="padding:14px 28px; font-size:0.84rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 10px 28px rgba(6,182,212,0.22); min-width:220px; justify-content:center;">↗ '+labelDemo+'</a>');
+      links.push('<a href="'+primaryHref+'" target="_blank" rel="noopener" class="btn btn-primary" style="padding:14px 28px; font-size:0.84rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 10px 28px rgba(6,182,212,0.22); min-width:220px; justify-content:center;">'+monoExternal+labelDemo+'</a>');
       if(p.links.github && p.links.demo && p.links.github !== p.links.demo){
         var labelGH = dict['projects.detail.github'] || 'Ver no GitHub';
-        links.push('<a href="'+p.links.github+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:12px 22px; font-size:0.78rem;">↗ '+labelGH+'</a>');
+        links.push('<a href="'+p.links.github+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:12px 22px; font-size:0.78rem;">'+monoExternal+labelGH+'</a>');
       }
     }
     if(p.private) {
       var privateLabel = dict['projects.detail.private'] || 'Código privado, protegido';
-      links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="font-size:1.2rem;">🔒</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+(currentLang==='en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.')+'</span></div>');
+      links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="display:grid;place-items:center;color:#d8b4fe;">'+monoLock+'</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+(currentLang==='en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.')+'</span></div>');
     }
     if(!primaryHref && !p.private) {
       var privateLabel2 = dict['projects.detail.private'] || 'Código privado, protegido';
-      links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="font-size:1.2rem;">🔒</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel2+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+(currentLang==='en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.')+'</span></div>');
+      links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="display:grid;place-items:center;color:#d8b4fe;">'+monoLock+'</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel2+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+(currentLang==='en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.')+'</span></div>');
     }
     linksWrap.innerHTML = links.join(' ');
   }
@@ -302,8 +304,7 @@
   } catch(e){}
   var catEl = document.querySelector('[data-detail="category"]');
  if(catEl) catEl.textContent = catLabel(p.category);
- var iconEl = document.querySelector('[data-detail="icon"]');
- if(iconEl){ iconEl.textContent = p.icon; iconEl.style.color = p.color; }
+ 
  };
 
  // INIT: load i18n then apply
