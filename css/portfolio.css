@@ -794,3 +794,16 @@
 }
 .info-card .info-list,
 .info-card .info-row { justify-content: center !important; text-align: center !important; }
+
+/* CTA horizontal — Links + Gostou lado a lado */
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  width: 100%;
+  max-width: 760px;
+  align-items: stretch;
+}
+@media (max-width: 700px) {
+  .cta-grid { grid-template-columns: 1fr; }
+}
