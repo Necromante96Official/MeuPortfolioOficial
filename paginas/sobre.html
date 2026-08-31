@@ -58,6 +58,11 @@
 /* levanta o modal Quem Sou para reduzir o vazio entre header e card */
 .page-header { padding-bottom:24px !important; }
 .section { padding-top:20px !important; }
+/* botoes Voltar - mesmo polimento das páginas de projetos */
+.page-back-btn{ padding:8px 16px !important; background: rgba(255,255,255,0.04) !important; border:1px solid rgba(255,255,255,0.08) !important; border-radius:999px !important; font-size:0.78rem !important; font-weight:700 !important; color:var(--text-muted) !important; display:inline-flex !important; align-items:center !important; gap:6px !important; transition: all 0.2s ease !important; text-decoration:none !important; }
+.page-back-btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.07) !important; border-color: rgba(255,255,255,0.14) !important; color:#fff !important; box-shadow: 0 6px 16px rgba(0,0,0,0.22); }
+.page-back-btn svg{ transition: transform 0.2s ease; }
+.page-back-btn:hover svg{ transform: translateX(-2px); }
 @media(max-width:900px){
   .sobre-card { padding:22px 16px; }
   .stack-grid { grid-template-columns:1fr; }
@@ -79,7 +84,7 @@
 </div>
 <div class="nav-actions">
 <div class="lang-switcher" role="group"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div>
-<a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</a>
+<a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</a><a href="https://www.youtube.com/@Necromante96Officiall" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 14px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px; border-color: rgba(255,0,0,0.18);"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" style="width:16px; height:14px;">YouTube</a>
 </div>
 <button class="mobile-toggle" aria-label="Menu" aria-expanded="false"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6H20"></path><path d="M4 12H20"></path><path d="M4 18H20"></path></svg></button>
 </nav>
@@ -139,6 +144,7 @@
 <a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center; padding:12px; gap:8px; width:100%;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:18px; height:18px;"> GitHub <span style="font-size:0.68rem; color:var(--text-muted);">Necromante96Official</span></a>
 <a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center; padding:12px; gap:8px; width:100%; border-color: rgba(8,145,178,0.22);"><img src="../assets/img/icons/nexus.svg" alt="Nexus Mods" style="width:18px; height:18px;"> Nexus Mods</a>
 <a href="https://www.curseforge.com/hytale/mods/maior-pack-de-traducoes-pt-br" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center; padding:12px; gap:8px; width:100%; border-color: rgba(96,165,250,0.22);"><img src="../assets/img/icons/curseforge.svg" alt="CurseForge" style="width:18px; height:18px;"> CurseForge</a>
+<a href="https://www.youtube.com/@Necromante96Officiall" target="_blank" rel="noopener" class="btn btn-outline" style="justify-content:center; padding:12px; gap:8px; width:100%; border-color: rgba(255,0,0,0.22);"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" style="width:18px; height:14px;"> YouTube <span style="font-size:0.68rem; color:var(--text-muted);">@Necromante96Officiall</span></a>
 </div>
 <div style="margin-top:14px; padding:8px 10px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); border-radius:8px; font-size:0.70rem; color:var(--text-dim); text-align:center;">Perfis verificados • sem vínculo com publishers</div>
 </article>

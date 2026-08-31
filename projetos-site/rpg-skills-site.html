@@ -26,6 +26,14 @@
 .page-header{ padding-bottom:24px !important; }
 .section{ padding-top:20px !important; }
 @media(max-width:900px){ .sobre-card{ padding:22px 16px; } .sobre-text{ max-width:92%; } .page-header{ padding-bottom:18px !important; } .section{ padding-top:14px !important; } }
+/* botoes Voltar/Início - separados e dinâmicos */
+.page-back-btn{ padding:8px 16px !important; background: rgba(255,255,255,0.04) !important; border:1px solid rgba(255,255,255,0.08) !important; border-radius:999px !important; font-size:0.78rem !important; font-weight:700 !important; color:var(--text-muted) !important; display:inline-flex !important; align-items:center !important; gap:6px !important; transition: all 0.2s ease !important; text-decoration:none !important; }
+.page-back-btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.07) !important; border-color: rgba(255,255,255,0.14) !important; color:#fff !important; box-shadow: 0 6px 16px rgba(0,0,0,0.22); }
+.page-back-btn:last-child{ background: rgba(8,145,178,0.10) !important; border-color: rgba(8,145,178,0.18) !important; color:#22d3ee !important; }
+.page-back-btn:last-child:hover{ background: rgba(8,145,178,0.16) !important; border-color: rgba(8,145,178,0.28) !important; color:#a5f3fc !important; box-shadow: 0 6px 16px rgba(8,145,178,0.18); }
+.page-back-btn svg{ transition: transform 0.2s ease; }
+.page-back-btn:hover svg{ transform: translateX(-2px); }
+.page-back-btn:last-child:hover svg{ transform: scale(1.08); }
 </style>
 
 </head>
@@ -36,7 +44,7 @@
 <nav class="nav"><a href="../index.html" class="nav-brand"><span class="brand-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></span> Lucas Tavares</a>
  <div class="nav-center"><a href="../index.html" data-i18n="nav.home">Início</a><a href="index.html" data-i18n="nav.projects" style="color:#fff;">Projetos</a><a href="../paginas/sobre.html" data-i18n="nav.about">Sobre</a><a href="../paginas/competencias.html" data-i18n="nav.skills">Competências</a><a href="../paginas/contato.html" data-i18n="nav.contact">Contato</a>
  </div>
- <div class="nav-actions"><div class="lang-switcher"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</a>
+ <div class="nav-actions"><div class="lang-switcher"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</a><a href="https://www.youtube.com/@Necromante96Officiall" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 14px; font-size:0.68rem; display:inline-flex; align-items:center; gap:6px; border-color: rgba(255,0,0,0.18);"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" style="width:16px; height:14px;">YouTube</a>
  </div><button class="mobile-toggle" aria-expanded="false"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6H20"></path><path d="M4 12H20"></path><path d="M4 18H20"></path></svg></button></nav>
 <div class="mobile-nav"><button class="mobile-nav-close"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6L18 18"></path><path d="M18 6L6 18"></path></svg></button><a href="../index.html" data-i18n="nav.home">Início</a><a href="index.html" data-i18n="nav.projects">Projetos</a><a href="../paginas/sobre.html" data-i18n="nav.about">Sobre</a><a href="../paginas/competencias.html" data-i18n="nav.skills">Competências</a><a href="../paginas/contato.html" data-i18n="nav.contact">Contato</a><div class="lang-switcher mobile-lang-switcher"><button class="lang-option" data-lang="pt-BR"><span class="fi fi-br"></span> PT-BR</button><button class="lang-option" data-lang="en"><span class="fi fi-us"></span> EN</button></div><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:6px; justify-content:center;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:16px; height:16px; ">GitHub</a></div>
 
@@ -49,7 +57,11 @@
  </div>
  <h1 class="page-title" data-detail="title" style="font-size: clamp(1.6rem, 4vw, 2.6rem);">RPG Skills Site: Vitrine Premium</h1>
  <p class="page-sub" data-detail="resumo">Site vanilla HTML/CSS/JS com 11 páginas, hero com orbs/partículas, i18n PT/EN e deploy .nojekyll. Base deste portfólio.</p>
- <div style="margin-top:16px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;"><a href="index.html" class="page-back-btn" data-i18n="projects.detail.back"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:4px;"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg> Voltar aos projetos</a><a href="../index.html" class="page-back-btn" data-i18n="projects.detail.home"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:4px;"><path d="M3 9.5L12 3l9 6.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.5Z"></path><path d="M9 20V12h6v8"></path></svg> Início</a></div>
+   <div style="margin-top:18px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; align-items:center;">
+    <a href="index.html" class="page-back-btn" data-i18n="projects.detail.back"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg> Voltar aos projetos</a>
+    <span style="width:4px; height:4px; background: rgba(255,255,255,0.18); border-radius:50%; flex-shrink:0;"></span>
+    <a href="../index.html" class="page-back-btn" data-i18n="projects.detail.home"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9.5Z"></path><path d="M9 20V12h6v8"></path></svg> Início</a>
+  </div>
  </div>
 </header>
 
