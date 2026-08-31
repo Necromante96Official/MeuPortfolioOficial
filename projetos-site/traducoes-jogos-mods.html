@@ -11,6 +11,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
 <link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/layout.css"><link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/effects.css"><link rel="stylesheet" href="../css/portfolio.css"><link rel="stylesheet" href="../css/mobile.css"><link rel="stylesheet" href="../css/polish.css">
  <link rel="stylesheet" href="../css/icons.css">
+<style>
+/* Sobre padrao - mesmo layout do Quem Sou */
+.sobre-wrapper{ display:flex; flex-direction:column; gap:24px; align-items:center; width:100%; }
+.sobre-card{ width:100%; max-width:1080px; margin:0 auto; background: var(--dark2); border:1px solid var(--border); border-radius:16px; padding:28px 24px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; text-align:center; overflow:visible; box-shadow: 0 8px 32px rgba(0,0,0,0.32); transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease; }
+.sobre-card:hover{ transform: translateY(-2px); border-color: rgba(8,145,178,0.22); box-shadow: 0 12px 32px rgba(8,145,178,0.12), 0 8px 24px rgba(0,0,0,0.28); }
+.sobre-title{ font-family:var(--font-heading); font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight:800; letter-spacing:-0.02em; line-height:1.1; text-align:center; margin:0 auto 10px; color:#22d3ee; text-wrap:balance; text-shadow: 0 0 18px rgba(34,211,238,0.22); }
+.sobre-subtitle{ font-size:1.18rem; font-weight:800; text-align:center; color:#22d3ee; margin:18px auto 10px; text-wrap:balance; letter-spacing:0.02em; text-shadow: 0 0 12px rgba(34,211,238,0.18); }
+.sobre-text{ width:100%; max-width:96ch; margin:0 auto 14px; font-size:1.02rem; line-height:1.82; color:var(--text-body); text-align:center; text-wrap:pretty; hyphens:none; overflow-wrap:break-word; word-break:normal; box-sizing:border-box; }
+.sobre-text b, .sobre-text strong{ color:#fff; font-weight:700; }
+.skill-tags{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; width:100%; }
+.skill-tags span, .tech-tag{ font-size:0.68rem; padding:4px 10px; background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:999px; color: var(--text-muted); transition: all 0.18s ease; cursor:default; }
+.skill-tags span:hover, .tech-tag:hover{ transform: translateY(-1px) scale(1.03); background: rgba(8,145,178,0.12) !important; border-color: rgba(8,145,178,0.22) !important; color:#fff !important; box-shadow: 0 4px 12px rgba(8,145,178,0.14); }
+.page-header{ padding-bottom:24px !important; }
+.section{ padding-top:20px !important; }
+@media(max-width:900px){ .sobre-card{ padding:22px 16px; } .sobre-text{ max-width:92%; } .page-header{ padding-bottom:18px !important; } .section{ padding-top:14px !important; } }
+</style>
+
 </head>
 <body data-slug="traducoes-jogos-mods">
 <div class="global-particles"><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div></div><div class="bg-grid"></div>
@@ -37,48 +54,37 @@
 </header>
 
 <section class="section">
- <div class="container" style="max-width:780px;">
- <div class="detail-stack" style="display:flex; flex-direction:column; gap:22px; align-items:center;">
-  <!-- Contexto -->
-  <div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:30px 26px;">
-  <div style="display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom:14px;">
-   <span style="font-family:var(--font-heading); font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-size:0.78rem;" data-i18n="projects.detail.context">Contexto</span>
+  <div class="container" style="max-width:1200px;">
+    <div class="sobre-wrapper" style="display:flex; flex-direction:column; gap:24px; align-items:center; width:100%;">
+      <!-- Contexto -->
+      <article class="sobre-card">
+        <h2 class="sobre-title" style="color:#22d3ee; text-shadow: 0 0 18px rgba(34,211,238,0.22);">Contexto</h2>
+        <p data-detail="descricao" class="sobre-text"></p>
+      </article>
+      <!-- Solucao -->
+      <article class="sobre-card">
+        <h2 class="sobre-title" style="color:#22d3ee; text-shadow: 0 0 18px rgba(34,211,238,0.22);">Solucao</h2>
+        <p data-detail="papel" class="sobre-text"></p>
+        <div style="margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.06); width:100%;">
+          <h3 class="sobre-subtitle" style="color:#22d3ee; font-size:1.18rem; margin:0 auto 12px;">Tecnologias</h3>
+          <div data-detail="techs" class="skill-tags" style="justify-content:center;"></div>
+        </div>
+      </article>
+      <!-- Links -->
+      <article class="sobre-card" style="max-width:640px;">
+        <h2 class="sobre-title" style="font-size:1.4rem; color:#22d3ee;">Links</h2>
+        <div data-detail="links" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;"></div>
+      </article>
+      <!-- Proximos passos -->
+      <article class="sobre-card" style="max-width:640px; background: linear-gradient(180deg, rgba(8,145,178,0.06), rgba(8,145,178,0.02)); border-color: rgba(8,145,178,0.18);">
+        <h3 class="sobre-title" style="font-size:1.3rem; color:#22d3ee;">Proximos passos</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; max-width:60ch; margin:0 auto 16px; text-align:center;" data-i18n="projects.detail.next.desc">Quer um case como este? Vamos conversar.</p>
+        <a href="../paginas/contato.html" class="btn btn-primary" style="padding:12px 24px; justify-content:center; min-width:200px;" data-i18n="cta.button">Entrar em contato</a>
+      </article>
+    </div>
   </div>
-  <p data-detail="descricao" style="text-align:center; max-width:62ch; margin:0 auto; font-size:0.92rem; line-height:1.78; color:var(--text-body); text-wrap:balance;"></p>
-  </div>
-
-  <!-- Solução -->
-  <div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:30px 26px;">
-  <div style="display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom:14px;">
-   <span style="font-family:var(--font-heading); font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-size:0.78rem;" data-i18n="projects.detail.solution">Solução</span>
-  </div>
-  <p data-detail="papel" style="text-align:center; max-width:62ch; margin:0 auto; font-size:0.90rem; line-height:1.75; color:var(--text-body); text-wrap:balance;"></p>
-  <div style="margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.06);">
-   <div style="font-family:var(--font-heading); font-size:0.74rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; text-align:center;" data-i18n="projects.detail.tech">Tecnologias</div>
-   <div data-detail="techs" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;"></div>
-  </div>
-  </div>
-
-  <!-- Links -->
-  
-   <div class="cta-grid">
-<div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:28px 26px; background: transparent; border: none; box-shadow: none;">
-  <div style="display:inline-flex; align-items:center; gap:10px; justify-content:center; margin-bottom:14px;">
-   <span style="font-family:var(--font-heading); font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-size:0.78rem;" data-i18n="projects.detail.links">Links</span>
-  </div>
-  <div data-detail="links" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;"></div>
-  
-  </div>
-<div class="detail-section reveal" style="width:100%; max-width:760px; text-align:center; padding:28px 26px; background: transparent; border: none; box-shadow: none;">
-  <h3 style="justify-content:center; margin-bottom:10px;"><span data-i18n="projects.detail.next">Próximos passos</span></h3>
-  <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; max-width:60ch; margin:0 auto 16px; text-align:center;" data-i18n="projects.detail.next.desc">Quer um case como este? Vamos conversar.</p>
-  <a href="../paginas/contato.html" class="btn btn-primary" style="padding:12px 24px; justify-content:center; min-width:200px;" data-i18n="cta.button">Entrar em contato</a>
-  </div>
-   </div>
-
- </div>
- </div>
 </section>
+
 
 <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="nav-brand" style="margin-bottom:8px;"><span class="brand-icon"><svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg></span> Lucas Tavares</div><p data-i18n="footer.brand"></p></div><div class="footer-col"><h4 data-i18n="footer.pages">Páginas</h4><a href="../index.html" data-i18n="nav.home">Início</a><a href="index.html" data-i18n="nav.projects">Projetos</a><a href="../paginas/sobre.html" data-i18n="nav.about">Sobre</a><a href="../paginas/competencias.html" data-i18n="nav.skills">Competências</a></div><div class="footer-col"><h4>Outros cases</h4><a href="fisiohub.html">FisioHub</a><a href="nexustranslator.html">NexusTranslator</a><a href="rpg-skills-mod.html">RPG Skills Mod</a><a href="traducoes-jogos-mods.html">Traduções</a></div><div class="footer-col"><h4 data-i18n="footer.connect">Conectar</h4><a href="https://github.com/Necromante96Official" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/github.svg" alt="GitHub" style="width:14px; height:14px; ">GitHub</a><a href="https://www.nexusmods.com/profile/Necromante96Official" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px;"><img src="../assets/img/icons/nexus.svg" alt="Nexus Mods" style="width:14px; height:14px;">Nexus</a><a href="../paginas/contato.html">Contato</a></div></div><div class="footer-bottom"><span data-i18n="footer.made">Feito com &#9829; por Lucas Tavares, 2026</span><span></span></div></div></footer>
 <script src="../js/i18n-data.js"></script><script src="../js/projects-data.js"></script><script src="../js/main.js"></script>
