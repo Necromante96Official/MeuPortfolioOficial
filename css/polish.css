@@ -443,3 +443,13 @@
   font-size:0.9rem;
   letter-spacing:6px;
 }
+
+/* ---------- FOOTER CONECTAR POLISH ---------- */
+.footer-col a{ transition: transform 0.16s ease, color 0.16s ease, opacity 0.16s ease; }
+.footer-col a:hover{ transform: translateX(3px); color:#fff !important; }
+.footer-brand a{ transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease; }
+.footer-brand a:hover{ transform: translateY(-2px) scale(1.04); border-color: rgba(8,145,178,0.22) !important; }
+
+/* YouTube visibility fix - garante contraste */
+a[href*="youtube.com"]{ background: rgba(255,0,0,0.18) !important; border-color: rgba(255,0,0,0.45) !important; color:#fff !important; box-shadow: 0 4px 14px rgba(255,0,0,0.18) !important; }
+a[href*="youtube.com"] img{ filter: drop-shadow(0 0 6px rgba(255,0,0,0.32)) brightness(1.05) !important; width:22px !important; height:16px !important; }
