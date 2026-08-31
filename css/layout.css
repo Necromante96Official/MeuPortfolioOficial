@@ -1,5 +1,5 @@
 /* ============================================
-   RPG SKILLS — Layout
+   RPG SKILLS, Layout
    ============================================ */
 
 /* CONTAINER - Android safe-area */
@@ -865,7 +865,7 @@
   color: var(--text-muted);
 }
 
-/* RESPONSIVE — TABLET */
+/* RESPONSIVE, TABLET */
 @media (max-width: 1024px) {
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
@@ -881,7 +881,7 @@
   }
 }
 
-/* RESPONSIVE — MOBILE */
+/* RESPONSIVE, MOBILE */
 @media (max-width: 700px) {
   .nav-links,
   .nav-center,
@@ -973,7 +973,7 @@
   }
 }
 
-/* RESPONSIVE — MOBILE TINY - Android */
+/* RESPONSIVE, MOBILE TINY - Android */
 @media (max-width: 480px) {
   .section {
     padding: var(--space-2xl) calc(var(--space-md) + env(safe-area-inset-right)) var(--space-2xl) calc(var(--space-md) + env(safe-area-inset-left));
@@ -994,7 +994,7 @@
   }
 }
 
-/* RESPONSIVE — LANGUAGE SWITCHER */
+/* RESPONSIVE, LANGUAGE SWITCHER */
 @media (max-width: 700px) {
   .nav-links .lang-switcher {
     display: none;

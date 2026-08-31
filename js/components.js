@@ -1,4 +1,4 @@
-/* Modular components loader — nav/footer via template injection (fallback for duplicated HTML) */
+/* Modular components loader, nav/footer via template injection (fallback for duplicated HTML) */
 (function(){
   'use strict';
   // Mapping for base paths
@@ -37,7 +37,7 @@
       el.addEventListener('blur', function(){ el.classList.remove('focus-visible'); });
     });
 
-    // Expand particles to 50 + 40 stars — mais animações a partir de Explore
+    // Expand particles to 50 + 40 stars, mais animações a partir de Explore
     try {
       document.querySelectorAll('.global-particles').forEach(function(container){
         var colors = ['g','w','d','c','b','g','c','w','d','b'];
@@ -94,7 +94,7 @@
           section.style.overflow = 'hidden';
         }
       });
-      // Nebulosas a partir de Explore para baixo — tirando do titulo principal
+      // Nebulosas a partir de Explore para baixo, tirando do titulo principal
       try {
         var nebulaSections = document.querySelectorAll('.explore-section, .section:not(.hero)');
         nebulaSections.forEach(function(sec, sIdx){

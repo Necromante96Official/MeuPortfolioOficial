@@ -1,5 +1,5 @@
 /* ============================================
-   MONOCHROMATIC ICONS — encaixe perfeito ciano
+   MONOCHROMATIC ICONS, encaixe perfeito ciano
    Todos os ícones usam currentColor = --icon-mono (#a5f3fc)
    Traço 1.75, round, sem fill colorido
    ============================================ */
@@ -21,7 +21,7 @@
 .mono-icon--lg { width: 22px; height: 22px; stroke-width: 1.6; }
 .mono-icon--xl { width: 26px; height: 26px; stroke-width: 1.5; }
 
-/* containers que antes tinham emoji + fundo colorido — agora minimal */
+/* containers que antes tinham emoji + fundo colorido, agora minimal */
 .icon-box {
   width: 36px;
   height: 36px;
@@ -34,7 +34,7 @@
 }
 .icon-box .mono-icon { width: 18px; height: 18px; }
 
-/* skill card icon — agora monocromático */
+/* skill card icon, agora monocromático */
 .skill-card h4 span.icon {
   background: var(--icon-glow-bg) !important;
   border-color: var(--icon-glow-border) !important;
@@ -52,7 +52,7 @@
 }
 .detail-section h3 .ico .mono-icon { width: 16px; height: 16px; }
 
-/* hero emblem / brand — monocromático ciano */
+/* hero emblem / brand, monocromático ciano */
 .hero-emblem .mono-icon,
 .brand-icon .mono-icon {
   width: 16px;
@@ -69,7 +69,7 @@
   text-shadow: var(--icon-glow) !important;
 }
 
-/* hero stats — ícones já monocromáticos */
+/* hero stats, ícones já monocromáticos */
 .hero-stat-icon {
   display: grid;
   place-items: center;
@@ -78,11 +78,11 @@
 }
 .hero-stat-icon .mono-icon { width: 18px; height: 18px; }
 
-/* badge VIBE — mantém borda ciano */
+/* badge VIBE, mantém borda ciano */
 .hero-vibe-badge .mono-icon,
 .explore-kicker .mono-icon { width: 12px; height: 12px; margin-right: 4px; }
 
-/* externos — GitHub / Nexus / CurseForge / Steam monocromáticos
+/* externos, GitHub / Nexus / CurseForge / Steam monocromáticos
    Todos os <img> de ícones externos recebem filtro para #a5f3fc */
 .icon-external {
   filter: brightness(0) saturate(100%) invert(88%) sepia(18%) saturate(620%) hue-rotate(150deg) brightness(98%) contrast(92%);

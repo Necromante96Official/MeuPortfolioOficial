@@ -1,5 +1,5 @@
 /* ============================================
-   PORTFÓLIO — Extras (projetos, skills, timeline, filtros)
+   PORTFÓLIO, Extras (projetos, skills, timeline, filtros)
    ============================================ */
 
 /* PROJECT CARDS - baseado em explore-card mas com thumb */
@@ -577,7 +577,7 @@
 .filter-btn:focus-visible { outline-offset: 1px; }
 
 /* ============================================
-   CARDS REMOVIDOS — apenas gatilhos para modais
+   CARDS REMOVIDOS, apenas gatilhos para modais
    ============================================ */
 .project-card { display: none !important; }
 .project-card-thumb { display: none !important; }
@@ -640,7 +640,7 @@
 }
 .project-trigger:hover .project-trigger-hint { color: var(--gold); }
 
-/* === Centralização forçada — todos os painéis === */
+/* === Centralização forçada, todos os painéis === */
 .detail-section,
 .info-card,
 .page-header .container,
@@ -669,7 +669,7 @@
 .info-card .info-list,
 .info-card .info-row { justify-content: center !important; text-align: center !important; }
 
-/* CTA horizontal — Links + Gostou lado a lado */
+/* CTA horizontal, Links + Gostou lado a lado */
 .cta-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -681,7 +681,7 @@
 @media (max-width: 700px) {
   .cta-grid { grid-template-columns: 1fr; }
 }
-/* Card privado — luz que viaja pelos 4 cantos do contorno, compatível */
+/* Card privado, luz que viaja pelos 4 cantos do contorno, compatível */
 .private-highlight-animated {
   position: relative;
   display: inline-flex;

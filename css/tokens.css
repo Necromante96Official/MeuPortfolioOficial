@@ -1,27 +1,27 @@
 /* ============================================
-   RPG SKILLS — Design Tokens
+   RPG SKILLS, Design Tokens
    ============================================ */
 
 :root {
-  /* PRIMARY — Gold (XP, Progression) */
+  /* PRIMARY, Gold (XP, Progression) */
   --gold:         #0891b2;
   --gold-light:   #06b6d4;
   --gold-dim:     #155e75;
   --gold-rgb:     8, 145, 178;
 
-  /* SECONDARY — Blue (Magic, Skills) */
+  /* SECONDARY, Blue (Magic, Skills) */
   --blue:         #60a5fa;
   --blue-light:   #93c5fd;
   --blue-dim:     #1e3a5f;
   --blue-rgb:     96, 165, 250;
 
-  /* ACCENT — Red (Combat, Damage) */
+  /* ACCENT, Red (Combat, Damage) */
   --red:          #ef4444;
   --red-light:    #f87171;
   --red-dim:      #7f1d1d;
   --red-rgb:      239, 68, 68;
 
-  /* ACCENT — Purple (Rare, Legendary) */
+  /* ACCENT, Purple (Rare, Legendary) */
   --purple:       #a78bfa;
   --purple-light: #c4b5fd;
   --purple-dim:   #4c1d95;
@@ -105,7 +105,7 @@
   --gold-gradient: linear-gradient(90deg, #22d3ee, #a5f3fc, #22d3ee);
   --gold-gradient-strong: linear-gradient(180deg, #fff 15%, #cffafe 55%, #0891b2 100%);
 
-  /* ICON GLOW — monocromático ciano (encaixe perfeito com página) */
+  /* ICON GLOW, monocromático ciano (encaixe perfeito com página) */
   --icon-color:   #a5f3fc;
   --icon-glow:    0 0 8px rgba(8, 145, 178, 0.32);
   --icon-glow-bg: rgba(8, 145, 178, 0.08);

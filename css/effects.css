@@ -1,5 +1,5 @@
 /* ============================================
-   PORTFÓLIO LUCAS TAVARES — Effects (ciano premium, 30 partículas)
+   PORTFÓLIO LUCAS TAVARES, Effects (ciano premium, 30 partículas)
    ============================================ */
 
 /* GLOBAL PARTICLES - 30 com variação ciano */
@@ -194,7 +194,7 @@
 .gs:nth-child(39) { left: 69%; top: 88%; width: 1.7px; height: 1.7px; animation-duration: 3.2s; animation-delay: -0.9s; }
 .gs:nth-child(40) { left: 95%; top: 92%; width: 1.4px; height: 1.4px; animation-duration: 2.8s; animation-delay: -1.5s; }
 
-/* NEBULOSAS — a partir de Explore para baixo */
+/* NEBULOSAS, a partir de Explore para baixo */
 .section-nebula {
   position: absolute;
   border-radius: 50%;
