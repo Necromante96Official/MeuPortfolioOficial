@@ -70,17 +70,19 @@
           <div data-detail="techs" class="skill-tags" style="justify-content:center;"></div>
         </div>
       </article>
-      <!-- Links -->
-      <article class="sobre-card" style="max-width:640px;">
-        <h2 class="sobre-title" style="font-size:1.4rem; color:#22d3ee;">Links</h2>
-        <div data-detail="links" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;"></div>
-      </article>
-      <!-- Proximos passos -->
-      <article class="sobre-card" style="max-width:640px; background: linear-gradient(180deg, rgba(8,145,178,0.06), rgba(8,145,178,0.02)); border-color: rgba(8,145,178,0.18);">
-        <h3 class="sobre-title" style="font-size:1.3rem; color:#22d3ee;">Proximos passos</h3>
-        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; max-width:60ch; margin:0 auto 16px; text-align:center;" data-i18n="projects.detail.next.desc">Quer um case como este? Vamos conversar.</p>
-        <a href="../paginas/contato.html" class="btn btn-primary" style="padding:12px 24px; justify-content:center; min-width:200px;" data-i18n="cta.button">Entrar em contato</a>
-      </article>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px; width:100%; max-width:1080px; margin:0 auto;">
+        <!-- Links -->
+        <article class="sobre-card" style="max-width:none; margin:0;">
+          <h2 class="sobre-title" style="font-size:1.4rem; color:#22d3ee;">Links</h2>
+          <div data-detail="links" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;"></div>
+        </article>
+        <!-- Proximos passos -->
+        <article class="sobre-card" style="max-width:none; margin:0; background: linear-gradient(180deg, rgba(8,145,178,0.06), rgba(8,145,178,0.02)); border-color: rgba(8,145,178,0.18);">
+          <h3 class="sobre-title" style="font-size:1.3rem; color:#22d3ee;">Proximos passos</h3>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; max-width:60ch; margin:0 auto 16px; text-align:center;" data-i18n="projects.detail.next.desc">Quer um case como este? Vamos conversar.</p>
+          <a href="../paginas/contato.html" class="btn btn-primary" style="padding:12px 24px; justify-content:center; min-width:200px;" data-i18n="cta.button">Entrar em contato</a>
+        </article>
+      </div>
     </div>
   </div>
 </section>
