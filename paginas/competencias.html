@@ -11,6 +11,69 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
 <link rel="stylesheet" href="../css/tokens.css"><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/layout.css"><link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/effects.css"><link rel="stylesheet" href="../css/portfolio.css"><link rel="stylesheet" href="../css/mobile.css"><link rel="stylesheet" href="../css/polish.css">
  <link rel="stylesheet" href="../css/icons.css">
+<style>
+/* levanta o primeiro card para reduzir o vazio entre header e conteudo - igual ao Quem Sou */
+.page-header { padding-bottom:24px !important; }
+.section { padding-top:20px !important; }
+@media(max-width:900px){
+  .page-header { padding-bottom:18px !important; }
+  .section { padding-top:14px !important; }
+}
+/* SOBRE padrao simples - mesmo layout do Quem Sou */
+.sobre-card{ width:100%; max-width:1080px; margin:0 auto; background: var(--dark2); border:1px solid var(--border); border-radius:16px; padding:28px 24px; box-sizing:border-box; display:flex; flex-direction:column; align-items:center; text-align:center; overflow:visible; box-shadow: 0 8px 32px rgba(0,0,0,0.32); }
+.sobre-title{ font-family:var(--font-heading); font-size: clamp(1.7rem, 3.5vw, 2.2rem); font-weight:800; letter-spacing:-0.02em; line-height:1.1; text-align:center; margin:0 auto 8px; color:#22d3ee; text-wrap:balance; text-shadow: 0 0 18px rgba(34,211,238,0.22); }
+.sobre-subtitle{ font-size:1.32rem; font-weight:800; text-align:center; color:#22d3ee; margin:22px auto 12px; text-wrap:balance; letter-spacing:0.02em; text-shadow: 0 0 18px rgba(34,211,238,0.22); }
+.sobre-text{ width:100%; max-width:96ch; margin:0 auto 14px; font-size:0.96rem; line-height:1.82; color:var(--text-body); text-align:center; text-wrap:pretty; hyphens:none; overflow-wrap:break-word; word-break:normal; box-sizing:border-box; }
+.sobre-text b, .sobre-text strong{ color:#fff; font-weight:700; }
+.sobre-quote{ max-width:44ch; margin:12px auto 14px; padding:12px 18px; background: rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.18); border-radius:10px; font-size:1.02rem; font-weight:800; text-align:center; color:#a5f3fc; text-wrap:balance; box-shadow: 0 4px 18px rgba(8,145,178,0.14); }
+@media(max-width:900px){ .sobre-card{ padding:22px 16px; } .sobre-text{ max-width:92%; } }
+/* container mais largo para caber 6 colunas com respiro */
+.section .container{ max-width:1360px; }
+/* 6 lado a lado - polimento premium */
+.skills-grid{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:14px;
+  align-items:stretch;
+}
+.skill-card{
+  padding:18px 12px;
+  border:1px solid rgba(8,145,178,0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(8,145,178,0.04));
+  border-radius:16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  min-height:100%;
+}
+.skill-card::before{ background: linear-gradient(90deg, transparent, rgba(8,145,178,0.22), transparent); }
+.skill-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(8,145,178,0.30);
+  box-shadow: 0 10px 28px rgba(8,145,178,0.14), 0 4px 16px rgba(0,0,0,0.28);
+}
+.skill-card h4{ font-size:0.84rem; gap:8px; margin-bottom:8px; }
+.skill-card h4 span.icon{ width:30px; height:30px; border-radius:8px; }
+.skill-card > p{ font-size:0.78rem !important; line-height:1.5; margin-bottom:8px !important; }
+.skill-tags{ gap:5px; }
+.skill-tags span{
+  font-size:0.66rem; padding:3px 8px;
+  background: rgba(255,255,255,0.035);
+  border:1px solid rgba(255,255,255,0.055);
+  color: var(--text-muted);
+}
+.skill-card div[style*="font-size:0.76rem"]{ font-size:0.70rem !important; line-height:1.5; margin-top:10px !important; }
+@media(max-width:1280px){
+  .skills-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+@media(max-width:760px){
+  .skills-grid{ grid-template-columns: repeat(2, 1fr); gap:12px; }
+}
+@media(max-width:520px){
+  .skills-grid{ grid-template-columns: 1fr; }
+  .skill-card{ padding:18px 16px; }
+}
+</style>
 </head>
 <body>
 <div class="global-particles"><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div><div class="gp g"></div><div class="gp w"></div><div class="gp d"></div><div class="gp c"></div><div class="gp b"></div></div><div class="bg-grid"></div>
@@ -36,12 +99,13 @@
 <section class="section">
  <div class="container">
 
- <div class="detail-section reveal" style="margin-bottom:20px; background: linear-gradient(135deg, rgba(8,145,178,0.08), rgba(8,145,178,0.02)); border-color: rgba(8,145,178,0.18); text-align:center;">
- <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:var(--icon-glow-bg); border:1px solid var(--icon-glow-border); border-radius:999px; font-family:var(--font-heading); font-size:0.70rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;"><svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5L21.5 12 12 21.5 2.5 12Z"></path></svg> VIBE CODING • IA direcionada</div>
- <h3 style="justify-content:center;"><span data-i18n="skills.vibe.title">Vibe Coding e IA Direcionada</span></h3>
- <p style="max-width:640px; margin:0 auto; color:var(--text-muted);" data-i18n="skills.vibe.desc">Arquiteto o sistema e a IA executa o boilerplate. Reviso, testo e publico. Velocidade sem perder engenharia.</p>
- <p style="margin-top:8px; font-size:0.82rem; color:var(--text-muted); font-style:italic;" data-i18n="skills.vibe.callout">Stack enxuta e IA direcionada: velocidade de Vibe Coding com rigor de engenharia.</p>
- </div>
+  <article class="sobre-card" style="margin-bottom:20px;">
+  <h2 class="sobre-title" style="font-size:clamp(1.4rem,3vw,1.9rem);">Vibe Coding e IA Direcionada</h2>
+  <p class="sobre-text">Minha abordagem de desenvolvimento é baseada em <b>Vibe Coding e no uso estratégico de Inteligência Artificial</b>. Em vez de concentrar meu trabalho exclusivamente na escrita manual de código, atuo na <b>concepção, arquitetura, planejamento e direcionamento de cada projeto</b>, definindo objetivos, regras, experiências e critérios de qualidade.</p>
+  <p class="sobre-text">A partir desse contexto, utilizo modelos avançados de IA como ferramentas de <b>execução, automação e aceleração do desenvolvimento</b>, conduzindo cada etapa com instruções precisas e validações contínuas. A IA auxilia na implementação, correção de problemas, refatoração e evolução das funcionalidades, enquanto mantenho o controle sobre as decisões técnicas e criativas do projeto.</p>
+  <p class="sobre-text">Esse fluxo me permite transformar ideias em soluções funcionais com maior agilidade, sem abrir mão de <b>organização, qualidade, consistência e atenção aos detalhes</b>. Cada projeto é construído de forma iterativa, passando por ciclos de implementação, análise, correção e aprimoramento.</p>
+  <div class="sobre-quote">Eu defino a visão, estruturo o caminho e direciono a execução. A IA amplia minha capacidade de transformar essa visão em realidade.</div>
+  </article>
 
  <div class="skills-grid">
  <div class="skill-card reveal">
