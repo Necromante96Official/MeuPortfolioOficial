@@ -128,16 +128,66 @@
  reveals.forEach(function(el){ el.classList.add('visible'); });
  }
 
- // MOBILE NAV
- var toggle = document.querySelector('.mobile-toggle');
- var mobile = document.querySelector('.mobile-nav');
- var closeBtn = document.querySelector('.mobile-nav-close');
- if (toggle && mobile) {
- toggle.addEventListener('click', function(){ mobile.classList.add('open'); document.body.style.overflow='hidden'; toggle.setAttribute('aria-expanded','true'); });
- var closeM = function(){ mobile.classList.remove('open'); document.body.style.overflow=''; if (toggle) toggle.setAttribute('aria-expanded','false'); };
- if (closeBtn) closeBtn.addEventListener('click', closeM);
- mobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeM); });
- }
+  // PAGE TRANSITIONS, entrada e saida suaves
+  (function(){
+    var overlay = document.getElementById('page-transition');
+    if(!overlay){
+      overlay = document.createElement('div');
+      overlay.id = 'page-transition';
+      document.body.appendChild(overlay);
+    }
+    document.body.classList.add('page-enter');
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ document.body.classList.remove('page-enter'); });
+    });
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a');
+      if(!a) return;
+      var href = a.getAttribute('href');
+      if(!href || a.hasAttribute('download') || a.target==='_blank') return;
+      if(href.charAt(0)==='#') return;
+      if(href.indexOf('http')===0 && href.indexOf(location.origin)!==0) return;
+      if(href.indexOf('//')===0) return;
+      if(href.indexOf('mailto:')===0 || href.indexOf('tel:')===0) return;
+      var url;
+      try{ url = new URL(href, location.href); } catch(err){ return; }
+      if(url.pathname === location.pathname && url.search === location.search && url.hash) return;
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var isMobileNav = a.closest('.mobile-nav');
+      if(isMobileNav) {
+        // deixa fechar o menu primeiro
+        setTimeout(function(){
+          document.body.classList.add('page-exit');
+          overlay.classList.add('active');
+          setTimeout(function(){ location.href = a.href; }, 280);
+        }, 180);
+        return;
+      }
+      e.preventDefault();
+      document.body.classList.add('page-exit');
+      overlay.classList.add('active');
+      setTimeout(function(){ location.href = a.href; }, 300);
+    }, true);
+    window.addEventListener('pageshow', function(ev){
+      if(ev.persisted){
+        document.body.classList.remove('page-exit');
+        overlay.classList.remove('active');
+      }
+    });
+  })();
+
+  // MOBILE NAV com transicao suave
+  var toggle = document.querySelector('.mobile-toggle');
+  var mobile = document.querySelector('.mobile-nav');
+  var closeBtn = document.querySelector('.mobile-nav-close');
+  if (toggle && mobile) {
+  toggle.addEventListener('click', function(){ mobile.classList.add('open'); document.body.style.overflow='hidden'; toggle.setAttribute('aria-expanded','true'); });
+  var closeM = function(){ mobile.classList.remove('open'); document.body.style.overflow=''; if (toggle) toggle.setAttribute('aria-expanded','false'); };
+  if (closeBtn) closeBtn.addEventListener('click', closeM);
+  mobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeM); });
+  // fecha ao clicar no backdrop (fora do menu)
+  mobile.addEventListener('click', function(e){ if(e.target===mobile) closeM(); });
+  }
 
  // smooth scroll
  document.querySelectorAll('a[href^=\"#\"]').forEach(function(a){
