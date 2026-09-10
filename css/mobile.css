@@ -28,9 +28,7 @@
   right: 0;
   bottom: 0;
   z-index: calc(var(--z-nav) - 1);
-  background: rgba(10, 10, 15, 0.97);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 10, 15, 0.98);
   flex-direction: column;
   align-items: center;
   justify-content: center;

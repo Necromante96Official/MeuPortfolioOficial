@@ -37,7 +37,6 @@
   transition: opacity .22s;
 }
 .project-card:hover {
-  will-change: transform;
   border-color: rgba(8,145,178,0.30);
   transform: translateY(-5px);
   box-shadow: var(--shadow-card-hover);
@@ -78,30 +77,11 @@
   border: 1px solid rgba(8,145,178,0.22);
   position: relative;
   overflow: hidden;
-  animation: thumbGlow 2.8s ease-in-out infinite;
+  box-shadow: inset 0 0 14px rgba(8,145,178,0.12), 0 0 14px rgba(8,145,178,0.14);
   text-shadow: 0 0 14px rgba(8,145,178,0.35);
 }
 .project-card-thumb-placeholder::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(90deg, transparent, rgba(8,145,178,0.35), transparent);
-  opacity: 0;
-  animation: thumbShimmer 3.2s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes thumbGlow {
-  0%, 100% { box-shadow: inset 0 0 14px rgba(8,145,178,0.12), 0 0 14px rgba(8,145,178,0.14); border-color: rgba(8,145,178,0.22); }
-  50% { box-shadow: inset 0 0 22px rgba(8,145,178,0.20), 0 0 28px rgba(8,145,178,0.32), 0 0 42px rgba(8,145,178,0.12); border-color: rgba(8,145,178,0.38); }
-}
-@keyframes thumbShimmer {
-  0% { transform: translateX(-100%); opacity: 0; }
-  45% { opacity: 0.5; }
-  100% { transform: translateX(100%); opacity: 0; }
-}
-.project-card:hover .project-card-thumb-placeholder {
-  animation-duration: 1.8s;
+  display: none;
 }
 .project-card-badge {
   position: absolute;
@@ -704,18 +684,12 @@
 .private-highlight-animated::before {
   content: '';
   position: absolute;
-  width: 12px;
-  height: 12px;
-  margin: -7px 0 0 -7px;
-  left: 0;
-  top: 0;
-  background: radial-gradient(circle, #ffffff 0%, #e9d5ff 40%, rgba(216,180,254,0.85) 60%, rgba(216,180,254,0) 78%);
-  border-radius: 50%;
-  filter: drop-shadow(0 0 5px #d8b4fe) drop-shadow(0 0 12px rgba(216,180,254,0.75)) drop-shadow(0 0 22px rgba(168,85,247,0.55));
-  animation: cornerLight 3.6s linear infinite;
+  inset: 0;
+  border-radius: inherit;
   pointer-events: none;
-  z-index: 4;
-  opacity: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(216,180,254,0.18), transparent 42%, transparent 58%, rgba(168,85,247,0.14));
+  opacity: 0.7;
 }
 .private-highlight-animated > * {
   position: relative;
@@ -723,16 +697,4 @@
   text-align: center;
   width: 100%;
   text-wrap: balance;
-}
-@keyframes cornerLight {
-  0%   { left: 0%;   top: 0%;   opacity: 0; }
-  2%   { opacity: 1; }
-  23%  { left: 100%; top: 0%;   opacity: 1; }
-  25%  { left: 100%; top: 0%; }
-  48%  { left: 100%; top: 100%; opacity: 1; }
-  50%  { left: 100%; top: 100%; }
-  73%  { left: 0%;   top: 100%; opacity: 1; }
-  75%  { left: 0%;   top: 100%; }
-  98%  { opacity: 1; }
-  100% { left: 0%;   top: 0%;   opacity: 0; }
 }

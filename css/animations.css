@@ -19,8 +19,8 @@
 }
 
 @keyframes shimmer {
-  0%        { left: -100%; }
-  55%, 100% { left: 150%; }
+  0%        { transform: translateX(-100%); }
+  55%, 100% { transform: translateX(250%); }
 }
 
 @keyframes slide-up {
@@ -99,10 +99,11 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 60%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: translateX(-100%);
   animation: shimmer 3s ease-in-out infinite;
 }
 
@@ -128,6 +129,21 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *:not(.gp):not(.gs):not(.lp):not(.bg-grid):not(.hero-aurora):not(.hero-orb), *:not(.gp):not(.gs):not(.lp):not(.bg-grid):not(.hero-aurora):not(.hero-orb)::before, *:not(.gp):not(.gs):not(.lp):not(.bg-grid):not(.hero-aurora):not(.hero-orb)::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-  .gp, .gs, .lp, .bg-grid, .hero-aurora, .hero-orb { animation-duration: 6s !important; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .global-particles,
+  .global-stars,
+  .bg-grid,
+  .local-particles,
+  .nebula-wrap,
+  .hero-aurora,
+  .hero-orb {
+    display: none !important;
+  }
 }

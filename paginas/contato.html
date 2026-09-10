@@ -89,12 +89,21 @@
       var btn = form.querySelector('button[type="submit"]');
       form.addEventListener('submit', function(e){
       e.preventDefault();
-      var fd = new FormData(form);
-      if(!fd.get('name') || !fd.get('email') || !fd.get('message')){ status.textContent='Preencha todos os campos.'; status.style.color='var(--error)'; return; }
-      status.textContent='Mensagem pronta para envio. Em breve com envio automático.';
-      status.style.color='var(--success)';
-      btn.disabled=true;
-      setTimeout(function(){ btn.disabled=false; form.reset(); status.textContent=''; }, 2000);
+      var name = (form.elements.name && form.elements.name.value || '').trim();
+      var email = (form.elements.email && form.elements.email.value || '').trim();
+      var message = (form.elements.message && form.elements.message.value || '').trim();
+      if(!name || !email || !message){
+        status.textContent = 'Preencha todos os campos.';
+        status.style.color = 'var(--error)';
+        return;
+      }
+      var subject = encodeURIComponent('Contato portfólio — ' + name);
+      var body = encodeURIComponent('Nome: ' + name + '\nE-mail: ' + email + '\n\n' + message);
+      status.textContent = 'Abrindo seu app de e-mail...';
+      status.style.color = 'var(--success)';
+      btn.disabled = true;
+      window.location.href = 'mailto:lukastavaresmattos96@gmail.com?subject=' + subject + '&body=' + body;
+      setTimeout(function(){ btn.disabled = false; }, 1500);
       });
       })();
       </script>

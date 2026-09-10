@@ -12,16 +12,18 @@
 }
 .gp {
   position: absolute;
+  bottom: -4%;
   border-radius: 50%;
   animation: gpFloat linear infinite;
   opacity: 0;
-  will-change: transform, opacity;
 }
-.gp.g { background: rgba(8,145,178,.42); box-shadow: 0 0 8px rgba(8,145,178,.28); }
-.gp.w { background: rgba(255,255,255,.28); box-shadow: 0 0 5px rgba(255,255,255,.18); }
+.gp.g { background: rgba(8,145,178,.42); }
+.gp.w { background: rgba(255,255,255,.28); }
 .gp.d { background: rgba(8,145,178,.20); }
-.gp.c { background: rgba(6,182,212,.36); box-shadow: 0 0 7px rgba(6,182,212,.24); }
-.gp.b { background: rgba(96,165,250,.18); box-shadow: 0 0 5px rgba(96,165,250,.12); }
+.gp.c { background: rgba(6,182,212,.36); }
+.gp.b { background: rgba(96,165,250,.18); }
+/* Cap animated particles — extras stay in DOM but cost nothing */
+.gp:nth-child(n+13) { display: none; }
 
 /* 30 particles - distribuição uniforme, tamanhos 1px a 3.5px, durações 15s a 35s */
 .gp:nth-child(1)  { left: 4%;   width: 2px; height: 2px; animation-duration: 24s; animation-delay: 0s; }
@@ -78,12 +80,12 @@
 .gp:nth-child(n+51) { display: none; }
 
 @keyframes gpFloat {
-  0% { bottom: -4%; opacity: 0; transform: translateX(0) scale(1); }
-  8% { opacity: .52; transform: translateX(6px) scale(1.12); }
-  25% { transform: translateX(18px) scale(1); opacity: .36; }
-  50% { transform: translateX(-12px) scale(.92); opacity: .44; }
-  92% { opacity: .09; }
-  100% { bottom: 104%; opacity: 0; transform: translateX(-8px); }
+  0% { opacity: 0; transform: translate3d(0, 0, 0) scale(1); }
+  8% { opacity: .45; transform: translate3d(6px, -12vh, 0) scale(1.08); }
+  25% { opacity: .32; transform: translate3d(14px, -30vh, 0) scale(1); }
+  50% { opacity: .38; transform: translate3d(-10px, -58vh, 0) scale(.94); }
+  92% { opacity: .08; }
+  100% { opacity: 0; transform: translate3d(-6px, -110vh, 0) scale(1); }
 }
 
 /* BACKGROUND GRID sutil ciano */
@@ -97,12 +99,8 @@
     linear-gradient(rgba(8,145,178,0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(8,145,178,0.035) 1px, transparent 1px);
   background-size: 42px 42px;
-  animation: gridMove 22s linear infinite;
 }
-@keyframes gridMove {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(42px); }
-}
+.fx-lite .bg-grid { display: none; }
 
 /* AURORA ciano-hero */
 .hero-aurora {
@@ -117,15 +115,10 @@
     radial-gradient(ellipse 45% 55% at 28% 22%, rgba(6,182,212,0.09), transparent 60%),
     radial-gradient(ellipse 42% 50% at 72% 78%, rgba(8,145,178,0.07), transparent 60%),
     radial-gradient(ellipse 35% 40% at 55% 45%, rgba(14,165,233,0.05), transparent 65%);
-  filter: blur(18px);
-  animation: auroraFloat 16s ease-in-out infinite alternate;
-  will-change: transform, opacity;
+  /* Soft gradients only — live blur on a large layer was a major lag source */
+  opacity: 0.95;
 }
-@keyframes auroraFloat {
-  0% { transform: translateX(0) translateY(0) scale(1); opacity: 0.9; }
-  50% { transform: translateX(18px) translateY(-10px) scale(1.04); opacity: 1; }
-  100% { transform: translateX(-12px) translateY(8px) scale(0.98); opacity: 0.85; }
-}
+.fx-lite .hero-aurora { display: none; }
 
 
 /* GLOBAL STARS - estrelas piscando estilo céu - 25 estrelas */
@@ -139,14 +132,13 @@
 .gs {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 0 6px rgba(165,243,252,0.8), 0 0 10px rgba(6,182,212,0.4);
+  background: rgba(255,255,255,0.85);
   animation: starTwinkle ease-in-out infinite;
-  will-change: opacity;
 }
-.gs.cyan { background: rgba(165,243,252,0.85); box-shadow: 0 0 6px rgba(165,243,252,0.7); }
-.gs.white { background: rgba(255,255,255,0.95); box-shadow: 0 0 5px rgba(255,255,255,0.6); }
-.gs.dim { background: rgba(165,243,252,0.5); box-shadow: 0 0 4px rgba(165,243,252,0.4); }
+.gs.cyan { background: rgba(165,243,252,0.8); }
+.gs.white { background: rgba(255,255,255,0.9); }
+.gs.dim { background: rgba(165,243,252,0.45); }
+.gs:nth-child(n+13) { display: none; }
 
 .gs:nth-child(1)  { left: 8%;  top: 12%; width: 1.8px; height: 1.8px; animation-duration: 2.8s; animation-delay: 0s; }
 .gs:nth-child(2)  { left: 18%; top: 24%; width: 1.2px; height: 1.2px; animation-duration: 3.2s; animation-delay: -0.7s; }
@@ -175,8 +167,8 @@
 .gs:nth-child(25) { left: 19%; top: 85%; width: 1px; height: 1px; animation-duration: 3.9s; animation-delay: -0.8s; }
 
 @keyframes starTwinkle {
-  0%, 100% { opacity: 0.15; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.15); }
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.85; }
 }
 .gs:nth-child(26) { left: 6%;  top: 78%; width: 1.6px; height: 1.6px; animation-duration: 3.4s; animation-delay: -0.9s; }
 .gs:nth-child(27) { left: 28%; top: 68%; width: 1.2px; height: 1.2px; animation-duration: 2.9s; animation-delay: -1.4s; }
@@ -195,29 +187,9 @@
 .gs:nth-child(40) { left: 95%; top: 92%; width: 1.4px; height: 1.4px; animation-duration: 2.8s; animation-delay: -1.5s; }
 
 /* NEBULOSAS, a partir de Explore para baixo */
-.section-nebula {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(28px);
-  opacity: 0.55;
-  animation: nebulaFloat 22s ease-in-out infinite alternate;
-  will-change: transform, opacity;
-}
-.nebula-cyan { background: radial-gradient(circle, rgba(6,182,212,0.14) 0%, transparent 70%); }
-.nebula-blue { background: radial-gradient(circle, rgba(96,165,250,0.12) 0%, transparent 70%); }
-.nebula-teal { background: radial-gradient(circle, rgba(8,145,178,0.10) 0%, transparent 70%); }
-@keyframes nebulaFloat {
-  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
-  50% { transform: translateY(-14px) translateX(10px) scale(1.04); opacity: 0.62; }
-  100% { transform: translateY(8px) translateX(-8px) scale(0.98); opacity: 0.48; }
-}
+.section-nebula,
 .nebula-wrap {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
+  display: none !important;
 }
 
 
@@ -247,7 +219,6 @@
   background: linear-gradient(180deg, transparent 0%, rgba(9,8,10,0.28) 42%, rgba(9,8,10,0.62) 75%, var(--dark) 100%);
   pointer-events: none;
   z-index: 5;
-  filter: blur(0.4px);
 }
 
 .section-divider {
@@ -266,7 +237,6 @@
   position: absolute;
   top: 50%; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent 0%, rgba(8,145,178,0.04) 18%, rgba(8,145,178,0.12) 50%, rgba(8,145,178,0.04) 82%, transparent 100%);
-  filter: blur(0.5px);
   opacity: 0.9;
 }
 .section-divider::after {
@@ -285,18 +255,9 @@
   background: linear-gradient(90deg, transparent 0%, rgba(8,145,178,0.05) 25%, rgba(8,145,178,0.09) 50%, rgba(8,145,178,0.05) 75%, transparent 100%);
   z-index: 1;
   opacity: 0.7;
-  filter: blur(0.3px);
 }
 .section-glow-line::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(8,145,178,0.18), transparent);
-  animation: shimmerLine 3.5s ease-in-out infinite;
-}
-@keyframes shimmerLine {
-  0% { left: -100%; }
-  55%, 100% { left: 150%; }
+  display: none;
 }
 .section-texture {
   position: absolute;
@@ -308,12 +269,15 @@
   z-index: 0;
 }
 
-/* ANDROID: reduz partículas em telas pequenas para performance */
-@media (max-width: 640px) {
-  /* mobile mantém 30 */
-  .bg-grid { opacity: 0.08; background-size: 32px 32px; }
-  /* mobile mantém estrelas visíveis */
-  .hero-aurora { filter: blur(12px); opacity: 0.7; }
+/* Mobile / lite: kill continuous FX */
+@media (max-width: 768px) {
+  .global-particles,
+  .global-stars,
+  .bg-grid,
+  .local-particles,
+  .hero-aurora {
+    display: none !important;
+  }
 }
 
 /* Garante que conteúdo fique acima das partículas globais mas partículas visíveis sobre fundos */
@@ -325,32 +289,5 @@
   position: relative;
   z-index: 4;
 }
-/* Partículas locais dentro de seções grandes/modais */
-.local-particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-  border-radius: inherit;
-}
-.local-particles .lp {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(8,145,178,0.18);
-  box-shadow: 0 0 6px rgba(8,145,178,0.12);
-  animation: lpFloat linear infinite;
-  opacity: 0;
-}
-.local-particles .lp:nth-child(1) { left: 12%; width: 2px; height: 2px; animation-duration: 18s; animation-delay: 0s; }
-.local-particles .lp:nth-child(2) { left: 34%; width: 1.5px; height: 1.5px; animation-duration: 22s; animation-delay: -4s; }
-.local-particles .lp:nth-child(3) { left: 56%; width: 2px; height: 2px; animation-duration: 16s; animation-delay: -2s; }
-.local-particles .lp:nth-child(4) { left: 78%; width: 1px; height: 1px; animation-duration: 26s; animation-delay: -7s; }
-.local-particles .lp:nth-child(5) { left: 88%; width: 1.8px; height: 1.8px; animation-duration: 20s; animation-delay: -5s; }
-@keyframes lpFloat {
-  0% { bottom: -4%; opacity: 0; transform: translateX(0); }
-  10% { opacity: .5; }
-  50% { transform: translateX(12px); opacity: .35; }
-  90% { opacity: .12; }
-  100% { bottom: 104%; opacity: 0; transform: translateX(-8px); }
-}
+/* Partículas locais desativadas por performance */
+.local-particles { display: none !important; }
