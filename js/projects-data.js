@@ -207,23 +207,23 @@ window.PROJECTS = [
  color: "#ef4444",
  destaque: true,
  private: true,
- links: { github: "", demo: "https://necromante96official.github.io/RPG-Skills-Site/", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/RPG-Skills-Site/", docs: "https://steamcommunity.com/workshop/filedetails/?id=3694501995" },
  thumb: "assets/img/rpg-skills-mod.webp",
  pt: {
  titulo: "RPG Skills Mod",
  resumo: "Transforma Necesse em um RPG com 33 classes, progressão e habilidades que evoluem com seu estilo de jogo.",
- descricao: "O RPG Skills Mod transforma o jogo Necesse em uma experiência de RPG mais completa. Adiciona 33 classes, progressão por níveis e habilidades que evoluem conforme seu estilo de jogo, com suporte a vários idiomas.\n\nFoi desenvolvido para ampliar a jogabilidade e oferecer novos desafios para quem já conhece o jogo. O código-fonte permanece privado; a vitrine pública e os guias estão no site oficial do mod.",
+ descricao: "O RPG Skills Mod transforma o jogo Necesse em uma experiência de RPG mais completa. Adiciona 33 classes, progressão por níveis e habilidades que evoluem conforme seu estilo de jogo, com suporte a vários idiomas.\n\nFoi desenvolvido para ampliar a jogabilidade e oferecer novos desafios para quem já conhece o jogo. O código-fonte permanece privado; a vitrine pública e os guias estão no site oficial do mod, e o download no Steam Workshop.",
  papel: "Solução que amplia o jogo com novas classes, níveis e habilidades, oferecendo mais opções e desafios.",
  techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
- resultados: ["v2.9 compatível com Necesse 1.3.3","18,5 mil downloads no Workshop (Steam)","457 favoritos • 143 avaliações"]
+ resultados: ["v2.9 compatível com Necesse 1.3.3","19,5 mil acessos • ~8 mil inscritos no Workshop (Steam)","499 favoritos • 157 avaliações"]
  },
  en: {
  titulo: "RPG Skills Mod",
- resumo: "Turn Necesse into a real RPG: 33 classes, 19 passives and XP that reacts to your style, 12 locales and 18.5k adventurers on Workshop.",
- descricao: "Pick Warrior, Mage, Ranger, Priest or Hybrid and climb to 165. Each class unlocks unique passives, the QoL shop and dynamic balancing keep the challenge just right.\n\n100% Java 17 with Gradle multi-module (ADRs + JUnit 5), no Kotlin, pure Necesse API to stay updated and smooth. Source stays private; the public showcase and guides live on the official mod site.",
+ resumo: "Turn Necesse into a real RPG: 33 classes, 19 passives and XP that reacts to your style, 12 locales and 19.5k adventurers on Workshop.",
+ descricao: "Pick Warrior, Mage, Ranger, Priest or Hybrid and climb to 165. Each class unlocks unique passives, the QoL shop and dynamic balancing keep the challenge just right.\n\n100% Java 17 with Gradle multi-module (ADRs + JUnit 5), no Kotlin, pure Necesse API to stay updated and smooth. Source stays private; the public showcase and guides live on the official mod site, with downloads on the Steam Workshop.",
  papel: "100% Java 17 development, multi-module Gradle architecture, Necesse API, RPG progression system, game balancing and localization for 12 languages. Java code with JUnit tests and optimized Gradle build.",
  techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
- resultados: ["v2.9 compatible with Necesse 1.3.3","18.5k downloads on Workshop (Steam)","457 favs • 143 ratings"]
+ resultados: ["v2.9 compatible with Necesse 1.3.3","19.5k unique visitors • ~8k subscribers on Workshop (Steam)","499 favs • 157 ratings"]
  }
  },
  {
@@ -286,19 +286,19 @@ color: "#d4881c",
     thumb: "assets/img/forbidden-legacy.webp",
     pt: {
       titulo: "Forbidden Legacy",
-      resumo: "Remake fã espiritual de Yu-Gi-Oh! Forbidden Memories, reconstruído do zero por Felipe França / Trager Games (com minha atuação como dev). 900+ cartas, 29 NPCs com IA e decks próprios, Season 1 completa, Beta 1.8.2 para PC/Android com launcher, boosters, torneios e Full Arts.",
-      descricao: "Forbidden Legacy é um remake feito por fãs do clássico Yu-Gi-Oh! Forbidden Memories. Reconstruído do zero, traz mais de 900 cartas, 29 oponentes com estratégias próprias, campanha completa e suporte para PC e Android.\n\nMantém a essência do jogo original, mas com melhorias visuais, novos modos e conteúdo adicional para quem é fã da série. Atualmente colaboro com a Trager Games no ecossistema do jogo, auxiliando em ferramentas e sistemas que mantêm o projeto em evolução.",
+      resumo: "Remake fã espiritual de Yu-Gi-Oh! Forbidden Memories, reconstruído do zero por Felipe França / Trager Games (com minha atuação como dev). 1.100+ cartas, 33 NPCs com IA e decks próprios, Season 1 + Season 2, Beta 1.9.1 para PC/Android com launcher, boosters, torneios e Full Arts.",
+      descricao: "Forbidden Legacy é um remake feito por fãs do clássico Yu-Gi-Oh! Forbidden Memories. Reconstruído do zero, traz mais de 1.100 cartas, 33 oponentes com estratégias próprias, Season 1 completa, Season 2 em andamento para Founders e suporte para PC e Android.\n\nMantém a essência do jogo original, com fusão fiel ao FM, banlist por grupos, loja, Deck Builder, Championship e interface reformulada. Atualmente colaboro com a Trager Games no ecossistema do jogo, auxiliando em ferramentas e sistemas que mantêm o projeto em evolução.",
       papel: "Colaboração no ecossistema do jogo, auxiliando em ferramentas e sistemas que mantêm o projeto em evolução para PC e Android.",
       techs: ["Godot 4", "GDScript/GDRE", "C# .NET 9", "Avalonia 11.2.5", "TypeScript", "PC/Android", "Launcher"],
-      resultados: ["Beta 1.8.2 com 900+ cartas e 29 NPCs", "Launcher PC com patches incrementais", "Torneio Championship com Full Arts", "Comunidade Discord ativa e Founder vitalício"]
+      resultados: ["Beta 1.9.1 com 1.100+ cartas e 33 NPCs", "Season 1 completa + Season 2 (Founders)", "Launcher PC/Linux + APK Android", "Comunidade Discord ativa e Founder vitalício"]
     },
     en: {
       titulo: "Forbidden Legacy",
-      resumo: "Spiritual fan remake of Yu-Gi-Oh! Forbidden Memories, rebuilt from scratch by Felipe França / Trager Games (with my dev contribution). 900+ cards, 29 NPCs with AI decks, Season 1, Beta 1.8.2 for PC/Android with launcher, boosters, tournaments and Full Arts.",
-      descricao: "The PS1 classic you loved, with everything it should have had: FM-faithful fusion, campaign with real drama, opponent AI, group banlist, reworked shop, Deck Builder, Catalog, Achievements, Championship and interface fully redesigned for PC and Android. 900+ cards, 29 NPCs (Simon Muran to Zorc), arenas like Skyscraper and Yami, Full Arts and 4 languages. Free up to Isis, Founder unlocks all (Akhenaden, High Mages, Sebek, Labyrinth, Heishin, Zorc) with full Season 1 and Season 2 early access.\n\nCurrently working as developer helping Trager Games: I contribute to the game ecosystem via Patch Manager (AES overlays for Godot PCK v4) and Deck Building System (TypeScript pipeline cataloging 200+ cards). Direct download with no install: launcher for Windows/Linux (incremental updates) and APK for Android (armeabi-v7a/arm64-v8a, OpenGL ES 3.0, 3GB RAM). Active Discord community with changelog, tournaments and support, Founder $20 / R$ 39.90 via PIX, card and Stripe.",
-      papel: "Collaborating developer at Trager Games: ecosystem support for Forbidden Legacy with C# .NET 9 + Avalonia and Python tooling (Godot PCK v4, pycryptodome), TypeScript card pipeline and web integration (forbiddenlegacy.com.br). Direct contribution keeping Beta 1.8.2 stable on PC/Android.",
+      resumo: "Spiritual fan remake of Yu-Gi-Oh! Forbidden Memories, rebuilt from scratch by Felipe França / Trager Games (with my dev contribution). 1,100+ cards, 33 NPCs with AI decks, Season 1 + Season 2, Beta 1.9.1 for PC/Android with launcher, boosters, tournaments and Full Arts.",
+      descricao: "The PS1 classic you loved, with everything it should have had: FM-faithful fusion, campaign with real drama, opponent AI, group banlist, reworked shop, Deck Builder, Catalog, Achievements, Championship and interface fully redesigned for PC and Android. 1,100+ cards, 33 NPCs, arenas like Skyscraper and Yami, Full Arts and multilingual UI. Free up to Isis; Founder unlocks all (Akhenaden, High Mages, Sebek, Labyrinth, Heishin, Zorc) with full Season 1 and Season 2 access.\n\nCurrently working as developer helping Trager Games: I contribute to the game ecosystem via Patch Manager (AES overlays for Godot PCK v4) and Deck Building System (TypeScript pipeline cataloging 200+ cards). Direct download with no install: launcher for Windows/Linux (incremental updates) and APK for Android (armeabi-v7a/arm64-v8a, OpenGL ES 3.0). Active Discord community with changelog, tournaments and support.",
+      papel: "Collaborating developer at Trager Games: ecosystem support for Forbidden Legacy with C# .NET 9 + Avalonia and Python tooling (Godot PCK v4, pycryptodome), TypeScript card pipeline and web integration (forbiddenlegacy.com.br). Direct contribution keeping Beta 1.9.1 stable on PC/Android.",
       techs: ["Godot 4", "GDScript/GDRE", "C# .NET 9", "Avalonia 11.2.5", "TypeScript", "PC/Android", "Launcher"],
-      resultados: ["Beta 1.8.2 with 900+ cards and 29 NPCs", "PC launcher with incremental patches", "Championship Tournament with Full Arts", "Active Discord community and lifetime Founder"]
+      resultados: ["Beta 1.9.1 with 1,100+ cards and 33 NPCs", "Full Season 1 + Season 2 (Founders)", "PC/Linux launcher + Android APK", "Active Discord community and lifetime Founder"]
     }
   },
  {

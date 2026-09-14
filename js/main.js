@@ -489,6 +489,7 @@
       if (/curseforge/i.test(url)) return 'CurseForge';
       if (/discord/i.test(url)) return 'Discord';
       if (/nexusmods/i.test(url)) return 'Nexus Mods';
+      if (/steamcommunity\.com\/workshop/i.test(url)) return 'Steam Workshop';
       return dict['projects.detail.docs'] || (currentLang === 'en' ? 'More info' : 'Saiba mais');
     }
     if (demoHref) {
