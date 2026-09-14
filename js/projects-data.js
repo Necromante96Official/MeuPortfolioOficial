@@ -7,7 +7,7 @@ window.PROJECTS = [
  color: "#60a5fa",
  destaque: true,
  private: false,
- links: { github: "", demo: "https://necromante96official.github.io/FisioHub/", docs: "" },
+ links: { github: "https://github.com/Necromante96Official/FisioHub", demo: "https://necromante96official.github.io/FisioHub/", docs: "" },
  thumb: "assets/img/fisiohub.webp",
  pt: {
  titulo: "FisioHub",
@@ -106,7 +106,7 @@ window.PROJECTS = [
  color: "#22c55e",
  destaque: true,
  private: false,
- links: { github: "", demo: "https://necromante96official.github.io/ControleFinanceiroOficial/", docs: "" },
+ links: { github: "https://github.com/Necromante96Official/ControleFinanceiroOficial", demo: "https://necromante96official.github.io/ControleFinanceiroOficial/", docs: "" },
  thumb: "assets/img/controle-financeiro.webp",
  pt: {
  titulo: "Controle Financeiro",
@@ -139,7 +139,7 @@ window.PROJECTS = [
  descricao: "O Nexus Translator é uma ferramenta criada para facilitar a tradução de jogos e modificações para o português. Ele analisa e organiza os textos de jogos como Stardew Valley e Hytale, preparando tudo para um processo de tradução mais consistente e natural, com apoio de glossários e revisão para manter o sentido e o estilo original.",
  papel: "Solução que organiza e prepara textos de jogos para tradução, cuidando da consistência e da qualidade do resultado.",
  techs: ["TypeScript 5.5","Python 3.10","Node 20","esbuild","Cursor SDK","UnityPy"],
- resultados: ["6.3.5 estável, 31 módulos","Stardew + Hytale + Unreal + Unity","Base para pack 12 idiomas RPG Skills"]
+ resultados: ["6.3.6 estável, 31 módulos","Stardew + Hytale + Unreal + Unity","Base para pack 12 idiomas RPG Skills"]
  },
  en: {
  titulo: "Nexus Translator",
@@ -147,7 +147,7 @@ window.PROJECTS = [
  descricao: "Under the hood, 31 modules (82% TypeScript, Python/UnityPy, Shell) detect Unity Mono/IL2CPP and Unreal packages, bridge NexusMods + Cursor Auto and handle glossaries.\n\nYou watch live progress, build optimized ZIPs and trust human+AI LQA (Cursor/Ollama) for natural dialogues, from JSON to binaries, charm intact.",
  papel: "Main architecture in TypeScript with Node, Python automation for UnityPy/Unreal, LQA pipelines and ZIP generation for Stardew, Hytale, Unreal and Unity. Reviewed code with esbuild and Cursor SDK.",
  techs: ["TypeScript 5.5","Python 3.10","Node 20","esbuild","Cursor SDK","UnityPy"],
- resultados: ["Stable 6.3.5, 31 modules","Stardew + Hytale + Unreal + Unity","Powers 12-language RPG Skills pack"]
+ resultados: ["Stable 6.3.6, 31 modules","Stardew + Hytale + Unreal + Unity","Powers 12-language RPG Skills pack"]
  }
  },
  {
@@ -189,7 +189,7 @@ window.PROJECTS = [
  descricao: "O RPG Skills Mod transforma o jogo Necesse em uma experiência de RPG mais completa. Adiciona 33 classes, progressão por níveis e habilidades que evoluem conforme seu estilo de jogo, com suporte a vários idiomas.\n\nFoi desenvolvido para ampliar a jogabilidade e oferecer novos desafios para quem já conhece o jogo.",
  papel: "Solução que amplia o jogo com novas classes, níveis e habilidades, oferecendo mais opções e desafios.",
  techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
- resultados: ["v2.7 compatível com Necesse 1.3.2","18,5 mil downloads no Workshop (Steam)","457 favoritos • 143 avaliações"]
+ resultados: ["v2.9 compatível com Necesse 1.3.3","18,5 mil downloads no Workshop (Steam)","457 favoritos • 143 avaliações"]
  },
  en: {
  titulo: "RPG Skills Mod",
@@ -197,7 +197,7 @@ window.PROJECTS = [
  descricao: "Pick Warrior, Mage, Ranger, Priest or Hybrid and climb to 165. Each class unlocks unique passives, the QoL shop and dynamic balancing keep the challenge just right.\n\n100% Java 17 with Gradle multi-module (ADRs + JUnit 5), no Kotlin, pure Necesse API to stay updated and smooth.",
  papel: "100% Java 17 development, multi-module Gradle architecture, Necesse API, RPG progression system, game balancing and localization for 12 languages. Java code with JUnit tests and optimized Gradle build.",
  techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
- resultados: ["v2.7 compatible with Necesse 1.3.2","18.5k downloads on Workshop (Steam)","457 favs • 143 ratings"]
+ resultados: ["v2.9 compatible with Necesse 1.3.3","18.5k downloads on Workshop (Steam)","457 favs • 143 ratings"]
  }
  },
  {
@@ -206,7 +206,7 @@ window.PROJECTS = [
  color: "#d4881c",
  destaque: false,
  private: false,
- links: { github: "", demo: "https://necromante96official.github.io/RPG-Skills-Site/", docs: "" },
+ links: { github: "https://github.com/Necromante96Official/RPG-Skills-Site", demo: "https://necromante96official.github.io/RPG-Skills-Site/", docs: "" },
  thumb: "assets/img/rpg-skills-site.webp",
  pt: {
  titulo: "RPG Skills Site",
@@ -214,15 +214,15 @@ window.PROJECTS = [
  descricao: "O RPG Skills Site é o site oficial do mod RPG Skills. Apresenta todas as informações sobre classes, progressão e atualizações de forma organizada e visualmente atraente, com suporte a dois idiomas e navegação simples.\n\nServe como vitrine para quem quer conhecer o mod antes de jogar.",
  papel: "Site organizado e visualmente cuidado para apresentar o projeto de forma clara e acessível.",
  techs: ["HTML5","CSS3","JavaScript vanilla","i18n vanilla","GitHub Pages"],
- resultados: ["Hub com 11 páginas responsivas","Hero premium com animações","Bilíngue instantâneo PT/EN"]
+ resultados: ["Hub com 13 páginas responsivas","Hero premium com animações","Bilíngue instantâneo PT/EN"]
  },
  en: {
  titulo: "RPG Skills Site",
- resumo: "The showcase that sells the mod: 100% vanilla premium site, 11 pages with orb hero and instant PT/EN switch, no framework, no bloat.",
+ resumo: "The showcase that sells the mod: 100% vanilla premium site, 13 pages with orb hero and instant PT/EN switch, no framework, no bloat.",
  descricao: "Semantic HTML5 + 10 CSS layers (tokens→polish) + IIFE JS with IntersectionObserver. Browse Progression, Classes, Passives and Changelog with smooth animations.\n\nLive on GitHub Pages with .nojekyll, solid SEO and fully responsive, well-crafted vanilla that shines.",
  papel: "100% semantic HTML5, CSS3 with design tokens and vanilla JavaScript IIFE development. Framework-free code, with vanilla i18n, IntersectionObserver for lazy load and GitHub Pages deploy.",
  techs: ["HTML5","CSS3","JavaScript vanilla","i18n vanilla","GitHub Pages"],
- resultados: ["11-page responsive hub","Premium hero with animations","Instant bilingual PT/EN"]
+ resultados: ["13-page responsive hub","Premium hero with animations","Instant bilingual PT/EN"]
  }
  },
  {
@@ -281,7 +281,7 @@ color: "#d4881c",
  color: "#c8973a",
  destaque: false,
  private: false,
- links: { github: "", demo: "https://necromante96official.github.io/DeckBuildingSystem/", docs: "" },
+ links: { github: "https://github.com/Necromante96Official/DeckBuildingSystem", demo: "https://necromante96official.github.io/DeckBuildingSystem/", docs: "" },
  thumb: "assets/img/deck-building.webp",
  pt: {
  titulo: "Deck Building System",
@@ -289,7 +289,7 @@ color: "#d4881c",
  descricao: "O Deck Building System ajuda a organizar e equilibrar coleções de cartas do Forbidden Legacy. Ele cataloga mais de 200 cartas por nível e estilo de jogo, facilitando a criação de decks equilibrados e a visualização de todas as opções disponíveis, com publicação automática para consulta.",
  papel: "Solução que organiza e equilibra coleções de cartas para facilitar a criação de decks.",
  techs: ["TypeScript 5.8","Node 22","esbuild","SheetJS","GitHub Pages"],
- resultados: ["200+ cartas webp otimizadas","Pipeline strict TypeScript validado","Publicação automática em GitHub Pages"]
+ resultados: ["v0.2.0 com 200+ cartas webp otimizadas","Pipeline strict TypeScript validado","Publicação automática em GitHub Pages"]
  },
  en: {
  titulo: "Deck Building System",
@@ -297,7 +297,7 @@ color: "#d4881c",
  descricao: "XLSX ingest via SheetJS, effect analysis and inventory validation, all in strict TypeScript (Node 22 + esbuild) with optimized webp sync.\n\nThe builder checks synergies, balances costs by rarity (Common→Legendary) and generates browsable indexes. No loose JS, just types: total confidence.",
  papel: "95% strict TypeScript development with Node.js, TypeScript pipelines with data ingest, validation and build, and GitHub Pages publisher. Fully typed code with esbuild.",
  techs: ["TypeScript 5.8","Node 22","esbuild","SheetJS","GitHub Pages"],
- resultados: ["200+ optimized webp cards","Strict validated TypeScript pipeline","Automated GitHub Pages publishing"]
+ resultados: ["v0.2.0 with 200+ optimized webp cards","Strict validated TypeScript pipeline","Automated GitHub Pages publishing"]
  }
  },
  {
@@ -314,15 +314,15 @@ color: "#d4881c",
  descricao: "Ancient Souls é um jogo de RPG em estilo clássico, com inspiração nos JRPGs tradicionais. Combina exploração em visão superior, batalhas em visão lateral, narrativa e progressão de personagens, oferecendo mais de 30 horas de aventura em um mundo medieval repleto de detalhes.",
  papel: "Jogo pensado para oferecer uma aventura completa, com exploração, combates e progressão bem equilibrados.",
  techs: ["JavaScript ES6","RPG Maker MZ 1.10","NW.js","CSS3","HTML5"],
- resultados: ["Engine custom completa 100% JS","500+ assets proprietários","12+ plugins AS_* com 30+ horas de gameplay"]
+ resultados: ["Engine custom completa 100% JS","500+ assets proprietários","19 plugins AS_* com 30+ horas de gameplay"]
  },
  en: {
  titulo: "Ancient Souls",
- resumo: "Enter The Chronicles of Ancient Souls: 100% JS 2D medieval JRPG, 30+ hours and 12 author plugins that change everything.",
+ resumo: "Enter The Chronicles of Ancient Souls: 100% JS 2D medieval JRPG, 30+ hours and 19 author plugins that change everything.",
  descricao: "RPG Maker MZ 1.10 + NW.js with no TypeScript: AS_0.0 Orchestrator, Title, Battle and more, each with custom HTML/CSS isolated screen and fluid combat.\n\nDive into 500+ tilesets, sprites and tracks, with advanced menu, persistent save and full gamepad, from village to final boss, your choices matter.",
  papel: "100% ES6 JavaScript game design, extensible plugin architecture in pure JS, level design with complex maps and RPG balancing. Modular JS code with premium CSS and NW.js as wrapper.",
  techs: ["JavaScript ES6","RPG Maker MZ 1.10","NW.js","CSS3","HTML5"],
- resultados: ["Full 100% JS custom engine","500+ proprietary assets","12+ AS_* plugins with 30+ hours of gameplay"]
+ resultados: ["Full 100% JS custom engine","500+ proprietary assets","19 AS_* plugins with 30+ hours of gameplay"]
  }
  },
  {
@@ -339,7 +339,7 @@ color: "#d4881c",
  descricao: "O OBS Overlay Timer é uma ferramenta para quem grava ou transmite com o OBS Studio. Mostra um cronômetro na sua tela que não aparece na gravação final, ajudando a controlar o tempo de forma discreta.\n\nIdeal para manter o foco no conteúdo sem se preocupar com a edição depois.",
  papel: "Ferramenta discreta que ajuda no controle de tempo sem interferir na gravação.",
  techs: ["Python 3.10","C++17","CMake","Qt6","OBS WebSocket 5"],
- resultados: ["3 modos funcionais: Python, C++, Dock","Totalmente excluído do vídeo via WDA_EXCLUDE","Live para streamers Windows 10+"]
+ resultados: ["3 modos: Python, plugin C++/Qt6, Browser Dock","OBS 28+ / Windows 10+, WDA_EXCLUDE","Live para streamers"]
  },
  en: {
  titulo: "OBS Overlay: Timer Action!",
@@ -347,7 +347,7 @@ color: "#d4881c",
  descricao: "Three ways: pure Python overlay (Tkinter + obs-websocket), native C++17 plugin (CMake/Qt6/libobs) or HTML/JS Dock. Sync via WDA_EXCLUDEFROMCAPTURE (Win32).\n\nMillisecond precision, free hotkeys and OBS 28+ on Windows 10 2004+, focus on content, not editing.",
  papel: "50% Python 3.10 development with obs-websocket and Tkinter, and 50% C++17 with CMake, Qt6 and libobs. Python code for overlay and native C++ for plugin with Win32 API.",
  techs: ["Python 3.10","C++17","CMake","Qt6","OBS WebSocket 5"],
- resultados: ["3 functional modes: Python, C++, Dock","Completely excluded from video via WDA_EXCLUDE","Live for Windows 10+ streamers"]
+ resultados: ["3 modes: Python, C++/Qt6 plugin, Browser Dock","OBS 28+ / Windows 10+, WDA_EXCLUDE","Live for Windows streamers"]
  }
  },
  {
