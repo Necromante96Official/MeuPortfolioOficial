@@ -110,7 +110,8 @@
         '{{CONTATO}}': b + 'paginas/contato.html',
         '{{FISIOHUB}}': b + 'projetos-site/fisiohub.html',
         '{{RPGMOD}}': b + 'projetos-site/rpg-skills-mod.html',
-        '{{TRADUCOES}}': b + 'projetos-site/traducoes-jogos-mods.html'
+        '{{TRADUCOES}}': b + 'projetos-site/traducoes-jogos-mods.html',
+        '{{ASSET_BASE}}': b
       };
       for (var k in map) html = html.split(k).join(map[k]);
       el.innerHTML = html;
@@ -131,7 +132,12 @@
           };
           if (closeBtn) closeBtn.addEventListener('click', closeM);
           mobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeM); });
+          document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape' && mobile.classList.contains('open')) closeM();
+          });
         }
+        // Rebind language buttons injected via partials
+        if (typeof window.bindLangButtons === 'function') window.bindLangButtons();
       } catch (e) {}
     }).catch(function(){ /* silent fallback */ });
   }

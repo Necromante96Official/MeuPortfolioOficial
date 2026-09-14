@@ -21,30 +21,38 @@
 .mobile-toggle:active { background: rgba(8,145,178,0.10); }
 
 .mobile-nav {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: calc(var(--z-nav) - 1);
+  z-index: calc(var(--z-nav) + 20);
   background: rgba(10, 10, 15, 0.98);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--space-xl);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity var(--transition-base);
+  transition:
+    opacity var(--nav-duration, 0.38s) var(--nav-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform var(--nav-duration, 0.38s) var(--nav-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    visibility 0s linear var(--nav-duration, 0.38s);
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav.open {
-  display: flex;
   opacity: 1;
+  visibility: visible;
   pointer-events: all;
+  transition:
+    opacity var(--nav-duration, 0.38s) var(--nav-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform var(--nav-duration, 0.38s) var(--nav-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    visibility 0s linear 0s;
 }
 
 .mobile-nav a {

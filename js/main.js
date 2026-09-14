@@ -65,9 +65,21 @@
  });
  }
 
+ function safeGetLang() {
+ try {
+   var saved = localStorage.getItem(STORAGE_KEY);
+   if (saved === 'en' || saved === 'pt-BR') return saved;
+ } catch (e) {}
+ return null;
+ }
+
+ function safeSetLang(lang) {
+ try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+ }
+
  function detectLang() {
- var saved = localStorage.getItem(STORAGE_KEY);
- if (saved === 'en' || saved === 'pt-BR') return saved;
+ var saved = safeGetLang();
+ if (saved) return saved;
  var nav = navigator.language || '';
  return nav.startsWith('en') ? 'en' : 'pt-BR';
  }
@@ -101,7 +113,7 @@
  function setLang(lang) {
  if (!I18N || !I18N[lang]) return;
  currentLang = lang;
- localStorage.setItem(STORAGE_KEY, lang);
+ safeSetLang(lang);
  document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
  document.querySelectorAll('.lang-option').forEach(function(b){
  b.classList.toggle('active', b.getAttribute('data-lang')===lang);
@@ -138,17 +150,67 @@
 
   // PAGE TRANSITIONS, entrada e saida suaves
   (function(){
+    var NAV_KEY = 'portfolio-page-nav';
+    var EXIT_MS = 380;
+    var ENTER_MS = 420;
+    var reduced = false;
+    try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e) {}
+
     var overlay = document.getElementById('page-transition');
     if(!overlay){
       overlay = document.createElement('div');
       overlay.id = 'page-transition';
+      overlay.setAttribute('aria-hidden', 'true');
       document.body.appendChild(overlay);
     }
-    document.body.classList.add('page-enter');
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){ document.body.classList.remove('page-enter'); });
-    });
+
+    var fromNav = false;
+    try { fromNav = sessionStorage.getItem(NAV_KEY) === '1'; sessionStorage.removeItem(NAV_KEY); } catch(e) {}
+
+    var finishEnter = function(){
+      document.body.classList.remove('page-enter');
+      document.body.classList.add('page-enter-done');
+      overlay.classList.remove('active', 'arrive', 'leave');
+      setTimeout(function(){ document.body.classList.remove('page-enter-done'); }, 50);
+    };
+
+    if (reduced) {
+      finishEnter();
+    } else if (fromNav) {
+      // Chegada após navegação interna: overlay cobre e sai
+      overlay.classList.add('arrive');
+      document.body.classList.add('page-enter');
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          overlay.classList.add('leave');
+          document.body.classList.remove('page-enter');
+          setTimeout(function(){
+            overlay.classList.remove('arrive', 'leave');
+            document.body.classList.add('page-enter-done');
+            setTimeout(function(){ document.body.classList.remove('page-enter-done'); }, 50);
+          }, ENTER_MS);
+        });
+      });
+    } else {
+      // Primeiro load / refresh: sem esconder o body (evita flash)
+      document.body.classList.add('page-enter-done');
+    }
+
     var navigating = false;
+    var navigateTo = function(href){
+      if (navigating) return;
+      navigating = true;
+      try { sessionStorage.setItem(NAV_KEY, '1'); } catch(e) {}
+      if (reduced) {
+        location.href = href;
+        return;
+      }
+      document.body.classList.add('page-exit');
+      overlay.classList.remove('arrive', 'leave');
+      overlay.classList.add('active');
+      setTimeout(function(){ location.href = href; }, EXIT_MS);
+    };
+
     document.addEventListener('click', function(e){
       if (navigating) return;
       if (e.defaultPrevented) return;
@@ -165,26 +227,28 @@
       var url;
       try{ url = new URL(href, location.href); } catch(err){ return; }
       if(url.pathname === location.pathname && url.search === location.search && url.hash) return;
-      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var go = function(){
-        navigating = true;
-        document.body.classList.add('page-exit');
-        overlay.classList.add('active');
-        setTimeout(function(){ location.href = a.href; }, 180);
-      };
-      var isMobileNav = a.closest('.mobile-nav');
+
       e.preventDefault();
+      var isMobileNav = a.closest('.mobile-nav');
       if(isMobileNav) {
-        setTimeout(go, 120);
+        // deixa o menu fechar um pouco antes da saída
+        var mobileEl = document.querySelector('.mobile-nav');
+        if (mobileEl) mobileEl.classList.remove('open');
+        document.body.style.overflow = '';
+        var toggleEl = document.querySelector('.mobile-toggle');
+        if (toggleEl) toggleEl.setAttribute('aria-expanded', 'false');
+        setTimeout(function(){ navigateTo(a.href); }, reduced ? 0 : 160);
         return;
       }
-      go();
+      navigateTo(a.href);
     }, true);
+
     window.addEventListener('pageshow', function(ev){
       navigating = false;
       if(ev.persisted){
-        document.body.classList.remove('page-exit');
-        overlay.classList.remove('active');
+        document.body.classList.remove('page-exit', 'page-enter');
+        overlay.classList.remove('active', 'arrive', 'leave');
+        document.body.style.opacity = '';
       }
     });
   })();
@@ -194,16 +258,44 @@
   var mobile = document.querySelector('.mobile-nav');
   var closeBtn = document.querySelector('.mobile-nav-close');
   if (toggle && mobile) {
-  toggle.addEventListener('click', function(){ mobile.classList.add('open'); document.body.style.overflow='hidden'; toggle.setAttribute('aria-expanded','true'); });
-  var closeM = function(){ mobile.classList.remove('open'); document.body.style.overflow=''; if (toggle) toggle.setAttribute('aria-expanded','false'); };
+  if (!toggle.hasAttribute('aria-label')) toggle.setAttribute('aria-label', 'Menu');
+  if (closeBtn && !closeBtn.hasAttribute('aria-label')) closeBtn.setAttribute('aria-label', 'Fechar');
+
+  var openM = function(){
+    mobile.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    toggle.setAttribute('aria-expanded', 'true');
+    if (closeBtn) {
+      try { closeBtn.focus(); } catch(e) {}
+    }
+  };
+  var closeM = function(){
+    if (!mobile.classList.contains('open')) return;
+    mobile.classList.remove('open');
+    document.body.style.overflow = '';
+    toggle.setAttribute('aria-expanded', 'false');
+    try { toggle.focus(); } catch(e) {}
+  };
+
+  toggle.addEventListener('click', function(){
+    if (mobile.classList.contains('open')) closeM();
+    else openM();
+  });
   if (closeBtn) closeBtn.addEventListener('click', closeM);
-  mobile.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeM); });
-  // fecha ao clicar no backdrop (fora do menu)
+  mobile.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeM(); });
+  });
   mobile.addEventListener('click', function(e){ if(e.target===mobile) closeM(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && mobile.classList.contains('open')) {
+      e.preventDefault();
+      closeM();
+    }
+  });
   }
 
  // smooth scroll
- document.querySelectorAll('a[href^=\"#\"]').forEach(function(a){
+ document.querySelectorAll('a[href^="#"]').forEach(function(a){
  a.addEventListener('click', function(e){
  var h = a.getAttribute('href');
  if(!h || h==='#') return;
@@ -221,6 +313,7 @@
  });
  });
  }
+ window.bindLangButtons = bindLangButtons;
  bindLangButtons();
 
  // PROJECT RENDERING - cards removidos, apenas gatilhos para modais informativos
@@ -257,11 +350,23 @@
     var hrefBase = (function(){ var path=location.pathname; if(path.indexOf('/projetos-site/')!==-1) return ''; if(path.indexOf('/paginas/')!==-1) return '../projetos-site/'; return 'projetos-site/'; })();
     var href = hrefBase + p.slug + '.html';
     var title = escapeHtml(d.titulo || '');
-    return '<a href="'+href+'" class="project-trigger" data-category="'+escapeHtml(p.category)+'" data-title="'+title.toLowerCase()+'" data-slug="'+escapeHtml(p.slug)+'" aria-label="Ver '+title+'">'
+    var viewPrefix = currentLang === 'en' ? 'View ' : 'Ver ';
+    return '<a href="'+href+'" class="project-trigger" data-category="'+escapeHtml(p.category)+'" data-title="'+title.toLowerCase()+'" data-slug="'+escapeHtml(p.slug)+'" aria-label="'+viewPrefix+title+'">'
       + '  <span class="project-trigger-title">'+title+'</span>'
       + '  <span class="project-trigger-cat">'+escapeHtml(catLabel(p.category))+'</span>'
       + '  <span class="project-trigger-hint">'+(currentLang==='en' ? 'view details →' : 'ver detalhes →')+'</span>'
       + '</a>';
+ }
+
+ function emptyProjectsHTML(dict){
+   var empty = currentLang === 'en' ? 'No projects found.' : 'Nenhum projeto encontrado.';
+   if (dict['projects.empty']) empty = dict['projects.empty'];
+   return '<div style="grid-column:1/-1; text-align:center; color:var(--text-muted); padding:32px;">'+empty+'</div>';
+ }
+
+ function getActiveFilter(){
+   var active = document.querySelector('.filter-btn.active');
+   return active ? active.getAttribute('data-filter') : 'all';
  }
 
  
@@ -270,16 +375,18 @@
  var gridAll = document.getElementById('project-grid-all');
  if(!window.PROJECTS) return;
  var dict = (I18N && I18N[currentLang]) || {};
+ var cat = getActiveFilter();
  if(grid){
- var featured = window.PROJECTS.filter(function(p){ return p.destaque; });
- grid.innerHTML = featured.map(projectCardHTML).join('');
+ var featured = window.PROJECTS.filter(function(p){
+   if (!p.destaque) return false;
+   return cat === 'all' || p.category === cat;
+ });
+ grid.innerHTML = featured.length ? featured.map(projectCardHTML).join('') : emptyProjectsHTML(dict);
  grid.classList.add('visible');
  }
  if(gridAll){
  var q = (document.getElementById('project-search')||{}).value || '';
  q = q.toLowerCase().trim();
- var active = document.querySelector('.filter-btn.active');
- var cat = active ? active.getAttribute('data-filter') : 'all';
  var list = window.PROJECTS.filter(function(p){
  var d = getLocalized(p);
  var matchCat = cat==='all' || p.category===cat;
@@ -290,11 +397,7 @@
  if (list.length) {
  gridAll.innerHTML = list.map(projectCardHTML).join('');
  } else {
- var emptyPT = 'Nenhum projeto encontrado.';
- var emptyEN = 'No projects found.';
- var empty = currentLang === 'en' ? emptyEN : emptyPT;
- if (dict['projects.empty']) empty = dict['projects.empty'];
- gridAll.innerHTML = '<div style="grid-column:1/-1; text-align:center; color:var(--text-muted); padding:32px;">'+empty+'</div>';
+ gridAll.innerHTML = emptyProjectsHTML(dict);
  }
  gridAll.classList.add('visible');
  var countEl = document.getElementById('filter-count');
@@ -368,29 +471,43 @@
    }
  }
  var resTitle = document.querySelector('[data-detail-results-title]');
- if(resTitle) resTitle.textContent = currentLang === 'en' ? 'Results' : 'Resultados';
+ if(resTitle) resTitle.textContent = dict['projects.detail.results'] || (currentLang === 'en' ? 'Results' : 'Resultados');
  if(resWrap) resWrap.innerHTML = (d.resultados||[]).map(function(r){ return '<li style="padding:8px 12px; background:rgba(8,145,178,0.06); border:1px solid rgba(8,145,178,0.12); border-radius:10px; color:var(--text-body); font-size:0.88rem; line-height:1.5;">'+escapeHtml(r)+'</li>'; }).join('');
  var linksWrap = document.querySelector('[data-detail="links"]');
   if(linksWrap){
     var links = [];
     var labelDemo = dict['projects.detail.demo'] || 'Acesse já aqui!';
-    var primaryHref = p.links.demo || p.links.github || "";
+    var labelGH = dict['projects.detail.github'] || 'Ver no GitHub';
+    var demoHref = (p.links && p.links.demo) || '';
+    var githubHref = (p.links && p.links.github) || '';
+    var docsHref = (p.links && p.links.docs) || '';
     var monoExternal = '<svg class="mono-icon mono-icon--sm" viewBox="0 0 24 24" aria-hidden="true" style="margin-right:6px;"><path d="M14 5h6v6"></path><path d="M10 14L20 4"></path><path d="M15 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h4"></path></svg>';
     var monoLock = '<svg class="mono-icon" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;color:#d8b4fe;"><rect x="4.5" y="11.5" width="15" height="9" rx="2"></rect><path d="M8.5 11.5V8a3.5 3.5 0 0 1 7 0v3.5"></path><circle cx="12" cy="15.5" r="1.2" fill="currentColor" stroke="none"></circle></svg>';
-    if(primaryHref){
-      links.push('<a href="'+primaryHref+'" target="_blank" rel="noopener" class="btn btn-primary" style="padding:14px 28px; font-size:0.84rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 10px 28px rgba(6,182,212,0.22); min-width:220px; justify-content:center;">'+monoExternal+labelDemo+'</a>');
-      if(p.links.github && p.links.demo && p.links.github !== p.links.demo){
-        var labelGH = dict['projects.detail.github'] || 'Ver no GitHub';
-        links.push('<a href="'+p.links.github+'" target="_blank" rel="noopener" class="btn btn-outline" style="padding:12px 22px; font-size:0.78rem;">'+monoExternal+labelGH+'</a>');
+    var btnPrimary = 'padding:14px 28px; font-size:0.84rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 10px 28px rgba(6,182,212,0.22); min-width:220px; justify-content:center;';
+    var btnOutline = 'padding:12px 22px; font-size:0.78rem;';
+    function docsLabel(url){
+      if (/curseforge/i.test(url)) return 'CurseForge';
+      if (/discord/i.test(url)) return 'Discord';
+      if (/nexusmods/i.test(url)) return 'Nexus Mods';
+      return dict['projects.detail.docs'] || (currentLang === 'en' ? 'More info' : 'Saiba mais');
+    }
+    if (demoHref) {
+      links.push('<a href="'+escapeHtml(demoHref)+'" target="_blank" rel="noopener" class="btn btn-primary" style="'+btnPrimary+'">'+monoExternal+labelDemo+'</a>');
+      if (githubHref && githubHref !== demoHref) {
+        links.push('<a href="'+escapeHtml(githubHref)+'" target="_blank" rel="noopener" class="btn btn-outline" style="'+btnOutline+'">'+monoExternal+labelGH+'</a>');
       }
+    } else if (githubHref) {
+      links.push('<a href="'+escapeHtml(githubHref)+'" target="_blank" rel="noopener" class="btn btn-primary" style="'+btnPrimary+'">'+monoExternal+labelGH+'</a>');
+    }
+    if (docsHref && docsHref !== demoHref && docsHref !== githubHref) {
+      links.push('<a href="'+escapeHtml(docsHref)+'" target="_blank" rel="noopener" class="btn btn-outline" style="'+btnOutline+'">'+monoExternal+escapeHtml(docsLabel(docsHref))+'</a>');
     }
     if(p.private) {
       var privateLabel = dict['projects.detail.private'] || 'Código privado, protegido';
       links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="display:grid;place-items:center;color:#d8b4fe;">'+monoLock+'</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+(currentLang==='en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.')+'</span></div>');
-    }
-    if(!primaryHref && !p.private) {
-      var privateLabel2 = dict['projects.detail.private'] || 'Código privado, protegido';
-      links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="display:grid;place-items:center;color:#d8b4fe;">'+monoLock+'</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel2+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+(currentLang==='en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.')+'</span></div>');
+    } else if (!demoHref && !githubHref && !docsHref) {
+      var consultaLabel = dict['projects.detail.consulta'] || (currentLang === 'en' ? 'Links on request' : 'Links sob consulta');
+      links.push('<div style="display:inline-flex; align-items:center; justify-content:center; padding:14px 22px; border-radius:12px; color:var(--text-muted); font-size:0.88rem; font-weight:600; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03);">'+consultaLabel+'</div>');
     }
     linksWrap.innerHTML = links.join(' ');
   }
