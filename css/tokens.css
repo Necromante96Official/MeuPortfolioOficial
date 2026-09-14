@@ -119,10 +119,10 @@
   --transition-slow:   0.4s ease;
   --page-ease:         cubic-bezier(0.22, 1, 0.36, 1);
   --page-ease-exit:    cubic-bezier(0.4, 0, 0.2, 1);
-  --page-duration:     0.42s;
-  --page-duration-exit: 0.36s;
+  --page-duration:     0.24s;
+  --page-duration-exit: 0.2s;
   --nav-ease:          cubic-bezier(0.22, 1, 0.36, 1);
-  --nav-duration:      0.38s;
+  --nav-duration:      0.22s;
 
   /* Z-INDEX */
   --z-nav:        100;

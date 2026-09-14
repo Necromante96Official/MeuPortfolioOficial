@@ -151,8 +151,8 @@
   // PAGE TRANSITIONS, entrada e saida suaves
   (function(){
     var NAV_KEY = 'portfolio-page-nav';
-    var EXIT_MS = 380;
-    var ENTER_MS = 420;
+    var EXIT_MS = 220;
+    var ENTER_MS = 260;
     var reduced = false;
     try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch(e) {}
 
@@ -237,7 +237,7 @@
         document.body.style.overflow = '';
         var toggleEl = document.querySelector('.mobile-toggle');
         if (toggleEl) toggleEl.setAttribute('aria-expanded', 'false');
-        setTimeout(function(){ navigateTo(a.href); }, reduced ? 0 : 160);
+        setTimeout(function(){ navigateTo(a.href); }, reduced ? 0 : 80);
         return;
       }
       navigateTo(a.href);
