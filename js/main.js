@@ -504,7 +504,11 @@
     }
     if(p.private) {
       var privateLabel = dict['projects.detail.private'] || 'Código privado, protegido';
-      links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="display:grid;place-items:center;color:#d8b4fe;">'+monoLock+'</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+(currentLang==='en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.')+'</span></div>');
+      var hasPublicCta = !!(demoHref || githubHref || docsHref);
+      var privateHint = hasPublicCta
+        ? (dict['projects.detail.privateHintPublic'] || (currentLang === 'en' ? 'Source code is private. Public showcase/links above.' : 'Código-fonte privado. Vitrine/links públicos acima.'))
+        : (dict['projects.detail.privateHint'] || (currentLang === 'en' ? 'Private repository. Available upon authorized request.' : 'Repositório privado. Liberação mediante solicitação autorizada.'));
+      links.push('<div class="private-highlight-animated" style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:18px 24px; border-radius:14px; color:#e9d5ff; font-size:0.92rem; font-weight:800; letter-spacing:0.04em; box-shadow:0 12px 28px rgba(168,85,247,0.20); text-align:center; min-width:280px; max-width:360px;"><span style="display:grid;place-items:center;color:#d8b4fe;">'+monoLock+'</span><span style="display:block; text-align:center; width:100%; text-wrap:balance;">'+privateLabel+'</span><span style="font-size:0.70rem; font-weight:600; color:var(--text-dim); margin-top:4px; display:block; text-align:center; width:100%;">'+privateHint+'</span></div>');
     } else if (!demoHref && !githubHref && !docsHref) {
       var consultaLabel = dict['projects.detail.consulta'] || (currentLang === 'en' ? 'Links on request' : 'Links sob consulta');
       links.push('<div style="display:inline-flex; align-items:center; justify-content:center; padding:14px 22px; border-radius:12px; color:var(--text-muted); font-size:0.88rem; font-weight:600; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03);">'+consultaLabel+'</div>');
@@ -512,11 +516,12 @@
     linksWrap.innerHTML = links.join(' ');
   }
   
-  // Esconde "Acesso direto e seguro" em páginas privadas
+  // Esconde "Acesso direto e seguro" só quando privado E sem CTA público
   try {
     var acessoEl = document.querySelector('[data-detail="links"] + p');
     if(acessoEl && acessoEl.textContent.includes('Acesso direto e seguro')){
-      acessoEl.style.display = p.private ? 'none' : '';
+      var hasPublic = !!(p.links && (p.links.demo || p.links.github || p.links.docs));
+      acessoEl.style.display = (p.private && !hasPublic) ? 'none' : '';
       acessoEl.style.textAlign = 'center';
     }
   } catch(e){}

@@ -100,7 +100,33 @@ window.PROJECTS = [
  techs: ["TypeScript 5.9", "Chrome Extension MV3", "ZenFisio Repetition", "chrome.storage", "Copy-static"],
  resultados: ["Automatic scan 07h–17h with X===Y highlight", "Floating AR button + Alt+Z with daily persistence", "Animated white stripe for easy review", "In production with FisioHub v0.5.7"]
  }
- }, {
+ },
+ {
+ slug: "attendance-declaration",
+ category: "institucional",
+ color: "#0ea5e9",
+ destaque: false,
+ private: true,
+ links: { github: "", demo: "", docs: "" },
+ thumb: "assets/img/fisiohub.webp",
+ pt: {
+ titulo: "Sistema de Declaração de Comparecimento",
+ resumo: "App desktop da Clínica de Fisioterapia da ESEFID/UFRGS que gera PDFs oficiais de comparecimento em duas vias, com calendário e pacientes salvos.",
+ descricao: "O Sistema de Declaração de Comparecimento automatiza a emissão de declarações oficiais da Clínica de Fisioterapia da ESEFID/UFRGS. Em vez de montar o documento à mão, a equipe escolhe paciente, turno, assistente e datas e recebe um PDF em paisagem A4 com duas vias lado a lado, logos institucionais e rodapé da clínica.\n\nInclui calendário só em dias úteis, pacientes salvos localmente, opção de nomes distintos por via e nomenclatura automática do arquivo, tudo offline com runtime Python portátil.",
+ papel: "Ferramenta institucional offline que padroniza a emissão de declarações e reduz retrabalho no atendimento administrativo.",
+ techs: ["Python 3", "Tkinter", "ReportLab 4.2", "Pillow", "JSON local", "Runtime portátil"],
+ resultados: ["PDF A4 paisagem com 2 vias oficiais", "Calendário institucional (2026–2030) e pacientes persistidos", "Launcher .bat com Python embutido (tkinter + ReportLab + Pillow)", "Em uso na Clínica de Fisioterapia da ESEFID/UFRGS"]
+ },
+ en: {
+ titulo: "Attendance Declaration System",
+ resumo: "Desktop app for the Physiotherapy Clinic of ESEFID/UFRGS: official attendance PDFs in two copies, calendar pickers and saved patients, fully offline.",
+ descricao: "Staff pick patient, shift, assistant and visit/issue dates; the app prints a landscape A4 PDF with two side-by-side declarations, UFRGS/FISIO logos and clinic footer.\n\nWeekday calendar (2026–2030), local patient roster, optional distinct names per copy and auto filenames. Portable Python runtime, no server and no cloud.",
+ papel: "100% Python desktop development with Tkinter UI, ReportLab PDF layout and Pillow assets. Offline institutional tooling for clinic administration.",
+ techs: ["Python 3", "Tkinter", "ReportLab 4.2", "Pillow", "Local JSON", "Portable runtime"],
+ resultados: ["Landscape A4 PDF with 2 official copies", "Institutional calendar (2026–2030) + persisted patients", ".bat launcher with embedded Python (tkinter + ReportLab + Pillow)", "In use at the Physiotherapy Clinic of ESEFID/UFRGS"]
+ }
+ },
+ {
  slug: "controle-financeiro",
  category: "web",
  color: "#22c55e",
@@ -181,12 +207,12 @@ window.PROJECTS = [
  color: "#ef4444",
  destaque: true,
  private: true,
- links: { github: "", demo: "", docs: "" },
+ links: { github: "", demo: "https://necromante96official.github.io/RPG-Skills-Site/", docs: "" },
  thumb: "assets/img/rpg-skills-mod.webp",
  pt: {
  titulo: "RPG Skills Mod",
  resumo: "Transforma Necesse em um RPG com 33 classes, progressão e habilidades que evoluem com seu estilo de jogo.",
- descricao: "O RPG Skills Mod transforma o jogo Necesse em uma experiência de RPG mais completa. Adiciona 33 classes, progressão por níveis e habilidades que evoluem conforme seu estilo de jogo, com suporte a vários idiomas.\n\nFoi desenvolvido para ampliar a jogabilidade e oferecer novos desafios para quem já conhece o jogo.",
+ descricao: "O RPG Skills Mod transforma o jogo Necesse em uma experiência de RPG mais completa. Adiciona 33 classes, progressão por níveis e habilidades que evoluem conforme seu estilo de jogo, com suporte a vários idiomas.\n\nFoi desenvolvido para ampliar a jogabilidade e oferecer novos desafios para quem já conhece o jogo. O código-fonte permanece privado; a vitrine pública e os guias estão no site oficial do mod.",
  papel: "Solução que amplia o jogo com novas classes, níveis e habilidades, oferecendo mais opções e desafios.",
  techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
  resultados: ["v2.9 compatível com Necesse 1.3.3","18,5 mil downloads no Workshop (Steam)","457 favoritos • 143 avaliações"]
@@ -194,7 +220,7 @@ window.PROJECTS = [
  en: {
  titulo: "RPG Skills Mod",
  resumo: "Turn Necesse into a real RPG: 33 classes, 19 passives and XP that reacts to your style, 12 locales and 18.5k adventurers on Workshop.",
- descricao: "Pick Warrior, Mage, Ranger, Priest or Hybrid and climb to 165. Each class unlocks unique passives, the QoL shop and dynamic balancing keep the challenge just right.\n\n100% Java 17 with Gradle multi-module (ADRs + JUnit 5), no Kotlin, pure Necesse API to stay updated and smooth.",
+ descricao: "Pick Warrior, Mage, Ranger, Priest or Hybrid and climb to 165. Each class unlocks unique passives, the QoL shop and dynamic balancing keep the challenge just right.\n\n100% Java 17 with Gradle multi-module (ADRs + JUnit 5), no Kotlin, pure Necesse API to stay updated and smooth. Source stays private; the public showcase and guides live on the official mod site.",
  papel: "100% Java 17 development, multi-module Gradle architecture, Necesse API, RPG progression system, game balancing and localization for 12 languages. Java code with JUnit tests and optimized Gradle build.",
  techs: ["Java 17","Gradle 8","Necesse API","JUnit 5","Eclipse JDT"],
  resultados: ["v2.9 compatible with Necesse 1.3.3","18.5k downloads on Workshop (Steam)","457 favs • 143 ratings"]
@@ -236,16 +262,16 @@ window.PROJECTS = [
  pt: {
  titulo: "Forbidden Legacy Patch Manager",
  resumo: "Cria e instala modificações para Forbidden Legacy com segurança e opção de desfazer alterações.",
- descricao: "O Forbidden Legacy Patch Manager facilita a criação e aplicação de modificações para o jogo Forbidden Legacy. Ele permite criar e instalar novos conteúdos sem interferir nos arquivos originais, com segurança e possibilidade de desfazer alterações se necessário.\n\nFoi pensado para que qualquer pessoa possa personalizar o jogo com tranquilidade.",
- papel: "Solução segura que permite personalizar o jogo sem riscos aos arquivos originais.",
+ descricao: "O Forbidden Legacy Patch Manager facilita a criação e aplicação de modificações para o jogo Forbidden Legacy. Ele permite criar e instalar novos conteúdos sem interferir nos arquivos originais, com segurança e possibilidade de desfazer alterações se necessário.\n\nFoi pensado para ajudar nas implementações do próprio jogo, sem disponibilidade para uso comercial.",
+ papel: "Ferramenta interna de apoio às implementações do próprio Forbidden Legacy, sem disponibilidade para uso comercial.",
  techs: ["C# .NET 9","Python 3.10","Avalonia 11.2.5","pycryptodome","Godot 4 PCK"],
  resultados: ["Overlays patch_xxxx.pck estáveis","Instalação segura sem conflito com launcher","Arquitetura Rules + Features modular"]
  },
  en: {
  titulo: "Forbidden Legacy Patch Manager",
  resumo: "Mod without fear: app that builds AES overlay patches and merges to official, without touching the exe and with rollback if needed.",
- descricao: "I reversed Godot 4 PCK with GDRE/GDScript, extract GDExtension, encrypt via pycryptodome and unify presets/drops with Avalonia UI (MVVM).\n\nInstall in layers, validate assets and solve conflicts alone. Your .flsave stays untouched and the official launcher won't notice, and if something fails, one click rolls back.",
- papel: "Main development in C# with Avalonia UI and MVVM, Python pipelines with pck_writer and pck_crypto, PCK format research with GDScript and GDRE. Native C# interface and Python automation.",
+ descricao: "I reversed Godot 4 PCK with GDRE/GDScript, extract GDExtension, encrypt via pycryptodome and unify presets/drops with Avalonia UI (MVVM).\n\nBuilt to support implementations of Forbidden Legacy itself — not available for commercial use. Install in layers, validate assets and solve conflicts alone; .flsave stays untouched and the official launcher won't notice, with one-click rollback if something fails.",
+ papel: "Internal tooling to support Forbidden Legacy's own implementations — not available for commercial use. Main stack: C# Avalonia UI (MVVM) + Python PCK pipelines.",
  techs: ["C# .NET 9","Python 3.10","Avalonia 11.2.5","pycryptodome","Godot 4 PCK"],
  resultados: ["Stable patch_xxxx.pck overlays","Safe installation without launcher conflict","Modular Rules + Features architecture"]
  }
