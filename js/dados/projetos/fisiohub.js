@@ -1,6 +1,7 @@
 // ========================================================================
-// Projetos: Clínica de Fisioterapia da ESEFID/UFRGS (FisioHub, as três
-// extensões do ZenFisio e o sistema de declarações).
+// Projetos: Clínica de Fisioterapia da ESEFID/UFRGS (FisioHub, Gerenciamento
+// da Clínica, Calculadora de Boleto, as três extensões do ZenFisio e o
+// sistema de declarações).
 // ========================================================================
 
 export const fisiohub = [
@@ -52,6 +53,103 @@ export const fisiohub = [
         "Pending progress notes visible and finance reconciled",
         "100% offline, data stays on the device",
         "Integrated with three ZenFisio extensions",
+      ],
+    },
+  },
+  {
+    slug: "gerenciamento-clinica",
+    categoria: "institucional",
+    grupo: "fisiohub",
+    destaque: false,
+    privado: true,
+    status: "ativo",
+    cor: "#14b8a6",
+    sigla: "GC",
+    icone: "prancheta",
+    links: [],
+    stack: ["Python", "SQLite", "JavaScript", "HTML / CSS", "TypeScript", "Chrome MV3"],
+    numeros: [
+      { valor: "12", rotulo: { pt: "telas do sistema", en: "system screens" } },
+      { valor: "0", rotulo: { pt: "dependências externas", en: "external dependencies" } },
+      { valor: "30", rotulo: { pt: "testes da API", en: "API tests" } },
+    ],
+    pt: {
+      titulo: "Gerenciamento da Clínica",
+      chamada: "Sistema local de gestão da clínica: agenda, pacientes, evoluções, financeiro e documentos.",
+      descricao: [
+        "Sistema completo de gestão feito para a Clínica de Fisioterapia, rodando no próprio computador da clínica. Reúne agenda do dia, pacientes, profissionais, convênios, procedimentos, evoluções, financeiro, relatórios, declarações e registros gerais em um só lugar.",
+        "Foi pensado para privacidade e uso offline: servidor local em Python sem nenhuma dependência externa, banco SQLite, contas de acesso com senha protegida por hash, documentos dos pacientes guardados cifrados, auditoria de alterações, backup completo e um cofre que guarda tudo o que é excluído. Uma extensão de navegador avisa a equipe no Google Chat sobre presença, falta e desmarcação.",
+      ],
+      papel: "Projeto completo: modelagem do banco, API local, interface, segurança dos dados e a extensão de avisos.",
+      destaques: [
+        "Agenda, pacientes, evoluções, financeiro e relatórios",
+        "100% local e offline, sem dependências externas",
+        "Senhas com hash, documentos cifrados e auditoria",
+        "Nada se perde: backup completo e cofre de exclusões",
+        "Avisos de presença e falta no Google Chat",
+      ],
+    },
+    en: {
+      titulo: "Clinic Management",
+      chamada: "A local clinic management system: schedule, patients, progress notes, finance and documents.",
+      descricao: [
+        "A complete management system built for the Physiotherapy Clinic, running on the clinic's own computer. It brings together the daily schedule, patients, professionals, insurers, procedures, progress notes, finance, reports, declarations and general records in one place.",
+        "It is designed for privacy and offline use: a local Python server with no external dependencies, SQLite database, access accounts with hashed passwords, encrypted patient documents, change auditing, full backup and a vault that keeps everything that gets deleted. A browser extension notifies the team on Google Chat about attendance, no-shows and cancellations.",
+      ],
+      papel: "End-to-end: database design, local API, interface, data security and the notification extension.",
+      destaques: [
+        "Schedule, patients, progress notes, finance and reports",
+        "100% local and offline, no external dependencies",
+        "Hashed passwords, encrypted documents and auditing",
+        "Nothing is lost: full backup and a deletion vault",
+        "Attendance and no-show notices on Google Chat",
+      ],
+    },
+  },
+  {
+    slug: "calculadora-boleto",
+    categoria: "institucional",
+    grupo: "fisiohub",
+    destaque: false,
+    privado: true,
+    status: "producao",
+    cor: "#84cc16",
+    sigla: "CB",
+    icone: "calculadora",
+    links: [],
+    stack: ["Python", "Tkinter", "Windows"],
+    numeros: [
+      { valor: "3", rotulo: { pt: "campos para recalcular", en: "fields to recalculate" } },
+      { valor: "100%", rotulo: { pt: "offline", en: "offline" } },
+    ],
+    pt: {
+      titulo: "Calculadora de Boleto",
+      chamada: "App desktop da clínica que recalcula boletos vencidos com multa, juros e o valor do novo boleto.",
+      descricao: [
+        "Aplicativo desktop que recalcula boletos vencidos para a clínica. Basta informar o valor original, a data de vencimento e a data do acordo: ele aplica multa, juros por dia de atraso e o custo de emissão e mostra o valor do novo boleto, passo a passo.",
+        "Os campos já formatam valor em reais e datas enquanto se digita, Enter calcula e Esc limpa. Abre com dois cliques e funciona sem internet.",
+      ],
+      papel: "Aplicativo completo em Python: regras do cálculo, interface e inicializador portátil.",
+      destaques: [
+        "Multa, juros por dia e custo de emissão aplicados sozinhos",
+        "Valor do novo boleto com o detalhamento do cálculo",
+        "Máscara de moeda e data enquanto se digita",
+        "Offline, abre com dois cliques",
+      ],
+    },
+    en: {
+      titulo: "Bill Calculator",
+      chamada: "A clinic desktop app that recalculates overdue bills with fines, interest and the new amount.",
+      descricao: [
+        "A desktop app that recalculates overdue bills for the clinic. Enter the original amount, the due date and the agreement date: it applies the fine, daily interest and the issuing fee and shows the new bill amount, step by step.",
+        "Fields format currency and dates as you type, Enter calculates and Esc clears. It opens with a double click and works offline.",
+      ],
+      papel: "Full Python app: calculation rules, interface and a portable launcher.",
+      destaques: [
+        "Fine, daily interest and issuing fee applied automatically",
+        "New bill amount with a full breakdown",
+        "Currency and date masks while typing",
+        "Offline, opens with a double click",
       ],
     },
   },
