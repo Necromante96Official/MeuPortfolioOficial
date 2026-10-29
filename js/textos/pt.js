@@ -112,7 +112,7 @@ export const pt = {
       {
         quando: "Colaboração",
         titulo: "Trager Games · Forbidden Legacy",
-        texto: "Ferramentas internas para o remake de fã de Yu-Gi-Oh! Forbidden Memories: patch de testes, editor de save e montagem de decks.",
+        texto: "Ferramentas internas para o remake de fã de Yu-Gi-Oh! Forbidden Memories: patch de testes e montagem de decks.",
       },
       {
         quando: "Comunidade",

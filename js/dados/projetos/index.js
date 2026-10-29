@@ -34,7 +34,6 @@ const ordem = [
   "rpg-skills-site",
   "forbidden-legacy-patchs",
   "deck-building-system",
-  "forbidden-legacy-save-editor",
   "zenfisio-coletor",
   "zenfisio-notificar",
   "zenfisio-alerta",

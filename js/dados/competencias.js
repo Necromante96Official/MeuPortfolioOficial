@@ -67,7 +67,7 @@ export const competencias = [
       pt: "Aplicativos e plugins que resolvem uma tarefa só, e bem: PDFs, OBS, gerenciadores de mods.",
       en: "Apps and plugins that solve one job well: PDFs, OBS, mod managers.",
     },
-    itens: ["Python", "Tkinter", "ReportLab", "pywebview", "C++17", "Qt6", "CMake", "PyQt"],
+    itens: ["Python", "Tkinter", "ReportLab", "C++17", "Qt6", "CMake", "PyQt"],
     casos: ["attendance-declaration", "obs-overlay", "mo2tools"],
   },
 ];

@@ -99,53 +99,6 @@ export const ferramentas = [
     },
   },
   {
-    slug: "forbidden-legacy-save-editor",
-    categoria: "tool",
-    grupo: "forbidden",
-    destaque: false,
-    privado: true,
-    status: "ativo",
-    cor: "#eab308",
-    sigla: "SE",
-    icone: "disquete",
-    links: [],
-    stack: ["Python", "pywebview", "TypeScript", "HTML / CSS", "Windows .exe"],
-    numeros: [
-      { valor: "2", rotulo: { pt: "abas: Editor e Cartas", en: "tabs: Editor and Cards" } },
-      { valor: ".exe", rotulo: { pt: "sem janela de console", en: "no console window" } },
-    ],
-    pt: {
-      titulo: "Forbidden Legacy Save Editor",
-      chamada: "Editor desktop do save do Forbidden Legacy, com catálogo visual das cartas.",
-      descricao: [
-        "Aplicativo desktop que abre o save do Forbidden Legacy e permite ajustá-lo com segurança, apoiando os testes da equipe. A aba Cartas mostra o catálogo com as artes de cada carta.",
-        "O backend é em Python e a interface em HTML, CSS e TypeScript dentro do pywebview. O build gera um executável para Windows que abre direto, sem janela de console.",
-      ],
-      papel: "Projeto completo: backend Python, interface em TypeScript e empacotamento do executável.",
-      destaques: [
-        "Edição segura do save",
-        "Catálogo de cartas com as artes",
-        "Executável único para Windows",
-        "Teste rápido (smoke test) antes de cada build",
-      ],
-    },
-    en: {
-      titulo: "Forbidden Legacy Save Editor",
-      chamada: "A desktop save editor for Forbidden Legacy, with a visual card catalog.",
-      descricao: [
-        "A desktop app that opens the Forbidden Legacy save and lets you adjust it safely, supporting the team's testing. The Cards tab shows the catalog with every card's artwork.",
-        "The backend is Python and the interface is HTML, CSS and TypeScript inside pywebview. The build produces a Windows executable that opens straight away, with no console window.",
-      ],
-      papel: "End-to-end: Python backend, TypeScript interface and executable packaging.",
-      destaques: [
-        "Safe save editing",
-        "Card catalog with artwork",
-        "Single Windows executable",
-        "Smoke test before every build",
-      ],
-    },
-  },
-  {
     slug: "deck-building-system",
     categoria: "tool",
     grupo: "forbidden",

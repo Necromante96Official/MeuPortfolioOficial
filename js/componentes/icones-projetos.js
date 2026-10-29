@@ -14,8 +14,6 @@ export const iconesDeProjeto = {
   cartas: '<rect x="3" y="6" width="11" height="15" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v13"/><path d="m8.5 11 1 2 2 .3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2L5.5 13.3l2-.3Z"/>',
   // Forbidden Legacy Patch: camadas sobre o jogo
   camadas: '<path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5"/>',
-  // Save Editor: disquete
-  disquete: '<path d="M5 3h11l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 1-2Z"/><path d="M8 3v5h7V3"/><rect x="7" y="13" width="10" height="6" rx="1"/>',
   // Deck Building: pilha de cartas em leque
   baralho: '<rect x="8" y="4" width="10" height="15" rx="2" transform="rotate(10 13 11.5)"/><rect x="5" y="5" width="10" height="15" rx="2" transform="rotate(-8 10 12.5)"/>',
   // Nexus Translator: idiomas

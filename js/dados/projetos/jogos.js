@@ -130,7 +130,7 @@ export const jogos = [
       descricao: [
         "Forbidden Legacy é o clássico do PS1 reconstruído do zero por Felipe França / Trager Games, \"com tudo que ele deveria ter tido\": fusão fiel ao Forbidden Memories, campanha com drama, IA de oponentes, banlist por grupos, loja, boosters, conquistas e interface refeita para PC e Android. Está no Beta 2.2, com mais de 1.600 cartas e 63 NPCs, cada um com IA e deck próprios.",
         "A campanha traz a Season 1 completa e a Season 2 até o Shadi, além do Torneio Sombrio e eventos. Tem Modo Torneio (Normal, Lendário e Sombrio), PVP online com busca de oponente, salas por código, espectadores e ranking ao vivo, e Cross-Save para continuar o mesmo progresso no PC e no celular. Disponível em 4 idiomas, com launcher que atualiza só o que mudou.",
-        "Colaboro com a Trager Games no ecossistema do jogo, criando ferramentas internas que apoiam o desenvolvimento: o patch de testes, o editor de save e o sistema de montagem de decks.",
+        "Colaboro com a Trager Games no ecossistema do jogo, criando ferramentas internas que apoiam o desenvolvimento: o patch de testes e o sistema de montagem de decks.",
       ],
       papel: "Desenvolvedor colaborador: ferramentas internas em C#, Python e TypeScript que ajudam a equipe a testar, equilibrar e evoluir o jogo.",
       destaques: [
@@ -138,7 +138,7 @@ export const jogos = [
         "Season 1 completa e Season 2 até o Shadi",
         "PVP online com ranking ao vivo e Cross-Save entre PC e celular",
         "Launcher para Windows e Linux e APK para Android",
-        "Três ferramentas internas criadas por mim",
+        "Duas ferramentas internas criadas por mim",
       ],
     },
     en: {
@@ -147,7 +147,7 @@ export const jogos = [
       descricao: [
         "Forbidden Legacy is the PS1 classic rebuilt from scratch by Felipe França / Trager Games, \"with everything it should have had\": FM-faithful fusion, a campaign with real drama, opponent AI, group banlist, shop, boosters, achievements and an interface redesigned for PC and Android. It is in Beta 2.2, with 1,600+ cards and 63 NPCs, each with its own AI and deck.",
         "The campaign has the full Season 1 and Season 2 up to Shadi, plus the Shadow Tournament and events. It features Tournament Mode (Normal, Legendary and Shadow), online PVP with matchmaking, code rooms, spectators and a live leaderboard, and Cross-Save to keep the same progress on PC and phone. Available in 4 languages, with a launcher that only downloads what changed.",
-        "I collaborate with Trager Games on the game's ecosystem, building internal tools that support development: the testing patch, the save editor and the deck building system.",
+        "I collaborate with Trager Games on the game's ecosystem, building internal tools that support development: the testing patch and the deck building system.",
       ],
       papel: "Contributing developer: internal tooling in C#, Python and TypeScript that helps the team test, balance and evolve the game.",
       destaques: [
@@ -155,7 +155,7 @@ export const jogos = [
         "Full Season 1 and Season 2 up to Shadi",
         "Online PVP with a live leaderboard and Cross-Save between PC and phone",
         "Launcher for Windows and Linux, APK for Android",
-        "Three internal tools built by me",
+        "Two internal tools built by me",
       ],
     },
   },

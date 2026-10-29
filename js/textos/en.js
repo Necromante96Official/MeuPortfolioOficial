@@ -111,7 +111,7 @@ export const en = {
       {
         quando: "Collaboration",
         titulo: "Trager Games · Forbidden Legacy",
-        texto: "Internal tools for the Yu-Gi-Oh! Forbidden Memories fan remake: testing patch, save editor and deck building.",
+        texto: "Internal tools for the Yu-Gi-Oh! Forbidden Memories fan remake: testing patch and deck building.",
       },
       {
         quando: "Community",
