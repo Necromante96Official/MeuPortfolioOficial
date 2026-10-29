@@ -67,6 +67,12 @@ for (const c of competencias) {
 }
 for (const a of agora) if (!slugs.has(a.slug)) erro(`Painel "Agora" cita projeto inexistente: ${a.slug}`);
 
+const { recomendacoes } = await importar("js/dados/recomendacoes.js");
+for (const r of recomendacoes) {
+  for (const s of r.projetos) if (!slugs.has(s)) erro(`Recomendação "${r.id}" cita projeto inexistente: ${s}`);
+  if (r.trecho.pt.length !== r.trecho.en.length) erro(`Recomendação "${r.id}": trechos com tamanhos diferentes em PT e EN`);
+}
+
 // ------------------------------------------------------------------------
 // Textos da interface: as mesmas chaves nos dois idiomas
 // ------------------------------------------------------------------------

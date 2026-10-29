@@ -62,6 +62,15 @@ export const pt = {
     ctaTexto: "Sites, sistemas, ferramentas para jogos ou localização PT-BR. Conte a ideia e eu respondo em até 24h.",
     ctaBotao: "Entrar em contato",
   },
+  recomendacao: {
+    kicker: "Recomendação",
+    titulo: "O que dizem do meu trabalho",
+    texto: "Carta da diretora da clínica onde os sistemas da ESEFID/UFRGS nasceram e são usados todos os dias.",
+    projeto: "Quem usa recomenda",
+    aPedido: "A carta completa, assinada, é enviada a pedido.",
+    contatoTitulo: "Carta de recomendação",
+    contatoTexto: "Tenho carta de recomendação assinada digitalmente pela diretora da Clínica de Fisioterapia ESEFID/UFRGS. Peça pelo formulário ou por e-mail e eu envio a carta completa.",
+  },
   projetos: {
     titulo: "Projetos | Lucas Tavares",
     kicker: "Portfólio",
@@ -102,7 +111,7 @@ export const pt = {
       {
         quando: "Hoje",
         titulo: "Clínica de Fisioterapia ESEFID/UFRGS",
-        texto: "Trabalho com o FisioHub e com os dados do ZenFisio, criando sistemas e extensões que organizam agenda, pacientes, evoluções e financeiro.",
+        texto: "Na recepção da clínica, identifiquei gargalos na rotina e criei os sistemas e extensões que hoje automatizam agenda, pacientes, evoluções e financeiro.",
       },
       {
         quando: "Hoje",

@@ -11,6 +11,8 @@ import { cabecalhoDeSecao, chamadaContato, dataCurta } from "../componentes/seco
 import { perfil, redes, numeros, agora } from "../dados/perfil.js";
 import { competencias, processo } from "../dados/competencias.js";
 import { categorias, projetoPorSlug, projetosEmDestaque, contarPorCategoria } from "../dados/projetos/index.js";
+import { recomendacoes } from "../dados/recomendacoes.js";
+import { cartaoRecomendacao } from "../componentes/recomendacao.js";
 
 export const pagina = {
   titulo: () => t("inicio.titulo"),
@@ -28,6 +30,12 @@ function render() {
         <div class="secao__acao revelar">
           <a href="projetos.html" class="botao botao--contorno">${esc(t("comum.verTodos"))}${icone("seta")}</a>
         </div>
+      </div>
+    </section>
+    <section class="secao secao--sem-topo" id="recomendacao">
+      <div class="container">
+        ${cabecalhoDeSecao("recomendacao.kicker", "recomendacao.titulo", "recomendacao.texto")}
+        ${lista(recomendacoes, (r) => cartaoRecomendacao(r))}
       </div>
     </section>
     ${areas()}

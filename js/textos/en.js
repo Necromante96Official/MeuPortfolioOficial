@@ -61,6 +61,15 @@ export const en = {
     ctaTexto: "Websites, systems, game tooling or PT-BR localization. Tell me the idea and I'll reply within 24h.",
     ctaBotao: "Get in touch",
   },
+  recomendacao: {
+    kicker: "Recommendation",
+    titulo: "What people say about my work",
+    texto: "A letter from the director of the clinic where the ESEFID/UFRGS systems were born and are used every day.",
+    projeto: "Recommended by its users",
+    aPedido: "The full signed letter is available on request.",
+    contatoTitulo: "Recommendation letter",
+    contatoTexto: "I have a recommendation letter digitally signed by the director of the ESEFID/UFRGS Physiotherapy Clinic. Ask through the form or by email and I will send the full letter.",
+  },
   projetos: {
     titulo: "Projects | Lucas Tavares",
     kicker: "Portfolio",
@@ -101,7 +110,7 @@ export const en = {
       {
         quando: "Now",
         titulo: "ESEFID/UFRGS Physiotherapy Clinic",
-        texto: "I work with FisioHub and ZenFisio data, building systems and extensions that organize schedules, patients, progress notes and finance.",
+        texto: "Working at the clinic's front desk, I spotted bottlenecks in the routine and built the systems and extensions that now automate schedules, patients, progress notes and finance.",
       },
       {
         quando: "Now",

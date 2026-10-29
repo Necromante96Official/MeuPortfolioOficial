@@ -117,3 +117,132 @@
     padding: var(--e-6) var(--e-5);
   }
 }
+
+/* ------------------------------------------------------------------------
+   Recomendação (início, sobre, projeto)
+   ------------------------------------------------------------------------ */
+
+.recomendacao {
+  position: relative;
+  margin: 0;
+  padding: var(--e-7) var(--e-7) var(--e-6);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(36rem 18rem at 0% 0%, rgba(52, 211, 153, 0.1), transparent 70%),
+    var(--superficie);
+  overflow: hidden;
+}
+
+.recomendacao__aspas {
+  position: absolute;
+  top: -18px;
+  right: 28px;
+  color: rgba(52, 211, 153, 0.14);
+  font-family: Georgia, serif;
+  font-size: 11rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.recomendacao blockquote {
+  position: relative;
+  display: grid;
+  gap: var(--e-4);
+  margin: 0;
+}
+
+.recomendacao blockquote p {
+  max-width: 62ch;
+  color: var(--texto);
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.recomendacao__autora {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-3) var(--e-4);
+  margin-top: var(--e-6);
+  padding-top: var(--e-5);
+  border-top: 1px solid var(--borda);
+}
+
+.recomendacao__inicial {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(52, 211, 153, 0.35);
+  color: var(--ok);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+}
+
+.recomendacao__autora > span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.recomendacao__autora small {
+  color: var(--texto-3);
+  font-size: var(--t-sm);
+}
+
+.recomendacao__selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 4px 12px;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: var(--r-total);
+  background: rgba(52, 211, 153, 0.06);
+  color: var(--ok);
+  font-size: var(--t-xs);
+}
+
+.recomendacao__nota,
+.recomendacao__pedido {
+  margin-top: var(--e-4);
+  color: var(--texto-4);
+  font-size: var(--t-xs);
+}
+
+.recomendacao__pedido a {
+  color: var(--marca);
+}
+
+.recomendacao--compacta {
+  padding: var(--e-5);
+}
+
+.recomendacao--compacta .recomendacao__aspas {
+  top: -10px;
+  font-size: 7rem;
+}
+
+.recomendacao--compacta blockquote p {
+  font-size: var(--t-lg);
+}
+
+.painel--destaque {
+  border-color: rgba(52, 211, 153, 0.3);
+  background: linear-gradient(180deg, rgba(52, 211, 153, 0.07), transparent), var(--superficie);
+}
+
+@media (max-width: 640px) {
+  .recomendacao {
+    padding: var(--e-6) var(--e-5) var(--e-5);
+  }
+
+  .recomendacao__selo {
+    margin-left: 0;
+  }
+}

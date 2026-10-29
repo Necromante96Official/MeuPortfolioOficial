@@ -10,6 +10,8 @@ import { cabecalhoDePagina, cabecalhoDeSecao, chamadaContato } from "../componen
 import { marca } from "../componentes/cartao-projeto.js";
 import { competencias, processo } from "../dados/competencias.js";
 import { projetoPorSlug } from "../dados/projetos/index.js";
+import { recomendacoes } from "../dados/recomendacoes.js";
+import { cartaoRecomendacao } from "../componentes/recomendacao.js";
 
 export const pagina = {
   titulo: () => t("sobre.titulo"),
@@ -56,6 +58,13 @@ function render() {
             </ol>
           </section>
         </aside>
+      </div>
+    </section>
+
+    <section class="secao secao--sem-topo" id="recomendacao">
+      <div class="container">
+        ${cabecalhoDeSecao("recomendacao.kicker", "recomendacao.titulo", "recomendacao.texto")}
+        ${lista(recomendacoes, (r) => cartaoRecomendacao(r))}
       </div>
     </section>
 

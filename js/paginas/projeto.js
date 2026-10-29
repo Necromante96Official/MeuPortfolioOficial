@@ -9,6 +9,8 @@ import { icone, iconeDoLink, iconeDaCategoria } from "../componentes/icones.js";
 import { cartaoProjeto, marca, selo } from "../componentes/cartao-projeto.js";
 import { chamadaContato } from "../componentes/secoes.js";
 import { projetoPorSlug, relacionados, vizinhos, categorias, grupos } from "../dados/projetos/index.js";
+import { recomendacoesDoProjeto } from "../dados/recomendacoes.js";
+import { cartaoRecomendacao } from "../componentes/recomendacao.js";
 
 const slug = new URLSearchParams(location.search).get("p");
 const projeto = projetoPorSlug(slug);
@@ -64,6 +66,10 @@ function render(p) {
               <h2>${esc(t("projeto.destaques"))}</h2>
               <ul class="lista-check">${lista(txt.destaques, (d) => `<li>${icone("ok", "icone icone--p")}<span>${esc(d)}</span></li>`)}</ul>
             </section>
+            ${lista(
+              recomendacoesDoProjeto(p.slug),
+              (r) => `<section class="bloco"><h2 class="revelar">${esc(t("recomendacao.projeto"))}</h2>${cartaoRecomendacao(r, { compacto: true })}</section>`,
+            )}
           </div>
           <aside class="projeto__lateral">
             <section class="painel revelar">

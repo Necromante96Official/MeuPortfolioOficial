@@ -40,6 +40,10 @@ function render() {
             <a class="contato__email" href="mailto:${esc(perfil.email)}">${esc(perfil.email)}</a>
             <button type="button" class="botao botao--contorno botao--p" id="copiar">${icone("copiar")}<span>${esc(t("contato.copiar"))}</span></button>
           </section>
+          <section class="painel painel--destaque revelar">
+            <h2>${esc(t("recomendacao.contatoTitulo"))}</h2>
+            <p>${esc(t("recomendacao.contatoTexto"))}</p>
+          </section>
           <section class="painel revelar">
             <h2>${esc(t("contato.canaisTitulo"))}</h2>
             <ul class="canais">
