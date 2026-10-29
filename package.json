@@ -1,0 +1,10 @@
+{
+  "name": "meu-portfolio-oficial",
+  "private": true,
+  "type": "module",
+  "description": "Portfólio de Lucas Tavares (Necromante96Official). Site estático, sem build.",
+  "scripts": {
+    "servir": "node ferramentas/servir.mjs",
+    "conferir": "node ferramentas/conferir.mjs"
+  }
+}

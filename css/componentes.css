@@ -1,0 +1,440 @@
+/* ========================================================================
+   Componentes: botões, ícones, selos, marcas, cartões, etiquetas, filtros,
+   painéis, números, formulário e a animação de entrada.
+   ======================================================================== */
+
+/* ------------------------------------------------------------------------
+   Ícones
+   ------------------------------------------------------------------------ */
+
+.icone {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.icone--p {
+  width: 14px;
+  height: 14px;
+}
+
+/* ------------------------------------------------------------------------
+   Botões
+   ------------------------------------------------------------------------ */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  min-height: 42px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--r-total);
+  font-size: var(--t-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    transform var(--rapido) var(--ease),
+    background var(--rapido),
+    border-color var(--rapido),
+    box-shadow var(--rapido),
+    color var(--rapido);
+}
+
+.botao img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.botao:hover {
+  transform: translateY(-1px);
+}
+
+.botao:active {
+  transform: translateY(0);
+}
+
+.botao--primario {
+  background: linear-gradient(180deg, #3ee0f5, var(--marca-forte));
+  color: #03141a;
+  box-shadow:
+    0 8px 24px rgba(6, 182, 212, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.botao--primario:hover {
+  box-shadow:
+    0 12px 32px rgba(6, 182, 212, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.botao--contorno {
+  border-color: var(--borda-forte);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--texto);
+}
+
+.botao--contorno:hover {
+  border-color: var(--marca-borda);
+  background: var(--marca-fundo);
+}
+
+.botao--p {
+  min-height: 36px;
+  padding: 7px 14px;
+  font-size: 0.8rem;
+}
+
+.botao--g {
+  min-height: 50px;
+  padding: 13px 24px;
+  font-size: var(--t-md);
+}
+
+.link-seta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  margin-top: var(--e-5);
+  color: var(--marca);
+  font-weight: 600;
+  font-size: var(--t-sm);
+}
+
+.link-seta:hover .icone {
+  transform: translateX(3px);
+}
+
+.link-seta .icone {
+  transition: transform var(--rapido);
+}
+
+/* ------------------------------------------------------------------------
+   Pílula e selos
+   ------------------------------------------------------------------------ */
+
+.pilula {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  padding: 6px 14px 6px 10px;
+  border: 1px solid var(--borda);
+  border-radius: var(--r-total);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--texto-2);
+  font-size: 0.8rem;
+}
+
+.pilula--ok {
+  border-color: rgba(52, 211, 153, 0.25);
+  background: rgba(52, 211, 153, 0.06);
+}
+
+.pilula__ponto,
+.selo__ponto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.18);
+  flex-shrink: 0;
+}
+
+.pilula__ponto {
+  animation: pulsar 2.4s ease-in-out infinite;
+}
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border: 1px solid var(--borda);
+  border-radius: var(--r-total);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--texto-3);
+  font-size: 0.72rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.selo__ponto {
+  width: 6px;
+  height: 6px;
+  box-shadow: none;
+}
+
+.selo--estavel .selo__ponto,
+.selo__ponto--estavel {
+  background: var(--marca);
+}
+
+.selo--ativo .selo__ponto,
+.selo__ponto--ativo {
+  background: var(--roxo);
+}
+
+.selo--beta .selo__ponto,
+.selo__ponto--beta {
+  background: var(--aviso);
+}
+
+/* ------------------------------------------------------------------------
+   Marca do projeto (sigla sobre a cor)
+   ------------------------------------------------------------------------ */
+
+.marca {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--r-md);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cor) 30%, transparent), color-mix(in srgb, var(--cor) 8%, transparent));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cor) 45%, transparent);
+  color: color-mix(in srgb, var(--cor) 70%, #fff);
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.marca__icone {
+  width: 55%;
+  height: 55%;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--cor) 45%, transparent));
+}
+
+.marca--pp .marca__icone {
+  width: 70%;
+  height: 70%;
+  filter: none;
+}
+
+.marca--p {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+}
+
+.marca--pp {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  font-size: 0.55rem;
+}
+
+.marca--g {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--r-lg);
+  font-size: 1.3rem;
+}
+
+/* ------------------------------------------------------------------------
+   Etiquetas (stack)
+   ------------------------------------------------------------------------ */
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.etiquetas li {
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--texto-3);
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+}
+
+.etiquetas--soltas li {
+  padding: 5px 11px;
+  border: 1px solid var(--borda);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--texto-2);
+}
+
+.etiquetas__mais {
+  color: var(--texto-4) !important;
+}
+
+/* ------------------------------------------------------------------------
+   Painel e números
+   ------------------------------------------------------------------------ */
+
+.painel {
+  padding: var(--e-5);
+  border: 1px solid var(--borda);
+  border-radius: var(--r-lg);
+  background: var(--superficie);
+}
+
+.painel h2 {
+  margin-bottom: var(--e-3);
+  color: var(--texto-4);
+  font-family: var(--fonte-mono);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.painel--nota {
+  display: flex;
+  gap: var(--e-3);
+  color: var(--texto-3);
+  font-size: var(--t-sm);
+  background: transparent;
+  border-style: dashed;
+}
+
+.painel--nota .icone {
+  margin-top: 4px;
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  border: 1px solid var(--borda);
+  border-radius: var(--r-lg);
+  background: rgba(15, 20, 27, 0.6);
+  overflow: hidden;
+}
+
+.numeros__item {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: var(--e-5);
+}
+
+.numeros__item + .numeros__item {
+  border-left: 1px solid var(--borda);
+}
+
+.numeros dd {
+  margin: 0;
+  color: var(--texto);
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.numeros dt {
+  color: var(--texto-3);
+  font-size: var(--t-sm);
+}
+
+@media (max-width: 760px) {
+  .numeros {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .numeros__item:nth-child(3) {
+    border-left: 0;
+  }
+
+  .numeros__item:nth-child(n + 3) {
+    border-top: 1px solid var(--borda);
+  }
+}
+
+/* ------------------------------------------------------------------------
+   Formulário
+   ------------------------------------------------------------------------ */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--texto-2);
+  font-size: var(--t-sm);
+  font-weight: 500;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-radius: var(--r-md);
+  background: var(--fundo-2);
+  color: var(--texto);
+  font-weight: 400;
+  transition:
+    border-color var(--rapido),
+    box-shadow var(--rapido);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--marca-borda);
+  box-shadow: 0 0 0 4px var(--marca-fundo);
+}
+
+/* ------------------------------------------------------------------------
+   Lista com marcação
+   ------------------------------------------------------------------------ */
+
+.lista-check {
+  display: grid;
+  gap: var(--e-3);
+}
+
+.lista-check li {
+  display: flex;
+  gap: var(--e-3);
+  color: var(--texto-2);
+}
+
+.lista-check .icone {
+  margin-top: 5px;
+  color: var(--cor, var(--marca));
+}
+
+/* ------------------------------------------------------------------------
+   Animação de entrada (só depois que o JS marca a página como pronta)
+   ------------------------------------------------------------------------ */
+
+/* Animação (e não transição) para não brigar com o hover dos cartões */
+.pronto .revelar {
+  opacity: 0;
+}
+
+.pronto .revelar.visivel {
+  opacity: 1;
+  animation: entrar 0.6s var(--ease) backwards;
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes pulsar {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.05);
+  }
+}

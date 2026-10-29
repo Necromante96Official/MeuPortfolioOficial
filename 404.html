@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página não encontrada | Lucas Tavares</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/MeuPortfolioOficial/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+      background: #07090d; color: #b3c0cc; font: 16px/1.6 "Segoe UI", system-ui, sans-serif; text-align: center;
+    }
+    h1 { color: #e6edf3; font-size: 1.6rem; margin: 0 0 8px; }
+    p { margin: 0 0 20px; max-width: 46ch; }
+    a { display: inline-block; padding: 12px 20px; border-radius: 999px; background: #22d3ee; color: #04131a; font-weight: 600; text-decoration: none; }
+  </style>
+  <script>
+    // O site foi reorganizado: os endereços antigos levam para os novos.
+    // paginas/sobre.html → sobre.html · projetos-site/fisiohub.html → projeto.html?p=fisiohub
+    (function () {
+      var caminho = location.pathname;
+      var marca = caminho.search(/\/(paginas|projetos-site)\//);
+      if (marca < 0) return;
+      var base = caminho.slice(0, marca + 1);
+      var resto = caminho.slice(marca + 1);
+      var antigo = {
+        "paginas/sobre.html": "sobre.html",
+        "paginas/competencias.html": "sobre.html#competencias",
+        "paginas/contato.html": "contato.html",
+        "projetos-site/index.html": "projetos.html",
+        "projetos-site/": "projetos.html",
+      };
+      var destino = antigo[resto];
+      var projeto = resto.match(/^projetos-site\/([\w-]+)\.html$/);
+      if (!destino && projeto) destino = "projeto.html?p=" + projeto[1];
+      if (destino) location.replace(base + destino);
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Página não encontrada</h1>
+    <p>Este endereço não existe mais. O site foi reorganizado; volte ao início para encontrar o que procura.</p>
+    <a href="/MeuPortfolioOficial/">Ir para o início</a>
+  </main>
+</body>
+</html>

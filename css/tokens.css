@@ -1,131 +1,100 @@
-/* ============================================
-   RPG SKILLS, Design Tokens
-   ============================================ */
+/* ========================================================================
+   Tokens: as cores, fontes, espaços e raios do site inteiro.
+   Nenhum outro arquivo escreve cor ou tamanho solto: tudo sai daqui.
+   ======================================================================== */
 
 :root {
-  /* PRIMARY, Gold (XP, Progression) */
-  --gold:         #0891b2;
-  --gold-light:   #06b6d4;
-  --gold-dim:     #155e75;
-  --gold-rgb:     8, 145, 178;
+  color-scheme: dark;
 
-  /* SECONDARY, Blue (Magic, Skills) */
-  --blue:         #60a5fa;
-  --blue-light:   #93c5fd;
-  --blue-dim:     #1e3a5f;
-  --blue-rgb:     96, 165, 250;
+  /* ----- Fundo e superfícies ----- */
+  --fundo: #07090d;
+  --fundo-2: #0b0f15;
+  --superficie: #0f141b;
+  --superficie-2: #141a23;
+  --superficie-3: #1a222d;
 
-  /* ACCENT, Red (Combat, Damage) */
-  --red:          #ef4444;
-  --red-light:    #f87171;
-  --red-dim:      #7f1d1d;
-  --red-rgb:      239, 68, 68;
+  /* ----- Bordas ----- */
+  --borda: rgba(148, 178, 204, 0.12);
+  --borda-forte: rgba(148, 178, 204, 0.22);
 
-  /* ACCENT, Purple (Rare, Legendary) */
-  --purple:       #a78bfa;
-  --purple-light: #c4b5fd;
-  --purple-dim:   #4c1d95;
-  --purple-rgb:   167, 139, 250;
+  /* ----- Texto ----- */
+  --texto: #e6edf3;
+  --texto-2: #b3c0cc;
+  --texto-3: #7d8b99;
+  --texto-4: #56626e;
 
-  /* DARKS (Backgrounds) */
-  --dark:         #09080a;
-  --dark2:        #0d0b0e;
-  --dark3:        #120e12;
-  --dark4:        #1a1418;
-  --dark-rgb:     9, 8, 10;
+  /* ----- Marca (ciano do Necromante96Official) ----- */
+  --marca: #22d3ee;
+  --marca-forte: #06b6d4;
+  --marca-escura: #0891b2;
+  --marca-clara: #a5f3fc;
+  --marca-fundo: rgba(34, 211, 238, 0.08);
+  --marca-borda: rgba(34, 211, 238, 0.28);
+  --marca-brilho: rgba(34, 211, 238, 0.35);
 
-  /* TEXT */
-  --text-body:    #e0e0e0;
-  --text-muted:   #999;
-  --text-dim:     #666;
-  --text-faint:   #444;
+  /* ----- Estados ----- */
+  --ok: #34d399;
+  --aviso: #fbbf24;
+  --erro: #f87171;
+  --roxo: #a78bfa;
 
-  /* BORDERS */
-  --border:       rgba(8, 145, 178, 0.13);
-  --border-hover: rgba(8, 145, 178, 0.28);
-  --border-active: rgba(8, 145, 178, 0.4);
+  /* ----- Categorias (cada área tem sua cor de apoio) ----- */
+  --cat-web: #38bdf8;
+  --cat-game: #f472b6;
+  --cat-tool: #a78bfa;
+  --cat-translation: #fbbf24;
+  --cat-institucional: #34d399;
 
-  /* SEMANTIC */
-  --success:      #22c55e;
-  --success-bg:   rgba(34, 197, 94, 0.12);
-  --warning:      #f59e0b;
-  --error:        #ef4444;
+  /* ----- Fontes ----- */
+  --fonte-titulo: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --fonte-texto: "Inter", "Segoe UI", system-ui, sans-serif;
+  --fonte-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
 
-  /* CATEGORY COLORS */
-  --cat-combat:   #ef4444;
-  --cat-defense:  #60a5fa;
-  --cat-mobility: #a78bfa;
-  --cat-utility:  #0e7490;
-  --cat-settler:  #0e7490;
+  /* ----- Escala de texto ----- */
+  --t-xs: 0.75rem;
+  --t-sm: 0.875rem;
+  --t-md: 1rem;
+  --t-lg: 1.125rem;
+  --t-xl: 1.375rem;
+  --t-2xl: clamp(1.6rem, 2.6vw, 2.1rem);
+  --t-3xl: clamp(2rem, 4vw, 2.9rem);
+  --t-hero: clamp(2.6rem, 7vw, 5.2rem);
 
-  /* SPACING */
-  --space-xs:     4px;
-  --space-sm:     8px;
-  --space-md:     16px;
-  --space-lg:     24px;
-  --space-xl:     40px;
-  --space-2xl:    64px;
-  --space-3xl:    96px;
+  /* ----- Espaços ----- */
+  --e-1: 4px;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 24px;
+  --e-6: 32px;
+  --e-7: 48px;
+  --e-8: 64px;
+  --e-9: 96px;
 
-  /* TYPOGRAPHY */
-  --font-heading: 'Rajdhani', 'Segoe UI', sans-serif;
-  --font-body:    'Exo 2', 'Inter', 'Segoe UI', sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+  /* ----- Raios e sombras ----- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-total: 999px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --sombra-forte: 0 24px 60px rgba(0, 0, 0, 0.5);
 
-  /* FONT SIZES */
-  --fs-xs:        0.75rem;
-  --fs-sm:        0.875rem;
-  --fs-base:      1rem;
-  --fs-lg:        1.125rem;
-  --fs-xl:        1.25rem;
-  --fs-2xl:       1.5rem;
-  --fs-3xl:       2rem;
-  --fs-4xl:       2.5rem;
-  --fs-hero:      clamp(2.5rem, 6vw, 5rem);
+  /* ----- Layout ----- */
+  --largura: 1180px;
+  --largura-texto: 70ch;
+  --altura-topo: 68px;
+  --margem: 20px;
 
-  /* LETTER SPACING */
-  --ls-tight:     1px;
-  --ls-normal:    1.5px;
-  --ls-wide:      2px;
-  --ls-wider:     3px;
+  /* ----- Movimento ----- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --rapido: 160ms;
+  --medio: 320ms;
+}
 
-  /* BORDER RADIUS */
-  --radius-sm:    4px;
-  --radius-md:    8px;
-  --radius-lg:    12px;
-  --radius-xl:    16px;
-  --radius-full:  9999px;
-
-  /* SHADOWS */
-  --shadow-sm:    0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg:    0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-glow:  0 0 20px rgba(8, 145, 178, 0.15);
-  --shadow-card-hover: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 18px rgba(8, 145, 178, 0.07);
-  --gold-gradient: linear-gradient(90deg, #22d3ee, #a5f3fc, #22d3ee);
-  --gold-gradient-strong: linear-gradient(180deg, #fff 15%, #cffafe 55%, #0891b2 100%);
-
-  /* ICON GLOW, monocromático ciano (encaixe perfeito com página) */
-  --icon-color:   #a5f3fc;
-  --icon-glow:    0 0 8px rgba(8, 145, 178, 0.32);
-  --icon-glow-bg: rgba(8, 145, 178, 0.08);
-  --icon-glow-border: rgba(8, 145, 178, 0.18);
-  --icon-mono:    #a5f3fc;
-  --icon-mono-dim: rgba(165, 243, 252, 0.72);
-
-  /* TRANSITIONS */
-  --transition-fast:   0.15s ease;
-  --transition-base:   0.25s ease;
-  --transition-slow:   0.4s ease;
-  --page-ease:         cubic-bezier(0.22, 1, 0.36, 1);
-  --page-ease-exit:    cubic-bezier(0.4, 0, 0.2, 1);
-  --page-duration:     0.24s;
-  --page-duration-exit: 0.2s;
-  --nav-ease:          cubic-bezier(0.22, 1, 0.36, 1);
-  --nav-duration:      0.22s;
-
-  /* Z-INDEX */
-  --z-nav:        100;
-  --z-modal:      200;
-  --z-tooltip:    300;
+@media (max-width: 640px) {
+  :root {
+    --margem: 16px;
+    --altura-topo: 60px;
+  }
 }

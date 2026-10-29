@@ -1,0 +1,267 @@
+/* ========================================================================
+   Cartões de projeto, a grade e os filtros (busca, chips, contagem, vazio).
+   ======================================================================== */
+
+/* ------------------------------------------------------------------------
+   Cartão de projeto
+   ------------------------------------------------------------------------ */
+
+.cartao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  padding: var(--e-5);
+  border: 1px solid var(--borda);
+  border-radius: var(--r-lg);
+  background: linear-gradient(180deg, var(--superficie), var(--fundo-2));
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform var(--medio) var(--ease),
+    border-color var(--medio),
+    box-shadow var(--medio);
+}
+
+/* O brilho da cor do projeto no canto, mais forte ao passar o mouse */
+.cartao::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  background: radial-gradient(28rem 14rem at 100% 0%, color-mix(in srgb, var(--cor) 16%, transparent), transparent 70%);
+  opacity: 0.55;
+  transition: opacity var(--medio);
+}
+
+.cartao:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--cor) 40%, var(--borda));
+  box-shadow: var(--sombra);
+}
+
+.cartao:hover::before {
+  opacity: 1;
+}
+
+.cartao__topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--e-3);
+  margin-bottom: var(--e-2);
+}
+
+.cartao__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.cartao__categoria {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--texto-4);
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cartao__titulo {
+  font-size: var(--t-xl);
+}
+
+.cartao__texto {
+  color: var(--texto-3);
+  font-size: var(--t-sm);
+  line-height: 1.6;
+}
+
+.cartao__numeros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--e-3);
+  margin: var(--e-2) 0 0;
+  padding-top: var(--e-4);
+  border-top: 1px dashed var(--borda);
+}
+
+/* column-reverse: o valor aparece em cima, mas o HTML segue dt → dd */
+.cartao__numeros div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.cartao__numeros dd {
+  margin: 0;
+  color: var(--texto);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-lg);
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.cartao__numeros dt {
+  color: var(--texto-4);
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.cartao__rodape {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--e-3);
+  margin-top: auto;
+  padding-top: var(--e-3);
+}
+
+.cartao__ir {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  color: var(--texto-3);
+  transition:
+    background var(--medio),
+    color var(--medio),
+    transform var(--medio) var(--ease);
+}
+
+.cartao:hover .cartao__ir {
+  background: var(--cor);
+  border-color: transparent;
+  color: #05080c;
+  transform: rotate(-45deg);
+}
+
+/* ------------------------------------------------------------------------
+   Busca e chips de filtro
+   ------------------------------------------------------------------------ */
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-4);
+  margin-bottom: var(--e-5);
+}
+
+.busca {
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 360px;
+  color: var(--texto-4);
+}
+
+.busca .icone {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.busca input {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px 0 42px;
+  border: 1px solid var(--borda);
+  border-radius: var(--r-total);
+  background: var(--superficie);
+  color: var(--texto);
+  transition: border-color var(--rapido);
+}
+
+.busca input::placeholder {
+  color: var(--texto-4);
+}
+
+.busca input:focus {
+  outline: none;
+  border-color: var(--marca-borda);
+  box-shadow: 0 0 0 4px var(--marca-fundo);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--borda);
+  border-radius: var(--r-total);
+  color: var(--texto-3);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  transition:
+    color var(--rapido),
+    border-color var(--rapido),
+    background var(--rapido);
+}
+
+.chip span {
+  min-width: 22px;
+  padding: 1px 6px;
+  border-radius: var(--r-total);
+  background: rgba(255, 255, 255, 0.06);
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.chip:hover {
+  color: var(--texto);
+  border-color: var(--borda-forte);
+}
+
+.chip[aria-pressed="true"] {
+  color: var(--marca);
+  border-color: var(--marca-borda);
+  background: var(--marca-fundo);
+}
+
+.contagem {
+  margin-bottom: var(--e-5);
+  color: var(--texto-4);
+  font-family: var(--fonte-mono);
+  font-size: var(--t-xs);
+}
+
+.vazio {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-4);
+  padding: var(--e-8) var(--e-4);
+  border: 1px dashed var(--borda);
+  border-radius: var(--r-lg);
+  text-align: center;
+}
+
+.vazio--pagina {
+  border: 0;
+}
+
+.grade-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: var(--e-4);
+}
+

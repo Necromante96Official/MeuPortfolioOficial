@@ -1,0 +1,155 @@
+/* ========================================================================
+   Sobre: texto, linha do tempo e competências.
+   ======================================================================== */
+
+/* ------------------------------------------------------------------------
+   Sobre
+   ------------------------------------------------------------------------ */
+
+.sobre {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: var(--e-7);
+}
+
+.sobre__texto {
+  display: grid;
+  gap: var(--e-7);
+}
+
+.citacao {
+  margin: 0 0 var(--e-4);
+  padding: var(--e-3) var(--e-5);
+  border-left: 3px solid var(--marca);
+  color: var(--texto);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-xl);
+}
+
+.sobre__lateral .painel {
+  position: sticky;
+  top: calc(var(--altura-topo) + 24px);
+}
+
+.linha-tempo {
+  display: grid;
+  gap: var(--e-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linha-tempo li {
+  position: relative;
+  padding-left: var(--e-5);
+  border-left: 1px solid var(--borda-forte);
+}
+
+.linha-tempo li::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--fundo);
+  border: 2px solid var(--marca);
+}
+
+.linha-tempo small {
+  color: var(--marca);
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.linha-tempo strong {
+  display: block;
+  margin: 2px 0 4px;
+  font-family: var(--fonte-titulo);
+}
+
+.grade-competencias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--e-4);
+}
+
+.competencia {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-3);
+  padding: var(--e-5);
+  border: 1px solid var(--borda);
+  border-radius: var(--r-lg);
+  background: var(--superficie);
+}
+
+.competencia__icone {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-md);
+  background: var(--marca-fundo);
+  color: var(--marca);
+}
+
+.competencia h3 {
+  font-size: var(--t-lg);
+}
+
+.competencia > p {
+  color: var(--texto-3);
+  font-size: var(--t-sm);
+}
+
+.competencia__casos {
+  margin-top: auto;
+  padding-top: var(--e-4);
+  border-top: 1px dashed var(--borda);
+}
+
+.competencia__casos small {
+  color: var(--texto-4);
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.competencia__casos ul {
+  display: grid;
+  gap: 6px;
+  margin-top: var(--e-2);
+}
+
+.competencia__casos a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  color: var(--texto-2);
+  font-size: var(--t-sm);
+}
+
+.competencia__casos a:hover {
+  color: var(--marca);
+}
+
+@media (max-width: 960px) {
+  .sobre {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-competencias {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .grade-competencias {
+    grid-template-columns: 1fr;
+  }
+}

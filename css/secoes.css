@@ -1,0 +1,119 @@
+/* ========================================================================
+   Blocos de seção usados em mais de uma página: texto corrido, passos do
+   processo e a chamada para contato.
+   ======================================================================== */
+
+.bloco h2 {
+  margin-bottom: var(--e-4);
+  font-size: var(--t-xl);
+}
+
+.bloco p + p {
+  margin-top: var(--e-4);
+}
+
+.bloco p {
+  color: var(--texto-2);
+  max-width: var(--largura-texto);
+}
+
+.painel p {
+  color: var(--texto-2);
+  font-size: var(--t-sm);
+}
+
+.processo {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: var(--e-8);
+  align-items: start;
+}
+
+.passos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--e-4);
+}
+
+.passos--linha {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: var(--e-6);
+}
+
+.passo {
+  padding: var(--e-5);
+  border: 1px solid var(--borda);
+  border-radius: var(--r-lg);
+  background: var(--fundo-2);
+}
+
+.passo__numero {
+  display: block;
+  margin-bottom: var(--e-4);
+  color: var(--marca);
+  font-family: var(--fonte-mono);
+  font-size: var(--t-sm);
+}
+
+.passo h3 {
+  margin-bottom: var(--e-2);
+  font-size: var(--t-lg);
+}
+
+.passo p {
+  color: var(--texto-3);
+  font-size: var(--t-sm);
+}
+
+@media (max-width: 960px) {
+  .processo {
+    grid-template-columns: 1fr;
+    gap: var(--e-6);
+  }
+
+  .passos--linha {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .passos,
+  .passos--linha {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chamada {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-6);
+  padding: var(--e-7);
+  border: 1px solid var(--marca-borda);
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(40rem 20rem at 0% 0%, rgba(34, 211, 238, 0.14), transparent 70%),
+    radial-gradient(30rem 20rem at 100% 100%, rgba(167, 139, 250, 0.1), transparent 70%),
+    var(--superficie);
+}
+
+.chamada h2 {
+  font-size: var(--t-2xl);
+}
+
+.chamada p {
+  margin-top: var(--e-2);
+  max-width: 52ch;
+  color: var(--texto-3);
+}
+
+@media (max-width: 760px) {
+  .chamada {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--e-6) var(--e-5);
+  }
+}
