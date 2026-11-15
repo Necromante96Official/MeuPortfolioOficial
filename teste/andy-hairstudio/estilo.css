@@ -1,6 +1,7 @@
 /* ========================================================================
-   Proposta de identidade visual: Andy Machado Hair Studio (página de teste).
-   Página isolada do portfólio: tem os próprios tokens (preto e dourado).
+   Proposta para o Instagram do Andy Machado (página de teste).
+   Página isolada do portfólio: tem os próprios tokens. As cores seguem o
+   preto e dourado que o perfil dele já usa (a proposta não muda o visual).
    ======================================================================== */
 
 :root {
@@ -12,7 +13,6 @@
   --borda-forte: rgba(212, 175, 105, 0.38);
   --ouro: #d4af69;
   --ouro-claro: #ecd7a6;
-  --ouro-escuro: #9c7a3c;
   --creme: #f4ede1;
   --texto: #ece5d8;
   --texto-2: #b9ad98;
@@ -41,9 +41,11 @@ h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
 h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
 h3 { font-size: 1.45rem; }
 p { margin: 0 0 1em; color: var(--texto-2); }
-ul { margin: 0; padding: 0; list-style: none; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: var(--ouro-claro); }
 .ouro { background: var(--gradiente-ouro); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .contem { width: min(var(--largura), 100% - 32px); margin-inline: auto; }
+.espaco { margin-top: 48px; }
 
 /* ----- Tela da senha ----- */
 .portao {
@@ -56,7 +58,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 36px 28px; border: 1px solid var(--borda); border-radius: var(--raio);
   background: rgba(21, 18, 13, 0.85);
 }
-.portao svg { width: 84px; height: 84px; margin-bottom: 12px; }
+.portao .icone-portao { display: inline-grid; place-items: center; width: 72px; height: 72px; margin-bottom: 14px; border-radius: 50%; border: 1.5px solid var(--ouro); }
+.portao .icone-portao svg { width: 32px; height: 32px; }
 .portao h1 { font-size: 1.9rem; }
 .portao input {
   width: 100%; margin: 14px 0 10px; padding: 12px 14px;
@@ -74,6 +77,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .botao.vazado { background: transparent; color: var(--ouro-claro); border: 1px solid var(--borda-forte); }
 .portao .botao { width: 100%; }
 
+/* Ícones de traço (destaques, cartões, senha) */
+[data-icone] svg { stroke: var(--ouro-claro); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
 /* ----- Topo e capa ----- */
 .topo {
   position: sticky; top: 0; z-index: 5;
@@ -81,8 +87,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-bottom: 1px solid var(--borda);
 }
 .topo .contem { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 62px; }
-.topo .marca { display: flex; align-items: center; gap: 10px; font-family: var(--serifa); font-size: 1.25rem; color: var(--creme); }
-.topo .marca svg { width: 34px; height: 34px; }
+.topo .marca { font-family: var(--serifa); font-size: 1.25rem; color: var(--creme); white-space: nowrap; }
 .topo nav { display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; }
 .topo nav a { color: var(--texto-2); text-decoration: none; font-size: 0.88rem; white-space: nowrap; }
 .topo nav a:hover { color: var(--ouro-claro); }
@@ -93,17 +98,19 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--borda-forte); border-radius: 999px;
   color: var(--ouro-claro); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
 }
-.capa p { max-width: 640px; margin: 0 auto 28px; font-size: 1.1rem; }
+.capa p { max-width: 660px; margin: 0 auto 28px; font-size: 1.1rem; }
 .capa .acoes { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-/* ----- Seções ----- */
+/* ----- Seções e cartões ----- */
 section.bloco { padding: 80px 0; border-top: 1px solid var(--borda); }
 .rotulo { color: var(--ouro); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
-.intro { max-width: 680px; margin-bottom: 40px; }
-.grade-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.grade-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.intro { max-width: 700px; margin-bottom: 40px; }
+.grade-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
+.grade-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px; }
 .cartao { padding: 26px; border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao); }
 .cartao h3 { display: flex; align-items: center; gap: 10px; }
+.cartao h3 [data-icone] svg { width: 26px; height: 26px; flex: 0 0 auto; }
+.cartao p:last-child { margin-bottom: 0; }
 .lista li { position: relative; padding-left: 24px; margin-bottom: 10px; color: var(--texto-2); }
 .lista li::before { content: ""; position: absolute; left: 4px; top: 0.65em; width: 7px; height: 7px; border-radius: 50%; background: var(--ouro); }
 .lista.bom li::before { background: var(--ok); }
@@ -117,30 +124,6 @@ section.bloco { padding: 80px 0; border-top: 1px solid var(--borda); }
 .numero span { color: var(--texto-3); font-size: 0.85rem; }
 .numero.alerta b { color: var(--alerta); }
 
-/* ----- Identidade ----- */
-.logo-vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-.logo-vitrine figure {
-  margin: 0; aspect-ratio: 1; display: grid; place-items: center;
-  border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao);
-}
-.logo-vitrine figure.claro { background: var(--creme); }
-.logo-vitrine figure.ouro-fundo { background: var(--gradiente-ouro); }
-.logo-vitrine svg { width: 62%; height: auto; }
-.legenda { margin-top: 10px; text-align: center; font-size: 0.85rem; color: var(--texto-3); }
-
-.paleta { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
-.cor { border: 1px solid var(--borda); border-radius: var(--raio-p); overflow: hidden; background: var(--carvao); }
-.cor i { display: block; height: 90px; }
-.cor div { padding: 10px 12px; font-size: 0.82rem; }
-.cor b { display: block; color: var(--creme); }
-.cor code { color: var(--texto-3); }
-
-.tipos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-.tipo { padding: 26px; border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao); }
-.tipo .amostra-serifa { font: 600 3rem/1 var(--serifa); color: var(--creme); }
-.tipo .amostra-sans { font: 700 2.2rem/1 var(--sans); color: var(--creme); letter-spacing: -0.02em; }
-.tipo small { display: block; margin-top: 12px; color: var(--texto-3); }
-
 /* ----- Celulares: hoje x proposta ----- */
 .comparar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: start; }
 .comparar > div > h3 { text-align: center; }
@@ -150,32 +133,37 @@ section.bloco { padding: 80px 0; border-top: 1px solid var(--borda); }
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), inset 0 0 0 6px #111;
   font-size: 13px; color: #f5f5f5;
 }
-.cel-topo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; margin: 4px 4px 14px; }
+.cel-topo { font-weight: 700; font-size: 15px; margin: 4px 4px 14px; }
 .cel-perfil { display: flex; align-items: center; gap: 14px; margin: 0 4px 10px; }
-.cel-avatar { flex: 0 0 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; background: var(--preto); border: 2px solid var(--ouro); }
-.cel-avatar svg { width: 56px; height: 56px; }
-.cel-avatar.velho { border-color: #444; background: #3b2f22; color: #c9b79a; font-size: 11px; }
+.cel-avatar {
+  flex: 0 0 72px; height: 72px; border-radius: 50%; display: grid; place-items: center;
+  background: #3b2f22; color: #c9b79a; font-size: 10.5px; text-align: center; line-height: 1.2; border: 2px solid #444;
+}
+.cel-avatar.novo { border-color: var(--ouro); }
 .cel-nums { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; line-height: 1.25; }
 .cel-nums b { display: block; font-size: 15px; }
-.cel-bio { margin: 0 4px 12px; line-height: 1.45; white-space: pre-line; }
+.cel-bio { margin: 0 4px 12px; line-height: 1.45; white-space: pre-line; color: #f5f5f5; }
 .cel-bio b { display: block; }
 .cel-bio .cat { color: #a8a8a8; display: block; }
-.cel-bio a { color: #e0f1ff; }
+.cel-bio a { color: #e0f1ff; text-decoration: none; }
 .cel-botoes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin: 0 4px 14px; }
 .cel-botoes span { padding: 7px 0; text-align: center; border-radius: 8px; background: #262626; font-weight: 600; font-size: 12px; }
-.cel-botoes span.destaque { background: var(--gradiente-ouro); color: #1a140a; }
+.cel-botoes span.destaque { background: #0095f6; }
 .cel-destaques { display: flex; gap: 10px; overflow: hidden; margin: 0 4px 14px; }
 .cel-destaques div { flex: 0 0 58px; text-align: center; font-size: 10.5px; color: #ddd; }
 .cel-destaques i {
   display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 4px;
-  border-radius: 50%; border: 1px solid #555; background: #1a1a1a;
+  border-radius: 50%; border: 1px solid #555; background: linear-gradient(135deg, #555, #2b2b2b);
 }
 .cel-destaques.novo i { border-color: var(--ouro); background: radial-gradient(circle, #231c11, #0c0a07); }
-.cel-destaques svg { width: 26px; height: 26px; stroke: var(--ouro-claro); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.cel-destaques.velho i { background: linear-gradient(135deg, #555, #2b2b2b); }
+.cel-destaques svg { width: 26px; height: 26px; }
 .cel-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.cel-grade > div { aspect-ratio: 4 / 5; }
-.cel-grade.velho > div { background: linear-gradient(160deg, #3a3a3a, #1c1c1c); display: grid; place-items: center; color: #777; font-size: 9px; text-align: center; padding: 4px; }
+.cel-grade > div {
+  aspect-ratio: 4 / 5; display: grid; place-items: center; padding: 4px; text-align: center;
+  background: linear-gradient(160deg, #3a3a3a, #1c1c1c); color: #8a8a8a; font-size: 9px;
+}
 .cel-grade.velho > div:nth-child(3n + 1) { background: linear-gradient(160deg, #5a4a33, #221b12); }
-.cel-grade.velho > div:nth-child(4) { background: linear-gradient(160deg, #6b5320, #1a140a); }
+.cel-grade.novo > div { background: linear-gradient(160deg, #2a2114, #0c0a07); color: var(--ouro-claro); font: 600 10px/1.25 var(--sans); }
+.cel-grade.novo > div.fixo { box-shadow: inset 0 0 0 1.5px var(--ouro); }
+.cel-grade.novo > div.reels { background: linear-gradient(160deg, #6b5320, #1a140a); }
 .notas-celular { margin-top: 18px; }

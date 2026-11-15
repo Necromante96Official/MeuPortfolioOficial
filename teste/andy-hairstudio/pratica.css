@@ -1,0 +1,80 @@
+/* ========================================================================
+   Rotina, práticas de venda, textos prontos, checklists e rodapé.
+   ======================================================================== */
+
+/* ----- Rotina do dia (períodos) ----- */
+.periodos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 18px; }
+.periodo .quando, .etapa .quando { color: var(--ouro); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
+.periodo h3, .etapa h3 { font-size: 1.25rem; }
+.tempo { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 99px; background: var(--carvao-2); color: var(--texto-3); font-size: 0.72rem; letter-spacing: 0; text-transform: none; }
+
+/* ----- Checklists ----- */
+.check { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; cursor: pointer; color: var(--texto-2); font-size: 0.93rem; }
+.check input { accent-color: var(--ouro); width: 18px; height: 18px; margin-top: 3px; flex: 0 0 auto; }
+.check input:checked + span { text-decoration: line-through; color: var(--texto-3); }
+.check small { display: block; color: var(--texto-3); font-size: 0.8rem; }
+.barra-progresso { display: flex; align-items: center; gap: 14px; margin: 0 0 26px; font-size: 0.85rem; color: var(--texto-3); }
+.progresso { flex: 1; height: 8px; border-radius: 99px; background: var(--carvao-2); overflow: hidden; }
+.progresso i { display: block; height: 100%; width: 0; background: var(--gradiente-ouro); transition: width 0.3s; }
+
+/* ----- Semana ----- */
+.semana { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.dia { padding: 16px 12px; border: 1px solid var(--borda); border-radius: var(--raio-p); background: var(--carvao); }
+.dia b { display: block; font: 600 1.2rem var(--serifa); color: var(--ouro-claro); }
+.dia span { display: block; font-size: 0.85rem; color: var(--creme); margin: 6px 0 4px; font-weight: 600; }
+.dia small { color: var(--texto-3); font-size: 0.78rem; line-height: 1.4; display: block; }
+.dia.folga { opacity: 0.55; }
+
+/* ----- Práticas de venda ----- */
+.pratica { position: relative; }
+.pratica .num { position: absolute; top: 18px; right: 22px; font: 600 2.4rem/1 var(--serifa); color: rgba(212, 175, 105, 0.22); }
+.pratica h3 { padding-right: 48px; }
+.pratica .porque { font-size: 0.85rem; color: var(--texto-3); border-top: 1px solid var(--borda); padding-top: 10px; margin-top: 12px; }
+.pratica .porque b { color: var(--ouro); font-weight: 600; }
+
+/* ----- Ideias de Reels ----- */
+.ideias { counter-reset: ideia; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 12px 24px; }
+.ideias li { counter-increment: ideia; display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--borda); color: var(--texto-2); font-size: 0.95rem; }
+.ideias li::before { content: counter(ideia, decimal-leading-zero); font: 600 1.3rem/1.2 var(--serifa); color: var(--ouro); flex: 0 0 30px; }
+.ideias b { color: var(--creme); font-weight: 600; }
+
+/* ----- Textos prontos (copiar) ----- */
+.copiavel {
+  position: relative; padding: 56px 22px 18px; border: 1px dashed var(--borda-forte);
+  border-radius: var(--raio); background: var(--carvao); color: var(--creme); line-height: 1.7;
+}
+.copiavel h4 { position: absolute; top: 18px; left: 22px; right: 112px; margin: 0; font: 700 0.78rem/1.4 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); }
+.copiavel [data-texto] { display: block; white-space: pre-line; font-size: 0.97rem; }
+.copiavel .copiar { position: absolute; top: 12px; right: 12px; padding: 7px 14px; font-size: 0.8rem; }
+.contagem { font-size: 0.8rem; color: var(--texto-3); margin-top: 8px; }
+
+/* ----- Capas de destaque ----- */
+.capas { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 18px; text-align: center; }
+.capas i {
+  display: grid; place-items: center; width: 88px; height: 88px; margin: 0 auto 10px;
+  border-radius: 50%; border: 1.5px solid var(--ouro); background: radial-gradient(circle, #231c11, #0c0a07);
+}
+.capas svg { width: 36px; height: 36px; }
+.capas b { display: block; color: var(--creme); font-weight: 600; }
+.capas small { color: var(--texto-3); font-size: 0.8rem; line-height: 1.4; display: block; }
+
+/* ----- Fontes ----- */
+.fontes { columns: 2 300px; column-gap: 32px; font-size: 0.88rem; }
+.fontes li { break-inside: avoid; margin-bottom: 8px; color: var(--texto-3); }
+.fontes a { text-decoration: none; }
+.fontes a:hover { text-decoration: underline; }
+
+/* ----- Rodapé ----- */
+.rodape { padding: 40px 0 60px; border-top: 1px solid var(--borda); text-align: center; color: var(--texto-3); font-size: 0.85rem; }
+
+/* ----- Telas menores ----- */
+@media (max-width: 860px) {
+  .comparar { grid-template-columns: minmax(0, 1fr); }
+  .semana { grid-template-columns: repeat(2, 1fr); }
+  .topo nav { display: none; }
+}
+@media (max-width: 480px) {
+  section.bloco { padding: 60px 0; }
+  .numeros { grid-template-columns: 1fr; }
+  .cartao { padding: 20px; }
+}
