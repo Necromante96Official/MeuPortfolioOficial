@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Proposta Andy Machado</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0c0a07">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="modelos.css">
+  <script type="module" src="pagina.js"></script>
+</head>
+<body>
+  <!-- Gradiente dourado usado por todos os logos da página -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="gradiente-ouro" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f2dfae"/><stop offset="0.45" stop-color="#d4af69"/><stop offset="1" stop-color="#9c7a3c"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ===== Senha ===== -->
+  <div class="portao" id="portao">
+    <form id="form-senha">
+      <span data-logo="ouro"></span>
+      <h1>Área reservada</h1>
+      <p>Proposta de identidade visual. Digite a senha para ver.</p>
+      <input type="password" inputmode="numeric" autocomplete="off" aria-label="Senha" placeholder="••••">
+      <p class="erro" role="alert"></p>
+      <button class="botao" type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div id="conteudo" hidden>
+    <header class="topo">
+      <div class="contem">
+        <span class="marca"><span data-logo="ouro" data-sem-texto></span> Andy Machado</span>
+        <nav>
+          <a href="#diagnostico">Diagnóstico</a>
+          <a href="#identidade">Identidade</a>
+          <a href="#perfil">Perfil novo</a>
+          <a href="#posts">Posts</a>
+          <a href="#conteudo-plano">Conteúdo</a>
+          <a href="#plano">Plano</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== Capa ===== -->
+    <section class="capa">
+      <div class="contem">
+        <span class="selo">Proposta de melhoria · Instagram</span>
+        <h1>Andy Machado <span class="ouro">Hair Studio</span></h1>
+        <p>Uma identidade visual mais profissional e um perfil pensado para transformar quem visita em cliente agendado: mesma essência preto e dourado que você já usa, só que organizada, consistente e fácil de reconhecer.</p>
+        <div class="acoes">
+          <a class="botao" href="#perfil">Ver o perfil novo</a>
+          <a class="botao vazado" href="#plano">Plano de 30 dias</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Diagnóstico ===== -->
+    <section class="bloco" id="diagnostico">
+      <div class="contem">
+        <p class="rotulo">01 · Diagnóstico</p>
+        <h2>Como o perfil está hoje</h2>
+        <p class="intro">Análise feita a partir do perfil <strong>@andy_hairstudio</strong> (novembro de 2026). A base é boa: o trabalho aparece, há vídeos de antes e depois e depoimentos. O que falta é <strong>organização visual</strong> e <strong>um caminho claro até o agendamento</strong>.</p>
+
+        <div class="numeros">
+          <div class="numero"><b>10</b><span>publicações</span></div>
+          <div class="numero"><b>1.317</b><span>seguidores</span></div>
+          <div class="numero alerta"><b>2.137</b><span>seguindo (mais que seguidores)</span></div>
+        </div>
+
+        <div class="grade-2">
+          <div class="cartao">
+            <h3>O que já funciona</h3>
+            <ul class="lista bom">
+              <li><strong>Preto e dourado</strong> já aparecem na arte "Agenda Aberta": é a base certa para uma marca de salão premium.</li>
+              <li><strong>Antes e depois</strong> em vídeo ("Como chegou…"): é o conteúdo que mais convence quem procura cabeleireiro.</li>
+              <li><strong>Feedback de clientes</strong> em vídeo: prova social real.</li>
+              <li><strong>Serviços variados</strong>: corte masculino, progressiva, coloração, tratamentos e visagismo.</li>
+              <li><strong>Link direto do WhatsApp</strong> na bio.</li>
+            </ul>
+          </div>
+          <div class="cartao">
+            <h3>O que trava novos clientes</h3>
+            <ul class="lista ruim">
+              <li><strong>Post fixado fraco:</strong> o primeiro da grade é um print com a interface da câmera aparecendo. É a primeira impressão do perfil.</li>
+              <li><strong>Grade sem padrão:</strong> cada post tem um estilo, fonte e enquadramento diferentes.</li>
+              <li><strong>Nome dividido:</strong> "Andy" no perfil, "Anderson Machado" e "AH / Anderson Hair Studio" nas artes. Quem vê não sabe se é a mesma marca.</li>
+              <li><strong>Dois WhatsApp diferentes:</strong> um na bio e outro na arte da Agenda. Gera dúvida na hora de chamar.</li>
+              <li><strong>Seguindo mais do que seguidores:</strong> passa imagem de perfil pessoal, não de profissional.</li>
+              <li><strong>Destaques sem capa padrão:</strong> só "Agenda" tem capa de marca; os outros são fotos soltas.</li>
+              <li><strong>Bio genérica:</strong> não diz o que te diferencia nem para quem é.</li>
+              <li><strong>Poucas publicações</strong> (10) para quem chega querendo ver o seu trabalho.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Identidade ===== -->
+    <section class="bloco" id="identidade">
+      <div class="contem">
+        <p class="rotulo">02 · Nova identidade</p>
+        <h2>Uma marca só: <span class="ouro">AM</span></h2>
+        <p class="intro">Um monograma <strong>AM</strong> (Andy Machado) substitui o "AH" e as variações de nome. Funciona como foto de perfil, marca d'água nos vídeos, capa de destaque e assinatura dos posts. O tom é de salão premium, mas próximo: elegante sem ser distante.</p>
+
+        <div class="logo-vitrine">
+          <div><figure data-logo="ouro"></figure><p class="legenda">Principal: dourado no preto</p></div>
+          <div><figure class="claro" data-logo="escuro"></figure><p class="legenda">Versão clara: posts de feedback</p></div>
+          <div><figure class="ouro-fundo" data-logo="escuro"></figure><p class="legenda">Sobre o dourado: dicas e chamadas</p></div>
+          <div><figure data-logo="creme" data-sem-texto></figure><p class="legenda">Marca d'água (só o monograma)</p></div>
+        </div>
+
+        <h3 style="margin-top:48px">Paleta</h3>
+        <div class="paleta">
+          <div class="cor"><i style="background:#0c0a07"></i><div><b>Preto Studio</b><code>#0C0A07</code></div></div>
+          <div class="cor"><i style="background:#1d1912"></i><div><b>Carvão</b><code>#1D1912</code></div></div>
+          <div class="cor"><i style="background:#d4af69"></i><div><b>Dourado</b><code>#D4AF69</code></div></div>
+          <div class="cor"><i style="background:#ecd7a6"></i><div><b>Champanhe</b><code>#ECD7A6</code></div></div>
+          <div class="cor"><i style="background:#f4ede1"></i><div><b>Creme</b><code>#F4EDE1</code></div></div>
+        </div>
+
+        <h3 style="margin-top:48px">Tipografia</h3>
+        <div class="tipos">
+          <div class="tipo">
+            <div class="amostra-serifa">Sua melhor <em>versão</em></div>
+            <small>Cormorant Garamond: títulos e frases de destaque (gratuita, Google Fonts; no Canva existe com o mesmo nome).</small>
+          </div>
+          <div class="tipo">
+            <div class="amostra-sans">AGENDA ABERTA</div>
+            <small>Manrope: textos de apoio, preços, horários e chamadas (gratuita, Google Fonts / Canva).</small>
+          </div>
+        </div>
+
+        <div class="grade-3" style="margin-top:48px">
+          <div class="cartao"><h3>Slogan</h3><p>"Seu cabelo, sua melhor versão." Já está nas suas artes: vira o slogan fixo da marca.</p></div>
+          <div class="cartao"><h3>Tom de voz</h3><p>Próximo e confiante. Fala com o cliente pelo resultado ("você sai daqui…"), não só pelo serviço.</p></div>
+          <div class="cartao"><h3>Regra de ouro</h3><p>No máximo 2 fontes e 3 cores por post. Logo sempre no mesmo canto. Isso sozinho já organiza a grade.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Perfil: hoje x proposta ===== -->
+    <section class="bloco" id="perfil">
+      <div class="contem">
+        <p class="rotulo">03 · Perfil novo</p>
+        <h2>Antes e depois do perfil</h2>
+        <p class="intro">Em 3 segundos quem visita precisa entender: <strong>quem é, o que faz, onde fica e como agendar</strong>. A proposta coloca isso no topo e deixa a grade com cara de vitrine.</p>
+
+        <div class="comparar">
+          <div>
+            <h3>Hoje</h3>
+            <div class="celular">
+              <div class="cel-topo">andy_hairstudio</div>
+              <div class="cel-perfil">
+                <div class="cel-avatar velho">foto</div>
+                <div class="cel-nums"><span><b>10</b>posts</span><span><b>1.317</b>seguidores</span><span><b>2.137</b>seguindo</span></div>
+              </div>
+              <p class="cel-bio"><b>Andy Machado | Hair Stylist</b>✂️ Cortes e estilos personalizados
+📍 Studio 9 | Alvorada
+📲 Agende seu horário abaixo ⬇️
+<a>wa.me/5551992995891</a></p>
+              <div class="cel-botoes"><span>Seguir</span><span>Mensagem</span><span>+</span></div>
+              <div class="cel-destaques velho">
+                <div><i></i>trabalhos</div><div><i></i>Agenda</div><div><i></i>Destaques</div><div><i></i>freestyle</div><div><i></i>corte a…</div>
+              </div>
+              <div class="cel-grade velho">
+                <div>print da câmera</div><div>vídeo</div><div>vídeo</div>
+                <div>arte AH</div><div>vídeo</div><div>feedback</div>
+                <div>vídeo</div><div>vídeo</div><div>foto</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="ouro">Proposta</h3>
+            <div class="celular">
+              <div class="cel-topo">andy_hairstudio</div>
+              <div class="cel-perfil">
+                <div class="cel-avatar" data-logo="ouro"></div>
+                <div class="cel-nums"><span><b>+30</b>posts</span><span><b>—</b>seguidores</span><span><b>&lt; 500</b>seguindo</span></div>
+              </div>
+              <p class="cel-bio"><b>Andy Machado | Cabeleireiro Alvorada</b><span class="cat">Cabeleireiro</span>✂️ Corte masculino · Progressiva · Coloração
+💎 Visagismo: o corte certo pro seu rosto
+📍 Studio Nove · Alvorada/RS
+📅 Agende pelo WhatsApp ⬇️
+<a>wa.me/5551992995891</a></p>
+              <div class="cel-botoes"><span>Seguir</span><span class="destaque">Agendar</span><span>WhatsApp</span></div>
+              <div class="cel-destaques novo">
+                <div><i data-icone="agenda"></i>Agenda</div>
+                <div><i data-icone="antes"></i>Antes/Depois</div>
+                <div><i data-icone="estrela"></i>Clientes</div>
+                <div><i data-icone="valores"></i>Valores</div>
+                <div><i data-icone="local"></i>Como chegar</div>
+              </div>
+              <div class="cel-grade">
+                <div class="post agenda"><span class="mini-logo" data-logo="ouro" data-sem-texto></span><span class="titulo">Agenda <em>aberta</em></span></div>
+                <div class="post antes-depois"><div class="metades"><div></div><div></div></div></div>
+                <div class="post feedback"><span class="aspas">“</span><span class="estrelas">★★★★★</span></div>
+                <div class="post antes-depois"><div class="metades"><div></div><div></div></div></div>
+                <div class="post dica"><span class="numero-dica">1</span><span class="titulo">Dica</span></div>
+                <div class="post antes-depois"><div class="metades"><div></div><div></div></div></div>
+                <div class="post visagismo"><svg class="rosto" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6.5" ry="8.5"/></svg></div>
+                <div class="post antes-depois"><div class="metades"><div></div><div></div></div></div>
+                <div class="post feedback"><span class="aspas">“</span><span class="estrelas">★★★★★</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grade-2 notas-celular">
+          <div class="cartao">
+            <h3>Bio pronta para colar</h3>
+            <div class="bio-pronta" id="bio-1">
+              <button class="botao vazado copiar" type="button" data-copiar="bio-1">Copiar</button>
+              <span data-texto>✂️ Corte masculino · Progressiva · Coloração
+💎 Visagismo: o corte certo pro seu rosto
+📍 Studio Nove · Alvorada/RS
+📅 Agende pelo WhatsApp ⬇️</span>
+            </div>
+            <p class="contagem" data-contagem="bio-1"></p>
+          </div>
+          <div class="cartao">
+            <h3>Ajustes no perfil</h3>
+            <ul class="lista">
+              <li><strong>Nome:</strong> "Andy Machado | Cabeleireiro Alvorada". O campo nome entra na busca do Instagram: quem procura "cabeleireiro Alvorada" passa a te achar.</li>
+              <li><strong>Foto:</strong> o monograma AM, ou seu retrato com fundo escuro e a borda dourada. Sempre a mesma.</li>
+              <li><strong>Conta profissional</strong> (categoria "Cabeleireiro") com botão de <strong>Agendar</strong> ou <strong>WhatsApp</strong> e o endereço do Studio Nove.</li>
+              <li><strong>Um WhatsApp só</strong> em tudo: bio, artes, stories e destaques.</li>
+              <li><strong>Seguindo:</strong> deixar de seguir perfis que não são clientes, parceiros ou referência da área, até ficar abaixo de 500.</li>
+              <li><strong>Post fixado:</strong> trocar o print da câmera pelos 3 melhores posts (Agenda, um antes e depois forte e um feedback).</li>
+              <li><strong>Link "oráculo":</strong> se não tem relação com o salão, tirar. Na bio, só o que leva ao agendamento.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="margin-top:48px">Capas dos destaques</h3>
+        <div class="capas">
+          <div><i data-icone="agenda"></i><b>Agenda</b><small>Horários livres da semana</small></div>
+          <div><i data-icone="antes"></i><b>Antes/Depois</b><small>Os melhores resultados</small></div>
+          <div><i data-icone="estrela"></i><b>Clientes</b><small>Feedbacks e depoimentos</small></div>
+          <div><i data-icone="tesoura"></i><b>Masculino</b><small>Cortes, degradê, freestyle</small></div>
+          <div><i data-icone="gota"></i><b>Química</b><small>Progressiva, coloração, tratamentos</small></div>
+          <div><i data-icone="rosto"></i><b>Visagismo</b><small>Como funciona a consulta</small></div>
+          <div><i data-icone="valores"></i><b>Valores</b><small>Serviços e preços</small></div>
+          <div><i data-icone="local"></i><b>Como chegar</b><small>Endereço e mapa do Studio Nove</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Modelos de post ===== -->
+    <section class="bloco" id="posts">
+      <div class="contem">
+        <p class="rotulo">04 · Modelos de post</p>
+        <h2>Cinco formatos, uma grade só</h2>
+        <p class="intro">Cinco modelos fixos para montar no Canva (formato 1080×1350). Revezando entre eles, a grade fica organizada sem esforço. As áreas em degradê representam onde entram as suas fotos.</p>
+
+        <div class="galeria-posts">
+          <figure>
+            <div class="post antes-depois">
+              <div class="metades"><div><span>Antes</span></div><div><span>Depois</span></div></div>
+              <div class="base"><span class="sub">Progressiva</span><div class="titulo">Liso com <em>movimento</em></div></div>
+            </div>
+            <figcaption><b>Antes e depois</b>O carro-chefe. Foto lado a lado, mesma luz e ângulo. Use em metade dos posts.</figcaption>
+          </figure>
+          <figure>
+            <div class="post feedback">
+              <span class="aspas">“</span>
+              <span class="frase">Saí do salão me sentindo outra pessoa. Atendimento impecável!</span>
+              <div><div class="estrelas">★★★★★</div><div class="rodape-post"><span>Cliente · Progressiva</span><span>@andy_hairstudio</span></div></div>
+            </div>
+            <figcaption><b>Feedback</b>Print ou frase do cliente (com autorização). Fundo creme para quebrar o preto da grade.</figcaption>
+          </figure>
+          <figure>
+            <div class="post agenda">
+              <span class="mini-logo" data-logo="ouro" data-sem-texto></span>
+              <div><span class="sub">Garanta seu horário</span><div class="titulo">Agenda <em>aberta</em></div><div class="faixa"></div>
+                <ul><li>Corte masculino</li><li>Progressiva e semidefinitiva</li><li>Coloração</li><li>Tratamentos</li><li>Visagismo</li></ul></div>
+              <span class="zap">Chame no WhatsApp</span>
+            </div>
+            <figcaption><b>Agenda aberta</b>Sua arte atual, mais limpa: menos enfeites, um número só, chamada direta.</figcaption>
+          </figure>
+          <figure>
+            <div class="post dica">
+              <span class="numero-dica">1</span>
+              <span class="sub">Dica do Andy</span>
+              <div class="titulo">Progressiva dura <em>mais</em> assim</div>
+              <div class="rodape-post"><span>Salve para lembrar</span><span>AM</span></div>
+            </div>
+            <figcaption><b>Dica rápida</b>Carrossel educativo (cuidados, pós-química, como pedir o corte). Gera salvamentos e compartilhamentos.</figcaption>
+          </figure>
+          <figure>
+            <div class="post visagismo">
+              <span class="sub">Visagismo</span>
+              <svg class="rosto" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6.5" ry="8.5"/><path d="M5.5 9.5h13M12 3.5v17" stroke-dasharray="1 1.2"/></svg>
+              <div class="titulo">O corte certo pro <em>seu rosto</em></div>
+            </div>
+            <figcaption><b>Visagismo</b>Seu diferencial. Explicar formatos de rosto e mostrar a consulta. Poucos salões da região falam disso.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Estratégia de conteúdo ===== -->
+    <section class="bloco" id="conteudo-plano">
+      <div class="contem">
+        <p class="rotulo">05 · Conteúdo</p>
+        <h2>O que postar e quando</h2>
+        <p class="intro">Constância vale mais do que quantidade. A meta é <strong>3 posts no feed e stories todo dia útil</strong>, sempre levando ao WhatsApp.</p>
+
+        <div class="grade-3">
+          <div class="cartao"><h3>Mostrar (50%)</h3><p>Antes e depois, transformações em Reels, processo do corte em vídeo curto (15 a 30 s) com áudio em alta.</p></div>
+          <div class="cartao"><h3>Provar (25%)</h3><p>Feedbacks, reação do cliente vendo o resultado, número de atendimentos do mês, bastidores do Studio Nove.</p></div>
+          <div class="cartao"><h3>Ensinar (25%)</h3><p>Dicas de cuidado, mitos da progressiva, visagismo, "como pedir seu corte". Mostra autoridade.</p></div>
+        </div>
+
+        <h3 style="margin-top:48px">Semana modelo</h3>
+        <div class="semana">
+          <div class="dia"><b>Seg</b><span>Stories: Agenda</span><small>Horários livres da semana + enquete</small></div>
+          <div class="dia"><b>Ter</b><span>Reels: antes e depois</span><small>Transformação com áudio em alta</small></div>
+          <div class="dia"><b>Qua</b><span>Stories: bastidores</span><small>Rotina do salão, caixinha de perguntas</small></div>
+          <div class="dia"><b>Qui</b><span>Carrossel: dica</span><small>Educativo, termina com "agende"</small></div>
+          <div class="dia"><b>Sex</b><span>Stories: feedback</span><small>Repostar clientes que marcaram você</small></div>
+          <div class="dia"><b>Sáb</b><span>Post: feedback ou antes/depois</span><small>Dia de mais movimento no salão</small></div>
+          <div class="dia folga"><b>Dom</b><span>Folga</span><small>Só responder mensagens</small></div>
+        </div>
+
+        <div class="grade-2" style="margin-top:48px">
+          <div class="cartao">
+            <h3>Legendas</h3>
+            <ul class="lista">
+              <li>Primeira linha forte: o resultado ("De danificado a brilho em 2 horas").</li>
+              <li>Fechar sempre com chamada: "Agende pelo link da bio".</li>
+              <li>Hashtags locais: #cabeleireiroalvorada #alvoradars #progressivaalvorada #barbeiroalvorada.</li>
+              <li>Marcar a localização do Studio Nove em todo post.</li>
+            </ul>
+          </div>
+          <div class="cartao">
+            <h3>Fotos e vídeos</h3>
+            <ul class="lista">
+              <li>Um canto fixo do salão para fotos: a parede de madeira do Studio Nove fica ótima com o dourado.</li>
+              <li>Luz de frente (janela ou ring light), celular na vertical, lente limpa.</li>
+              <li>Antes e depois sempre no mesmo ângulo e na mesma luz.</li>
+              <li>Monograma AM como marca d'água no canto inferior dos vídeos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Plano de 30 dias ===== -->
+    <section class="bloco" id="plano">
+      <div class="contem">
+        <p class="rotulo">06 · Plano de 30 dias</p>
+        <h2>Passo a passo</h2>
+        <p class="intro">Marque o que for fazendo: a página lembra neste navegador. <span id="resumo-progresso"></span></p>
+        <div class="progresso"><i></i></div>
+
+        <div class="etapas">
+          <div class="cartao etapa">
+            <p class="quando">Semana 1</p><h3>Arrumar a casa</h3>
+            <label class="check"><input type="checkbox"><span>Trocar foto do perfil e nome</span></label>
+            <label class="check"><input type="checkbox"><span>Colar a bio nova e deixar um WhatsApp só</span></label>
+            <label class="check"><input type="checkbox"><span>Ativar conta profissional, categoria e endereço</span></label>
+            <label class="check"><input type="checkbox"><span>Arquivar o print da câmera fixado</span></label>
+            <label class="check"><input type="checkbox"><span>Começar a reduzir o "seguindo"</span></label>
+          </div>
+          <div class="cartao etapa">
+            <p class="quando">Semana 2</p><h3>Montar a vitrine</h3>
+            <label class="check"><input type="checkbox"><span>Criar os 5 modelos no Canva</span></label>
+            <label class="check"><input type="checkbox"><span>Trocar as capas dos destaques e reorganizá-los</span></label>
+            <label class="check"><input type="checkbox"><span>Refazer a arte da Agenda Aberta com a nova marca</span></label>
+            <label class="check"><input type="checkbox"><span>Fixar os 3 melhores posts</span></label>
+          </div>
+          <div class="cartao etapa">
+            <p class="quando">Semana 3</p><h3>Produzir</h3>
+            <label class="check"><input type="checkbox"><span>Fotografar antes e depois de todo cliente (com autorização)</span></label>
+            <label class="check"><input type="checkbox"><span>Pedir feedback em vídeo para 3 clientes</span></label>
+            <label class="check"><input type="checkbox"><span>Publicar 3 posts na semana seguindo o calendário</span></label>
+          </div>
+          <div class="cartao etapa">
+            <p class="quando">Semana 4</p><h3>Medir e ajustar</h3>
+            <label class="check"><input type="checkbox"><span>Ver no painel profissional quais posts trouxeram mais visitas</span></label>
+            <label class="check"><input type="checkbox"><span>Contar quantos agendamentos vieram do Instagram</span></label>
+            <label class="check"><input type="checkbox"><span>Repetir o formato que mais funcionou</span></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      <div class="contem">
+        <p>Proposta de identidade visual para @andy_hairstudio · preparada por Lucas Tavares · novembro de 2026</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

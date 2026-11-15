@@ -1,0 +1,125 @@
+/* ========================================================================
+   Modelos de post (grade nova), plano de conteúdo, checklist e rodapé.
+   ======================================================================== */
+
+/* ----- Peça de post (4:5) ----- */
+.post {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 8%; background: var(--preto); color: var(--creme);
+  container-type: inline-size;
+}
+.post .mini-logo { width: 14cqw; height: 14cqw; }
+.post .titulo { font: 600 13cqw/0.95 var(--serifa); }
+.post .titulo em { font-style: italic; color: var(--ouro-claro); }
+.post .sub { font: 700 4.4cqw/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); }
+.post .rodape-post { display: flex; justify-content: space-between; align-items: center; font: 600 4cqw var(--sans); color: var(--texto-2); }
+.post .faixa { height: 1px; background: var(--gradiente-ouro); margin: 3cqw 0; }
+
+/* Antes | Depois: duas metades com "foto" de exemplo */
+.post.antes-depois { padding: 0; }
+.post.antes-depois .metades { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; }
+.post.antes-depois .metades div { position: relative; }
+.post.antes-depois .metades div:first-child { background: linear-gradient(170deg, #4a4033 0%, #1c1813 100%); filter: grayscale(0.7); }
+.post.antes-depois .metades div:last-child { background: linear-gradient(170deg, #8a6b3a 0%, #2a1f10 100%); border-left: 2px solid var(--ouro); }
+.post.antes-depois .metades span {
+  position: absolute; top: 7cqw; left: 50%; transform: translateX(-50%);
+  padding: 1.5cqw 4cqw; border-radius: 99px; background: rgba(12, 10, 7, 0.75);
+  font: 700 3.8cqw var(--sans); letter-spacing: 0.16em; text-transform: uppercase;
+}
+.post.antes-depois .metades div:last-child span { color: #1a140a; background: var(--gradiente-ouro); }
+.post.antes-depois .base {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 6cqw 8cqw;
+  background: linear-gradient(transparent, rgba(12, 10, 7, 0.95) 45%);
+}
+.post.antes-depois .base .titulo { font-size: 9cqw; }
+
+/* Feedback */
+.post.feedback { background: var(--creme); color: var(--preto); }
+.post.feedback .aspas { font: 600 40cqw/0.6 var(--serifa); color: var(--ouro); height: 18cqw; }
+.post.feedback .frase { font: 500 italic 8.4cqw/1.15 var(--serifa); color: #2a2216; }
+.post.feedback .estrelas { color: var(--ouro-escuro); font-size: 6cqw; letter-spacing: 0.15em; }
+.post.feedback .rodape-post { color: #6b5d48; }
+
+/* Agenda aberta */
+.post.agenda { background: radial-gradient(circle at 80% 10%, #3a2c14 0%, var(--preto) 60%); border: 1px solid var(--borda-forte); }
+.post.agenda ul { font: 600 4.6cqw/1.9 var(--sans); }
+.post.agenda li::before { content: "✦ "; color: var(--ouro); }
+.post.agenda .zap {
+  display: inline-block; padding: 2.5cqw 5cqw; border-radius: 99px;
+  background: var(--gradiente-ouro); color: #1a140a; font: 800 4.4cqw var(--sans);
+}
+
+/* Dica rápida */
+.post.dica { background: var(--gradiente-ouro); color: #1a140a; }
+.post.dica .sub { color: #3d2e14; }
+.post.dica .numero-dica { font: 600 34cqw/0.8 var(--serifa); color: rgba(26, 20, 10, 0.18); position: absolute; right: 6%; top: 6%; }
+.post.dica .titulo em { color: #fff7e6; }
+.post.dica .rodape-post { color: #3d2e14; }
+
+/* Visagismo */
+.post.visagismo { background: var(--carvao-2); }
+.post.visagismo .rosto { width: 46cqw; height: 46cqw; margin: 0 auto; stroke: var(--ouro); fill: none; stroke-width: 1.2; }
+
+.galeria-posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.galeria-posts figure { margin: 0; }
+.galeria-posts .post { border-radius: var(--raio-p); }
+.galeria-posts figcaption { margin-top: 10px; font-size: 0.86rem; color: var(--texto-2); }
+.galeria-posts figcaption b { display: block; color: var(--creme); }
+
+/* Grade do celular com os modelos (miniaturas) */
+.cel-grade .post { padding: 7%; }
+.cel-grade .post .titulo { font-size: 14cqw; }
+
+/* ----- Bio pronta ----- */
+.bio-pronta {
+  position: relative; padding: 56px 22px 18px; border: 1px dashed var(--borda-forte);
+  border-radius: var(--raio); background: var(--carvao);
+  font-size: 1.02rem; color: var(--creme); line-height: 1.7;
+}
+.bio-pronta [data-texto] { display: block; white-space: pre-line; }
+.bio-pronta .copiar { position: absolute; top: 12px; right: 12px; padding: 7px 14px; font-size: 0.8rem; }
+.contagem { font-size: 0.8rem; color: var(--texto-3); margin-top: 8px; }
+
+/* ----- Destaques (capas) ----- */
+.capas { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 18px; text-align: center; }
+.capas i {
+  display: grid; place-items: center; width: 96px; height: 96px; margin: 0 auto 10px;
+  border-radius: 50%; border: 1.5px solid var(--ouro); background: radial-gradient(circle, #231c11, #0c0a07);
+}
+.capas svg { width: 40px; height: 40px; stroke: var(--ouro-claro); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.capas b { display: block; color: var(--creme); font-weight: 600; }
+.capas small { color: var(--texto-3); font-size: 0.8rem; line-height: 1.4; display: block; }
+
+/* ----- Calendário ----- */
+.semana { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.dia { padding: 16px 12px; border: 1px solid var(--borda); border-radius: var(--raio-p); background: var(--carvao); }
+.dia b { display: block; font: 600 1.2rem var(--serifa); color: var(--ouro-claro); }
+.dia span { display: block; font-size: 0.85rem; color: var(--creme); margin: 6px 0 4px; font-weight: 600; }
+.dia small { color: var(--texto-3); font-size: 0.78rem; line-height: 1.4; display: block; }
+.dia.folga { opacity: 0.55; }
+
+/* ----- Checklist ----- */
+.etapas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+.etapa h3 { font-size: 1.25rem; }
+.etapa .quando { color: var(--ouro); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.check { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; cursor: pointer; color: var(--texto-2); font-size: 0.93rem; }
+.check input { accent-color: var(--ouro); width: 18px; height: 18px; margin-top: 3px; flex: 0 0 auto; }
+.check input:checked + span { text-decoration: line-through; color: var(--texto-3); }
+.progresso { height: 8px; border-radius: 99px; background: var(--carvao-2); overflow: hidden; margin: 6px 0 30px; }
+.progresso i { display: block; height: 100%; width: 0; background: var(--gradiente-ouro); transition: width 0.3s; }
+
+/* ----- Rodapé ----- */
+.rodape { padding: 40px 0 60px; border-top: 1px solid var(--borda); text-align: center; color: var(--texto-3); font-size: 0.85rem; }
+
+/* ----- Celular / telas pequenas ----- */
+@media (max-width: 860px) {
+  .comparar { grid-template-columns: minmax(0, 1fr); }
+  .semana { grid-template-columns: repeat(2, 1fr); }
+  .topo nav { display: none; }
+}
+@media (max-width: 480px) {
+  section.bloco { padding: 60px 0; }
+  .numeros { grid-template-columns: 1fr; }
+  .cartao { padding: 20px; }
+}

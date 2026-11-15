@@ -1,0 +1,181 @@
+/* ========================================================================
+   Proposta de identidade visual: Andy Machado Hair Studio (página de teste).
+   Página isolada do portfólio: tem os próprios tokens (preto e dourado).
+   ======================================================================== */
+
+:root {
+  color-scheme: dark;
+  --preto: #0c0a07;
+  --carvao: #15120d;
+  --carvao-2: #1d1912;
+  --borda: rgba(212, 175, 105, 0.16);
+  --borda-forte: rgba(212, 175, 105, 0.38);
+  --ouro: #d4af69;
+  --ouro-claro: #ecd7a6;
+  --ouro-escuro: #9c7a3c;
+  --creme: #f4ede1;
+  --texto: #ece5d8;
+  --texto-2: #b9ad98;
+  --texto-3: #85796a;
+  --ok: #7fc8a0;
+  --alerta: #e58f6f;
+  --gradiente-ouro: linear-gradient(135deg, #f2dfae 0%, #d4af69 45%, #9c7a3c 100%);
+  --serifa: "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", system-ui, sans-serif;
+  --raio: 18px;
+  --raio-p: 10px;
+  --largura: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--preto);
+  color: var(--texto);
+  font: 400 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--serifa); font-weight: 600; line-height: 1.1; margin: 0 0 0.5em; color: var(--creme); }
+h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+h3 { font-size: 1.45rem; }
+p { margin: 0 0 1em; color: var(--texto-2); }
+ul { margin: 0; padding: 0; list-style: none; }
+.ouro { background: var(--gradiente-ouro); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.contem { width: min(var(--largura), 100% - 32px); margin-inline: auto; }
+
+/* ----- Tela da senha ----- */
+.portao {
+  position: fixed; inset: 0; z-index: 10;
+  display: grid; place-items: center; padding: 16px;
+  background: radial-gradient(circle at 50% 30%, #241d12 0%, var(--preto) 65%);
+}
+.portao form {
+  width: min(360px, 100%); text-align: center;
+  padding: 36px 28px; border: 1px solid var(--borda); border-radius: var(--raio);
+  background: rgba(21, 18, 13, 0.85);
+}
+.portao svg { width: 84px; height: 84px; margin-bottom: 12px; }
+.portao h1 { font-size: 1.9rem; }
+.portao input {
+  width: 100%; margin: 14px 0 10px; padding: 12px 14px;
+  border: 1px solid var(--borda-forte); border-radius: var(--raio-p);
+  background: var(--preto); color: var(--creme); font: inherit; text-align: center; letter-spacing: 0.3em;
+}
+.portao input:focus { outline: 2px solid var(--ouro); outline-offset: 2px; }
+.portao .erro { min-height: 1.4em; color: var(--alerta); font-size: 0.9rem; margin: 0 0 6px; }
+.botao {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 22px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--gradiente-ouro); color: #1a140a; font: 700 0.95rem var(--sans); text-decoration: none;
+}
+.botao:hover { filter: brightness(1.08); }
+.botao.vazado { background: transparent; color: var(--ouro-claro); border: 1px solid var(--borda-forte); }
+.portao .botao { width: 100%; }
+
+/* ----- Topo e capa ----- */
+.topo {
+  position: sticky; top: 0; z-index: 5;
+  background: rgba(12, 10, 7, 0.86); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borda);
+}
+.topo .contem { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 62px; }
+.topo .marca { display: flex; align-items: center; gap: 10px; font-family: var(--serifa); font-size: 1.25rem; color: var(--creme); }
+.topo .marca svg { width: 34px; height: 34px; }
+.topo nav { display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; }
+.topo nav a { color: var(--texto-2); text-decoration: none; font-size: 0.88rem; white-space: nowrap; }
+.topo nav a:hover { color: var(--ouro-claro); }
+
+.capa { padding: 90px 0 70px; text-align: center; background: radial-gradient(ellipse at 50% 0%, #2a2114 0%, transparent 60%); }
+.capa .selo {
+  display: inline-block; padding: 6px 14px; margin-bottom: 22px;
+  border: 1px solid var(--borda-forte); border-radius: 999px;
+  color: var(--ouro-claro); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.capa p { max-width: 640px; margin: 0 auto 28px; font-size: 1.1rem; }
+.capa .acoes { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ----- Seções ----- */
+section.bloco { padding: 80px 0; border-top: 1px solid var(--borda); }
+.rotulo { color: var(--ouro); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+.intro { max-width: 680px; margin-bottom: 40px; }
+.grade-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.grade-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.cartao { padding: 26px; border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao); }
+.cartao h3 { display: flex; align-items: center; gap: 10px; }
+.lista li { position: relative; padding-left: 24px; margin-bottom: 10px; color: var(--texto-2); }
+.lista li::before { content: ""; position: absolute; left: 4px; top: 0.65em; width: 7px; height: 7px; border-radius: 50%; background: var(--ouro); }
+.lista.bom li::before { background: var(--ok); }
+.lista.ruim li::before { background: var(--alerta); }
+.lista strong { color: var(--creme); font-weight: 600; }
+
+/* ----- Números ----- */
+.numeros { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+.numero { padding: 20px; border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao); text-align: center; }
+.numero b { display: block; font: 600 2.4rem var(--serifa); color: var(--creme); }
+.numero span { color: var(--texto-3); font-size: 0.85rem; }
+.numero.alerta b { color: var(--alerta); }
+
+/* ----- Identidade ----- */
+.logo-vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.logo-vitrine figure {
+  margin: 0; aspect-ratio: 1; display: grid; place-items: center;
+  border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao);
+}
+.logo-vitrine figure.claro { background: var(--creme); }
+.logo-vitrine figure.ouro-fundo { background: var(--gradiente-ouro); }
+.logo-vitrine svg { width: 62%; height: auto; }
+.legenda { margin-top: 10px; text-align: center; font-size: 0.85rem; color: var(--texto-3); }
+
+.paleta { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.cor { border: 1px solid var(--borda); border-radius: var(--raio-p); overflow: hidden; background: var(--carvao); }
+.cor i { display: block; height: 90px; }
+.cor div { padding: 10px 12px; font-size: 0.82rem; }
+.cor b { display: block; color: var(--creme); }
+.cor code { color: var(--texto-3); }
+
+.tipos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.tipo { padding: 26px; border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao); }
+.tipo .amostra-serifa { font: 600 3rem/1 var(--serifa); color: var(--creme); }
+.tipo .amostra-sans { font: 700 2.2rem/1 var(--sans); color: var(--creme); letter-spacing: -0.02em; }
+.tipo small { display: block; margin-top: 12px; color: var(--texto-3); }
+
+/* ----- Celulares: hoje x proposta ----- */
+.comparar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; align-items: start; }
+.comparar > div > h3 { text-align: center; }
+.celular {
+  width: min(360px, 100%); margin: 0 auto; padding: 18px 14px 22px;
+  border: 1px solid #2d271c; border-radius: 34px; background: #000;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), inset 0 0 0 6px #111;
+  font-size: 13px; color: #f5f5f5;
+}
+.cel-topo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; margin: 4px 4px 14px; }
+.cel-perfil { display: flex; align-items: center; gap: 14px; margin: 0 4px 10px; }
+.cel-avatar { flex: 0 0 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; background: var(--preto); border: 2px solid var(--ouro); }
+.cel-avatar svg { width: 56px; height: 56px; }
+.cel-avatar.velho { border-color: #444; background: #3b2f22; color: #c9b79a; font-size: 11px; }
+.cel-nums { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); text-align: center; line-height: 1.25; }
+.cel-nums b { display: block; font-size: 15px; }
+.cel-bio { margin: 0 4px 12px; line-height: 1.45; white-space: pre-line; }
+.cel-bio b { display: block; }
+.cel-bio .cat { color: #a8a8a8; display: block; }
+.cel-bio a { color: #e0f1ff; }
+.cel-botoes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin: 0 4px 14px; }
+.cel-botoes span { padding: 7px 0; text-align: center; border-radius: 8px; background: #262626; font-weight: 600; font-size: 12px; }
+.cel-botoes span.destaque { background: var(--gradiente-ouro); color: #1a140a; }
+.cel-destaques { display: flex; gap: 10px; overflow: hidden; margin: 0 4px 14px; }
+.cel-destaques div { flex: 0 0 58px; text-align: center; font-size: 10.5px; color: #ddd; }
+.cel-destaques i {
+  display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 4px;
+  border-radius: 50%; border: 1px solid #555; background: #1a1a1a;
+}
+.cel-destaques.novo i { border-color: var(--ouro); background: radial-gradient(circle, #231c11, #0c0a07); }
+.cel-destaques svg { width: 26px; height: 26px; stroke: var(--ouro-claro); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.cel-destaques.velho i { background: linear-gradient(135deg, #555, #2b2b2b); }
+.cel-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.cel-grade > div { aspect-ratio: 4 / 5; }
+.cel-grade.velho > div { background: linear-gradient(160deg, #3a3a3a, #1c1c1c); display: grid; place-items: center; color: #777; font-size: 9px; text-align: center; padding: 4px; }
+.cel-grade.velho > div:nth-child(3n + 1) { background: linear-gradient(160deg, #5a4a33, #221b12); }
+.cel-grade.velho > div:nth-child(4) { background: linear-gradient(160deg, #6b5320, #1a140a); }
+.notas-celular { margin-top: 18px; }
