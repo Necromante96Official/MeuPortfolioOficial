@@ -86,11 +86,9 @@ a { color: var(--ouro-claro); }
   background: rgba(12, 10, 7, 0.86); backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--borda);
 }
-.topo .contem { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 62px; }
+.topo .contem { display: flex; align-items: center; gap: 16px; height: 62px; }
 .topo .marca { font-family: var(--serifa); font-size: 1.25rem; color: var(--creme); white-space: nowrap; }
-.topo nav { display: flex; gap: 18px; overflow-x: auto; scrollbar-width: none; }
-.topo nav a { color: var(--texto-2); text-decoration: none; font-size: 0.88rem; white-space: nowrap; }
-.topo nav a:hover { color: var(--ouro-claro); }
+.topo-progresso { flex: 1; display: flex; align-items: center; gap: 12px; font-size: 0.82rem; color: var(--texto-2); white-space: nowrap; }
 
 .capa { padding: 90px 0 70px; text-align: center; background: radial-gradient(ellipse at 50% 0%, #2a2114 0%, transparent 60%); }
 .capa .selo {
@@ -106,10 +104,8 @@ section.bloco { padding: 80px 0; border-top: 1px solid var(--borda); }
 .rotulo { color: var(--ouro); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
 .intro { max-width: 700px; margin-bottom: 40px; }
 .grade-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px; }
-.grade-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px; }
 .cartao { padding: 26px; border: 1px solid var(--borda); border-radius: var(--raio); background: var(--carvao); }
 .cartao h3 { display: flex; align-items: center; gap: 10px; }
-.cartao h3 [data-icone] svg { width: 26px; height: 26px; flex: 0 0 auto; }
 .cartao p:last-child { margin-bottom: 0; }
 .lista li { position: relative; padding-left: 24px; margin-bottom: 10px; color: var(--texto-2); }
 .lista li::before { content: ""; position: absolute; left: 4px; top: 0.65em; width: 7px; height: 7px; border-radius: 50%; background: var(--ouro); }
@@ -166,4 +162,3 @@ section.bloco { padding: 80px 0; border-top: 1px solid var(--borda); }
 .cel-grade.novo > div { background: linear-gradient(160deg, #2a2114, #0c0a07); color: var(--ouro-claro); font: 600 10px/1.25 var(--sans); }
 .cel-grade.novo > div.fixo { box-shadow: inset 0 0 0 1.5px var(--ouro); }
 .cel-grade.novo > div.reels { background: linear-gradient(160deg, #6b5320, #1a140a); }
-.notas-celular { margin-top: 18px; }

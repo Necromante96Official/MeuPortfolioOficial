@@ -1,0 +1,107 @@
+/* ========================================================================
+   As peças de dentro dos passos: avisos, textos para copiar, ideias,
+   cartões, rotina do dia, semana, capas, montador de legenda, painel do
+   mês e calendário. (Os tipos estão em js/pecas.js.)
+   ======================================================================== */
+
+.peca { margin: 0 0 22px; }
+.aviso { margin: 0 0 22px; padding: 14px 16px; border-radius: var(--raio-p); border: 1px solid var(--borda-forte); background: rgba(212, 175, 105, 0.06); }
+.aviso > b { display: block; margin-bottom: 4px; color: var(--ouro); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.aviso p { margin: 0; }
+.aviso.atencao { border-color: rgba(229, 143, 111, 0.4); background: rgba(229, 143, 111, 0.06); }
+.aviso.atencao > b { color: var(--alerta); }
+.aviso .lista { margin-top: 10px; }
+
+.copiavel {
+  position: relative; margin: 0 0 6px; padding: 52px 18px 16px; border: 1px dashed var(--borda-forte);
+  border-radius: var(--raio-p); background: var(--preto); color: var(--creme); line-height: 1.7;
+}
+.copiavel h4 { position: absolute; top: 16px; left: 18px; right: 110px; margin: 0; font: 800 0.74rem/1.4 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); }
+.texto-pronto { display: block; white-space: pre-line; font-size: 0.97rem; overflow-wrap: anywhere; }
+.copiavel .copiar { position: absolute; top: 10px; right: 10px; }
+.contagem { font-size: 0.8rem; color: var(--texto-3); margin: 0; }
+.copiavel + .contagem, .copiavel:last-child { margin-bottom: 22px; }
+.botao.pequeno { padding: 7px 14px; font-size: 0.82rem; }
+
+.abre-fecha { margin: 0 0 22px; border: 1px solid var(--borda); border-radius: var(--raio-p); }
+.abre-fecha summary { padding: 14px 16px; cursor: pointer; color: var(--ouro-claro); font-weight: 700; }
+.abre-fecha[open] summary { border-bottom: 1px solid var(--borda); }
+.ideias { counter-reset: ideia; padding: 6px 16px 10px; }
+.ideias li { counter-increment: ideia; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--borda); color: var(--texto-2); font-size: 0.93rem; }
+.ideias li:last-child { border-bottom: 0; }
+.ideias li::before { content: counter(ideia, decimal-leading-zero); font: 600 1.2rem/1.2 var(--serifa); color: var(--ouro); flex: 0 0 28px; }
+.ideias b { display: block; color: var(--creme); font-weight: 600; }
+.ideias small { display: block; color: var(--texto-3); font-size: 0.85rem; }
+.ideias small::first-letter { text-transform: uppercase; }
+.quantas { margin-left: 6px; padding: 1px 8px; border-radius: 99px; background: var(--carvao-2); color: var(--texto-3); font-size: 0.75rem; }
+
+/* Rotina do dia */
+.periodos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 14px; }
+.periodo { padding: 16px; border: 1px solid var(--borda); border-radius: var(--raio-p); background: var(--preto); }
+.periodo h4 { margin: 0 0 6px; font: 600 1.2rem var(--serifa); color: var(--creme); }
+.quando { color: var(--ouro); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2px; }
+.tempo { display: inline-block; margin-left: 4px; padding: 1px 8px; border-radius: 99px; background: var(--carvao-2); color: var(--texto-3); font-size: 0.7rem; letter-spacing: 0; text-transform: none; }
+.check { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; cursor: pointer; color: var(--texto-2); font-size: 0.92rem; }
+.check input { accent-color: var(--ouro); width: 18px; height: 18px; margin-top: 3px; flex: 0 0 auto; }
+.check input:checked + span { text-decoration: line-through; color: var(--texto-3); }
+.check small { display: block; color: var(--texto-3); font-size: 0.8rem; }
+.barra-progresso { display: flex; align-items: center; gap: 14px; margin: 0 0 14px; font-size: 0.85rem; color: var(--texto-3); }
+.progresso { flex: 1; height: 8px; border-radius: 99px; background: var(--carvao-2); overflow: hidden; }
+.progresso i { display: block; height: 100%; width: 0; background: var(--gradiente-ouro); transition: width 0.3s; }
+
+/* Semana modelo */
+.semana { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; margin: 0 0 22px; }
+.dia { padding: 12px; border: 1px solid var(--borda); border-radius: var(--raio-p); background: var(--preto); }
+.dia b { display: block; font: 600 1.15rem var(--serifa); color: var(--ouro-claro); }
+.dia span { display: block; font-size: 0.84rem; color: var(--creme); margin: 4px 0; font-weight: 600; line-height: 1.35; }
+.dia small { color: var(--texto-3); font-size: 0.76rem; line-height: 1.4; display: block; }
+.dia.folga { opacity: 0.55; }
+
+/* Capas de destaque */
+.capas { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 18px 12px; text-align: center; }
+.capas i {
+  display: grid; place-items: center; width: 80px; height: 80px; margin: 0 auto 8px;
+  border-radius: 50%; border: 1.5px solid var(--ouro); background: radial-gradient(circle, #231c11, #0c0a07);
+}
+.capas svg { width: 34px; height: 34px; }
+.capas b { display: block; color: var(--creme); font-weight: 600; font-size: 0.92rem; }
+.capas small { color: var(--texto-3); font-size: 0.78rem; line-height: 1.35; display: block; min-height: 2.7em; }
+.capas .botao { margin-top: 8px; }
+
+/* Cartões de ideia (pacotes) */
+.cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px; margin: 0 0 22px; }
+.cartao-ideia { padding: 16px; border: 1px solid var(--borda); border-radius: var(--raio-p); background: var(--preto); }
+.cartao-ideia b { display: block; margin-bottom: 6px; color: var(--ouro-claro); }
+.cartao-ideia p { margin: 0 0 8px; font-size: 0.9rem; }
+.cartao-ideia .porque-curto { margin: 0; color: var(--texto-3); font-size: 0.82rem; }
+
+/* Campos (montador de legenda e painel do mês) */
+.campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr)); gap: 12px; margin-bottom: 14px; }
+.campos label { display: flex; flex-direction: column; gap: 6px; color: var(--texto-2); font-size: 0.85rem; font-weight: 600; }
+.campos .largo { grid-column: 1 / -1; }
+.campos input, .campos select {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--borda-forte); border-radius: var(--raio-p);
+  background: var(--preto); color: var(--creme); font: 400 0.95rem var(--sans); color-scheme: dark;
+}
+.campos input:focus, .campos select:focus { outline: 2px solid var(--ouro); outline-offset: 1px; }
+.montador .copiavel { margin-bottom: 0; }
+.erro-campo { min-height: 1.3em; margin: 0 0 8px; color: var(--alerta); font-size: 0.85rem; }
+
+/* Painel do mês */
+.tabela-rolar { overflow-x: auto; margin-top: 16px; }
+.tabela-mes { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 0.88rem; }
+.tabela-mes th, .tabela-mes td { padding: 9px 10px; border-bottom: 1px solid var(--borda); text-align: left; vertical-align: top; }
+.tabela-mes thead th { color: var(--ouro); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.tabela-mes tbody th { color: var(--creme); white-space: nowrap; }
+.tabela-mes th small { display: block; color: var(--texto-3); font-weight: 400; font-size: 0.74rem; }
+.tabela-mes td { color: var(--texto); }
+.subiu { color: var(--ok); } .desceu { color: var(--alerta); } .igual { color: var(--texto-3); }
+
+/* Calendário do ano */
+.calendario { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px; margin-bottom: 10px; }
+.calendario li { padding: 14px; border: 1px solid var(--borda); border-radius: var(--raio-p); background: var(--preto); }
+.calendario li.este-mes { border-color: var(--borda-forte); }
+.calendario li.proxima { border-color: var(--ouro); background: linear-gradient(160deg, #241c10, var(--preto) 70%); }
+.data-quando { display: block; color: var(--ouro); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.calendario b { display: block; margin: 2px 0 4px; color: var(--creme); }
+.calendario small { color: var(--texto-3); font-size: 0.82rem; line-height: 1.4; display: block; }

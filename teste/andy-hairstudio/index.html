@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Proposta Andy Machado</title>
+  <title>Guia do Instagram · Andy Machado</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#0c0a07">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700;800&display=swap">
   <link rel="stylesheet" href="estilo.css">
-  <link rel="stylesheet" href="pratica.css">
-  <script type="module" src="pagina.js"></script>
+  <link rel="stylesheet" href="trilha.css">
+  <link rel="stylesheet" href="pecas.css">
+  <script type="module" src="js/pagina.js"></script>
 </head>
 <body>
   <!-- ===== Senha ===== -->
@@ -19,7 +20,7 @@
     <form id="form-senha">
       <span class="icone-portao" data-icone="cadeado"></span>
       <h1>Área reservada</h1>
-      <p>Proposta para o Instagram @andy_hairstudio. Digite a senha para ver.</p>
+      <p>Guia para o Instagram @andy_hairstudio. Digite a senha para ver.</p>
       <input type="password" inputmode="numeric" autocomplete="off" aria-label="Senha" placeholder="••••">
       <p class="erro" role="alert"></p>
       <button class="botao" type="submit">Entrar</button>
@@ -29,38 +30,54 @@
   <div id="conteudo" hidden>
     <header class="topo">
       <div class="contem">
-        <span class="marca">Andy Machado · Proposta</span>
-        <nav>
-          <a href="#diagnostico">Diagnóstico</a>
-          <a href="#perfil">Perfil</a>
-          <a href="#rotina">Rotina diária</a>
-          <a href="#semana">Semana e mês</a>
-          <a href="#vender">Vender mais</a>
-          <a href="#textos">Textos prontos</a>
-          <a href="#plano">Plano 30 dias</a>
-        </nav>
+        <span class="marca">Andy Machado · Guia</span>
+        <div class="topo-progresso" data-progresso-geral><div class="progresso"><i></i></div><span></span></div>
+        <button class="botao pequeno" type="button" data-continuar>Continuar</button>
       </div>
     </header>
 
     <!-- ===== Capa ===== -->
     <section class="capa">
       <div class="contem">
-        <span class="selo">Proposta de melhoria · Instagram</span>
-        <h1>Mais clientes pelo <span class="ouro">Instagram</span></h1>
-        <p>O visual preto e dourado do @andy_hairstudio continua o mesmo. O que muda é o perfil, que passa a explicar em segundos o que você faz e como agendar, e a rotina: o que fazer todo dia, toda semana e todo mês para o Instagram trazer clientes novos para o Studio Nove.</p>
+        <span class="selo">Guia passo a passo · Instagram</span>
+        <h1>Seu Instagram trazendo <span class="ouro">mais clientes</span></h1>
+        <p>Um caminho com começo, meio e fim para reformular o @andy_hairstudio. Cada passo diz <strong>por que</strong> fazer, <strong>onde tocar</strong> no celular e <strong>como saber que terminou</strong>. O visual preto e dourado continua o mesmo.</p>
         <div class="acoes">
-          <a class="botao" href="#rotina">Ver a rotina diária</a>
-          <a class="botao vazado" href="#vender">Como vender mais</a>
+          <button class="botao" type="button" data-continuar>Começar (ou continuar) o caminho</button>
+          <a class="botao vazado" href="#caixa-secao">Só os textos prontos</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== Diagnóstico ===== -->
-    <section class="bloco" id="diagnostico">
+    <!-- ===== Seu dia hoje (montado por js/hoje.js) ===== -->
+    <section class="bloco hoje" id="hoje">
       <div class="contem">
-        <p class="rotulo">01 · Diagnóstico</p>
-        <h2>Como o perfil está hoje</h2>
-        <p class="intro">Análise do perfil <strong>@andy_hairstudio</strong> em novembro de 2026. O trabalho é bom e aparece. O que falta é deixar claro, logo no topo, <strong>o que você faz e como agendar</strong>, e postar com <strong>constância</strong>.</p>
+        <p class="rotulo">Seu dia hoje</p>
+        <h2 data-saudacao>Olá, Andy!</h2>
+        <div class="hoje-cartoes" id="hoje-cartoes"></div>
+      </div>
+    </section>
+
+    <!-- ===== Como usar ===== -->
+    <section class="bloco" id="como-usar">
+      <div class="contem">
+        <p class="rotulo">Antes de começar</p>
+        <h2>Como usar este guia</h2>
+        <ol class="como-usar">
+          <li><b>Siga na ordem.</b> São <span data-contagem-fases></span> fases e <span data-contagem-passos></span> passos. Um passo prepara o outro: não precisa pensar no que vem depois.</li>
+          <li><b>Abra o Instagram ao lado.</b> Em cada passo, o quadro <span class="exemplo-onde">Onde fica</span> mostra onde tocar, um toque de cada vez.</li>
+          <li><b>Toque em "Marcar como feito".</b> O passo fecha e o próximo abre sozinho. Fica guardado neste celular: amanhã você continua de onde parou.</li>
+        </ol>
+        <p class="nota">Os nomes dos menus podem mudar um pouco de uma versão do Instagram para outra. Se não achar algo, procure pela lupa das configurações com a palavra do passo.</p>
+      </div>
+    </section>
+
+    <!-- ===== Onde vamos chegar ===== -->
+    <section class="bloco" id="chegar">
+      <div class="contem">
+        <p class="rotulo">O ponto de partida</p>
+        <h2>Como está hoje e onde vamos chegar</h2>
+        <p class="intro">O trabalho é bom e aparece. O que falta é deixar claro, logo no topo, <strong>o que você faz e como agendar</strong>, e postar com <strong>constância</strong>. Análise feita em novembro de 2026.</p>
 
         <div class="numeros">
           <div class="numero"><b>10</b><span>publicações</span></div>
@@ -70,7 +87,7 @@
 
         <div class="grade-2">
           <div class="cartao">
-            <h3>O que já funciona (manter)</h3>
+            <h3>O que já funciona (fica)</h3>
             <ul class="lista bom">
               <li><strong>Visual preto e dourado</strong> da arte "Agenda Aberta": bonito e com cara de salão. Fica como está.</li>
               <li><strong>Antes e depois em vídeo</strong> ("Como chegou…"): é o conteúdo que mais convence quem procura cabeleireiro.</li>
@@ -80,7 +97,7 @@
             </ul>
           </div>
           <div class="cartao">
-            <h3>O que trava novos clientes</h3>
+            <h3>O que afasta cliente novo</h3>
             <ul class="lista ruim">
               <li><strong>Post fixado:</strong> o primeiro da grade é um print com a tela da câmera aparecendo. É a primeira coisa que o cliente novo vê.</li>
               <li><strong>Poucos posts</strong> (10): quem chega quer ver muitos resultados antes de marcar.</li>
@@ -92,16 +109,8 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== Perfil ===== -->
-    <section class="bloco" id="perfil">
-      <div class="contem">
-        <p class="rotulo">02 · Perfil que atrai</p>
-        <h2>O mesmo perfil, mais claro</h2>
-        <p class="intro">Em 3 segundos quem visita precisa entender <strong>quem é, o que faz, onde fica e como agendar</strong>. As mudanças são de texto e organização: a foto, as cores e as artes continuam as suas.</p>
-
+        <h3 class="espaco centro">Antes e depois do guia</h3>
         <div class="comparar">
           <div>
             <h3>Hoje</h3>
@@ -128,7 +137,7 @@
           </div>
 
           <div>
-            <h3 class="ouro">Proposta</h3>
+            <h3 class="ouro">Depois do guia</h3>
             <div class="celular">
               <div class="cel-topo">andy_hairstudio</div>
               <div class="cel-perfil">
@@ -159,344 +168,26 @@
           </div>
         </div>
 
-        <div class="grade-2 notas-celular">
-          <div class="cartao">
-            <h3>Bio pronta para colar</h3>
-            <div class="copiavel" id="bio">
-              <h4>Bio</h4>
-              <button class="botao vazado copiar" type="button" data-copiar="bio">Copiar</button>
-              <span data-texto>✂️ Corte masculino · Progressiva · Coloração
-💎 Visagismo: o corte certo pro seu rosto
-📍 Studio Nove · Alvorada/RS
-📅 Agende pelo WhatsApp ⬇️</span>
-            </div>
-            <p class="contagem" data-contagem="bio"></p>
-          </div>
-          <div class="cartao">
-            <h3>Ajustes no perfil (uma vez só)</h3>
-            <ul class="lista">
-              <li><strong>Nome:</strong> "Andy Machado | Cabeleireiro Alvorada". O nome entra na busca do Instagram: quem procura "cabeleireiro Alvorada" passa a te achar.</li>
-              <li><strong>Conta profissional</strong> com categoria "Cabeleireiro", endereço do Studio Nove e botão de contato pelo WhatsApp.</li>
-              <li><strong>Um WhatsApp só</strong> em tudo: bio, artes, stories e destaques.</li>
-              <li><strong>Post fixado:</strong> trocar o print da câmera por 3 fixados: Agenda aberta, o antes e depois mais forte e o melhor feedback.</li>
-              <li><strong>Seguindo:</strong> deixar de seguir aos poucos (uns 50 por dia) perfis que não são clientes, parceiros ou referência, até ficar abaixo de 500.</li>
-              <li><strong>Link "oráculo":</strong> se não tem relação com o salão, tirar. Na bio, só o que leva ao agendamento.</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3 class="espaco">Destaques organizados</h3>
-        <p>Capas no mesmo estilo da capa "Agenda" que você já usa (fundo preto, ícone dourado). Cada destaque com um nome que diz o que tem dentro.</p>
-        <div class="capas">
-          <div><i data-icone="agenda"></i><b>Agenda</b><small>Horários livres da semana</small></div>
-          <div><i data-icone="antes"></i><b>Antes/Depois</b><small>Os melhores resultados</small></div>
-          <div><i data-icone="estrela"></i><b>Clientes</b><small>Feedbacks e marcações</small></div>
-          <div><i data-icone="tesoura"></i><b>Masculino</b><small>Cortes, degradê, freestyle</small></div>
-          <div><i data-icone="gota"></i><b>Química</b><small>Progressiva, coloração, tratamentos</small></div>
-          <div><i data-icone="valores"></i><b>Valores</b><small>Serviços com preço "a partir de"</small></div>
-          <div><i data-icone="local"></i><b>Como chegar</b><small>Endereço e mapa do Studio Nove</small></div>
-        </div>
       </div>
     </section>
 
-    <!-- ===== Rotina diária ===== -->
-    <section class="bloco" id="rotina">
+    <!-- ===== A trilha (montada por js/trilha.js) ===== -->
+    <section class="bloco" id="caminho">
       <div class="contem">
-        <p class="rotulo">03 · Rotina diária</p>
-        <h2>O que fazer todo dia</h2>
-        <p class="intro">Uns <strong>30 a 40 minutos por dia</strong>, encaixados no próprio trabalho. A lista zera sozinha todo dia: é só ir marcando.</p>
-        <div class="barra-progresso" data-progresso="diaria"><div class="progresso"><i></i></div><span></span></div>
-
-        <div class="periodos" data-checklist="diaria" data-zera-todo-dia>
-          <div class="cartao periodo">
-            <p class="quando">Ao abrir o salão <span class="tempo">10 min</span></p>
-            <h3>Começar o dia</h3>
-            <label class="check"><input type="checkbox"><span>Story com os horários livres de hoje<small>Com a figurinha de link para o WhatsApp</small></span></label>
-            <label class="check"><input type="checkbox"><span>Responder todas as mensagens e comentários de ontem</span></label>
-            <label class="check"><input type="checkbox"><span>Confirmar pelo WhatsApp os clientes de hoje</span></label>
-          </div>
-          <div class="cartao periodo">
-            <p class="quando">Durante os atendimentos <span class="tempo">sem tempo extra</span></p>
-            <h3>Gravar o material</h3>
-            <label class="check"><input type="checkbox"><span>Foto ou vídeo do "antes" (pedir autorização ao cliente)</span></label>
-            <label class="check"><input type="checkbox"><span>10 a 20 segundos do processo<small>Mãos trabalhando, finalização, o secador, a navalha</small></span></label>
-            <label class="check"><input type="checkbox"><span>O "depois" no mesmo lugar, mesma luz e mesmo ângulo</span></label>
-            <label class="check"><input type="checkbox"><span>Pedir ao cliente que poste e marque @andy_hairstudio</span></label>
-          </div>
-          <div class="cartao periodo">
-            <p class="quando">Fim do dia <span class="tempo">20 a 30 min</span></p>
-            <h3>Fechar o dia</h3>
-            <label class="check"><input type="checkbox"><span>2 a 4 stories: resultado do dia, bastidores, repost de cliente</span></label>
-            <label class="check"><input type="checkbox"><span>Responder tudo o que chegou no Direct e no WhatsApp<small>Meta: ninguém fica sem resposta até o dia seguinte</small></span></label>
-            <label class="check"><input type="checkbox"><span>Pedir avaliação no Google a 1 cliente satisfeito de hoje</span></label>
-            <label class="check"><input type="checkbox"><span>Separar o melhor vídeo do dia numa pasta "Para postar"</span></label>
-            <label class="check"><input type="checkbox"><span>10 min interagindo<small>Responder comentários e comentar em perfis de clientes e comércios de Alvorada</small></span></label>
-          </div>
-        </div>
+        <p class="rotulo">O caminho</p>
+        <h2>Passo a passo</h2>
+        <nav class="mapa" aria-label="Fases" data-mapa></nav>
+        <div id="trilha"></div>
       </div>
     </section>
 
-    <!-- ===== Semana e mês ===== -->
-    <section class="bloco" id="semana">
+    <!-- ===== Caixa de ferramentas (montada por js/caixa-de-ferramentas.js) ===== -->
+    <section class="bloco" id="caixa-secao">
       <div class="contem">
-        <p class="rotulo">04 · Semana e mês</p>
-        <h2>A semana modelo</h2>
-        <p class="intro">Meta realista: <strong>3 a 4 Reels por semana</strong> e <strong>stories todo dia útil</strong>. Constância vale mais do que quantidade: é melhor 3 posts toda semana do que 10 numa semana e nada no mês seguinte.</p>
-
-        <div class="semana">
-          <div class="dia"><b>Seg</b><span>Stories: agenda da semana</span><small>Horários livres + enquete ("qual corte você quer ver?")</small></div>
-          <div class="dia"><b>Ter</b><span>Reels: antes e depois</span><small>Transformação com áudio em alta</small></div>
-          <div class="dia"><b>Qua</b><span>Stories: caixinha de perguntas</span><small>As respostas viram conteúdo da quinta</small></div>
-          <div class="dia"><b>Qui</b><span>Reels ou carrossel: dica</span><small>Responder uma dúvida da caixinha</small></div>
-          <div class="dia"><b>Sex</b><span>Stories: clientes</span><small>Repost de quem marcou, feedbacks</small></div>
-          <div class="dia"><b>Sáb</b><span>Reels: transformação do dia</span><small>Dia mais cheio, mais material</small></div>
-          <div class="dia folga"><b>Dom</b><span>Folga</span><small>Só responder mensagens</small></div>
-        </div>
-
-        <div class="grade-2 espaco">
-          <div class="cartao">
-            <h3><span data-icone="agenda"></span>Toda semana</h3>
-            <ul class="lista">
-              <li>Mandar mensagem de retorno para os clientes que estão "no prazo" (ver <a href="#textos">textos prontos</a>).</li>
-              <li>Testar 1 <strong>Reels de teste</strong> (opção "Trial" ao publicar): ele aparece primeiro para quem não te segue.</li>
-              <li>Atualizar o destaque "Agenda" com os horários da semana.</li>
-              <li>Escolher na pasta "Para postar" os vídeos da semana seguinte.</li>
-            </ul>
-          </div>
-          <div class="cartao">
-            <h3><span data-icone="grafico"></span>Todo mês</h3>
-            <ul class="lista">
-              <li>Abrir o <strong>painel profissional</strong> e ver os 3 posts que mais trouxeram visitas ao perfil e cliques no WhatsApp. Repetir esse formato.</li>
-              <li>Contar quantos agendamentos vieram do Instagram (perguntar "como você me achou?").</li>
-              <li>Fazer 1 parceria local (post em colaboração).</li>
-              <li>Revisar os 3 posts fixados e o destaque "Valores".</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Vender mais ===== -->
-    <section class="bloco" id="vender">
-      <div class="contem">
-        <p class="rotulo">05 · Vender mais</p>
-        <h2>As melhores práticas</h2>
-        <p class="intro">O que os guias de marketing para salões e de Instagram recomendam em 2026, adaptado para um cabeleireiro de bairro. As fontes estão no fim da página.</p>
-
-        <div class="grade-3">
-          <div class="cartao pratica"><span class="num">01</span>
-            <h3><span data-icone="video"></span>Reels traz cliente novo</h3>
-            <p>O Instagram mostra Reels para quem ainda não te segue. Post de foto parada chega quase só em quem já te conhece.</p>
-            <p class="porque"><b>Por quê:</b> hoje o que mais pesa é o vídeo ser assistido até o fim e enviado para outras pessoas pelo Direct.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">02</span>
-            <h3><span data-icone="relogio"></span>Prender nos 3 primeiros segundos</h3>
-            <p>Comece pelo resultado (o "depois") ou pela parte mais impressionante, com uma frase escrita na tela: "Ela chegou assim…".</p>
-            <p class="porque"><b>Por quê:</b> se a pessoa passa o vídeo logo no começo, o Instagram para de mostrar.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">03</span>
-            <h3><span data-icone="enviar"></span>Conteúdo que as pessoas enviam</h3>
-            <p>Dica útil ("como fazer a progressiva durar mais"), visagismo ("o corte certo pro rosto redondo") e transformações fortes são os que a pessoa manda pra amiga.</p>
-            <p class="porque"><b>Por quê:</b> envio pelo Direct é um dos sinais que mais aumentam o alcance.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">04</span>
-            <h3><span data-icone="conversa"></span>Responder rápido é vender</h3>
-            <p>Quem pergunta preço já quer agendar. Responda no mesmo dia com: valor, 2 opções de horário e a pergunta "posso reservar?".</p>
-            <p class="porque"><b>Por quê:</b> quem demora a receber resposta procura outro salão.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">05</span>
-            <h3><span data-icone="conversa"></span>WhatsApp Business arrumado</h3>
-            <p>Mensagem de saudação e de ausência, <strong>catálogo</strong> com os serviços e preços, e <strong>etiquetas</strong>: Novo, Agendado, Retorno, VIP.</p>
-            <p class="porque"><b>Por quê:</b> o cliente é atendido mesmo quando você está com a tesoura na mão.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">06</span>
-            <h3><span data-icone="estrela"></span>Google + avaliações</h3>
-            <p>Criar ou completar o Perfil da Empresa no Google (Studio Nove ou Andy Machado): horário, fotos reais, serviços. Meta: <strong>50 avaliações</strong>, pedindo pessoalmente aos clientes satisfeitos.</p>
-            <p class="porque"><b>Por quê:</b> é o que aparece em "cabeleireiro perto de mim" e não custa nada.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">07</span>
-            <h3><span data-icone="retorno"></span>Chamar quem já veio</h3>
-            <p>Cliente antigo é a venda mais fácil. Corte masculino costuma voltar em 3 a 4 semanas; química no prazo que você indicar. Anote a data e mande a mensagem de retorno.</p>
-            <p class="porque"><b>Por quê:</b> trazer de volta quem já gostou custa menos do que conquistar um cliente novo.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">08</span>
-            <h3><span data-icone="presente"></span>Indicação premiada</h3>
-            <p>"Indique um amigo: quando ele vier, vocês dois ganham um bônus." Pode ser hidratação, sobrancelha ou desconto no próximo serviço.</p>
-            <p class="porque"><b>Por quê:</b> indicação de amigo é a propaganda em que o cliente mais confia.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">09</span>
-            <h3><span data-icone="agenda"></span>Encher horário vago</h3>
-            <p>Story "Vagou um horário HOJE às 15h, quem chamar primeiro leva". Nos dias mais fracos, uma condição só daquele dia.</p>
-            <p class="porque"><b>Por quê:</b> horário vazio é dinheiro que não volta, e urgência faz a pessoa agir.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">10</span>
-            <h3><span data-icone="local"></span>Ser achado em Alvorada</h3>
-            <p>Marcar a localização do Studio Nove em todo post. Escrever "cabeleireiro em Alvorada" na legenda. 3 a 5 hashtags locais, não 30 genéricas.</p>
-            <p class="porque"><b>Por quê:</b> a busca do Instagram lê nome, bio e legenda; cliente de cabeleireiro é sempre da região.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">11</span>
-            <h3><span data-icone="pessoas"></span>Parcerias locais</h3>
-            <p>Post em colaboração com lojas de roupa, fotógrafos, maquiadoras e academias de Alvorada: o post aparece para os seguidores dos dois perfis.</p>
-            <p class="porque"><b>Por quê:</b> é público novo e da região, sem pagar anúncio.</p>
-          </div>
-          <div class="cartao pratica"><span class="num">12</span>
-            <h3><span data-icone="megafone"></span>Anúncio pequeno e local</h3>
-            <p>Quando um Reels for bem sozinho, impulsionar com o botão de WhatsApp, só para um raio de 5 a 8 km do salão. Comece pequeno (por exemplo, R$ 10 a 20 por dia durante 7 dias) e conte as conversas que chegaram.</p>
-            <p class="porque"><b>Por quê:</b> impulsionar um vídeo que já provou que funciona gasta menos para trazer resultado.</p>
-          </div>
-        </div>
-
-        <h3 class="espaco">20 ideias de Reels para nunca ficar sem post</h3>
-        <ol class="ideias">
-          <li><span><b>Como chegou x como saiu:</b> o formato que você já usa, sempre com o "depois" no começo.</span></li>
-          <li><span><b>Progressiva em 30 segundos:</b> o processo acelerado, do lavatório ao liso.</span></li>
-          <li><span><b>Degradê do zero:</b> máquina, navalha e acabamento em vídeo rápido.</span></li>
-          <li><span><b>A reação no espelho:</b> o cliente se vendo pela primeira vez.</span></li>
-          <li><span><b>O corte certo pro seu rosto:</b> visagismo explicado em 3 formatos de rosto.</span></li>
-          <li><span><b>3 erros que estragam sua progressiva:</b> lavar cedo, prender o cabelo, shampoo errado.</span></li>
-          <li><span><b>Quanto tempo dura?</b> responder dúvidas reais da caixinha de perguntas.</span></li>
-          <li><span><b>Foto de referência x resultado:</b> o cliente trouxe a foto e você entregou.</span></li>
-          <li><span><b>Um dia no Studio Nove:</b> bastidores, da abertura ao último cliente.</span></li>
-          <li><span><b>Coloração passo a passo:</b> do fio ao tom final.</span></li>
-          <li><span><b>Tratamento que salvou o cabelo:</b> antes danificado, depois com brilho.</span></li>
-          <li><span><b>Freestyle:</b> desenho no corte com áudio em alta.</span></li>
-          <li><span><b>Primeiro corte da criança:</b> conteúdo que as famílias compartilham.</span></li>
-          <li><span><b>Pronto pro evento:</b> casamento, formatura, entrevista de emprego.</span></li>
-          <li><span><b>Mito ou verdade:</b> "cortar a ponta faz crescer?".</span></li>
-          <li><span><b>O que tem na minha bancada:</b> ferramentas e produtos que você usa.</span></li>
-          <li><span><b>Feedback em vídeo:</b> 10 segundos do cliente falando, sem roteiro.</span></li>
-          <li><span><b>Cortes em alta da estação:</b> 3 cortes masculinos que estão pedindo.</span></li>
-          <li><span><b>Pergunte ao cabeleireiro:</b> você respondendo uma pergunta olhando pra câmera.</span></li>
-          <li><span><b>Transformação da semana:</b> a melhor da semana, todo sábado.</span></li>
-        </ol>
-
-        <div class="grade-2 espaco">
-          <div class="cartao">
-            <h3>Evitar</h3>
-            <ul class="lista ruim">
-              <li>Seguir e deixar de seguir em massa, ou comprar seguidores: o Instagram derruba o alcance.</li>
-              <li>Sumir por semanas e voltar postando 5 de uma vez.</li>
-              <li>Deixar pergunta de preço sem resposta, ou responder só "chama no privado".</li>
-              <li>Post só de arte, sem foto real do trabalho.</li>
-              <li>Foto com interface da câmera, tremida ou com luz amarela.</li>
-              <li>Postar foto de cliente sem pedir autorização.</li>
-            </ul>
-          </div>
-          <div class="cartao">
-            <h3>Fotos e vídeos melhores, sem gastar</h3>
-            <ul class="lista bom">
-              <li>Um canto fixo para fotos: a parede de madeira do Studio Nove já é ótima.</li>
-              <li>Luz de frente (janela ou ring light), nunca de cima.</li>
-              <li>Celular na vertical, lente limpa, sem zoom digital.</li>
-              <li>Antes e depois sempre no mesmo ângulo e na mesma luz.</li>
-              <li>Gravar mais do que precisa: depois escolhe o melhor trecho.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Textos prontos ===== -->
-    <section class="bloco" id="textos">
-      <div class="contem">
-        <p class="rotulo">06 · Textos prontos</p>
-        <h2>Copiar e usar</h2>
-        <p class="intro">Mensagens prontas para o WhatsApp Business e para os stories. Troque o que está entre colchetes.</p>
-
-        <div class="grade-2">
-          <div class="copiavel" id="t-saudacao">
-            <h4>WhatsApp · Saudação</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-saudacao">Copiar</button>
-            <span data-texto>Olá! Aqui é o Andy, do Studio Nove em Alvorada ✂️
-Me conta qual serviço você procura (corte, progressiva, coloração, tratamento ou visagismo) e o melhor dia pra você, que eu já te passo os horários livres!</span>
-          </div>
-          <div class="copiavel" id="t-ausencia">
-            <h4>WhatsApp · Ausência</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-ausencia">Copiar</button>
-            <span data-texto>Oi! Agora estou atendendo, mas já te respondo 🙏
-Enquanto isso, veja os resultados e valores no Instagram: @andy_hairstudio</span>
-          </div>
-          <div class="copiavel" id="t-preco">
-            <h4>Resposta de preço</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-preco">Copiar</button>
-            <span data-texto>A [serviço] fica a partir de R$ [valor] (depende do comprimento e do volume, confirmo na hora).
-Tenho [dia] às [hora] ou [dia] às [hora]. Posso reservar pra você?</span>
-          </div>
-          <div class="copiavel" id="t-retorno">
-            <h4>Retorno de cliente</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-retorno">Copiar</button>
-            <span data-texto>Oi, [nome]! Já faz [X] semanas do seu último [serviço] 😉
-Quer que eu reserve um horário essa semana? Tenho [dia] às [hora].</span>
-          </div>
-          <div class="copiavel" id="t-avaliacao">
-            <h4>Pedido de avaliação no Google</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-avaliacao">Copiar</button>
-            <span data-texto>Oi, [nome]! Obrigado pela confiança hoje 🙏
-Se gostou do resultado, me ajuda muito deixar uma avaliação no Google, leva 1 minuto: [link]</span>
-          </div>
-          <div class="copiavel" id="t-indicacao">
-            <h4>Indicação</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-indicacao">Copiar</button>
-            <span data-texto>Indique um amigo! Quando ele vier ao Studio Nove, vocês dois ganham [bônus] no próximo serviço 🤝
-É só ele falar seu nome na hora de agendar.</span>
-          </div>
-          <div class="copiavel" id="t-vago">
-            <h4>Story · Horário vago</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-vago">Copiar</button>
-            <span data-texto>⚡ VAGOU UM HORÁRIO HOJE às [hora]
-Quem chamar primeiro no WhatsApp leva! 👇</span>
-          </div>
-          <div class="copiavel" id="t-legenda">
-            <h4>Legenda modelo</h4>
-            <button class="botao vazado copiar" type="button" data-copiar="t-legenda">Copiar</button>
-            <span data-texto>Chegou com [como estava] e saiu assim ✨
-[Serviço] feito aqui no Studio Nove, em Alvorada.
-Quer o seu? Agende pelo WhatsApp do link na bio 📲
-#cabeleireiroalvorada #alvoradars #progressivaalvorada #barbeiroalvorada #studionove</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Plano de 30 dias ===== -->
-    <section class="bloco" id="plano">
-      <div class="contem">
-        <p class="rotulo">07 · Plano de 30 dias</p>
-        <h2>Para começar</h2>
-        <p class="intro">O que fazer uma vez só, semana a semana. Fica marcado neste navegador.</p>
-        <div class="barra-progresso" data-progresso="plano"><div class="progresso"><i></i></div><span></span></div>
-
-        <div class="periodos" data-checklist="plano">
-          <div class="cartao etapa">
-            <p class="quando">Semana 1</p><h3>Arrumar o perfil</h3>
-            <label class="check"><input type="checkbox"><span>Trocar o nome para "Andy Machado | Cabeleireiro Alvorada"</span></label>
-            <label class="check"><input type="checkbox"><span>Colar a bio nova e deixar um WhatsApp só</span></label>
-            <label class="check"><input type="checkbox"><span>Conta profissional: categoria, endereço e botão de contato</span></label>
-            <label class="check"><input type="checkbox"><span>Desafixar o print da câmera e fixar os 3 melhores posts</span></label>
-            <label class="check"><input type="checkbox"><span>Começar a reduzir o "seguindo" (uns 50 por dia)</span></label>
-          </div>
-          <div class="cartao etapa">
-            <p class="quando">Semana 2</p><h3>Arrumar o atendimento</h3>
-            <label class="check"><input type="checkbox"><span>WhatsApp Business: saudação, ausência, catálogo e etiquetas</span></label>
-            <label class="check"><input type="checkbox"><span>Criar ou completar o Perfil da Empresa no Google</span></label>
-            <label class="check"><input type="checkbox"><span>Reorganizar os destaques (Agenda, Antes/Depois, Clientes, Valores, Como chegar)</span></label>
-            <label class="check"><input type="checkbox"><span>Montar a lista de clientes com a data do último serviço</span></label>
-          </div>
-          <div class="cartao etapa">
-            <p class="quando">Semana 3</p><h3>Entrar no ritmo</h3>
-            <label class="check"><input type="checkbox"><span>Seguir a rotina diária todos os dias úteis</span></label>
-            <label class="check"><input type="checkbox"><span>Publicar 3 Reels seguindo a semana modelo</span></label>
-            <label class="check"><input type="checkbox"><span>Pedir 5 avaliações no Google</span></label>
-            <label class="check"><input type="checkbox"><span>Lançar a indicação premiada nos stories</span></label>
-          </div>
-          <div class="cartao etapa">
-            <p class="quando">Semana 4</p><h3>Medir e crescer</h3>
-            <label class="check"><input type="checkbox"><span>Ver no painel profissional quais Reels trouxeram mais visitas</span></label>
-            <label class="check"><input type="checkbox"><span>Contar quantos agendamentos vieram do Instagram</span></label>
-            <label class="check"><input type="checkbox"><span>Propor 1 parceria local (post em colaboração)</span></label>
-            <label class="check"><input type="checkbox"><span>Impulsionar o melhor Reels do mês na região</span></label>
-          </div>
-        </div>
+        <p class="rotulo">Para consultar depois</p>
+        <h2>Caixa de ferramentas</h2>
+        <p class="intro">Todos os textos prontos e as capas num lugar só. Troque o que está entre [colchetes] antes de enviar.</p>
+        <div id="caixa"></div>
       </div>
     </section>
 
@@ -505,7 +196,7 @@ Quer o seu? Agende pelo WhatsApp do link na bio 📲
       <div class="contem">
         <p class="rotulo">Fontes</p>
         <h2>De onde vieram as dicas</h2>
-        <p class="intro">Pesquisa feita em novembro de 2026. O Instagram não publica as regras exatas do algoritmo: as dicas seguem o que os guias abaixo têm em comum. O melhor termômetro continua sendo o painel profissional do próprio perfil.</p>
+        <p class="intro">Pesquisa feita em novembro de 2026. O Instagram não publica as regras exatas de quem vê o quê: as dicas seguem o que os guias abaixo têm em comum. O melhor termômetro continua sendo o painel profissional do próprio perfil.</p>
         <ul class="fontes">
           <li><a href="https://later.com/blog/instagram-reels-algorithm/" target="_blank" rel="noopener">Later: como funciona o algoritmo dos Reels</a></li>
           <li><a href="https://buffer.com/resources/instagram-news-feed-algorithm/" target="_blank" rel="noopener">Buffer: o algoritmo do Instagram em 2026</a></li>
@@ -526,7 +217,7 @@ Quer o seu? Agende pelo WhatsApp do link na bio 📲
 
     <footer class="rodape">
       <div class="contem">
-        <p>Proposta para o Instagram @andy_hairstudio · preparada por Lucas Tavares · novembro de 2026</p>
+        <p>Guia para o Instagram @andy_hairstudio · preparado por Lucas Tavares · novembro de 2026</p>
       </div>
     </footer>
   </div>
